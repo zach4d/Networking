@@ -1,0 +1,971 @@
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"ShiftReg_output_PM.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.bss
+  19              		.align	2
+  20              	ShiftReg_output_backup:
+  21 0000 00000000 		.space	12
+  21      00000000 
+  21      00000000 
+  22              		.section	.text.ShiftReg_output_SaveConfig,"ax",%progbits
+  23              		.align	2
+  24              		.global	ShiftReg_output_SaveConfig
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	ShiftReg_output_SaveConfig, %function
+  28              	ShiftReg_output_SaveConfig:
+  29              	.LFB0:
+  30              		.file 1 ".\\Generated_Source\\PSoC5\\ShiftReg_output_PM.c"
+   1:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * File Name: ShiftReg_output_PM.c
+   3:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Version 2.30
+   4:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+   5:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Description:
+   6:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  This file provides the API source code for sleep mode support for Shift
+   7:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  Register component.
+   8:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+   9:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Note:
+  10:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  11:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Copyright 2008-2013, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  18:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** #include "ShiftReg_output.h"
+  19:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  20:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** static ShiftReg_output_BACKUP_STRUCT ShiftReg_output_backup =
+  21:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** {
+  22:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ShiftReg_output_DISABLED,
+  23:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  24:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ((uint32) ShiftReg_output_DEFAULT_A0),
+  25:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ((uint32) ShiftReg_output_DEFAULT_A1),
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 2
+
+
+  26:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  27:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     #if(CY_UDB_V0)
+  28:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****         ((uint32) ShiftReg_output_INT_SRC),
+  29:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     #endif /* (CY_UDB_V0) */
+  30:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** };
+  31:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  32:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  33:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** /*******************************************************************************
+  34:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Function Name: ShiftReg_output_SaveConfig
+  35:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** ********************************************************************************
+  36:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  37:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Summary:
+  38:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  Saves Shift Register configuration.
+  39:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  40:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Parameters:
+  41:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+  42:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  43:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Return:
+  44:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+  45:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  46:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Reentrant:
+  47:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  No.
+  48:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  49:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *******************************************************************************/
+  50:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** void ShiftReg_output_SaveConfig(void) 
+  51:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** {
+  31              		.loc 1 51 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 4
+  39              		.cfi_offset 7, -4
+  40 0002 00AF     		add	r7, sp, #0
+  41              	.LCFI1:
+  42              		.cfi_def_cfa_register 7
+  52:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     /* Store working registers A0 and A1 */
+  53:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ShiftReg_output_backup.saveSrA0Reg   = CY_GET_REG32(ShiftReg_output_SHIFT_REG_LSB_PTR);
+  43              		.loc 1 53 0
+  44 0004 46F20453 		movw	r3, #25860
+  45 0008 C4F20003 		movt	r3, 16384
+  46 000c 1A68     		ldr	r2, [r3, #0]
+  47 000e 40F20003 		movw	r3, #:lower16:ShiftReg_output_backup
+  48 0012 C0F20003 		movt	r3, #:upper16:ShiftReg_output_backup
+  49 0016 5A60     		str	r2, [r3, #4]
+  54:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ShiftReg_output_backup.saveSrA1Reg   = CY_GET_REG32(ShiftReg_output_SHIFT_REG_VALUE_LSB_PTR);
+  50              		.loc 1 54 0
+  51 0018 46F21453 		movw	r3, #25876
+  52 001c C4F20003 		movt	r3, 16384
+  53 0020 1A68     		ldr	r2, [r3, #0]
+  54 0022 40F20003 		movw	r3, #:lower16:ShiftReg_output_backup
+  55 0026 C0F20003 		movt	r3, #:upper16:ShiftReg_output_backup
+  56 002a 9A60     		str	r2, [r3, #8]
+  55:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  56:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     #if(CY_UDB_V0)
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 3
+
+
+  57:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****         ShiftReg_output_backup.saveSrIntMask = ShiftReg_output_SR_STATUS_MASK;
+  58:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     #endif /* (CY_UDB_V0) */
+  59:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** }
+  57              		.loc 1 59 0
+  58 002c BD46     		mov	sp, r7
+  59 002e 80BC     		pop	{r7}
+  60 0030 7047     		bx	lr
+  61              		.cfi_endproc
+  62              	.LFE0:
+  63              		.size	ShiftReg_output_SaveConfig, .-ShiftReg_output_SaveConfig
+  64 0032 00BF     		.section	.text.ShiftReg_output_RestoreConfig,"ax",%progbits
+  65              		.align	2
+  66              		.global	ShiftReg_output_RestoreConfig
+  67              		.thumb
+  68              		.thumb_func
+  69              		.type	ShiftReg_output_RestoreConfig, %function
+  70              	ShiftReg_output_RestoreConfig:
+  71              	.LFB1:
+  60:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  61:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  62:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** /*******************************************************************************
+  63:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Function Name: ShiftReg_output_RestoreConfig
+  64:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** ********************************************************************************
+  65:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  66:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Summary:
+  67:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  Restores Shift Register configuration.
+  68:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  69:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Parameters:
+  70:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+  71:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  72:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Return:
+  73:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+  74:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  75:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *******************************************************************************/
+  76:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** void ShiftReg_output_RestoreConfig(void) 
+  77:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** {
+  72              		.loc 1 77 0
+  73              		.cfi_startproc
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 1, uses_anonymous_args = 0
+  76              		@ link register save eliminated.
+  77 0000 80B4     		push	{r7}
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_offset 4
+  80              		.cfi_offset 7, -4
+  81 0002 00AF     		add	r7, sp, #0
+  82              	.LCFI3:
+  83              		.cfi_def_cfa_register 7
+  78:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     /* Restore working registers A0 and A1 */
+  79:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     CY_SET_REG32(ShiftReg_output_SHIFT_REG_LSB_PTR, ShiftReg_output_backup.saveSrA0Reg);
+  84              		.loc 1 79 0
+  85 0004 46F20453 		movw	r3, #25860
+  86 0008 C4F20003 		movt	r3, 16384
+  87 000c 40F20002 		movw	r2, #:lower16:ShiftReg_output_backup
+  88 0010 C0F20002 		movt	r2, #:upper16:ShiftReg_output_backup
+  89 0014 5268     		ldr	r2, [r2, #4]
+  90 0016 1A60     		str	r2, [r3, #0]
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 4
+
+
+  80:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     CY_SET_REG32(ShiftReg_output_SHIFT_REG_VALUE_LSB_PTR, ShiftReg_output_backup.saveSrA1Reg);
+  91              		.loc 1 80 0
+  92 0018 46F21453 		movw	r3, #25876
+  93 001c C4F20003 		movt	r3, 16384
+  94 0020 40F20002 		movw	r2, #:lower16:ShiftReg_output_backup
+  95 0024 C0F20002 		movt	r2, #:upper16:ShiftReg_output_backup
+  96 0028 9268     		ldr	r2, [r2, #8]
+  97 002a 1A60     		str	r2, [r3, #0]
+  81:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  82:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     #if(CY_UDB_V0)
+  83:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****         ShiftReg_output_SR_STATUS_MASK = ((uint8) ShiftReg_output_backup.saveSrIntMask);
+  84:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     #endif /* (CY_UDB_V0) */
+  85:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** }
+  98              		.loc 1 85 0
+  99 002c BD46     		mov	sp, r7
+ 100 002e 80BC     		pop	{r7}
+ 101 0030 7047     		bx	lr
+ 102              		.cfi_endproc
+ 103              	.LFE1:
+ 104              		.size	ShiftReg_output_RestoreConfig, .-ShiftReg_output_RestoreConfig
+ 105 0032 00BF     		.section	.text.ShiftReg_output_Sleep,"ax",%progbits
+ 106              		.align	2
+ 107              		.global	ShiftReg_output_Sleep
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.type	ShiftReg_output_Sleep, %function
+ 111              	ShiftReg_output_Sleep:
+ 112              	.LFB2:
+  86:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  87:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+  88:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** /*******************************************************************************
+  89:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Function Name: ShiftReg_output_Sleep
+  90:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** ********************************************************************************
+  91:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  92:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Summary:
+  93:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  Prepare the component to enter a Sleep mode.
+  94:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  95:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Parameters:
+  96:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+  97:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+  98:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Return:
+  99:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+ 100:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+ 101:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Reentrant:
+ 102:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  No.
+ 103:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+ 104:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *******************************************************************************/
+ 105:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** void ShiftReg_output_Sleep(void) 
+ 106:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** {
+ 113              		.loc 1 106 0
+ 114              		.cfi_startproc
+ 115              		@ args = 0, pretend = 0, frame = 0
+ 116              		@ frame_needed = 1, uses_anonymous_args = 0
+ 117 0000 80B5     		push	{r7, lr}
+ 118              	.LCFI4:
+ 119              		.cfi_def_cfa_offset 8
+ 120              		.cfi_offset 7, -8
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 5
+
+
+ 121              		.cfi_offset 14, -4
+ 122 0002 00AF     		add	r7, sp, #0
+ 123              	.LCFI5:
+ 124              		.cfi_def_cfa_register 7
+ 107:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ShiftReg_output_backup.enableState = ((uint8) ShiftReg_output_IS_ENABLED);
+ 125              		.loc 1 107 0
+ 126 0004 46F27753 		movw	r3, #25975
+ 127 0008 C4F20003 		movt	r3, 16384
+ 128 000c 1B78     		ldrb	r3, [r3, #0]
+ 129 000e DBB2     		uxtb	r3, r3
+ 130 0010 03F00103 		and	r3, r3, #1
+ 131 0014 002B     		cmp	r3, #0
+ 132 0016 0CBF     		ite	eq
+ 133 0018 0023     		moveq	r3, #0
+ 134 001a 0123     		movne	r3, #1
+ 135 001c DBB2     		uxtb	r3, r3
+ 136 001e 1A46     		mov	r2, r3
+ 137 0020 40F20003 		movw	r3, #:lower16:ShiftReg_output_backup
+ 138 0024 C0F20003 		movt	r3, #:upper16:ShiftReg_output_backup
+ 139 0028 1A70     		strb	r2, [r3, #0]
+ 108:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+ 109:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ShiftReg_output_Stop();
+ 140              		.loc 1 109 0
+ 141 002a FFF7FEFF 		bl	ShiftReg_output_Stop
+ 110:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ShiftReg_output_SaveConfig();
+ 142              		.loc 1 110 0
+ 143 002e FFF7FEFF 		bl	ShiftReg_output_SaveConfig
+ 111:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** }
+ 144              		.loc 1 111 0
+ 145 0032 80BD     		pop	{r7, pc}
+ 146              		.cfi_endproc
+ 147              	.LFE2:
+ 148              		.size	ShiftReg_output_Sleep, .-ShiftReg_output_Sleep
+ 149              		.section	.text.ShiftReg_output_Wakeup,"ax",%progbits
+ 150              		.align	2
+ 151              		.global	ShiftReg_output_Wakeup
+ 152              		.thumb
+ 153              		.thumb_func
+ 154              		.type	ShiftReg_output_Wakeup, %function
+ 155              	ShiftReg_output_Wakeup:
+ 156              	.LFB3:
+ 112:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+ 113:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+ 114:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** /*******************************************************************************
+ 115:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Function Name: ShiftReg_output_Wakeup
+ 116:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** ********************************************************************************
+ 117:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+ 118:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Summary:
+ 119:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  Restores and enables the user configuration.
+ 120:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+ 121:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Parameters:
+ 122:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+ 123:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+ 124:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** * Return:
+ 125:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *  None.
+ 126:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *
+ 127:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** *******************************************************************************/
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 6
+
+
+ 128:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** void ShiftReg_output_Wakeup(void) 
+ 129:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** {
+ 157              		.loc 1 129 0
+ 158              		.cfi_startproc
+ 159              		@ args = 0, pretend = 0, frame = 0
+ 160              		@ frame_needed = 1, uses_anonymous_args = 0
+ 161 0000 80B5     		push	{r7, lr}
+ 162              	.LCFI6:
+ 163              		.cfi_def_cfa_offset 8
+ 164              		.cfi_offset 7, -8
+ 165              		.cfi_offset 14, -4
+ 166 0002 00AF     		add	r7, sp, #0
+ 167              	.LCFI7:
+ 168              		.cfi_def_cfa_register 7
+ 130:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     ShiftReg_output_RestoreConfig();
+ 169              		.loc 1 130 0
+ 170 0004 FFF7FEFF 		bl	ShiftReg_output_RestoreConfig
+ 131:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** 
+ 132:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     if(0u != ShiftReg_output_backup.enableState)
+ 171              		.loc 1 132 0
+ 172 0008 40F20003 		movw	r3, #:lower16:ShiftReg_output_backup
+ 173 000c C0F20003 		movt	r3, #:upper16:ShiftReg_output_backup
+ 174 0010 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 175 0012 002B     		cmp	r3, #0
+ 176 0014 01D0     		beq	.L4
+ 133:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     {
+ 134:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****         ShiftReg_output_Enable();
+ 177              		.loc 1 134 0
+ 178 0016 FFF7FEFF 		bl	ShiftReg_output_Enable
+ 179              	.L4:
+ 135:.\Generated_Source\PSoC5/ShiftReg_output_PM.c ****     }
+ 136:.\Generated_Source\PSoC5/ShiftReg_output_PM.c **** }
+ 180              		.loc 1 136 0
+ 181 001a 80BD     		pop	{r7, pc}
+ 182              		.cfi_endproc
+ 183              	.LFE3:
+ 184              		.size	ShiftReg_output_Wakeup, .-ShiftReg_output_Wakeup
+ 185              		.text
+ 186              	.Letext0:
+ 187              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 188              		.file 3 ".\\Generated_Source\\PSoC5\\ShiftReg_output.h"
+ 189              		.section	.debug_info,"",%progbits
+ 190              	.Ldebug_info0:
+ 191 0000 65010000 		.4byte	0x165
+ 192 0004 0200     		.2byte	0x2
+ 193 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 194 000a 04       		.byte	0x4
+ 195 000b 01       		.uleb128 0x1
+ 196 000c 6F000000 		.4byte	.LASF25
+ 197 0010 01       		.byte	0x1
+ 198 0011 98010000 		.4byte	.LASF26
+ 199 0015 FA000000 		.4byte	.LASF27
+ 200 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 201 001d 00000000 		.4byte	0
+ 202 0021 00000000 		.4byte	0
+ 203 0025 00000000 		.4byte	.Ldebug_line0
+ 204 0029 02       		.uleb128 0x2
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 7
+
+
+ 205 002a 01       		.byte	0x1
+ 206 002b 06       		.byte	0x6
+ 207 002c D9010000 		.4byte	.LASF0
+ 208 0030 02       		.uleb128 0x2
+ 209 0031 01       		.byte	0x1
+ 210 0032 08       		.byte	0x8
+ 211 0033 EC000000 		.4byte	.LASF1
+ 212 0037 02       		.uleb128 0x2
+ 213 0038 02       		.byte	0x2
+ 214 0039 05       		.byte	0x5
+ 215 003a 1F020000 		.4byte	.LASF2
+ 216 003e 02       		.uleb128 0x2
+ 217 003f 02       		.byte	0x2
+ 218 0040 07       		.byte	0x7
+ 219 0041 C6010000 		.4byte	.LASF3
+ 220 0045 02       		.uleb128 0x2
+ 221 0046 04       		.byte	0x4
+ 222 0047 05       		.byte	0x5
+ 223 0048 89010000 		.4byte	.LASF4
+ 224 004c 02       		.uleb128 0x2
+ 225 004d 04       		.byte	0x4
+ 226 004e 07       		.byte	0x7
+ 227 004f BE000000 		.4byte	.LASF5
+ 228 0053 02       		.uleb128 0x2
+ 229 0054 08       		.byte	0x8
+ 230 0055 05       		.byte	0x5
+ 231 0056 00000000 		.4byte	.LASF6
+ 232 005a 02       		.uleb128 0x2
+ 233 005b 08       		.byte	0x8
+ 234 005c 07       		.byte	0x7
+ 235 005d D0000000 		.4byte	.LASF7
+ 236 0061 03       		.uleb128 0x3
+ 237 0062 04       		.byte	0x4
+ 238 0063 05       		.byte	0x5
+ 239 0064 696E7400 		.ascii	"int\000"
+ 240 0068 02       		.uleb128 0x2
+ 241 0069 04       		.byte	0x4
+ 242 006a 07       		.byte	0x7
+ 243 006b 21000000 		.4byte	.LASF8
+ 244 006f 04       		.uleb128 0x4
+ 245 0070 B8000000 		.4byte	.LASF9
+ 246 0074 02       		.byte	0x2
+ 247 0075 5B       		.byte	0x5b
+ 248 0076 30000000 		.4byte	0x30
+ 249 007a 04       		.uleb128 0x4
+ 250 007b 0E000000 		.4byte	.LASF10
+ 251 007f 02       		.byte	0x2
+ 252 0080 5D       		.byte	0x5d
+ 253 0081 4C000000 		.4byte	0x4c
+ 254 0085 02       		.uleb128 0x2
+ 255 0086 04       		.byte	0x4
+ 256 0087 04       		.byte	0x4
+ 257 0088 19020000 		.4byte	.LASF11
+ 258 008c 02       		.uleb128 0x2
+ 259 008d 08       		.byte	0x8
+ 260 008e 04       		.byte	0x4
+ 261 008f 82010000 		.4byte	.LASF12
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 8
+
+
+ 262 0093 02       		.uleb128 0x2
+ 263 0094 01       		.byte	0x1
+ 264 0095 08       		.byte	0x8
+ 265 0096 E7000000 		.4byte	.LASF13
+ 266 009a 04       		.uleb128 0x4
+ 267 009b 29020000 		.4byte	.LASF14
+ 268 009f 02       		.byte	0x2
+ 269 00a0 F0       		.byte	0xf0
+ 270 00a1 A5000000 		.4byte	0xa5
+ 271 00a5 05       		.uleb128 0x5
+ 272 00a6 6F000000 		.4byte	0x6f
+ 273 00aa 04       		.uleb128 0x4
+ 274 00ab 92010000 		.4byte	.LASF15
+ 275 00af 02       		.byte	0x2
+ 276 00b0 F2       		.byte	0xf2
+ 277 00b1 B5000000 		.4byte	0xb5
+ 278 00b5 05       		.uleb128 0x5
+ 279 00b6 7A000000 		.4byte	0x7a
+ 280 00ba 02       		.uleb128 0x2
+ 281 00bb 04       		.byte	0x4
+ 282 00bc 07       		.byte	0x7
+ 283 00bd 49020000 		.4byte	.LASF16
+ 284 00c1 06       		.uleb128 0x6
+ 285 00c2 0C       		.byte	0xc
+ 286 00c3 03       		.byte	0x3
+ 287 00c4 30       		.byte	0x30
+ 288 00c5 F4000000 		.4byte	0xf4
+ 289 00c9 07       		.uleb128 0x7
+ 290 00ca 15000000 		.4byte	.LASF17
+ 291 00ce 03       		.byte	0x3
+ 292 00cf 32       		.byte	0x32
+ 293 00d0 6F000000 		.4byte	0x6f
+ 294 00d4 02       		.byte	0x2
+ 295 00d5 23       		.byte	0x23
+ 296 00d6 00       		.uleb128 0
+ 297 00d7 07       		.uleb128 0x7
+ 298 00d8 5F010000 		.4byte	.LASF18
+ 299 00dc 03       		.byte	0x3
+ 300 00dd 34       		.byte	0x34
+ 301 00de 7A000000 		.4byte	0x7a
+ 302 00e2 02       		.byte	0x2
+ 303 00e3 23       		.byte	0x23
+ 304 00e4 04       		.uleb128 0x4
+ 305 00e5 07       		.uleb128 0x7
+ 306 00e6 2E000000 		.4byte	.LASF19
+ 307 00ea 03       		.byte	0x3
+ 308 00eb 35       		.byte	0x35
+ 309 00ec 7A000000 		.4byte	0x7a
+ 310 00f0 02       		.byte	0x2
+ 311 00f1 23       		.byte	0x23
+ 312 00f2 08       		.uleb128 0x8
+ 313 00f3 00       		.byte	0
+ 314 00f4 04       		.uleb128 0x4
+ 315 00f5 FB010000 		.4byte	.LASF20
+ 316 00f9 03       		.byte	0x3
+ 317 00fa 3B       		.byte	0x3b
+ 318 00fb C1000000 		.4byte	0xc1
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 9
+
+
+ 319 00ff 08       		.uleb128 0x8
+ 320 0100 01       		.byte	0x1
+ 321 0101 2E020000 		.4byte	.LASF21
+ 322 0105 01       		.byte	0x1
+ 323 0106 32       		.byte	0x32
+ 324 0107 01       		.byte	0x1
+ 325 0108 00000000 		.4byte	.LFB0
+ 326 010c 32000000 		.4byte	.LFE0
+ 327 0110 00000000 		.4byte	.LLST0
+ 328 0114 01       		.byte	0x1
+ 329 0115 08       		.uleb128 0x8
+ 330 0116 01       		.byte	0x1
+ 331 0117 51000000 		.4byte	.LASF22
+ 332 011b 01       		.byte	0x1
+ 333 011c 4C       		.byte	0x4c
+ 334 011d 01       		.byte	0x1
+ 335 011e 00000000 		.4byte	.LFB1
+ 336 0122 32000000 		.4byte	.LFE1
+ 337 0126 2C000000 		.4byte	.LLST1
+ 338 012a 01       		.byte	0x1
+ 339 012b 09       		.uleb128 0x9
+ 340 012c 01       		.byte	0x1
+ 341 012d E5010000 		.4byte	.LASF23
+ 342 0131 01       		.byte	0x1
+ 343 0132 69       		.byte	0x69
+ 344 0133 01       		.byte	0x1
+ 345 0134 00000000 		.4byte	.LFB2
+ 346 0138 34000000 		.4byte	.LFE2
+ 347 013c 58000000 		.4byte	.LLST2
+ 348 0140 01       		.byte	0x1
+ 349 0141 09       		.uleb128 0x9
+ 350 0142 01       		.byte	0x1
+ 351 0143 6B010000 		.4byte	.LASF24
+ 352 0147 01       		.byte	0x1
+ 353 0148 80       		.byte	0x80
+ 354 0149 01       		.byte	0x1
+ 355 014a 00000000 		.4byte	.LFB3
+ 356 014e 1C000000 		.4byte	.LFE3
+ 357 0152 84000000 		.4byte	.LLST3
+ 358 0156 01       		.byte	0x1
+ 359 0157 0A       		.uleb128 0xa
+ 360 0158 3A000000 		.4byte	.LASF28
+ 361 015c 01       		.byte	0x1
+ 362 015d 14       		.byte	0x14
+ 363 015e F4000000 		.4byte	0xf4
+ 364 0162 05       		.byte	0x5
+ 365 0163 03       		.byte	0x3
+ 366 0164 00000000 		.4byte	ShiftReg_output_backup
+ 367 0168 00       		.byte	0
+ 368              		.section	.debug_abbrev,"",%progbits
+ 369              	.Ldebug_abbrev0:
+ 370 0000 01       		.uleb128 0x1
+ 371 0001 11       		.uleb128 0x11
+ 372 0002 01       		.byte	0x1
+ 373 0003 25       		.uleb128 0x25
+ 374 0004 0E       		.uleb128 0xe
+ 375 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 10
+
+
+ 376 0006 0B       		.uleb128 0xb
+ 377 0007 03       		.uleb128 0x3
+ 378 0008 0E       		.uleb128 0xe
+ 379 0009 1B       		.uleb128 0x1b
+ 380 000a 0E       		.uleb128 0xe
+ 381 000b 55       		.uleb128 0x55
+ 382 000c 06       		.uleb128 0x6
+ 383 000d 11       		.uleb128 0x11
+ 384 000e 01       		.uleb128 0x1
+ 385 000f 52       		.uleb128 0x52
+ 386 0010 01       		.uleb128 0x1
+ 387 0011 10       		.uleb128 0x10
+ 388 0012 06       		.uleb128 0x6
+ 389 0013 00       		.byte	0
+ 390 0014 00       		.byte	0
+ 391 0015 02       		.uleb128 0x2
+ 392 0016 24       		.uleb128 0x24
+ 393 0017 00       		.byte	0
+ 394 0018 0B       		.uleb128 0xb
+ 395 0019 0B       		.uleb128 0xb
+ 396 001a 3E       		.uleb128 0x3e
+ 397 001b 0B       		.uleb128 0xb
+ 398 001c 03       		.uleb128 0x3
+ 399 001d 0E       		.uleb128 0xe
+ 400 001e 00       		.byte	0
+ 401 001f 00       		.byte	0
+ 402 0020 03       		.uleb128 0x3
+ 403 0021 24       		.uleb128 0x24
+ 404 0022 00       		.byte	0
+ 405 0023 0B       		.uleb128 0xb
+ 406 0024 0B       		.uleb128 0xb
+ 407 0025 3E       		.uleb128 0x3e
+ 408 0026 0B       		.uleb128 0xb
+ 409 0027 03       		.uleb128 0x3
+ 410 0028 08       		.uleb128 0x8
+ 411 0029 00       		.byte	0
+ 412 002a 00       		.byte	0
+ 413 002b 04       		.uleb128 0x4
+ 414 002c 16       		.uleb128 0x16
+ 415 002d 00       		.byte	0
+ 416 002e 03       		.uleb128 0x3
+ 417 002f 0E       		.uleb128 0xe
+ 418 0030 3A       		.uleb128 0x3a
+ 419 0031 0B       		.uleb128 0xb
+ 420 0032 3B       		.uleb128 0x3b
+ 421 0033 0B       		.uleb128 0xb
+ 422 0034 49       		.uleb128 0x49
+ 423 0035 13       		.uleb128 0x13
+ 424 0036 00       		.byte	0
+ 425 0037 00       		.byte	0
+ 426 0038 05       		.uleb128 0x5
+ 427 0039 35       		.uleb128 0x35
+ 428 003a 00       		.byte	0
+ 429 003b 49       		.uleb128 0x49
+ 430 003c 13       		.uleb128 0x13
+ 431 003d 00       		.byte	0
+ 432 003e 00       		.byte	0
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 11
+
+
+ 433 003f 06       		.uleb128 0x6
+ 434 0040 13       		.uleb128 0x13
+ 435 0041 01       		.byte	0x1
+ 436 0042 0B       		.uleb128 0xb
+ 437 0043 0B       		.uleb128 0xb
+ 438 0044 3A       		.uleb128 0x3a
+ 439 0045 0B       		.uleb128 0xb
+ 440 0046 3B       		.uleb128 0x3b
+ 441 0047 0B       		.uleb128 0xb
+ 442 0048 01       		.uleb128 0x1
+ 443 0049 13       		.uleb128 0x13
+ 444 004a 00       		.byte	0
+ 445 004b 00       		.byte	0
+ 446 004c 07       		.uleb128 0x7
+ 447 004d 0D       		.uleb128 0xd
+ 448 004e 00       		.byte	0
+ 449 004f 03       		.uleb128 0x3
+ 450 0050 0E       		.uleb128 0xe
+ 451 0051 3A       		.uleb128 0x3a
+ 452 0052 0B       		.uleb128 0xb
+ 453 0053 3B       		.uleb128 0x3b
+ 454 0054 0B       		.uleb128 0xb
+ 455 0055 49       		.uleb128 0x49
+ 456 0056 13       		.uleb128 0x13
+ 457 0057 38       		.uleb128 0x38
+ 458 0058 0A       		.uleb128 0xa
+ 459 0059 00       		.byte	0
+ 460 005a 00       		.byte	0
+ 461 005b 08       		.uleb128 0x8
+ 462 005c 2E       		.uleb128 0x2e
+ 463 005d 00       		.byte	0
+ 464 005e 3F       		.uleb128 0x3f
+ 465 005f 0C       		.uleb128 0xc
+ 466 0060 03       		.uleb128 0x3
+ 467 0061 0E       		.uleb128 0xe
+ 468 0062 3A       		.uleb128 0x3a
+ 469 0063 0B       		.uleb128 0xb
+ 470 0064 3B       		.uleb128 0x3b
+ 471 0065 0B       		.uleb128 0xb
+ 472 0066 27       		.uleb128 0x27
+ 473 0067 0C       		.uleb128 0xc
+ 474 0068 11       		.uleb128 0x11
+ 475 0069 01       		.uleb128 0x1
+ 476 006a 12       		.uleb128 0x12
+ 477 006b 01       		.uleb128 0x1
+ 478 006c 40       		.uleb128 0x40
+ 479 006d 06       		.uleb128 0x6
+ 480 006e 9742     		.uleb128 0x2117
+ 481 0070 0C       		.uleb128 0xc
+ 482 0071 00       		.byte	0
+ 483 0072 00       		.byte	0
+ 484 0073 09       		.uleb128 0x9
+ 485 0074 2E       		.uleb128 0x2e
+ 486 0075 00       		.byte	0
+ 487 0076 3F       		.uleb128 0x3f
+ 488 0077 0C       		.uleb128 0xc
+ 489 0078 03       		.uleb128 0x3
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 12
+
+
+ 490 0079 0E       		.uleb128 0xe
+ 491 007a 3A       		.uleb128 0x3a
+ 492 007b 0B       		.uleb128 0xb
+ 493 007c 3B       		.uleb128 0x3b
+ 494 007d 0B       		.uleb128 0xb
+ 495 007e 27       		.uleb128 0x27
+ 496 007f 0C       		.uleb128 0xc
+ 497 0080 11       		.uleb128 0x11
+ 498 0081 01       		.uleb128 0x1
+ 499 0082 12       		.uleb128 0x12
+ 500 0083 01       		.uleb128 0x1
+ 501 0084 40       		.uleb128 0x40
+ 502 0085 06       		.uleb128 0x6
+ 503 0086 9642     		.uleb128 0x2116
+ 504 0088 0C       		.uleb128 0xc
+ 505 0089 00       		.byte	0
+ 506 008a 00       		.byte	0
+ 507 008b 0A       		.uleb128 0xa
+ 508 008c 34       		.uleb128 0x34
+ 509 008d 00       		.byte	0
+ 510 008e 03       		.uleb128 0x3
+ 511 008f 0E       		.uleb128 0xe
+ 512 0090 3A       		.uleb128 0x3a
+ 513 0091 0B       		.uleb128 0xb
+ 514 0092 3B       		.uleb128 0x3b
+ 515 0093 0B       		.uleb128 0xb
+ 516 0094 49       		.uleb128 0x49
+ 517 0095 13       		.uleb128 0x13
+ 518 0096 02       		.uleb128 0x2
+ 519 0097 0A       		.uleb128 0xa
+ 520 0098 00       		.byte	0
+ 521 0099 00       		.byte	0
+ 522 009a 00       		.byte	0
+ 523              		.section	.debug_loc,"",%progbits
+ 524              	.Ldebug_loc0:
+ 525              	.LLST0:
+ 526 0000 00000000 		.4byte	.LFB0
+ 527 0004 02000000 		.4byte	.LCFI0
+ 528 0008 0200     		.2byte	0x2
+ 529 000a 7D       		.byte	0x7d
+ 530 000b 00       		.sleb128 0
+ 531 000c 02000000 		.4byte	.LCFI0
+ 532 0010 04000000 		.4byte	.LCFI1
+ 533 0014 0200     		.2byte	0x2
+ 534 0016 7D       		.byte	0x7d
+ 535 0017 04       		.sleb128 4
+ 536 0018 04000000 		.4byte	.LCFI1
+ 537 001c 32000000 		.4byte	.LFE0
+ 538 0020 0200     		.2byte	0x2
+ 539 0022 77       		.byte	0x77
+ 540 0023 04       		.sleb128 4
+ 541 0024 00000000 		.4byte	0
+ 542 0028 00000000 		.4byte	0
+ 543              	.LLST1:
+ 544 002c 00000000 		.4byte	.LFB1
+ 545 0030 02000000 		.4byte	.LCFI2
+ 546 0034 0200     		.2byte	0x2
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 13
+
+
+ 547 0036 7D       		.byte	0x7d
+ 548 0037 00       		.sleb128 0
+ 549 0038 02000000 		.4byte	.LCFI2
+ 550 003c 04000000 		.4byte	.LCFI3
+ 551 0040 0200     		.2byte	0x2
+ 552 0042 7D       		.byte	0x7d
+ 553 0043 04       		.sleb128 4
+ 554 0044 04000000 		.4byte	.LCFI3
+ 555 0048 32000000 		.4byte	.LFE1
+ 556 004c 0200     		.2byte	0x2
+ 557 004e 77       		.byte	0x77
+ 558 004f 04       		.sleb128 4
+ 559 0050 00000000 		.4byte	0
+ 560 0054 00000000 		.4byte	0
+ 561              	.LLST2:
+ 562 0058 00000000 		.4byte	.LFB2
+ 563 005c 02000000 		.4byte	.LCFI4
+ 564 0060 0200     		.2byte	0x2
+ 565 0062 7D       		.byte	0x7d
+ 566 0063 00       		.sleb128 0
+ 567 0064 02000000 		.4byte	.LCFI4
+ 568 0068 04000000 		.4byte	.LCFI5
+ 569 006c 0200     		.2byte	0x2
+ 570 006e 7D       		.byte	0x7d
+ 571 006f 08       		.sleb128 8
+ 572 0070 04000000 		.4byte	.LCFI5
+ 573 0074 34000000 		.4byte	.LFE2
+ 574 0078 0200     		.2byte	0x2
+ 575 007a 77       		.byte	0x77
+ 576 007b 08       		.sleb128 8
+ 577 007c 00000000 		.4byte	0
+ 578 0080 00000000 		.4byte	0
+ 579              	.LLST3:
+ 580 0084 00000000 		.4byte	.LFB3
+ 581 0088 02000000 		.4byte	.LCFI6
+ 582 008c 0200     		.2byte	0x2
+ 583 008e 7D       		.byte	0x7d
+ 584 008f 00       		.sleb128 0
+ 585 0090 02000000 		.4byte	.LCFI6
+ 586 0094 04000000 		.4byte	.LCFI7
+ 587 0098 0200     		.2byte	0x2
+ 588 009a 7D       		.byte	0x7d
+ 589 009b 08       		.sleb128 8
+ 590 009c 04000000 		.4byte	.LCFI7
+ 591 00a0 1C000000 		.4byte	.LFE3
+ 592 00a4 0200     		.2byte	0x2
+ 593 00a6 77       		.byte	0x77
+ 594 00a7 08       		.sleb128 8
+ 595 00a8 00000000 		.4byte	0
+ 596 00ac 00000000 		.4byte	0
+ 597              		.section	.debug_aranges,"",%progbits
+ 598 0000 34000000 		.4byte	0x34
+ 599 0004 0200     		.2byte	0x2
+ 600 0006 00000000 		.4byte	.Ldebug_info0
+ 601 000a 04       		.byte	0x4
+ 602 000b 00       		.byte	0
+ 603 000c 0000     		.2byte	0
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 14
+
+
+ 604 000e 0000     		.2byte	0
+ 605 0010 00000000 		.4byte	.LFB0
+ 606 0014 32000000 		.4byte	.LFE0-.LFB0
+ 607 0018 00000000 		.4byte	.LFB1
+ 608 001c 32000000 		.4byte	.LFE1-.LFB1
+ 609 0020 00000000 		.4byte	.LFB2
+ 610 0024 34000000 		.4byte	.LFE2-.LFB2
+ 611 0028 00000000 		.4byte	.LFB3
+ 612 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 613 0030 00000000 		.4byte	0
+ 614 0034 00000000 		.4byte	0
+ 615              		.section	.debug_ranges,"",%progbits
+ 616              	.Ldebug_ranges0:
+ 617 0000 00000000 		.4byte	.LFB0
+ 618 0004 32000000 		.4byte	.LFE0
+ 619 0008 00000000 		.4byte	.LFB1
+ 620 000c 32000000 		.4byte	.LFE1
+ 621 0010 00000000 		.4byte	.LFB2
+ 622 0014 34000000 		.4byte	.LFE2
+ 623 0018 00000000 		.4byte	.LFB3
+ 624 001c 1C000000 		.4byte	.LFE3
+ 625 0020 00000000 		.4byte	0
+ 626 0024 00000000 		.4byte	0
+ 627              		.section	.debug_line,"",%progbits
+ 628              	.Ldebug_line0:
+ 629 0000 BA000000 		.section	.debug_str,"MS",%progbits,1
+ 629      02006600 
+ 629      00000201 
+ 629      FB0E0D00 
+ 629      01010101 
+ 630              	.LASF6:
+ 631 0000 6C6F6E67 		.ascii	"long long int\000"
+ 631      206C6F6E 
+ 631      6720696E 
+ 631      7400
+ 632              	.LASF10:
+ 633 000e 75696E74 		.ascii	"uint32\000"
+ 633      333200
+ 634              	.LASF17:
+ 635 0015 656E6162 		.ascii	"enableState\000"
+ 635      6C655374 
+ 635      61746500 
+ 636              	.LASF8:
+ 637 0021 756E7369 		.ascii	"unsigned int\000"
+ 637      676E6564 
+ 637      20696E74 
+ 637      00
+ 638              	.LASF19:
+ 639 002e 73617665 		.ascii	"saveSrA1Reg\000"
+ 639      53724131 
+ 639      52656700 
+ 640              	.LASF28:
+ 641 003a 53686966 		.ascii	"ShiftReg_output_backup\000"
+ 641      74526567 
+ 641      5F6F7574 
+ 641      7075745F 
+ 641      6261636B 
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 15
+
+
+ 642              	.LASF22:
+ 643 0051 53686966 		.ascii	"ShiftReg_output_RestoreConfig\000"
+ 643      74526567 
+ 643      5F6F7574 
+ 643      7075745F 
+ 643      52657374 
+ 644              	.LASF25:
+ 645 006f 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 645      4320342E 
+ 645      372E3320 
+ 645      32303133 
+ 645      30333132 
+ 646 00a2 616E6368 		.ascii	"anch revision 196615]\000"
+ 646      20726576 
+ 646      6973696F 
+ 646      6E203139 
+ 646      36363135 
+ 647              	.LASF9:
+ 648 00b8 75696E74 		.ascii	"uint8\000"
+ 648      3800
+ 649              	.LASF5:
+ 650 00be 6C6F6E67 		.ascii	"long unsigned int\000"
+ 650      20756E73 
+ 650      69676E65 
+ 650      6420696E 
+ 650      7400
+ 651              	.LASF7:
+ 652 00d0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 652      206C6F6E 
+ 652      6720756E 
+ 652      7369676E 
+ 652      65642069 
+ 653              	.LASF13:
+ 654 00e7 63686172 		.ascii	"char\000"
+ 654      00
+ 655              	.LASF1:
+ 656 00ec 756E7369 		.ascii	"unsigned char\000"
+ 656      676E6564 
+ 656      20636861 
+ 656      7200
+ 657              	.LASF27:
+ 658 00fa 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
+ 658      73657273 
+ 658      5C5A6163 
+ 658      685C4472 
+ 658      6F70626F 
+ 659 0127 5C4E6574 		.ascii	"\\Networking\\Networking Project\\Networking Projec"
+ 659      776F726B 
+ 659      696E675C 
+ 659      4E657477 
+ 659      6F726B69 
+ 660 0157 742E6379 		.ascii	"t.cydsn\000"
+ 660      64736E00 
+ 661              	.LASF18:
+ 662 015f 73617665 		.ascii	"saveSrA0Reg\000"
+ 662      53724130 
+ 662      52656700 
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 16
+
+
+ 663              	.LASF24:
+ 664 016b 53686966 		.ascii	"ShiftReg_output_Wakeup\000"
+ 664      74526567 
+ 664      5F6F7574 
+ 664      7075745F 
+ 664      57616B65 
+ 665              	.LASF12:
+ 666 0182 646F7562 		.ascii	"double\000"
+ 666      6C6500
+ 667              	.LASF4:
+ 668 0189 6C6F6E67 		.ascii	"long int\000"
+ 668      20696E74 
+ 668      00
+ 669              	.LASF15:
+ 670 0192 72656733 		.ascii	"reg32\000"
+ 670      3200
+ 671              	.LASF26:
+ 672 0198 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ShiftReg_output_PM.c\000"
+ 672      6E657261 
+ 672      7465645F 
+ 672      536F7572 
+ 672      63655C50 
+ 673              	.LASF3:
+ 674 01c6 73686F72 		.ascii	"short unsigned int\000"
+ 674      7420756E 
+ 674      7369676E 
+ 674      65642069 
+ 674      6E7400
+ 675              	.LASF0:
+ 676 01d9 7369676E 		.ascii	"signed char\000"
+ 676      65642063 
+ 676      68617200 
+ 677              	.LASF23:
+ 678 01e5 53686966 		.ascii	"ShiftReg_output_Sleep\000"
+ 678      74526567 
+ 678      5F6F7574 
+ 678      7075745F 
+ 678      536C6565 
+ 679              	.LASF20:
+ 680 01fb 53686966 		.ascii	"ShiftReg_output_BACKUP_STRUCT\000"
+ 680      74526567 
+ 680      5F6F7574 
+ 680      7075745F 
+ 680      4241434B 
+ 681              	.LASF11:
+ 682 0219 666C6F61 		.ascii	"float\000"
+ 682      7400
+ 683              	.LASF2:
+ 684 021f 73686F72 		.ascii	"short int\000"
+ 684      7420696E 
+ 684      7400
+ 685              	.LASF14:
+ 686 0229 72656738 		.ascii	"reg8\000"
+ 686      00
+ 687              	.LASF21:
+ 688 022e 53686966 		.ascii	"ShiftReg_output_SaveConfig\000"
+ 688      74526567 
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccDfBbGE.s 			page 17
+
+
+ 688      5F6F7574 
+ 688      7075745F 
+ 688      53617665 
+ 689              	.LASF16:
+ 690 0249 73697A65 		.ascii	"sizetype\000"
+ 690      74797065 
+ 690      00
+ 691              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

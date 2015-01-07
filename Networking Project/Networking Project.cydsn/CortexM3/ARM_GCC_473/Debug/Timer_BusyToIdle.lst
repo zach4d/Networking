@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
   23:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** 
   24:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** #include "Timer_BusyToIdle.h"
   25:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 2
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 2
 
 
   26:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** uint8 Timer_BusyToIdle_initVar = 0u;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
   65:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****             /* Set 3rd bit of Control register to enable one shot mode */
   66:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****             Timer_BusyToIdle_CONTROL |= 0x04u;
   67:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****         #endif /* One Shot enabled only when RunModeUsed is not Continuous*/
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 3
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 3
 
 
   68:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  119:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****     Timer_BusyToIdle_WriteCounter(Timer_BusyToIdle_INIT_PERIOD);
   51              		.loc 1 119 0
   52 000e 42F61B40 		movw	r0, #11291
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 4
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 4
 
 
   53 0012 FFF7FEFF 		bl	Timer_BusyToIdle_WriteCounter
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  155:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****             #endif /* Set interrupt count in control register if control register is not removed */
  156:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****         #endif /*Set interrupt count in UDB implementation if interrupt count feature is checked.*/
  157:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 5
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 5
 
 
  158:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****         Timer_BusyToIdle_ClearFIFO();
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  103              		.cfi_def_cfa_register 7
  181:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****     /* Globally Enable the Fixed Function Block chosen */
  182:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****     #if (Timer_BusyToIdle_UsingFixedFunction)
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 6
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 6
 
 
  183:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****         Timer_BusyToIdle_GLOBAL_ENABLE |= Timer_BusyToIdle_BLOCK_EN_MASK;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  212:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *
  213:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *******************************************************************************/
  214:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** void Timer_BusyToIdle_Start(void) 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 7
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 7
 
 
  215:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  228:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** /*******************************************************************************
  229:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** * Function Name: Timer_BusyToIdle_Stop
  230:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** ********************************************************************************
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 8
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 8
 
 
  231:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  196              		.cfi_endproc
  197              	.LFE3:
  198              		.size	Timer_BusyToIdle_Stop, .-Timer_BusyToIdle_Stop
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 9
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 9
 
 
  199 0026 00BF     		.section	.text.Timer_BusyToIdle_SetInterruptMode,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  230 0016 07F10C07 		add	r7, r7, #12
  231 001a BD46     		mov	sp, r7
  232 001c 80BC     		pop	{r7}
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 10
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 10
 
 
  233 001e 7047     		bx	lr
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  262 000e BD46     		mov	sp, r7
  263 0010 80BC     		pop	{r7}
  264 0012 7047     		bx	lr
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 11
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 11
 
 
  265              		.cfi_endproc
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  294 0010 1846     		mov	r0, r3
  295 0012 BD46     		mov	sp, r7
  296 0014 80BC     		pop	{r7}
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 12
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 12
 
 
  297 0016 7047     		bx	lr
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  328 0012 BD46     		mov	sp, r7
  329 0014 80BC     		pop	{r7}
  330 0016 7047     		bx	lr
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 13
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 13
 
 
  331              		.cfi_endproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  366 001a BD46     		mov	sp, r7
  367 001c 80BC     		pop	{r7}
  368 001e 7047     		bx	lr
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 14
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 14
 
 
  369              		.cfi_endproc
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  398 0010 1846     		mov	r0, r3
  399 0012 BD46     		mov	sp, r7
  400 0014 80BC     		pop	{r7}
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 15
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 15
 
 
  401 0016 7047     		bx	lr
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  430              		.loc 1 423 0
  431 000a 46F65803 		movw	r3, #26712
  432 000e C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 16
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 16
 
 
  433 0012 FA88     		ldrh	r2, [r7, #6]	@ movhi
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  463              		.loc 1 447 0
  464 0004 46F69803 		movw	r3, #26776
  465 0008 C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 17
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 17
 
 
  466 000c 1B88     		ldrh	r3, [r3, #0]	@ movhi
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  499 0006 0346     		mov	r3, r0
  500 0008 FB80     		strh	r3, [r7, #6]	@ movhi
  469:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****    #if(Timer_BusyToIdle_UsingFixedFunction)
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 18
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 18
 
 
  470:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****         /* This functionality is removed until a FixedFunction HW update to
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  528              	.LCFI31:
  529              		.cfi_def_cfa_offset 4
  530              		.cfi_offset 7, -4
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 19
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 19
 
 
  531 0002 00AF     		add	r7, sp, #0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  523:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** /*******************************************************************************
  524:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** * Function Name: Timer_BusyToIdle_SetCaptureMode
  525:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** ********************************************************************************
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 20
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 20
 
 
  526:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  580:.\Generated_Source\PSoC5/Timer_BusyToIdle.c ****     #define Timer_BusyToIdle__B_TIMER__TM_SOFTWARE 0x10u
  581:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *
  582:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** * Return:
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 21
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 21
 
 
  583:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *  void
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  637:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *
  638:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *******************************************************************************/
  639:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** void Timer_BusyToIdle_DisableTrigger(void) 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 22
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 22
 
 
  640:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** {
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  694:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *  captureCount: A value between 2 and 127 inclusive is valid.  A value of 1
  695:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *                to 127 will cause the interrupt to delay by the same number of
  696:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *                captures.
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 23
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 23
 
 
  697:.\Generated_Source\PSoC5/Timer_BusyToIdle.c **** *
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  565              		.cfi_def_cfa_offset 8
  566              		.cfi_offset 7, -8
  567              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 24
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 24
 
 
  568 0002 00AF     		add	r7, sp, #0
@@ -1417,10 +1417,10 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  595 0006 00000000 		.4byte	.Ldebug_abbrev0
  596 000a 04       		.byte	0x4
  597 000b 01       		.uleb128 0x1
- 598 000c 7F020000 		.4byte	.LASF36
+ 598 000c E4020000 		.4byte	.LASF36
  599 0010 01       		.byte	0x1
  600 0011 2E010000 		.4byte	.LASF37
- 601 0015 43030000 		.4byte	.LASF38
+ 601 0015 EE010000 		.4byte	.LASF38
  602 0019 00000000 		.4byte	.Ldebug_ranges0+0
  603 001d 00000000 		.4byte	0
  604 0021 00000000 		.4byte	0
@@ -1428,7 +1428,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  606 0029 02       		.uleb128 0x2
  607 002a 01       		.byte	0x1
  608 002b 06       		.byte	0x6
- 609 002c 1A030000 		.4byte	.LASF0
+ 609 002c 7F030000 		.4byte	.LASF0
  610 0030 02       		.uleb128 0x2
  611 0031 01       		.byte	0x1
  612 0032 08       		.byte	0x8
@@ -1436,9 +1436,9 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  614 0037 02       		.uleb128 0x2
  615 0038 02       		.byte	0x2
  616 0039 05       		.byte	0x5
- 617 003a 75020000 		.4byte	.LASF2
+ 617 003a DA020000 		.4byte	.LASF2
  618 003e 02       		.uleb128 0x2
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 25
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 25
 
 
  619 003f 02       		.byte	0x2
@@ -1447,7 +1447,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  622 0045 02       		.uleb128 0x2
  623 0046 04       		.byte	0x4
  624 0047 05       		.byte	0x5
- 625 0048 D0020000 		.4byte	.LASF4
+ 625 0048 35030000 		.4byte	.LASF4
  626 004c 02       		.uleb128 0x2
  627 004d 04       		.byte	0x4
  628 004e 07       		.byte	0x7
@@ -1455,11 +1455,11 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  630 0053 02       		.uleb128 0x2
  631 0054 08       		.byte	0x8
  632 0055 05       		.byte	0x5
- 633 0056 43020000 		.4byte	.LASF6
+ 633 0056 A8020000 		.4byte	.LASF6
  634 005a 02       		.uleb128 0x2
  635 005b 08       		.byte	0x8
  636 005c 07       		.byte	0x7
- 637 005d FB010000 		.4byte	.LASF7
+ 637 005d 60020000 		.4byte	.LASF7
  638 0061 03       		.uleb128 0x3
  639 0062 04       		.byte	0x4
  640 0063 05       		.byte	0x5
@@ -1467,7 +1467,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  642 0068 02       		.uleb128 0x2
  643 0069 04       		.byte	0x4
  644 006a 07       		.byte	0x7
- 645 006b EE010000 		.4byte	.LASF8
+ 645 006b 53020000 		.4byte	.LASF8
  646 006f 04       		.uleb128 0x4
  647 0070 28010000 		.4byte	.LASF9
  648 0074 02       		.byte	0x2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  673 00a5 05       		.uleb128 0x5
  674 00a6 6F000000 		.4byte	0x6f
  675 00aa 04       		.uleb128 0x4
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 26
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 26
 
 
  676 00ab 00000000 		.4byte	.LASF15
@@ -1510,7 +1510,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  682 00ba 02       		.uleb128 0x2
  683 00bb 04       		.byte	0x4
  684 00bc 07       		.byte	0x7
- 685 00bd 3A020000 		.4byte	.LASF16
+ 685 00bd 9F020000 		.4byte	.LASF16
  686 00c1 06       		.uleb128 0x6
  687 00c2 01       		.byte	0x1
  688 00c3 A9010000 		.4byte	.LASF20
@@ -1523,7 +1523,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  695 00d6 01       		.byte	0x1
  696 00d7 EA000000 		.4byte	0xea
  697 00db 07       		.uleb128 0x7
- 698 00dc 1A020000 		.4byte	.LASF39
+ 698 00dc 7F020000 		.4byte	.LASF39
  699 00e0 01       		.byte	0x1
  700 00e1 2F       		.byte	0x2f
  701 00e2 6F000000 		.4byte	0x6f
@@ -1553,12 +1553,12 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  725 0115 01       		.byte	0x1
  726 0116 08       		.uleb128 0x8
  727 0117 01       		.byte	0x1
- 728 0118 5F020000 		.4byte	.LASF19
+ 728 0118 C4020000 		.4byte	.LASF19
  729 011c 01       		.byte	0x1
  730 011d F6       		.byte	0xf6
  731 011e 01       		.byte	0x1
  732 011f 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 27
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 27
 
 
  733 0123 26000000 		.4byte	.LFE3
@@ -1576,7 +1576,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  745 0142 01       		.byte	0x1
  746 0143 57010000 		.4byte	0x157
  747 0147 0B       		.uleb128 0xb
- 748 0148 51020000 		.4byte	.LASF26
+ 748 0148 B6020000 		.4byte	.LASF26
  749 014c 01       		.byte	0x1
  750 014d 1601     		.2byte	0x116
  751 014f 6F000000 		.4byte	0x6f
@@ -1607,7 +1607,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  776 0188 01       		.byte	0x1
  777 0189 0D       		.uleb128 0xd
  778 018a 01       		.byte	0x1
- 779 018b D9020000 		.4byte	.LASF24
+ 779 018b 3E030000 		.4byte	.LASF24
  780 018f 01       		.byte	0x1
  781 0190 5F01     		.2byte	0x15f
  782 0192 01       		.byte	0x1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  787 01a3 01       		.byte	0x1
  788 01a4 0A       		.uleb128 0xa
  789 01a5 01       		.byte	0x1
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 28
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 28
 
 
  790 01a6 12000000 		.4byte	.LASF25
@@ -1631,7 +1631,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  797 01ba 01       		.byte	0x1
  798 01bb CF010000 		.4byte	0x1cf
  799 01bf 0B       		.uleb128 0xb
- 800 01c0 C8020000 		.4byte	.LASF27
+ 800 01c0 2D030000 		.4byte	.LASF27
  801 01c4 01       		.byte	0x1
  802 01c5 7201     		.2byte	0x172
  803 01c7 6F000000 		.4byte	0x6f
@@ -1641,7 +1641,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  807 01ce 00       		.byte	0
  808 01cf 0D       		.uleb128 0xd
  809 01d0 01       		.byte	0x1
- 810 01d1 FE020000 		.4byte	.LASF28
+ 810 01d1 63030000 		.4byte	.LASF28
  811 01d5 01       		.byte	0x1
  812 01d6 8701     		.2byte	0x187
  813 01d8 01       		.byte	0x1
@@ -1672,13 +1672,13 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  838 0214 00       		.byte	0
  839 0215 0D       		.uleb128 0xd
  840 0216 01       		.byte	0x1
- 841 0217 26030000 		.4byte	.LASF31
+ 841 0217 8B030000 		.4byte	.LASF31
  842 021b 01       		.byte	0x1
  843 021c BA01     		.2byte	0x1ba
  844 021e 01       		.byte	0x1
  845 021f 7A000000 		.4byte	0x7a
  846 0223 00000000 		.4byte	.LFB11
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 29
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 29
 
 
  847 0227 18000000 		.4byte	.LFE11
@@ -1696,7 +1696,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  859 0246 01       		.byte	0x1
  860 0247 5B020000 		.4byte	0x25b
  861 024b 0B       		.uleb128 0xb
- 862 024c 12020000 		.4byte	.LASF33
+ 862 024c 77020000 		.4byte	.LASF33
  863 0250 01       		.byte	0x1
  864 0251 D201     		.2byte	0x1d2
  865 0253 7A000000 		.4byte	0x7a
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  901              		.section	.debug_abbrev,"",%progbits
  902              	.Ldebug_abbrev0:
  903 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 30
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 30
 
 
  904 0001 11       		.uleb128 0x11
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  958 0037 00       		.byte	0
  959 0038 05       		.uleb128 0x5
  960 0039 35       		.uleb128 0x35
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 31
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 31
 
 
  961 003a 00       		.byte	0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1015 0071 3B       		.uleb128 0x3b
  1016 0072 0B       		.uleb128 0xb
  1017 0073 27       		.uleb128 0x27
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 32
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 32
 
 
  1018 0074 0C       		.uleb128 0xc
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1072 00ad 0C       		.uleb128 0xc
  1073 00ae 01       		.uleb128 0x1
  1074 00af 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 33
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 33
 
 
  1075 00b0 00       		.byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1129 00e7 13       		.uleb128 0x13
  1130 00e8 11       		.uleb128 0x11
  1131 00e9 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 34
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 34
 
 
  1132 00ea 12       		.uleb128 0x12
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1186 0008 0200     		.2byte	0x2
  1187 000a 7D       		.byte	0x7d
  1188 000b 00       		.sleb128 0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 35
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 35
 
 
  1189 000c 02000000 		.4byte	.LCFI0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1243 0090 00000000 		.4byte	.LFB3
  1244 0094 02000000 		.4byte	.LCFI7
  1245 0098 0200     		.2byte	0x2
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 36
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 36
 
 
  1246 009a 7D       		.byte	0x7d
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1300 011c 00000000 		.4byte	0
  1301              	.LLST6:
  1302 0120 00000000 		.4byte	.LFB6
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 37
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 37
 
 
  1303 0124 02000000 		.4byte	.LCFI14
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1357 01a7 10       		.sleb128 16
  1358 01a8 00000000 		.4byte	0
  1359 01ac 00000000 		.4byte	0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 38
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 38
 
 
  1360              	.LLST9:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1414 0234 0200     		.2byte	0x2
  1415 0236 77       		.byte	0x77
  1416 0237 04       		.sleb128 4
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 39
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 39
 
 
  1417 0238 00000000 		.4byte	0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1471 02bc 04000000 		.4byte	.LCFI34
  1472 02c0 1A000000 		.4byte	.LFE14
  1473 02c4 0200     		.2byte	0x2
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 40
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 40
 
 
  1474 02c6 77       		.byte	0x77
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1528 0020 00000000 		.4byte	.LFB4
  1529 0024 20000000 		.4byte	.LFE4
  1530 0028 00000000 		.4byte	.LFB5
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 41
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 41
 
 
  1531 002c 14000000 		.4byte	.LFE5
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1566      5F536574 
  1567              	.LASF35:
  1568 006d 54696D65 		.ascii	"Timer_BusyToIdle_ClearFIFO\000"
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 42
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 42
 
 
  1568      725F4275 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1588      63655C50 
  1589              	.LASF23:
  1590 015a 54696D65 		.ascii	"Timer_BusyToIdle_ReadStatusRegister\000"
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 43
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 43
 
 
  1590      725F4275 
@@ -2554,109 +2554,107 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 1
  1601              	.LASF10:
  1602 01e7 75696E74 		.ascii	"uint16\000"
  1602      313600
- 1603              	.LASF8:
- 1604 01ee 756E7369 		.ascii	"unsigned int\000"
- 1604      676E6564 
- 1604      20696E74 
- 1604      00
- 1605              	.LASF7:
- 1606 01fb 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1606      206C6F6E 
- 1606      6720756E 
- 1606      7369676E 
- 1606      65642069 
- 1607              	.LASF33:
- 1608 0212 636F756E 		.ascii	"counter\000"
- 1608      74657200 
- 1609              	.LASF39:
- 1610 021a 54696D65 		.ascii	"Timer_BusyToIdle_interruptState\000"
- 1610      725F4275 
- 1610      7379546F 
- 1610      49646C65 
- 1610      5F696E74 
- 1611              	.LASF16:
- 1612 023a 73697A65 		.ascii	"sizetype\000"
- 1612      74797065 
- 1612      00
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 44
+ 1603              	.LASF38:
+ 1604 01ee 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
+ 1604      73657273 
+ 1604      5C5A6163 
+ 1604      685C4472 
+ 1604      6F70626F 
+ 1605 021b 5C4E6574 		.ascii	"\\Networking\\Networking Project\\Networking Projec"
+ 1605      776F726B 
+ 1605      696E675C 
+ 1605      4E657477 
+ 1605      6F726B69 
+ 1606 024b 742E6379 		.ascii	"t.cydsn\000"
+ 1606      64736E00 
+ 1607              	.LASF8:
+ 1608 0253 756E7369 		.ascii	"unsigned int\000"
+ 1608      676E6564 
+ 1608      20696E74 
+ 1608      00
+ 1609              	.LASF7:
+ 1610 0260 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1610      206C6F6E 
+ 1610      6720756E 
+ 1610      7369676E 
+ 1610      65642069 
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 44
 
 
- 1613              	.LASF6:
- 1614 0243 6C6F6E67 		.ascii	"long long int\000"
- 1614      206C6F6E 
- 1614      6720696E 
- 1614      7400
- 1615              	.LASF26:
- 1616 0251 696E7465 		.ascii	"interruptMode\000"
- 1616      72727570 
- 1616      744D6F64 
- 1616      6500
- 1617              	.LASF19:
- 1618 025f 54696D65 		.ascii	"Timer_BusyToIdle_Stop\000"
- 1618      725F4275 
- 1618      7379546F 
- 1618      49646C65 
- 1618      5F53746F 
- 1619              	.LASF2:
- 1620 0275 73686F72 		.ascii	"short int\000"
- 1620      7420696E 
- 1620      7400
- 1621              	.LASF36:
- 1622 027f 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 1622      4320342E 
- 1622      372E3320 
- 1622      32303133 
- 1622      30333132 
- 1623 02b2 616E6368 		.ascii	"anch revision 196615]\000"
- 1623      20726576 
- 1623      6973696F 
- 1623      6E203139 
- 1623      36363135 
- 1624              	.LASF27:
- 1625 02c8 636F6E74 		.ascii	"control\000"
- 1625      726F6C00 
- 1626              	.LASF4:
- 1627 02d0 6C6F6E67 		.ascii	"long int\000"
- 1627      20696E74 
- 1627      00
- 1628              	.LASF24:
- 1629 02d9 54696D65 		.ascii	"Timer_BusyToIdle_ReadControlRegister\000"
- 1629      725F4275 
- 1629      7379546F 
- 1629      49646C65 
- 1629      5F526561 
- 1630              	.LASF28:
- 1631 02fe 54696D65 		.ascii	"Timer_BusyToIdle_ReadPeriod\000"
- 1631      725F4275 
- 1631      7379546F 
- 1631      49646C65 
- 1631      5F526561 
- 1632              	.LASF0:
- 1633 031a 7369676E 		.ascii	"signed char\000"
- 1633      65642063 
- 1633      68617200 
- 1634              	.LASF31:
- 1635 0326 54696D65 		.ascii	"Timer_BusyToIdle_ReadCapture\000"
+ 1611              	.LASF33:
+ 1612 0277 636F756E 		.ascii	"counter\000"
+ 1612      74657200 
+ 1613              	.LASF39:
+ 1614 027f 54696D65 		.ascii	"Timer_BusyToIdle_interruptState\000"
+ 1614      725F4275 
+ 1614      7379546F 
+ 1614      49646C65 
+ 1614      5F696E74 
+ 1615              	.LASF16:
+ 1616 029f 73697A65 		.ascii	"sizetype\000"
+ 1616      74797065 
+ 1616      00
+ 1617              	.LASF6:
+ 1618 02a8 6C6F6E67 		.ascii	"long long int\000"
+ 1618      206C6F6E 
+ 1618      6720696E 
+ 1618      7400
+ 1619              	.LASF26:
+ 1620 02b6 696E7465 		.ascii	"interruptMode\000"
+ 1620      72727570 
+ 1620      744D6F64 
+ 1620      6500
+ 1621              	.LASF19:
+ 1622 02c4 54696D65 		.ascii	"Timer_BusyToIdle_Stop\000"
+ 1622      725F4275 
+ 1622      7379546F 
+ 1622      49646C65 
+ 1622      5F53746F 
+ 1623              	.LASF2:
+ 1624 02da 73686F72 		.ascii	"short int\000"
+ 1624      7420696E 
+ 1624      7400
+ 1625              	.LASF36:
+ 1626 02e4 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1626      4320342E 
+ 1626      372E3320 
+ 1626      32303133 
+ 1626      30333132 
+ 1627 0317 616E6368 		.ascii	"anch revision 196615]\000"
+ 1627      20726576 
+ 1627      6973696F 
+ 1627      6E203139 
+ 1627      36363135 
+ 1628              	.LASF27:
+ 1629 032d 636F6E74 		.ascii	"control\000"
+ 1629      726F6C00 
+ 1630              	.LASF4:
+ 1631 0335 6C6F6E67 		.ascii	"long int\000"
+ 1631      20696E74 
+ 1631      00
+ 1632              	.LASF24:
+ 1633 033e 54696D65 		.ascii	"Timer_BusyToIdle_ReadControlRegister\000"
+ 1633      725F4275 
+ 1633      7379546F 
+ 1633      49646C65 
+ 1633      5F526561 
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\cceUb0iH.s 			page 45
+
+
+ 1634              	.LASF28:
+ 1635 0363 54696D65 		.ascii	"Timer_BusyToIdle_ReadPeriod\000"
  1635      725F4275 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccStM39P.s 			page 45
-
-
  1635      7379546F 
  1635      49646C65 
  1635      5F526561 
- 1636              	.LASF38:
- 1637 0343 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
- 1637      73657273 
- 1637      5C5A6163 
- 1637      685C4472 
- 1637      6F70626F 
- 1638 0370 5C4E6574 		.ascii	"\\Networking Project\\Networking Project\\Networkin"
- 1638      776F726B 
- 1638      696E6720 
- 1638      50726F6A 
- 1638      6563745C 
- 1639 03a0 67205072 		.ascii	"g Project.cydsn\000"
- 1639      6F6A6563 
- 1639      742E6379 
- 1639      64736E00 
+ 1636              	.LASF0:
+ 1637 037f 7369676E 		.ascii	"signed char\000"
+ 1637      65642063 
+ 1637      68617200 
+ 1638              	.LASF31:
+ 1639 038b 54696D65 		.ascii	"Timer_BusyToIdle_ReadCapture\000"
+ 1639      725F4275 
+ 1639      7379546F 
+ 1639      49646C65 
+ 1639      5F526561 
  1640              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

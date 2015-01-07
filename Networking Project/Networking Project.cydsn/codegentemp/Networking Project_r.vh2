@@ -1,5 +1,5 @@
 -- Project:   Networking Project
--- Generated: 12/17/2014 16:13:34
+-- Generated: 01/07/2015 15:55:59
 -- 
 
 ENTITY \Networking Project\ IS
@@ -127,7 +127,7 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     ATTRIBUTE lib_model OF Pin_LEDBusy(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF Pin_LEDBusy(0) : LABEL IS "P6[2]";
     ATTRIBUTE lib_model OF Pin_LEDCollision(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF Pin_LEDCollision(0) : LABEL IS "P6[6]";
+    ATTRIBUTE Location OF Pin_LEDCollision(0) : LABEL IS "P3[7]";
     ATTRIBUTE lib_model OF Pin_LEDIdle(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Pin_LEDIdle(0) : LABEL IS "P6[3]";
     ATTRIBUTE lib_model OF Recieve_Input(0) : LABEL IS "iocell4";

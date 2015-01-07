@@ -28,5 +28,5 @@ set_location "\Timer_BusyToIdle:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" controlcell 
 set_location "ClockBlock" clockblockcell -1 -1 0
 set_io "Recieve_Input(0)" iocell 6 0
 set_io "Pin_LEDBusy(0)" iocell 6 2
-set_io "Pin_LEDCollision(0)" iocell 6 6
+set_io "Pin_LEDCollision(0)" iocell 3 7
 set_io "Pin_LEDIdle(0)" iocell 6 3

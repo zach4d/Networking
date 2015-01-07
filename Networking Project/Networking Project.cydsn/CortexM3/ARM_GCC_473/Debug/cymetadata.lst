@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 1
 
 
    1              		.syntax unified
@@ -22,7 +22,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
   19              		.section	.cyconfigecc,"a",%progbits
   20              		.align	2
   21              		.type	cy_meta_configecc, %object
-  22              		.size	cy_meta_configecc, 572
+  22              		.size	cy_meta_configecc, 580
   23              	cy_meta_configecc:
   24 0000 01       		.byte	1
   25 0001 52       		.byte	82
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
   55 001f 40       		.byte	64
   56 0020 06       		.byte	6
   57 0021 40       		.byte	64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 2
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 2
 
 
   58 0022 01       		.byte	1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  112 0058 5F       		.byte	95
  113 0059 01       		.byte	1
  114 005a 60       		.byte	96
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 3
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 3
 
 
  115 005b 40       		.byte	64
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  169 0091 10       		.byte	16
  170 0092 BF       		.byte	-65
  171 0093 40       		.byte	64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 4
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 4
 
 
  172 0094 C0       		.byte	-64
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  226 00ca E6       		.byte	-26
  227 00cb 80       		.byte	-128
  228 00cc E8       		.byte	-24
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 5
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 5
 
 
  229 00cd 80       		.byte	-128
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  283 0103 02       		.byte	2
  284 0104 79       		.byte	121
  285 0105 40       		.byte	64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 6
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 6
 
 
  286 0106 87       		.byte	-121
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  340 013c 49       		.byte	73
  341 013d FF       		.byte	-1
  342 013e 4A       		.byte	74
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 7
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 7
 
 
  343 013f FF       		.byte	-1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  397 0175 27       		.byte	39
  398 0176 B0       		.byte	-80
  399 0177 18       		.byte	24
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 8
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 8
 
 
  400 0178 B2       		.byte	-78
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  454 01ae E4       		.byte	-28
  455 01af 40       		.byte	64
  456 01b0 E5       		.byte	-27
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 9
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 9
 
 
  457 01b1 40       		.byte	64
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  511 01e7 80       		.byte	-128
  512 01e8 57       		.byte	87
  513 01e9 C0       		.byte	-64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 10
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 10
 
 
  514 01ea 5D       		.byte	93
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  568 0220 00       		.byte	0
  569 0221 04       		.byte	4
  570 0222 C0       		.byte	-64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 11
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 11
 
 
  571 0223 08       		.byte	8
@@ -614,490 +614,496 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 1
  581 022d FF       		.byte	-1
  582 022e 00       		.byte	0
  583 022f 00       		.byte	0
- 584 0230 01       		.byte	1
- 585 0231 00       		.byte	0
- 586 0232 00       		.byte	0
- 587 0233 4D       		.byte	77
- 588 0234 4C       		.byte	76
+ 584 0230 00       		.byte	0
+ 585 0231 80       		.byte	-128
+ 586 0232 80       		.byte	-128
+ 587 0233 00       		.byte	0
+ 588 0234 00       		.byte	0
  589 0235 00       		.byte	0
  590 0236 00       		.byte	0
  591 0237 00       		.byte	0
- 592 0238 00       		.byte	0
+ 592 0238 01       		.byte	1
  593 0239 00       		.byte	0
  594 023a 00       		.byte	0
- 595 023b 00       		.byte	0
- 596              		.global	cy_meta_custnvl
- 597              		.section	.cycustnvl,"a",%progbits
- 598              		.align	2
- 599              		.type	cy_meta_custnvl, %object
- 600              		.size	cy_meta_custnvl, 4
- 601              	cy_meta_custnvl:
- 602 0000 00       		.byte	0
- 603 0001 00       		.byte	0
- 604 0002 40       		.byte	64
- 605 0003 05       		.byte	5
- 606              		.global	cy_meta_wonvl
- 607              		.section	.cywolatch,"a",%progbits
- 608              		.align	2
- 609              		.type	cy_meta_wonvl, %object
- 610              		.size	cy_meta_wonvl, 4
- 611              	cy_meta_wonvl:
- 612 0000 BC       		.byte	-68
- 613 0001 90       		.byte	-112
- 614 0002 AC       		.byte	-84
- 615 0003 AF       		.byte	-81
- 616              		.global	cy_meta_flashprotect
- 617              		.section	.cyflashprotect,"a",%progbits
- 618              		.align	2
- 619              		.type	cy_meta_flashprotect, %object
- 620              		.size	cy_meta_flashprotect, 256
- 621              	cy_meta_flashprotect:
- 622 0000 00000000 		.space	256
- 622      00000000 
- 622      00000000 
- 622      00000000 
- 622      00000000 
- 623              		.global	cy_metadata
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 12
+ 595 023b 0D       		.byte	13
+ 596 023c 0C       		.byte	12
+ 597 023d 00       		.byte	0
+ 598 023e 00       		.byte	0
+ 599 023f 00       		.byte	0
+ 600 0240 00       		.byte	0
+ 601 0241 00       		.byte	0
+ 602 0242 00       		.byte	0
+ 603 0243 00       		.byte	0
+ 604              		.global	cy_meta_custnvl
+ 605              		.section	.cycustnvl,"a",%progbits
+ 606              		.align	2
+ 607              		.type	cy_meta_custnvl, %object
+ 608              		.size	cy_meta_custnvl, 4
+ 609              	cy_meta_custnvl:
+ 610 0000 00       		.byte	0
+ 611 0001 00       		.byte	0
+ 612 0002 40       		.byte	64
+ 613 0003 05       		.byte	5
+ 614              		.global	cy_meta_wonvl
+ 615              		.section	.cywolatch,"a",%progbits
+ 616              		.align	2
+ 617              		.type	cy_meta_wonvl, %object
+ 618              		.size	cy_meta_wonvl, 4
+ 619              	cy_meta_wonvl:
+ 620 0000 BC       		.byte	-68
+ 621 0001 90       		.byte	-112
+ 622 0002 AC       		.byte	-84
+ 623 0003 AF       		.byte	-81
+ 624              		.global	cy_meta_flashprotect
+ 625              		.section	.cyflashprotect,"a",%progbits
+ 626              		.align	2
+ 627              		.type	cy_meta_flashprotect, %object
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 12
 
 
- 624              		.section	.cymeta,"a",%progbits
- 625              		.align	2
- 626              		.type	cy_metadata, %object
- 627              		.size	cy_metadata, 12
- 628              	cy_metadata:
- 629 0000 00       		.byte	0
- 630 0001 01       		.byte	1
- 631 0002 2E       		.byte	46
- 632 0003 12       		.byte	18
- 633 0004 30       		.byte	48
- 634 0005 69       		.byte	105
- 635 0006 00       		.byte	0
- 636 0007 01       		.byte	1
- 637 0008 00       		.byte	0
- 638 0009 00       		.byte	0
- 639 000a 00       		.byte	0
- 640 000b 00       		.byte	0
- 641              		.text
- 642              	.Letext0:
- 643              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
- 644              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
- 645              		.section	.debug_info,"",%progbits
- 646              	.Ldebug_info0:
- 647 0000 3B010000 		.4byte	0x13b
- 648 0004 0200     		.2byte	0x2
- 649 0006 00000000 		.4byte	.Ldebug_abbrev0
- 650 000a 04       		.byte	0x4
- 651 000b 01       		.uleb128 0x1
- 652 000c 07010000 		.4byte	.LASF18
- 653 0010 01       		.byte	0x1
- 654 0011 00000000 		.4byte	.LASF19
- 655 0015 65010000 		.4byte	.LASF20
- 656 0019 00000000 		.4byte	.Ldebug_line0
- 657 001d 02       		.uleb128 0x2
- 658 001e 01       		.byte	0x1
- 659 001f 06       		.byte	0x6
- 660 0020 59010000 		.4byte	.LASF0
- 661 0024 02       		.uleb128 0x2
- 662 0025 01       		.byte	0x1
- 663 0026 08       		.byte	0x8
- 664 0027 38000000 		.4byte	.LASF1
- 665 002b 02       		.uleb128 0x2
- 666 002c 02       		.byte	0x2
- 667 002d 05       		.byte	0x5
- 668 002e F7000000 		.4byte	.LASF2
- 669 0032 02       		.uleb128 0x2
- 670 0033 02       		.byte	0x2
- 671 0034 07       		.byte	0x7
- 672 0035 58000000 		.4byte	.LASF3
- 673 0039 02       		.uleb128 0x2
- 674 003a 04       		.byte	0x4
- 675 003b 05       		.byte	0x5
- 676 003c 50010000 		.4byte	.LASF4
- 677 0040 02       		.uleb128 0x2
- 678 0041 04       		.byte	0x4
- 679 0042 07       		.byte	0x7
- 680 0043 46000000 		.4byte	.LASF5
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 13
+ 628              		.size	cy_meta_flashprotect, 256
+ 629              	cy_meta_flashprotect:
+ 630 0000 00000000 		.space	256
+ 630      00000000 
+ 630      00000000 
+ 630      00000000 
+ 630      00000000 
+ 631              		.global	cy_metadata
+ 632              		.section	.cymeta,"a",%progbits
+ 633              		.align	2
+ 634              		.type	cy_metadata, %object
+ 635              		.size	cy_metadata, 12
+ 636              	cy_metadata:
+ 637 0000 00       		.byte	0
+ 638 0001 01       		.byte	1
+ 639 0002 2E       		.byte	46
+ 640 0003 12       		.byte	18
+ 641 0004 30       		.byte	48
+ 642 0005 69       		.byte	105
+ 643 0006 00       		.byte	0
+ 644 0007 01       		.byte	1
+ 645 0008 00       		.byte	0
+ 646 0009 00       		.byte	0
+ 647 000a 00       		.byte	0
+ 648 000b 00       		.byte	0
+ 649              		.text
+ 650              	.Letext0:
+ 651              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 652              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 653              		.section	.debug_info,"",%progbits
+ 654              	.Ldebug_info0:
+ 655 0000 3B010000 		.4byte	0x13b
+ 656 0004 0200     		.2byte	0x2
+ 657 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 658 000a 04       		.byte	0x4
+ 659 000b 01       		.uleb128 0x1
+ 660 000c 6C010000 		.4byte	.LASF18
+ 661 0010 01       		.byte	0x1
+ 662 0011 00000000 		.4byte	.LASF19
+ 663 0015 82000000 		.4byte	.LASF20
+ 664 0019 00000000 		.4byte	.Ldebug_line0
+ 665 001d 02       		.uleb128 0x2
+ 666 001e 01       		.byte	0x1
+ 667 001f 06       		.byte	0x6
+ 668 0020 BE010000 		.4byte	.LASF0
+ 669 0024 02       		.uleb128 0x2
+ 670 0025 01       		.byte	0x1
+ 671 0026 08       		.byte	0x8
+ 672 0027 38000000 		.4byte	.LASF1
+ 673 002b 02       		.uleb128 0x2
+ 674 002c 02       		.byte	0x2
+ 675 002d 05       		.byte	0x5
+ 676 002e 5C010000 		.4byte	.LASF2
+ 677 0032 02       		.uleb128 0x2
+ 678 0033 02       		.byte	0x2
+ 679 0034 07       		.byte	0x7
+ 680 0035 58000000 		.4byte	.LASF3
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 13
 
 
- 681 0047 02       		.uleb128 0x2
- 682 0048 08       		.byte	0x8
- 683 0049 05       		.byte	0x5
- 684 004a E4000000 		.4byte	.LASF6
- 685 004e 02       		.uleb128 0x2
- 686 004f 08       		.byte	0x8
- 687 0050 07       		.byte	0x7
- 688 0051 A1000000 		.4byte	.LASF7
- 689 0055 03       		.uleb128 0x3
- 690 0056 04       		.byte	0x4
- 691 0057 05       		.byte	0x5
- 692 0058 696E7400 		.ascii	"int\000"
- 693 005c 02       		.uleb128 0x2
- 694 005d 04       		.byte	0x4
- 695 005e 07       		.byte	0x7
- 696 005f 94000000 		.4byte	.LASF8
- 697 0063 04       		.uleb128 0x4
- 698 0064 01010000 		.4byte	.LASF21
- 699 0068 02       		.byte	0x2
- 700 0069 5B       		.byte	0x5b
- 701 006a 24000000 		.4byte	0x24
- 702 006e 02       		.uleb128 0x2
- 703 006f 04       		.byte	0x4
- 704 0070 04       		.byte	0x4
- 705 0071 32000000 		.4byte	.LASF9
- 706 0075 02       		.uleb128 0x2
- 707 0076 08       		.byte	0x8
- 708 0077 04       		.byte	0x4
- 709 0078 6B000000 		.4byte	.LASF10
- 710 007c 02       		.uleb128 0x2
- 711 007d 01       		.byte	0x1
- 712 007e 08       		.byte	0x8
- 713 007f F2000000 		.4byte	.LASF11
- 714 0083 05       		.uleb128 0x5
- 715 0084 63000000 		.4byte	0x63
- 716 0088 94000000 		.4byte	0x94
- 717 008c 06       		.uleb128 0x6
- 718 008d 94000000 		.4byte	0x94
- 719 0091 3B02     		.2byte	0x23b
- 720 0093 00       		.byte	0
- 721 0094 02       		.uleb128 0x2
- 722 0095 04       		.byte	0x4
- 723 0096 07       		.byte	0x7
- 724 0097 DB000000 		.4byte	.LASF12
- 725 009b 07       		.uleb128 0x7
- 726 009c 82000000 		.4byte	.LASF13
- 727 00a0 01       		.byte	0x1
- 728 00a1 1C       		.byte	0x1c
- 729 00a2 AD000000 		.4byte	0xad
- 730 00a6 01       		.byte	0x1
- 731 00a7 05       		.byte	0x5
- 732 00a8 03       		.byte	0x3
- 733 00a9 00000000 		.4byte	cy_meta_configecc
- 734 00ad 08       		.uleb128 0x8
- 735 00ae 83000000 		.4byte	0x83
- 736 00b2 05       		.uleb128 0x5
- 737 00b3 63000000 		.4byte	0x63
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 14
+ 681 0039 02       		.uleb128 0x2
+ 682 003a 04       		.byte	0x4
+ 683 003b 05       		.byte	0x5
+ 684 003c B5010000 		.4byte	.LASF4
+ 685 0040 02       		.uleb128 0x2
+ 686 0041 04       		.byte	0x4
+ 687 0042 07       		.byte	0x7
+ 688 0043 46000000 		.4byte	.LASF5
+ 689 0047 02       		.uleb128 0x2
+ 690 0048 08       		.byte	0x8
+ 691 0049 05       		.byte	0x5
+ 692 004a 49010000 		.4byte	.LASF6
+ 693 004e 02       		.uleb128 0x2
+ 694 004f 08       		.byte	0x8
+ 695 0050 07       		.byte	0x7
+ 696 0051 F4000000 		.4byte	.LASF7
+ 697 0055 03       		.uleb128 0x3
+ 698 0056 04       		.byte	0x4
+ 699 0057 05       		.byte	0x5
+ 700 0058 696E7400 		.ascii	"int\000"
+ 701 005c 02       		.uleb128 0x2
+ 702 005d 04       		.byte	0x4
+ 703 005e 07       		.byte	0x7
+ 704 005f E7000000 		.4byte	.LASF8
+ 705 0063 04       		.uleb128 0x4
+ 706 0064 66010000 		.4byte	.LASF21
+ 707 0068 02       		.byte	0x2
+ 708 0069 5B       		.byte	0x5b
+ 709 006a 24000000 		.4byte	0x24
+ 710 006e 02       		.uleb128 0x2
+ 711 006f 04       		.byte	0x4
+ 712 0070 04       		.byte	0x4
+ 713 0071 32000000 		.4byte	.LASF9
+ 714 0075 02       		.uleb128 0x2
+ 715 0076 08       		.byte	0x8
+ 716 0077 04       		.byte	0x4
+ 717 0078 6B000000 		.4byte	.LASF10
+ 718 007c 02       		.uleb128 0x2
+ 719 007d 01       		.byte	0x1
+ 720 007e 08       		.byte	0x8
+ 721 007f 57010000 		.4byte	.LASF11
+ 722 0083 05       		.uleb128 0x5
+ 723 0084 63000000 		.4byte	0x63
+ 724 0088 94000000 		.4byte	0x94
+ 725 008c 06       		.uleb128 0x6
+ 726 008d 94000000 		.4byte	0x94
+ 727 0091 4302     		.2byte	0x243
+ 728 0093 00       		.byte	0
+ 729 0094 02       		.uleb128 0x2
+ 730 0095 04       		.byte	0x4
+ 731 0096 07       		.byte	0x7
+ 732 0097 2E010000 		.4byte	.LASF12
+ 733 009b 07       		.uleb128 0x7
+ 734 009c 37010000 		.4byte	.LASF13
+ 735 00a0 01       		.byte	0x1
+ 736 00a1 1C       		.byte	0x1c
+ 737 00a2 AD000000 		.4byte	0xad
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 14
 
 
- 738 00b7 C2000000 		.4byte	0xc2
- 739 00bb 09       		.uleb128 0x9
- 740 00bc 94000000 		.4byte	0x94
- 741 00c0 03       		.byte	0x3
- 742 00c1 00       		.byte	0
- 743 00c2 07       		.uleb128 0x7
- 744 00c3 72000000 		.4byte	.LASF14
- 745 00c7 01       		.byte	0x1
- 746 00c8 6E       		.byte	0x6e
- 747 00c9 D4000000 		.4byte	0xd4
- 748 00cd 01       		.byte	0x1
- 749 00ce 05       		.byte	0x5
- 750 00cf 03       		.byte	0x3
- 751 00d0 00000000 		.4byte	cy_meta_custnvl
- 752 00d4 08       		.uleb128 0x8
- 753 00d5 B2000000 		.4byte	0xb2
- 754 00d9 07       		.uleb128 0x7
- 755 00da CD000000 		.4byte	.LASF15
- 756 00de 01       		.byte	0x1
- 757 00df 79       		.byte	0x79
- 758 00e0 EB000000 		.4byte	0xeb
- 759 00e4 01       		.byte	0x1
- 760 00e5 05       		.byte	0x5
- 761 00e6 03       		.byte	0x3
- 762 00e7 00000000 		.4byte	cy_meta_wonvl
- 763 00eb 08       		.uleb128 0x8
- 764 00ec B2000000 		.4byte	0xb2
- 765 00f0 05       		.uleb128 0x5
- 766 00f1 63000000 		.4byte	0x63
- 767 00f5 00010000 		.4byte	0x100
- 768 00f9 09       		.uleb128 0x9
- 769 00fa 94000000 		.4byte	0x94
- 770 00fe FF       		.byte	0xff
- 771 00ff 00       		.byte	0
- 772 0100 07       		.uleb128 0x7
- 773 0101 B8000000 		.4byte	.LASF16
- 774 0105 01       		.byte	0x1
- 775 0106 84       		.byte	0x84
- 776 0107 12010000 		.4byte	0x112
- 777 010b 01       		.byte	0x1
- 778 010c 05       		.byte	0x5
- 779 010d 03       		.byte	0x3
- 780 010e 00000000 		.4byte	cy_meta_flashprotect
- 781 0112 08       		.uleb128 0x8
- 782 0113 F0000000 		.4byte	0xf0
- 783 0117 05       		.uleb128 0x5
- 784 0118 63000000 		.4byte	0x63
- 785 011c 27010000 		.4byte	0x127
- 786 0120 09       		.uleb128 0x9
- 787 0121 94000000 		.4byte	0x94
- 788 0125 0B       		.byte	0xb
- 789 0126 00       		.byte	0
- 790 0127 07       		.uleb128 0x7
- 791 0128 26000000 		.4byte	.LASF17
- 792 012c 01       		.byte	0x1
- 793 012d AE       		.byte	0xae
- 794 012e 39010000 		.4byte	0x139
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 15
+ 738 00a6 01       		.byte	0x1
+ 739 00a7 05       		.byte	0x5
+ 740 00a8 03       		.byte	0x3
+ 741 00a9 00000000 		.4byte	cy_meta_configecc
+ 742 00ad 08       		.uleb128 0x8
+ 743 00ae 83000000 		.4byte	0x83
+ 744 00b2 05       		.uleb128 0x5
+ 745 00b3 63000000 		.4byte	0x63
+ 746 00b7 C2000000 		.4byte	0xc2
+ 747 00bb 09       		.uleb128 0x9
+ 748 00bc 94000000 		.4byte	0x94
+ 749 00c0 03       		.byte	0x3
+ 750 00c1 00       		.byte	0
+ 751 00c2 07       		.uleb128 0x7
+ 752 00c3 72000000 		.4byte	.LASF14
+ 753 00c7 01       		.byte	0x1
+ 754 00c8 6F       		.byte	0x6f
+ 755 00c9 D4000000 		.4byte	0xd4
+ 756 00cd 01       		.byte	0x1
+ 757 00ce 05       		.byte	0x5
+ 758 00cf 03       		.byte	0x3
+ 759 00d0 00000000 		.4byte	cy_meta_custnvl
+ 760 00d4 08       		.uleb128 0x8
+ 761 00d5 B2000000 		.4byte	0xb2
+ 762 00d9 07       		.uleb128 0x7
+ 763 00da 20010000 		.4byte	.LASF15
+ 764 00de 01       		.byte	0x1
+ 765 00df 7A       		.byte	0x7a
+ 766 00e0 EB000000 		.4byte	0xeb
+ 767 00e4 01       		.byte	0x1
+ 768 00e5 05       		.byte	0x5
+ 769 00e6 03       		.byte	0x3
+ 770 00e7 00000000 		.4byte	cy_meta_wonvl
+ 771 00eb 08       		.uleb128 0x8
+ 772 00ec B2000000 		.4byte	0xb2
+ 773 00f0 05       		.uleb128 0x5
+ 774 00f1 63000000 		.4byte	0x63
+ 775 00f5 00010000 		.4byte	0x100
+ 776 00f9 09       		.uleb128 0x9
+ 777 00fa 94000000 		.4byte	0x94
+ 778 00fe FF       		.byte	0xff
+ 779 00ff 00       		.byte	0
+ 780 0100 07       		.uleb128 0x7
+ 781 0101 0B010000 		.4byte	.LASF16
+ 782 0105 01       		.byte	0x1
+ 783 0106 85       		.byte	0x85
+ 784 0107 12010000 		.4byte	0x112
+ 785 010b 01       		.byte	0x1
+ 786 010c 05       		.byte	0x5
+ 787 010d 03       		.byte	0x3
+ 788 010e 00000000 		.4byte	cy_meta_flashprotect
+ 789 0112 08       		.uleb128 0x8
+ 790 0113 F0000000 		.4byte	0xf0
+ 791 0117 05       		.uleb128 0x5
+ 792 0118 63000000 		.4byte	0x63
+ 793 011c 27010000 		.4byte	0x127
+ 794 0120 09       		.uleb128 0x9
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 15
 
 
- 795 0132 01       		.byte	0x1
- 796 0133 05       		.byte	0x5
- 797 0134 03       		.byte	0x3
- 798 0135 00000000 		.4byte	cy_metadata
- 799 0139 08       		.uleb128 0x8
- 800 013a 17010000 		.4byte	0x117
- 801 013e 00       		.byte	0
- 802              		.section	.debug_abbrev,"",%progbits
- 803              	.Ldebug_abbrev0:
- 804 0000 01       		.uleb128 0x1
- 805 0001 11       		.uleb128 0x11
- 806 0002 01       		.byte	0x1
- 807 0003 25       		.uleb128 0x25
- 808 0004 0E       		.uleb128 0xe
- 809 0005 13       		.uleb128 0x13
- 810 0006 0B       		.uleb128 0xb
- 811 0007 03       		.uleb128 0x3
- 812 0008 0E       		.uleb128 0xe
- 813 0009 1B       		.uleb128 0x1b
- 814 000a 0E       		.uleb128 0xe
- 815 000b 10       		.uleb128 0x10
- 816 000c 06       		.uleb128 0x6
- 817 000d 00       		.byte	0
- 818 000e 00       		.byte	0
- 819 000f 02       		.uleb128 0x2
- 820 0010 24       		.uleb128 0x24
- 821 0011 00       		.byte	0
- 822 0012 0B       		.uleb128 0xb
- 823 0013 0B       		.uleb128 0xb
- 824 0014 3E       		.uleb128 0x3e
- 825 0015 0B       		.uleb128 0xb
- 826 0016 03       		.uleb128 0x3
- 827 0017 0E       		.uleb128 0xe
- 828 0018 00       		.byte	0
- 829 0019 00       		.byte	0
- 830 001a 03       		.uleb128 0x3
- 831 001b 24       		.uleb128 0x24
- 832 001c 00       		.byte	0
- 833 001d 0B       		.uleb128 0xb
- 834 001e 0B       		.uleb128 0xb
- 835 001f 3E       		.uleb128 0x3e
- 836 0020 0B       		.uleb128 0xb
- 837 0021 03       		.uleb128 0x3
- 838 0022 08       		.uleb128 0x8
- 839 0023 00       		.byte	0
- 840 0024 00       		.byte	0
- 841 0025 04       		.uleb128 0x4
- 842 0026 16       		.uleb128 0x16
- 843 0027 00       		.byte	0
- 844 0028 03       		.uleb128 0x3
- 845 0029 0E       		.uleb128 0xe
- 846 002a 3A       		.uleb128 0x3a
- 847 002b 0B       		.uleb128 0xb
- 848 002c 3B       		.uleb128 0x3b
- 849 002d 0B       		.uleb128 0xb
- 850 002e 49       		.uleb128 0x49
- 851 002f 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 16
+ 795 0121 94000000 		.4byte	0x94
+ 796 0125 0B       		.byte	0xb
+ 797 0126 00       		.byte	0
+ 798 0127 07       		.uleb128 0x7
+ 799 0128 26000000 		.4byte	.LASF17
+ 800 012c 01       		.byte	0x1
+ 801 012d AF       		.byte	0xaf
+ 802 012e 39010000 		.4byte	0x139
+ 803 0132 01       		.byte	0x1
+ 804 0133 05       		.byte	0x5
+ 805 0134 03       		.byte	0x3
+ 806 0135 00000000 		.4byte	cy_metadata
+ 807 0139 08       		.uleb128 0x8
+ 808 013a 17010000 		.4byte	0x117
+ 809 013e 00       		.byte	0
+ 810              		.section	.debug_abbrev,"",%progbits
+ 811              	.Ldebug_abbrev0:
+ 812 0000 01       		.uleb128 0x1
+ 813 0001 11       		.uleb128 0x11
+ 814 0002 01       		.byte	0x1
+ 815 0003 25       		.uleb128 0x25
+ 816 0004 0E       		.uleb128 0xe
+ 817 0005 13       		.uleb128 0x13
+ 818 0006 0B       		.uleb128 0xb
+ 819 0007 03       		.uleb128 0x3
+ 820 0008 0E       		.uleb128 0xe
+ 821 0009 1B       		.uleb128 0x1b
+ 822 000a 0E       		.uleb128 0xe
+ 823 000b 10       		.uleb128 0x10
+ 824 000c 06       		.uleb128 0x6
+ 825 000d 00       		.byte	0
+ 826 000e 00       		.byte	0
+ 827 000f 02       		.uleb128 0x2
+ 828 0010 24       		.uleb128 0x24
+ 829 0011 00       		.byte	0
+ 830 0012 0B       		.uleb128 0xb
+ 831 0013 0B       		.uleb128 0xb
+ 832 0014 3E       		.uleb128 0x3e
+ 833 0015 0B       		.uleb128 0xb
+ 834 0016 03       		.uleb128 0x3
+ 835 0017 0E       		.uleb128 0xe
+ 836 0018 00       		.byte	0
+ 837 0019 00       		.byte	0
+ 838 001a 03       		.uleb128 0x3
+ 839 001b 24       		.uleb128 0x24
+ 840 001c 00       		.byte	0
+ 841 001d 0B       		.uleb128 0xb
+ 842 001e 0B       		.uleb128 0xb
+ 843 001f 3E       		.uleb128 0x3e
+ 844 0020 0B       		.uleb128 0xb
+ 845 0021 03       		.uleb128 0x3
+ 846 0022 08       		.uleb128 0x8
+ 847 0023 00       		.byte	0
+ 848 0024 00       		.byte	0
+ 849 0025 04       		.uleb128 0x4
+ 850 0026 16       		.uleb128 0x16
+ 851 0027 00       		.byte	0
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 16
 
 
- 852 0030 00       		.byte	0
- 853 0031 00       		.byte	0
- 854 0032 05       		.uleb128 0x5
- 855 0033 01       		.uleb128 0x1
- 856 0034 01       		.byte	0x1
- 857 0035 49       		.uleb128 0x49
- 858 0036 13       		.uleb128 0x13
- 859 0037 01       		.uleb128 0x1
- 860 0038 13       		.uleb128 0x13
- 861 0039 00       		.byte	0
- 862 003a 00       		.byte	0
- 863 003b 06       		.uleb128 0x6
- 864 003c 21       		.uleb128 0x21
- 865 003d 00       		.byte	0
- 866 003e 49       		.uleb128 0x49
- 867 003f 13       		.uleb128 0x13
- 868 0040 2F       		.uleb128 0x2f
- 869 0041 05       		.uleb128 0x5
- 870 0042 00       		.byte	0
- 871 0043 00       		.byte	0
- 872 0044 07       		.uleb128 0x7
- 873 0045 34       		.uleb128 0x34
- 874 0046 00       		.byte	0
- 875 0047 03       		.uleb128 0x3
- 876 0048 0E       		.uleb128 0xe
- 877 0049 3A       		.uleb128 0x3a
- 878 004a 0B       		.uleb128 0xb
- 879 004b 3B       		.uleb128 0x3b
- 880 004c 0B       		.uleb128 0xb
- 881 004d 49       		.uleb128 0x49
- 882 004e 13       		.uleb128 0x13
- 883 004f 3F       		.uleb128 0x3f
- 884 0050 0C       		.uleb128 0xc
- 885 0051 02       		.uleb128 0x2
- 886 0052 0A       		.uleb128 0xa
- 887 0053 00       		.byte	0
- 888 0054 00       		.byte	0
- 889 0055 08       		.uleb128 0x8
- 890 0056 26       		.uleb128 0x26
- 891 0057 00       		.byte	0
- 892 0058 49       		.uleb128 0x49
- 893 0059 13       		.uleb128 0x13
- 894 005a 00       		.byte	0
- 895 005b 00       		.byte	0
- 896 005c 09       		.uleb128 0x9
- 897 005d 21       		.uleb128 0x21
- 898 005e 00       		.byte	0
- 899 005f 49       		.uleb128 0x49
- 900 0060 13       		.uleb128 0x13
- 901 0061 2F       		.uleb128 0x2f
- 902 0062 0B       		.uleb128 0xb
- 903 0063 00       		.byte	0
- 904 0064 00       		.byte	0
- 905 0065 00       		.byte	0
- 906              		.section	.debug_aranges,"",%progbits
- 907 0000 14000000 		.4byte	0x14
- 908 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 17
+ 852 0028 03       		.uleb128 0x3
+ 853 0029 0E       		.uleb128 0xe
+ 854 002a 3A       		.uleb128 0x3a
+ 855 002b 0B       		.uleb128 0xb
+ 856 002c 3B       		.uleb128 0x3b
+ 857 002d 0B       		.uleb128 0xb
+ 858 002e 49       		.uleb128 0x49
+ 859 002f 13       		.uleb128 0x13
+ 860 0030 00       		.byte	0
+ 861 0031 00       		.byte	0
+ 862 0032 05       		.uleb128 0x5
+ 863 0033 01       		.uleb128 0x1
+ 864 0034 01       		.byte	0x1
+ 865 0035 49       		.uleb128 0x49
+ 866 0036 13       		.uleb128 0x13
+ 867 0037 01       		.uleb128 0x1
+ 868 0038 13       		.uleb128 0x13
+ 869 0039 00       		.byte	0
+ 870 003a 00       		.byte	0
+ 871 003b 06       		.uleb128 0x6
+ 872 003c 21       		.uleb128 0x21
+ 873 003d 00       		.byte	0
+ 874 003e 49       		.uleb128 0x49
+ 875 003f 13       		.uleb128 0x13
+ 876 0040 2F       		.uleb128 0x2f
+ 877 0041 05       		.uleb128 0x5
+ 878 0042 00       		.byte	0
+ 879 0043 00       		.byte	0
+ 880 0044 07       		.uleb128 0x7
+ 881 0045 34       		.uleb128 0x34
+ 882 0046 00       		.byte	0
+ 883 0047 03       		.uleb128 0x3
+ 884 0048 0E       		.uleb128 0xe
+ 885 0049 3A       		.uleb128 0x3a
+ 886 004a 0B       		.uleb128 0xb
+ 887 004b 3B       		.uleb128 0x3b
+ 888 004c 0B       		.uleb128 0xb
+ 889 004d 49       		.uleb128 0x49
+ 890 004e 13       		.uleb128 0x13
+ 891 004f 3F       		.uleb128 0x3f
+ 892 0050 0C       		.uleb128 0xc
+ 893 0051 02       		.uleb128 0x2
+ 894 0052 0A       		.uleb128 0xa
+ 895 0053 00       		.byte	0
+ 896 0054 00       		.byte	0
+ 897 0055 08       		.uleb128 0x8
+ 898 0056 26       		.uleb128 0x26
+ 899 0057 00       		.byte	0
+ 900 0058 49       		.uleb128 0x49
+ 901 0059 13       		.uleb128 0x13
+ 902 005a 00       		.byte	0
+ 903 005b 00       		.byte	0
+ 904 005c 09       		.uleb128 0x9
+ 905 005d 21       		.uleb128 0x21
+ 906 005e 00       		.byte	0
+ 907 005f 49       		.uleb128 0x49
+ 908 0060 13       		.uleb128 0x13
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 17
 
 
- 909 0006 00000000 		.4byte	.Ldebug_info0
- 910 000a 04       		.byte	0x4
- 911 000b 00       		.byte	0
- 912 000c 0000     		.2byte	0
- 913 000e 0000     		.2byte	0
- 914 0010 00000000 		.4byte	0
- 915 0014 00000000 		.4byte	0
- 916              		.section	.debug_line,"",%progbits
- 917              	.Ldebug_line0:
- 918 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
- 918      02004900 
- 918      00000201 
- 918      FB0E0D00 
- 918      01010101 
- 919              	.LASF19:
- 920 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
- 920      6E657261 
- 920      7465645F 
- 920      536F7572 
- 920      63655C50 
- 921              	.LASF17:
- 922 0026 63795F6D 		.ascii	"cy_metadata\000"
- 922      65746164 
- 922      61746100 
- 923              	.LASF9:
- 924 0032 666C6F61 		.ascii	"float\000"
- 924      7400
- 925              	.LASF1:
- 926 0038 756E7369 		.ascii	"unsigned char\000"
- 926      676E6564 
- 926      20636861 
- 926      7200
- 927              	.LASF5:
- 928 0046 6C6F6E67 		.ascii	"long unsigned int\000"
- 928      20756E73 
- 928      69676E65 
- 928      6420696E 
- 928      7400
- 929              	.LASF3:
- 930 0058 73686F72 		.ascii	"short unsigned int\000"
- 930      7420756E 
- 930      7369676E 
- 930      65642069 
- 930      6E7400
- 931              	.LASF10:
- 932 006b 646F7562 		.ascii	"double\000"
- 932      6C6500
- 933              	.LASF14:
- 934 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 934      6574615F 
- 934      63757374 
- 934      6E766C00 
- 935              	.LASF13:
- 936 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
- 936      6574615F 
- 936      636F6E66 
- 936      69676563 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 18
+ 909 0061 2F       		.uleb128 0x2f
+ 910 0062 0B       		.uleb128 0xb
+ 911 0063 00       		.byte	0
+ 912 0064 00       		.byte	0
+ 913 0065 00       		.byte	0
+ 914              		.section	.debug_aranges,"",%progbits
+ 915 0000 14000000 		.4byte	0x14
+ 916 0004 0200     		.2byte	0x2
+ 917 0006 00000000 		.4byte	.Ldebug_info0
+ 918 000a 04       		.byte	0x4
+ 919 000b 00       		.byte	0
+ 920 000c 0000     		.2byte	0
+ 921 000e 0000     		.2byte	0
+ 922 0010 00000000 		.4byte	0
+ 923 0014 00000000 		.4byte	0
+ 924              		.section	.debug_line,"",%progbits
+ 925              	.Ldebug_line0:
+ 926 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 926      02004900 
+ 926      00000201 
+ 926      FB0E0D00 
+ 926      01010101 
+ 927              	.LASF19:
+ 928 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 928      6E657261 
+ 928      7465645F 
+ 928      536F7572 
+ 928      63655C50 
+ 929              	.LASF17:
+ 930 0026 63795F6D 		.ascii	"cy_metadata\000"
+ 930      65746164 
+ 930      61746100 
+ 931              	.LASF9:
+ 932 0032 666C6F61 		.ascii	"float\000"
+ 932      7400
+ 933              	.LASF1:
+ 934 0038 756E7369 		.ascii	"unsigned char\000"
+ 934      676E6564 
+ 934      20636861 
+ 934      7200
+ 935              	.LASF5:
+ 936 0046 6C6F6E67 		.ascii	"long unsigned int\000"
+ 936      20756E73 
+ 936      69676E65 
+ 936      6420696E 
+ 936      7400
+ 937              	.LASF3:
+ 938 0058 73686F72 		.ascii	"short unsigned int\000"
+ 938      7420756E 
+ 938      7369676E 
+ 938      65642069 
+ 938      6E7400
+ 939              	.LASF10:
+ 940 006b 646F7562 		.ascii	"double\000"
+ 940      6C6500
+ 941              	.LASF14:
+ 942 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 18
 
 
- 936      6300
- 937              	.LASF8:
- 938 0094 756E7369 		.ascii	"unsigned int\000"
- 938      676E6564 
- 938      20696E74 
- 938      00
- 939              	.LASF7:
- 940 00a1 6C6F6E67 		.ascii	"long long unsigned int\000"
- 940      206C6F6E 
- 940      6720756E 
- 940      7369676E 
- 940      65642069 
- 941              	.LASF16:
- 942 00b8 63795F6D 		.ascii	"cy_meta_flashprotect\000"
  942      6574615F 
- 942      666C6173 
- 942      6870726F 
- 942      74656374 
- 943              	.LASF15:
- 944 00cd 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 944      6574615F 
- 944      776F6E76 
- 944      6C00
- 945              	.LASF12:
- 946 00db 73697A65 		.ascii	"sizetype\000"
- 946      74797065 
- 946      00
- 947              	.LASF6:
- 948 00e4 6C6F6E67 		.ascii	"long long int\000"
- 948      206C6F6E 
- 948      6720696E 
- 948      7400
- 949              	.LASF11:
- 950 00f2 63686172 		.ascii	"char\000"
- 950      00
- 951              	.LASF2:
- 952 00f7 73686F72 		.ascii	"short int\000"
- 952      7420696E 
- 952      7400
- 953              	.LASF21:
- 954 0101 75696E74 		.ascii	"uint8\000"
- 954      3800
- 955              	.LASF18:
- 956 0107 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 956      4320342E 
- 956      372E3320 
- 956      32303133 
- 956      30333132 
- 957 013a 616E6368 		.ascii	"anch revision 196615]\000"
- 957      20726576 
- 957      6973696F 
- 957      6E203139 
- 957      36363135 
- 958              	.LASF4:
- 959 0150 6C6F6E67 		.ascii	"long int\000"
- 959      20696E74 
- 959      00
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccsSJI7h.s 			page 19
+ 942      63757374 
+ 942      6E766C00 
+ 943              	.LASF20:
+ 944 0082 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
+ 944      73657273 
+ 944      5C5A6163 
+ 944      685C4472 
+ 944      6F70626F 
+ 945 00af 5C4E6574 		.ascii	"\\Networking\\Networking Project\\Networking Projec"
+ 945      776F726B 
+ 945      696E675C 
+ 945      4E657477 
+ 945      6F726B69 
+ 946 00df 742E6379 		.ascii	"t.cydsn\000"
+ 946      64736E00 
+ 947              	.LASF8:
+ 948 00e7 756E7369 		.ascii	"unsigned int\000"
+ 948      676E6564 
+ 948      20696E74 
+ 948      00
+ 949              	.LASF7:
+ 950 00f4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 950      206C6F6E 
+ 950      6720756E 
+ 950      7369676E 
+ 950      65642069 
+ 951              	.LASF16:
+ 952 010b 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 952      6574615F 
+ 952      666C6173 
+ 952      6870726F 
+ 952      74656374 
+ 953              	.LASF15:
+ 954 0120 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 954      6574615F 
+ 954      776F6E76 
+ 954      6C00
+ 955              	.LASF12:
+ 956 012e 73697A65 		.ascii	"sizetype\000"
+ 956      74797065 
+ 956      00
+ 957              	.LASF13:
+ 958 0137 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 958      6574615F 
+ 958      636F6E66 
+ 958      69676563 
+ 958      6300
+ 959              	.LASF6:
+ 960 0149 6C6F6E67 		.ascii	"long long int\000"
+ 960      206C6F6E 
+ 960      6720696E 
+ 960      7400
+ 961              	.LASF11:
+ 962 0157 63686172 		.ascii	"char\000"
+ 962      00
+ 963              	.LASF2:
+ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 19
 
 
- 960              	.LASF0:
- 961 0159 7369676E 		.ascii	"signed char\000"
- 961      65642063 
- 961      68617200 
- 962              	.LASF20:
- 963 0165 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
- 963      73657273 
- 963      5C5A6163 
- 963      685C4472 
- 963      6F70626F 
- 964 0192 5C4E6574 		.ascii	"\\Networking Project\\Networking Project\\Networkin"
- 964      776F726B 
- 964      696E6720 
- 964      50726F6A 
- 964      6563745C 
- 965 01c2 67205072 		.ascii	"g Project.cydsn\000"
- 965      6F6A6563 
- 965      742E6379 
- 965      64736E00 
- 966              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 964 015c 73686F72 		.ascii	"short int\000"
+ 964      7420696E 
+ 964      7400
+ 965              	.LASF21:
+ 966 0166 75696E74 		.ascii	"uint8\000"
+ 966      3800
+ 967              	.LASF18:
+ 968 016c 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 968      4320342E 
+ 968      372E3320 
+ 968      32303133 
+ 968      30333132 
+ 969 019f 616E6368 		.ascii	"anch revision 196615]\000"
+ 969      20726576 
+ 969      6973696F 
+ 969      6E203139 
+ 969      36363135 
+ 970              	.LASF4:
+ 971 01b5 6C6F6E67 		.ascii	"long int\000"
+ 971      20696E74 
+ 971      00
+ 972              	.LASF0:
+ 973 01be 7369676E 		.ascii	"signed char\000"
+ 973      65642063 
+ 973      68617200 
+ 974              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

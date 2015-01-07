@@ -1,5 +1,5 @@
 # Networking Project
-# 2014-12-17 22:13:34Z
+# 2015-01-07 21:55:59Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -12,7 +12,7 @@ set_location "Net_1" 0 5 0 2
 set_location "Net_3" 0 5 0 0
 set_location "Net_573" 0 4 0 0
 set_io "Pin_LEDBusy(0)" iocell 6 2
-set_io "Pin_LEDCollision(0)" iocell 6 6
+set_io "Pin_LEDCollision(0)" iocell 3 7
 set_io "Pin_LEDIdle(0)" iocell 6 3
 set_io "Recieve_Input(0)" iocell 6 0
 set_location "\Falling_EdgeDetect:last\" 0 5 0 1
