@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 1
 
 
    1              		.syntax unified
@@ -22,1088 +22,1213 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 1
   19              		.section	.cyconfigecc,"a",%progbits
   20              		.align	2
   21              		.type	cy_meta_configecc, %object
-  22              		.size	cy_meta_configecc, 580
+  22              		.size	cy_meta_configecc, 696
   23              	cy_meta_configecc:
   24 0000 01       		.byte	1
-  25 0001 52       		.byte	82
+  25 0001 45       		.byte	69
   26 0002 00       		.byte	0
   27 0003 40       		.byte	64
   28 0004 02       		.byte	2
-  29 0005 64       		.byte	100
+  29 0005 4F       		.byte	79
   30 0006 00       		.byte	0
   31 0007 40       		.byte	64
-  32 0008 01       		.byte	1
-  33 0009 01       		.byte	1
-  34 000a 01       		.byte	1
+  32 0008 02       		.byte	2
+  33 0009 52       		.byte	82
+  34 000a 00       		.byte	0
   35 000b 40       		.byte	64
-  36 000c 03       		.byte	3
-  37 000d 03       		.byte	3
-  38 000e 01       		.byte	1
+  36 000c 02       		.byte	2
+  37 000d 64       		.byte	100
+  38 000e 00       		.byte	0
   39 000f 40       		.byte	64
-  40 0010 47       		.byte	71
-  41 0011 0C       		.byte	12
+  40 0010 01       		.byte	1
+  41 0011 01       		.byte	1
   42 0012 01       		.byte	1
   43 0013 40       		.byte	64
-  44 0014 2A       		.byte	42
-  45 0015 0D       		.byte	13
+  44 0014 03       		.byte	3
+  45 0015 03       		.byte	3
   46 0016 01       		.byte	1
   47 0017 40       		.byte	64
-  48 0018 4A       		.byte	74
-  49 0019 0E       		.byte	14
+  48 0018 01       		.byte	1
+  49 0019 07       		.byte	7
   50 001a 01       		.byte	1
   51 001b 40       		.byte	64
-  52 001c 25       		.byte	37
-  53 001d 0F       		.byte	15
+  52 001c 01       		.byte	1
+  53 001d 09       		.byte	9
   54 001e 01       		.byte	1
   55 001f 40       		.byte	64
-  56 0020 06       		.byte	6
-  57 0021 40       		.byte	64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 2
+  56 0020 01       		.byte	1
+  57 0021 0B       		.byte	11
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 2
 
 
   58 0022 01       		.byte	1
   59 0023 40       		.byte	64
-  60 0024 07       		.byte	7
-  61 0025 41       		.byte	65
+  60 0024 4B       		.byte	75
+  61 0025 0C       		.byte	12
   62 0026 01       		.byte	1
   63 0027 40       		.byte	64
-  64 0028 02       		.byte	2
-  65 0029 44       		.byte	68
+  64 0028 2B       		.byte	43
+  65 0029 0D       		.byte	13
   66 002a 01       		.byte	1
   67 002b 40       		.byte	64
-  68 002c 02       		.byte	2
-  69 002d 45       		.byte	69
+  68 002c 47       		.byte	71
+  69 002d 0E       		.byte	14
   70 002e 01       		.byte	1
   71 002f 40       		.byte	64
-  72 0030 02       		.byte	2
-  73 0031 50       		.byte	80
+  72 0030 25       		.byte	37
+  73 0031 0F       		.byte	15
   74 0032 01       		.byte	1
   75 0033 40       		.byte	64
   76 0034 01       		.byte	1
-  77 0035 51       		.byte	81
+  77 0035 17       		.byte	23
   78 0036 01       		.byte	1
   79 0037 40       		.byte	64
-  80 0038 34       		.byte	52
-  81 0039 01       		.byte	1
-  82 003a 8D       		.byte	-115
-  83 003b 0D       		.byte	13
-  84 003c 8F       		.byte	-113
-  85 003d 0D       		.byte	13
-  86 003e E6       		.byte	-26
-  87 003f 04       		.byte	4
-  88 0040 E6       		.byte	-26
-  89 0041 02       		.byte	2
-  90 0042 EA       		.byte	-22
-  91 0043 04       		.byte	4
-  92 0044 EE       		.byte	-18
-  93 0045 08       		.byte	8
-  94 0046 40       		.byte	64
-  95 0047 51       		.byte	81
-  96 0048 41       		.byte	65
-  97 0049 06       		.byte	6
-  98 004a 49       		.byte	73
-  99 004b FF       		.byte	-1
- 100 004c 4A       		.byte	74
- 101 004d FF       		.byte	-1
- 102 004e 4B       		.byte	75
- 103 004f FF       		.byte	-1
- 104 0050 4F       		.byte	79
- 105 0051 01       		.byte	1
- 106 0052 50       		.byte	80
- 107 0053 18       		.byte	24
- 108 0054 5A       		.byte	90
- 109 0055 04       		.byte	4
- 110 0056 5D       		.byte	93
- 111 0057 09       		.byte	9
- 112 0058 5F       		.byte	95
- 113 0059 01       		.byte	1
- 114 005a 60       		.byte	96
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 3
+  80 0038 01       		.byte	1
+  81 0039 19       		.byte	25
+  82 003a 01       		.byte	1
+  83 003b 40       		.byte	64
+  84 003c 09       		.byte	9
+  85 003d 40       		.byte	64
+  86 003e 01       		.byte	1
+  87 003f 40       		.byte	64
+  88 0040 09       		.byte	9
+  89 0041 41       		.byte	65
+  90 0042 01       		.byte	1
+  91 0043 40       		.byte	64
+  92 0044 03       		.byte	3
+  93 0045 42       		.byte	66
+  94 0046 01       		.byte	1
+  95 0047 40       		.byte	64
+  96 0048 03       		.byte	3
+  97 0049 43       		.byte	67
+  98 004a 01       		.byte	1
+  99 004b 40       		.byte	64
+ 100 004c 02       		.byte	2
+ 101 004d 44       		.byte	68
+ 102 004e 01       		.byte	1
+ 103 004f 40       		.byte	64
+ 104 0050 02       		.byte	2
+ 105 0051 45       		.byte	69
+ 106 0052 01       		.byte	1
+ 107 0053 40       		.byte	64
+ 108 0054 02       		.byte	2
+ 109 0055 47       		.byte	71
+ 110 0056 01       		.byte	1
+ 111 0057 40       		.byte	64
+ 112 0058 02       		.byte	2
+ 113 0059 48       		.byte	72
+ 114 005a 01       		.byte	1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 3
 
 
  115 005b 40       		.byte	64
- 116 005c 62       		.byte	98
- 117 005d 40       		.byte	64
- 118 005e 64       		.byte	100
+ 116 005c 01       		.byte	1
+ 117 005d 4C       		.byte	76
+ 118 005e 01       		.byte	1
  119 005f 40       		.byte	64
- 120 0060 65       		.byte	101
- 121 0061 40       		.byte	64
- 122 0062 66       		.byte	102
- 123 0063 80       		.byte	-128
- 124 0064 68       		.byte	104
- 125 0065 80       		.byte	-128
- 126 0066 6A       		.byte	106
- 127 0067 80       		.byte	-128
- 128 0068 6C       		.byte	108
- 129 0069 80       		.byte	-128
- 130 006a 6E       		.byte	110
+ 120 0060 02       		.byte	2
+ 121 0061 50       		.byte	80
+ 122 0062 01       		.byte	1
+ 123 0063 40       		.byte	64
+ 124 0064 02       		.byte	2
+ 125 0065 51       		.byte	81
+ 126 0066 01       		.byte	1
+ 127 0067 40       		.byte	64
+ 128 0068 7E       		.byte	126
+ 129 0069 02       		.byte	2
+ 130 006a 01       		.byte	1
  131 006b 80       		.byte	-128
- 132 006c 80       		.byte	-128
- 133 006d 04       		.byte	4
- 134 006e 82       		.byte	-126
- 135 006f 10       		.byte	16
- 136 0070 83       		.byte	-125
- 137 0071 01       		.byte	1
- 138 0072 8C       		.byte	-116
- 139 0073 08       		.byte	8
- 140 0074 8E       		.byte	-114
- 141 0075 10       		.byte	16
- 142 0076 92       		.byte	-110
- 143 0077 4E       		.byte	78
- 144 0078 94       		.byte	-108
- 145 0079 0E       		.byte	14
- 146 007a 96       		.byte	-106
- 147 007b 20       		.byte	32
- 148 007c 9C       		.byte	-100
- 149 007d 02       		.byte	2
- 150 007e 9E       		.byte	-98
- 151 007f 10       		.byte	16
- 152 0080 AC       		.byte	-84
+ 132 006c 0A       		.byte	10
+ 133 006d 4B       		.byte	75
+ 134 006e 34       		.byte	52
+ 135 006f 01       		.byte	1
+ 136 0070 7C       		.byte	124
+ 137 0071 40       		.byte	64
+ 138 0072 8D       		.byte	-115
+ 139 0073 0D       		.byte	13
+ 140 0074 8F       		.byte	-113
+ 141 0075 0D       		.byte	13
+ 142 0076 E2       		.byte	-30
+ 143 0077 08       		.byte	8
+ 144 0078 E2       		.byte	-30
+ 145 0079 01       		.byte	1
+ 146 007a E6       		.byte	-26
+ 147 007b 02       		.byte	2
+ 148 007c EE       		.byte	-18
+ 149 007d 04       		.byte	4
+ 150 007e EA       		.byte	-22
+ 151 007f 01       		.byte	1
+ 152 0080 A8       		.byte	-88
  153 0081 01       		.byte	1
- 154 0082 AE       		.byte	-82
- 155 0083 3E       		.byte	62
- 156 0084 AF       		.byte	-81
+ 154 0082 90       		.byte	-112
+ 155 0083 01       		.byte	1
+ 156 0084 10       		.byte	16
  157 0085 01       		.byte	1
- 158 0086 B0       		.byte	-80
- 159 0087 40       		.byte	64
- 160 0088 B2       		.byte	-78
- 161 0089 30       		.byte	48
- 162 008a B4       		.byte	-76
- 163 008b 01       		.byte	1
- 164 008c B6       		.byte	-74
- 165 008d 0E       		.byte	14
- 166 008e B7       		.byte	-73
- 167 008f 01       		.byte	1
- 168 0090 BE       		.byte	-66
- 169 0091 10       		.byte	16
- 170 0092 BF       		.byte	-65
- 171 0093 40       		.byte	64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 4
+ 158 0086 12       		.byte	18
+ 159 0087 04       		.byte	4
+ 160 0088 2C       		.byte	44
+ 161 0089 04       		.byte	4
+ 162 008a 2E       		.byte	46
+ 163 008b 03       		.byte	3
+ 164 008c 30       		.byte	48
+ 165 008d 02       		.byte	2
+ 166 008e 32       		.byte	50
+ 167 008f 04       		.byte	4
+ 168 0090 34       		.byte	52
+ 169 0091 01       		.byte	1
+ 170 0092 38       		.byte	56
+ 171 0093 80       		.byte	-128
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 4
 
 
- 172 0094 C0       		.byte	-64
+ 172 0094 3E       		.byte	62
  173 0095 54       		.byte	84
- 174 0096 C1       		.byte	-63
- 175 0097 02       		.byte	2
- 176 0098 C5       		.byte	-59
- 177 0099 EC       		.byte	-20
- 178 009a C7       		.byte	-57
- 179 009b 20       		.byte	32
- 180 009c C8       		.byte	-56
- 181 009d 23       		.byte	35
- 182 009e C9       		.byte	-55
+ 174 0096 40       		.byte	64
+ 175 0097 65       		.byte	101
+ 176 0098 41       		.byte	65
+ 177 0099 01       		.byte	1
+ 178 009a 49       		.byte	73
+ 179 009b FF       		.byte	-1
+ 180 009c 4A       		.byte	74
+ 181 009d FF       		.byte	-1
+ 182 009e 4B       		.byte	75
  183 009f FF       		.byte	-1
- 184 00a0 CA       		.byte	-54
- 185 00a1 FF       		.byte	-1
- 186 00a2 CB       		.byte	-53
- 187 00a3 FF       		.byte	-1
- 188 00a4 CD       		.byte	-51
- 189 00a5 83       		.byte	-125
- 190 00a6 CE       		.byte	-50
- 191 00a7 03       		.byte	3
- 192 00a8 CF       		.byte	-49
- 193 00a9 01       		.byte	1
- 194 00aa D0       		.byte	-48
- 195 00ab 18       		.byte	24
- 196 00ac D2       		.byte	-46
- 197 00ad 80       		.byte	-128
- 198 00ae D4       		.byte	-44
- 199 00af 01       		.byte	1
- 200 00b0 D6       		.byte	-42
- 201 00b1 04       		.byte	4
- 202 00b2 D8       		.byte	-40
- 203 00b3 04       		.byte	4
- 204 00b4 D9       		.byte	-39
- 205 00b5 04       		.byte	4
- 206 00b6 DA       		.byte	-38
- 207 00b7 04       		.byte	4
- 208 00b8 DB       		.byte	-37
- 209 00b9 04       		.byte	4
- 210 00ba DC       		.byte	-36
- 211 00bb 09       		.byte	9
- 212 00bc DD       		.byte	-35
- 213 00bd 99       		.byte	-103
- 214 00be DE       		.byte	-34
+ 184 00a0 4F       		.byte	79
+ 185 00a1 01       		.byte	1
+ 186 00a2 50       		.byte	80
+ 187 00a3 18       		.byte	24
+ 188 00a4 58       		.byte	88
+ 189 00a5 04       		.byte	4
+ 190 00a6 5A       		.byte	90
+ 191 00a7 04       		.byte	4
+ 192 00a8 5C       		.byte	92
+ 193 00a9 09       		.byte	9
+ 194 00aa 5D       		.byte	93
+ 195 00ab 09       		.byte	9
+ 196 00ac 5F       		.byte	95
+ 197 00ad 01       		.byte	1
+ 198 00ae 60       		.byte	96
+ 199 00af 40       		.byte	64
+ 200 00b0 62       		.byte	98
+ 201 00b1 40       		.byte	64
+ 202 00b2 64       		.byte	100
+ 203 00b3 40       		.byte	64
+ 204 00b4 65       		.byte	101
+ 205 00b5 40       		.byte	64
+ 206 00b6 66       		.byte	102
+ 207 00b7 80       		.byte	-128
+ 208 00b8 68       		.byte	104
+ 209 00b9 80       		.byte	-128
+ 210 00ba 6A       		.byte	106
+ 211 00bb 80       		.byte	-128
+ 212 00bc 6C       		.byte	108
+ 213 00bd 80       		.byte	-128
+ 214 00be 6E       		.byte	110
  215 00bf 80       		.byte	-128
- 216 00c0 DF       		.byte	-33
- 217 00c1 05       		.byte	5
- 218 00c2 E0       		.byte	-32
- 219 00c3 40       		.byte	64
- 220 00c4 E2       		.byte	-30
- 221 00c5 40       		.byte	64
- 222 00c6 E4       		.byte	-28
- 223 00c7 40       		.byte	64
- 224 00c8 E5       		.byte	-27
- 225 00c9 40       		.byte	64
- 226 00ca E6       		.byte	-26
- 227 00cb 80       		.byte	-128
- 228 00cc E8       		.byte	-24
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 5
+ 216 00c0 84       		.byte	-124
+ 217 00c1 1F       		.byte	31
+ 218 00c2 8C       		.byte	-116
+ 219 00c3 04       		.byte	4
+ 220 00c4 8E       		.byte	-114
+ 221 00c5 48       		.byte	72
+ 222 00c6 92       		.byte	-110
+ 223 00c7 27       		.byte	39
+ 224 00c8 94       		.byte	-108
+ 225 00c9 07       		.byte	7
+ 226 00ca 96       		.byte	-106
+ 227 00cb 10       		.byte	16
+ 228 00cc 98       		.byte	-104
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 5
 
 
- 229 00cd 80       		.byte	-128
- 230 00ce EA       		.byte	-22
- 231 00cf 80       		.byte	-128
- 232 00d0 EC       		.byte	-20
- 233 00d1 80       		.byte	-128
- 234 00d2 EE       		.byte	-18
- 235 00d3 80       		.byte	-128
- 236 00d4 01       		.byte	1
- 237 00d5 02       		.byte	2
- 238 00d6 02       		.byte	2
- 239 00d7 01       		.byte	1
- 240 00d8 09       		.byte	9
- 241 00d9 02       		.byte	2
- 242 00da 0A       		.byte	10
- 243 00db 11       		.byte	17
- 244 00dc 10       		.byte	16
- 245 00dd 02       		.byte	2
- 246 00de 11       		.byte	17
- 247 00df 40       		.byte	64
- 248 00e0 18       		.byte	24
- 249 00e1 04       		.byte	4
- 250 00e2 19       		.byte	25
- 251 00e3 42       		.byte	66
- 252 00e4 1A       		.byte	26
- 253 00e5 11       		.byte	17
- 254 00e6 1B       		.byte	27
- 255 00e7 51       		.byte	81
- 256 00e8 22       		.byte	34
- 257 00e9 40       		.byte	64
- 258 00ea 2B       		.byte	43
- 259 00eb 01       		.byte	1
- 260 00ec 39       		.byte	57
- 261 00ed 02       		.byte	2
- 262 00ee 40       		.byte	64
- 263 00ef 04       		.byte	4
- 264 00f0 41       		.byte	65
- 265 00f1 01       		.byte	1
- 266 00f2 46       		.byte	70
+ 229 00cd 01       		.byte	1
+ 230 00ce 9A       		.byte	-102
+ 231 00cf 08       		.byte	8
+ 232 00d0 9C       		.byte	-100
+ 233 00d1 02       		.byte	2
+ 234 00d2 9E       		.byte	-98
+ 235 00d3 48       		.byte	72
+ 236 00d4 B0       		.byte	-80
+ 237 00d5 40       		.byte	64
+ 238 00d6 B2       		.byte	-78
+ 239 00d7 18       		.byte	24
+ 240 00d8 B4       		.byte	-76
+ 241 00d9 07       		.byte	7
+ 242 00da B6       		.byte	-74
+ 243 00db 20       		.byte	32
+ 244 00dc BE       		.byte	-66
+ 245 00dd 01       		.byte	1
+ 246 00de C0       		.byte	-64
+ 247 00df 25       		.byte	37
+ 248 00e0 C1       		.byte	-63
+ 249 00e1 01       		.byte	1
+ 250 00e2 C5       		.byte	-59
+ 251 00e3 EC       		.byte	-20
+ 252 00e4 C7       		.byte	-57
+ 253 00e5 20       		.byte	32
+ 254 00e6 C8       		.byte	-56
+ 255 00e7 23       		.byte	35
+ 256 00e8 C9       		.byte	-55
+ 257 00e9 FF       		.byte	-1
+ 258 00ea CA       		.byte	-54
+ 259 00eb FF       		.byte	-1
+ 260 00ec CB       		.byte	-53
+ 261 00ed FF       		.byte	-1
+ 262 00ee CD       		.byte	-51
+ 263 00ef 83       		.byte	-125
+ 264 00f0 CE       		.byte	-50
+ 265 00f1 03       		.byte	3
+ 266 00f2 CF       		.byte	-49
  267 00f3 01       		.byte	1
- 268 00f4 49       		.byte	73
- 269 00f5 45       		.byte	69
- 270 00f6 4F       		.byte	79
- 271 00f7 A0       		.byte	-96
- 272 00f8 51       		.byte	81
+ 268 00f4 D0       		.byte	-48
+ 269 00f5 18       		.byte	24
+ 270 00f6 D2       		.byte	-46
+ 271 00f7 80       		.byte	-128
+ 272 00f8 D4       		.byte	-44
  273 00f9 01       		.byte	1
- 274 00fa 52       		.byte	82
- 275 00fb 01       		.byte	1
- 276 00fc 59       		.byte	89
- 277 00fd 05       		.byte	5
- 278 00fe 5A       		.byte	90
- 279 00ff 80       		.byte	-128
- 280 0100 63       		.byte	99
- 281 0101 40       		.byte	64
- 282 0102 71       		.byte	113
- 283 0103 02       		.byte	2
- 284 0104 79       		.byte	121
- 285 0105 40       		.byte	64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 6
+ 274 00fa D6       		.byte	-42
+ 275 00fb 04       		.byte	4
+ 276 00fc D8       		.byte	-40
+ 277 00fd 04       		.byte	4
+ 278 00fe DA       		.byte	-38
+ 279 00ff 04       		.byte	4
+ 280 0100 DB       		.byte	-37
+ 281 0101 04       		.byte	4
+ 282 0102 DC       		.byte	-36
+ 283 0103 09       		.byte	9
+ 284 0104 DD       		.byte	-35
+ 285 0105 99       		.byte	-103
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 6
 
 
- 286 0106 87       		.byte	-121
- 287 0107 40       		.byte	64
- 288 0108 A0       		.byte	-96
- 289 0109 02       		.byte	2
- 290 010a AA       		.byte	-86
+ 286 0106 DF       		.byte	-33
+ 287 0107 05       		.byte	5
+ 288 0108 E0       		.byte	-32
+ 289 0109 40       		.byte	64
+ 290 010a E2       		.byte	-30
  291 010b 40       		.byte	64
- 292 010c AE       		.byte	-82
- 293 010d 04       		.byte	4
- 294 010e B4       		.byte	-76
- 295 010f 02       		.byte	2
- 296 0110 B5       		.byte	-75
- 297 0111 04       		.byte	4
- 298 0112 B6       		.byte	-74
- 299 0113 01       		.byte	1
- 300 0114 C0       		.byte	-64
- 301 0115 09       		.byte	9
- 302 0116 C2       		.byte	-62
- 303 0117 0D       		.byte	13
- 304 0118 C4       		.byte	-60
- 305 0119 01       		.byte	1
- 306 011a CA       		.byte	-54
+ 292 010c E4       		.byte	-28
+ 293 010d 40       		.byte	64
+ 294 010e E5       		.byte	-27
+ 295 010f 40       		.byte	64
+ 296 0110 E6       		.byte	-26
+ 297 0111 80       		.byte	-128
+ 298 0112 E8       		.byte	-24
+ 299 0113 80       		.byte	-128
+ 300 0114 EA       		.byte	-22
+ 301 0115 80       		.byte	-128
+ 302 0116 EC       		.byte	-20
+ 303 0117 80       		.byte	-128
+ 304 0118 EE       		.byte	-18
+ 305 0119 80       		.byte	-128
+ 306 011a 01       		.byte	1
  307 011b 08       		.byte	8
- 308 011c CE       		.byte	-50
- 309 011d 01       		.byte	1
- 310 011e D0       		.byte	-48
- 311 011f 15       		.byte	21
- 312 0120 D2       		.byte	-46
- 313 0121 38       		.byte	56
- 314 0122 D6       		.byte	-42
- 315 0123 0B       		.byte	11
- 316 0124 D8       		.byte	-40
- 317 0125 01       		.byte	1
- 318 0126 DE       		.byte	-34
- 319 0127 08       		.byte	8
- 320 0128 08       		.byte	8
- 321 0129 04       		.byte	4
- 322 012a 0A       		.byte	10
- 323 012b 01       		.byte	1
- 324 012c 2C       		.byte	44
+ 308 011c 02       		.byte	2
+ 309 011d 02       		.byte	2
+ 310 011e 09       		.byte	9
+ 311 011f 02       		.byte	2
+ 312 0120 0A       		.byte	10
+ 313 0121 15       		.byte	21
+ 314 0122 0E       		.byte	14
+ 315 0123 80       		.byte	-128
+ 316 0124 16       		.byte	22
+ 317 0125 02       		.byte	2
+ 318 0126 18       		.byte	24
+ 319 0127 04       		.byte	4
+ 320 0128 1A       		.byte	26
+ 321 0129 55       		.byte	85
+ 322 012a 1B       		.byte	27
+ 323 012b 10       		.byte	16
+ 324 012c 1C       		.byte	28
  325 012d 01       		.byte	1
- 326 012e 2E       		.byte	46
- 327 012f 06       		.byte	6
- 328 0130 30       		.byte	48
- 329 0131 04       		.byte	4
- 330 0132 32       		.byte	50
- 331 0133 02       		.byte	2
- 332 0134 34       		.byte	52
- 333 0135 01       		.byte	1
- 334 0136 3E       		.byte	62
- 335 0137 11       		.byte	17
- 336 0138 40       		.byte	64
- 337 0139 31       		.byte	49
- 338 013a 41       		.byte	65
- 339 013b 05       		.byte	5
+ 326 012e 1D       		.byte	29
+ 327 012f 08       		.byte	8
+ 328 0130 1E       		.byte	30
+ 329 0131 80       		.byte	-128
+ 330 0132 1F       		.byte	31
+ 331 0133 20       		.byte	32
+ 332 0134 40       		.byte	64
+ 333 0135 04       		.byte	4
+ 334 0136 41       		.byte	65
+ 335 0137 40       		.byte	64
+ 336 0138 42       		.byte	66
+ 337 0139 02       		.byte	2
+ 338 013a 46       		.byte	70
+ 339 013b 02       		.byte	2
  340 013c 49       		.byte	73
- 341 013d FF       		.byte	-1
+ 341 013d 05       		.byte	5
  342 013e 4A       		.byte	74
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 7
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 7
 
 
- 343 013f FF       		.byte	-1
- 344 0140 4B       		.byte	75
- 345 0141 FF       		.byte	-1
+ 343 013f 02       		.byte	2
+ 344 0140 4E       		.byte	78
+ 345 0141 02       		.byte	2
  346 0142 4F       		.byte	79
- 347 0143 01       		.byte	1
- 348 0144 50       		.byte	80
- 349 0145 18       		.byte	24
- 350 0146 58       		.byte	88
- 351 0147 04       		.byte	4
+ 347 0143 20       		.byte	32
+ 348 0144 52       		.byte	82
+ 349 0145 02       		.byte	2
+ 350 0146 59       		.byte	89
+ 351 0147 05       		.byte	5
  352 0148 5A       		.byte	90
- 353 0149 04       		.byte	4
- 354 014a 5C       		.byte	92
- 355 014b 09       		.byte	9
- 356 014c 5D       		.byte	93
- 357 014d 09       		.byte	9
- 358 014e 5F       		.byte	95
- 359 014f 01       		.byte	1
- 360 0150 60       		.byte	96
- 361 0151 40       		.byte	64
- 362 0152 62       		.byte	98
+ 353 0149 40       		.byte	64
+ 354 014a 63       		.byte	99
+ 355 014b 40       		.byte	64
+ 356 014c 71       		.byte	113
+ 357 014d 02       		.byte	2
+ 358 014e 79       		.byte	121
+ 359 014f 80       		.byte	-128
+ 360 0150 81       		.byte	-127
+ 361 0151 08       		.byte	8
+ 362 0152 87       		.byte	-121
  363 0153 40       		.byte	64
- 364 0154 64       		.byte	100
- 365 0155 40       		.byte	64
- 366 0156 65       		.byte	101
- 367 0157 40       		.byte	64
- 368 0158 66       		.byte	102
- 369 0159 80       		.byte	-128
- 370 015a 68       		.byte	104
- 371 015b 80       		.byte	-128
- 372 015c 6A       		.byte	106
- 373 015d 80       		.byte	-128
- 374 015e 6C       		.byte	108
- 375 015f 80       		.byte	-128
- 376 0160 6E       		.byte	110
- 377 0161 80       		.byte	-128
- 378 0162 8C       		.byte	-116
- 379 0163 07       		.byte	7
- 380 0164 8E       		.byte	-114
- 381 0165 10       		.byte	16
- 382 0166 90       		.byte	-112
- 383 0167 1F       		.byte	31
- 384 0168 94       		.byte	-108
- 385 0169 01       		.byte	1
- 386 016a 96       		.byte	-106
- 387 016b 08       		.byte	8
- 388 016c 98       		.byte	-104
- 389 016d 02       		.byte	2
- 390 016e 9A       		.byte	-102
- 391 016f 48       		.byte	72
- 392 0170 9C       		.byte	-100
- 393 0171 04       		.byte	4
- 394 0172 9E       		.byte	-98
- 395 0173 48       		.byte	72
- 396 0174 AE       		.byte	-82
- 397 0175 27       		.byte	39
- 398 0176 B0       		.byte	-80
- 399 0177 18       		.byte	24
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 8
+ 364 0154 99       		.byte	-103
+ 365 0155 08       		.byte	8
+ 366 0156 9A       		.byte	-102
+ 367 0157 02       		.byte	2
+ 368 0158 A7       		.byte	-89
+ 369 0159 20       		.byte	32
+ 370 015a AB       		.byte	-85
+ 371 015b 20       		.byte	32
+ 372 015c B5       		.byte	-75
+ 373 015d 08       		.byte	8
+ 374 015e B6       		.byte	-74
+ 375 015f 12       		.byte	18
+ 376 0160 C0       		.byte	-64
+ 377 0161 05       		.byte	5
+ 378 0162 C2       		.byte	-62
+ 379 0163 1F       		.byte	31
+ 380 0164 C4       		.byte	-60
+ 381 0165 80       		.byte	-128
+ 382 0166 D0       		.byte	-48
+ 383 0167 1C       		.byte	28
+ 384 0168 D2       		.byte	-46
+ 385 0169 38       		.byte	56
+ 386 016a D6       		.byte	-42
+ 387 016b 0B       		.byte	11
+ 388 016c D8       		.byte	-40
+ 389 016d 01       		.byte	1
+ 390 016e DE       		.byte	-34
+ 391 016f 08       		.byte	8
+ 392 0170 40       		.byte	64
+ 393 0171 62       		.byte	98
+ 394 0172 41       		.byte	65
+ 395 0173 03       		.byte	3
+ 396 0174 49       		.byte	73
+ 397 0175 FF       		.byte	-1
+ 398 0176 4A       		.byte	74
+ 399 0177 FF       		.byte	-1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 8
 
 
- 400 0178 B2       		.byte	-78
- 401 0179 07       		.byte	7
- 402 017a B4       		.byte	-76
- 403 017b 20       		.byte	32
- 404 017c B6       		.byte	-74
- 405 017d 40       		.byte	64
- 406 017e BE       		.byte	-66
- 407 017f 40       		.byte	64
- 408 0180 C0       		.byte	-64
- 409 0181 35       		.byte	53
- 410 0182 C1       		.byte	-63
+ 400 0178 4B       		.byte	75
+ 401 0179 FF       		.byte	-1
+ 402 017a 4F       		.byte	79
+ 403 017b 01       		.byte	1
+ 404 017c 50       		.byte	80
+ 405 017d 18       		.byte	24
+ 406 017e 5A       		.byte	90
+ 407 017f 04       		.byte	4
+ 408 0180 5D       		.byte	93
+ 409 0181 09       		.byte	9
+ 410 0182 5F       		.byte	95
  411 0183 01       		.byte	1
- 412 0184 C5       		.byte	-59
- 413 0185 EC       		.byte	-20
- 414 0186 C6       		.byte	-58
- 415 0187 02       		.byte	2
- 416 0188 C8       		.byte	-56
- 417 0189 07       		.byte	7
- 418 018a C9       		.byte	-55
- 419 018b FF       		.byte	-1
- 420 018c CA       		.byte	-54
- 421 018d FF       		.byte	-1
- 422 018e CB       		.byte	-53
- 423 018f FF       		.byte	-1
- 424 0190 CD       		.byte	-51
- 425 0191 83       		.byte	-125
- 426 0192 CE       		.byte	-50
- 427 0193 03       		.byte	3
- 428 0194 CF       		.byte	-49
- 429 0195 01       		.byte	1
- 430 0196 D0       		.byte	-48
- 431 0197 18       		.byte	24
- 432 0198 D2       		.byte	-46
- 433 0199 80       		.byte	-128
- 434 019a D4       		.byte	-44
+ 412 0184 60       		.byte	96
+ 413 0185 40       		.byte	64
+ 414 0186 62       		.byte	98
+ 415 0187 40       		.byte	64
+ 416 0188 64       		.byte	100
+ 417 0189 40       		.byte	64
+ 418 018a 65       		.byte	101
+ 419 018b 40       		.byte	64
+ 420 018c 66       		.byte	102
+ 421 018d 80       		.byte	-128
+ 422 018e 68       		.byte	104
+ 423 018f 80       		.byte	-128
+ 424 0190 6A       		.byte	106
+ 425 0191 80       		.byte	-128
+ 426 0192 6C       		.byte	108
+ 427 0193 80       		.byte	-128
+ 428 0194 6E       		.byte	110
+ 429 0195 80       		.byte	-128
+ 430 0196 80       		.byte	-128
+ 431 0197 0E       		.byte	14
+ 432 0198 82       		.byte	-126
+ 433 0199 20       		.byte	32
+ 434 019a 84       		.byte	-124
  435 019b 01       		.byte	1
- 436 019c D6       		.byte	-42
- 437 019d 04       		.byte	4
- 438 019e D8       		.byte	-40
- 439 019f 04       		.byte	4
- 440 01a0 DA       		.byte	-38
- 441 01a1 04       		.byte	4
- 442 01a2 DB       		.byte	-37
- 443 01a3 04       		.byte	4
- 444 01a4 DC       		.byte	-36
- 445 01a5 09       		.byte	9
- 446 01a6 DD       		.byte	-35
- 447 01a7 99       		.byte	-103
- 448 01a8 DF       		.byte	-33
- 449 01a9 05       		.byte	5
- 450 01aa E0       		.byte	-32
- 451 01ab 40       		.byte	64
- 452 01ac E2       		.byte	-30
- 453 01ad 40       		.byte	64
- 454 01ae E4       		.byte	-28
- 455 01af 40       		.byte	64
- 456 01b0 E5       		.byte	-27
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 9
+ 436 019c 86       		.byte	-122
+ 437 019d 3E       		.byte	62
+ 438 019e 8B       		.byte	-117
+ 439 019f 01       		.byte	1
+ 440 01a0 94       		.byte	-108
+ 441 01a1 08       		.byte	8
+ 442 01a2 96       		.byte	-106
+ 443 01a3 10       		.byte	16
+ 444 01a4 98       		.byte	-104
+ 445 01a5 02       		.byte	2
+ 446 01a6 9A       		.byte	-102
+ 447 01a7 10       		.byte	16
+ 448 01a8 9C       		.byte	-100
+ 449 01a9 04       		.byte	4
+ 450 01aa 9E       		.byte	-98
+ 451 01ab 10       		.byte	16
+ 452 01ac A3       		.byte	-93
+ 453 01ad 01       		.byte	1
+ 454 01ae AE       		.byte	-82
+ 455 01af 4E       		.byte	78
+ 456 01b0 B0       		.byte	-80
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 9
 
 
- 457 01b1 40       		.byte	64
- 458 01b2 E6       		.byte	-26
- 459 01b3 80       		.byte	-128
- 460 01b4 E8       		.byte	-24
- 461 01b5 80       		.byte	-128
- 462 01b6 EA       		.byte	-22
- 463 01b7 80       		.byte	-128
- 464 01b8 EC       		.byte	-20
- 465 01b9 80       		.byte	-128
- 466 01ba EE       		.byte	-18
- 467 01bb 80       		.byte	-128
- 468 01bc 00       		.byte	0
- 469 01bd 10       		.byte	16
- 470 01be 04       		.byte	4
- 471 01bf 40       		.byte	64
- 472 01c0 0C       		.byte	12
- 473 01c1 82       		.byte	-126
- 474 01c2 0D       		.byte	13
- 475 01c3 08       		.byte	8
- 476 01c4 0E       		.byte	14
- 477 01c5 08       		.byte	8
- 478 01c6 10       		.byte	16
- 479 01c7 02       		.byte	2
- 480 01c8 17       		.byte	23
- 481 01c9 80       		.byte	-128
- 482 01ca 18       		.byte	24
- 483 01cb 10       		.byte	16
- 484 01cc 1A       		.byte	26
- 485 01cd 48       		.byte	72
- 486 01ce 1C       		.byte	28
- 487 01cf 40       		.byte	64
- 488 01d0 1D       		.byte	29
- 489 01d1 08       		.byte	8
- 490 01d2 1E       		.byte	30
- 491 01d3 08       		.byte	8
- 492 01d4 1F       		.byte	31
- 493 01d5 40       		.byte	64
- 494 01d6 3B       		.byte	59
- 495 01d7 C0       		.byte	-64
- 496 01d8 41       		.byte	65
- 497 01d9 08       		.byte	8
- 498 01da 43       		.byte	67
- 499 01db 80       		.byte	-128
- 500 01dc 45       		.byte	69
- 501 01dd 08       		.byte	8
- 502 01de 46       		.byte	70
- 503 01df 01       		.byte	1
- 504 01e0 48       		.byte	72
- 505 01e1 02       		.byte	2
- 506 01e2 4D       		.byte	77
+ 457 01b1 30       		.byte	48
+ 458 01b2 B1       		.byte	-79
+ 459 01b3 01       		.byte	1
+ 460 01b4 B2       		.byte	-78
+ 461 01b5 01       		.byte	1
+ 462 01b6 B4       		.byte	-76
+ 463 01b7 0E       		.byte	14
+ 464 01b8 B6       		.byte	-74
+ 465 01b9 40       		.byte	64
+ 466 01ba BE       		.byte	-66
+ 467 01bb 04       		.byte	4
+ 468 01bc BF       		.byte	-65
+ 469 01bd 01       		.byte	1
+ 470 01be C0       		.byte	-64
+ 471 01bf 62       		.byte	98
+ 472 01c0 C1       		.byte	-63
+ 473 01c1 03       		.byte	3
+ 474 01c2 C5       		.byte	-59
+ 475 01c3 EC       		.byte	-20
+ 476 01c4 C6       		.byte	-58
+ 477 01c5 20       		.byte	32
+ 478 01c6 C8       		.byte	-56
+ 479 01c7 0B       		.byte	11
+ 480 01c8 C9       		.byte	-55
+ 481 01c9 FF       		.byte	-1
+ 482 01ca CA       		.byte	-54
+ 483 01cb FF       		.byte	-1
+ 484 01cc CB       		.byte	-53
+ 485 01cd FF       		.byte	-1
+ 486 01ce CD       		.byte	-51
+ 487 01cf 83       		.byte	-125
+ 488 01d0 CE       		.byte	-50
+ 489 01d1 03       		.byte	3
+ 490 01d2 CF       		.byte	-49
+ 491 01d3 01       		.byte	1
+ 492 01d4 D0       		.byte	-48
+ 493 01d5 18       		.byte	24
+ 494 01d6 D2       		.byte	-46
+ 495 01d7 80       		.byte	-128
+ 496 01d8 D4       		.byte	-44
+ 497 01d9 01       		.byte	1
+ 498 01da D6       		.byte	-42
+ 499 01db 04       		.byte	4
+ 500 01dc D8       		.byte	-40
+ 501 01dd 04       		.byte	4
+ 502 01de D9       		.byte	-39
+ 503 01df 04       		.byte	4
+ 504 01e0 DA       		.byte	-38
+ 505 01e1 04       		.byte	4
+ 506 01e2 DB       		.byte	-37
  507 01e3 04       		.byte	4
- 508 01e4 4F       		.byte	79
- 509 01e5 81       		.byte	-127
- 510 01e6 54       		.byte	84
- 511 01e7 80       		.byte	-128
- 512 01e8 57       		.byte	87
- 513 01e9 C0       		.byte	-64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 10
+ 508 01e4 DC       		.byte	-36
+ 509 01e5 09       		.byte	9
+ 510 01e6 DD       		.byte	-35
+ 511 01e7 99       		.byte	-103
+ 512 01e8 DE       		.byte	-34
+ 513 01e9 80       		.byte	-128
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 10
 
 
- 514 01ea 5D       		.byte	93
- 515 01eb 04       		.byte	4
- 516 01ec 5F       		.byte	95
- 517 01ed 41       		.byte	65
- 518 01ee 66       		.byte	102
- 519 01ef 02       		.byte	2
- 520 01f0 77       		.byte	119
- 521 01f1 80       		.byte	-128
- 522 01f2 7D       		.byte	125
- 523 01f3 08       		.byte	8
- 524 01f4 82       		.byte	-126
- 525 01f5 02       		.byte	2
- 526 01f6 C0       		.byte	-64
- 527 01f7 82       		.byte	-126
- 528 01f8 C2       		.byte	-62
- 529 01f9 F0       		.byte	-16
- 530 01fa C4       		.byte	-60
- 531 01fb 81       		.byte	-127
- 532 01fc D0       		.byte	-48
- 533 01fd 5A       		.byte	90
- 534 01fe D2       		.byte	-46
- 535 01ff 18       		.byte	24
- 536 0200 D6       		.byte	-42
- 537 0201 D0       		.byte	-48
- 538 0202 D8       		.byte	-40
- 539 0203 80       		.byte	-128
- 540 0204 DE       		.byte	-34
+ 514 01ea DF       		.byte	-33
+ 515 01eb 05       		.byte	5
+ 516 01ec E0       		.byte	-32
+ 517 01ed 40       		.byte	64
+ 518 01ee E2       		.byte	-30
+ 519 01ef 40       		.byte	64
+ 520 01f0 E4       		.byte	-28
+ 521 01f1 40       		.byte	64
+ 522 01f2 E5       		.byte	-27
+ 523 01f3 40       		.byte	64
+ 524 01f4 E6       		.byte	-26
+ 525 01f5 80       		.byte	-128
+ 526 01f6 E8       		.byte	-24
+ 527 01f7 80       		.byte	-128
+ 528 01f8 EA       		.byte	-22
+ 529 01f9 80       		.byte	-128
+ 530 01fa EC       		.byte	-20
+ 531 01fb 80       		.byte	-128
+ 532 01fc EE       		.byte	-18
+ 533 01fd 80       		.byte	-128
+ 534 01fe 05       		.byte	5
+ 535 01ff 09       		.byte	9
+ 536 0200 0E       		.byte	14
+ 537 0201 0A       		.byte	10
+ 538 0202 0F       		.byte	15
+ 539 0203 20       		.byte	32
+ 540 0204 17       		.byte	23
  541 0205 40       		.byte	64
- 542 0206 32       		.byte	50
- 543 0207 04       		.byte	4
- 544 0208 33       		.byte	51
- 545 0209 80       		.byte	-128
- 546 020a 36       		.byte	54
- 547 020b 28       		.byte	40
- 548 020c 83       		.byte	-125
+ 542 0206 1C       		.byte	28
+ 543 0207 18       		.byte	24
+ 544 0208 1D       		.byte	29
+ 545 0209 09       		.byte	9
+ 546 020a 1E       		.byte	30
+ 547 020b 0A       		.byte	10
+ 548 020c 1F       		.byte	31
  549 020d 80       		.byte	-128
- 550 020e CC       		.byte	-52
- 551 020f F0       		.byte	-16
- 552 0210 E6       		.byte	-26
- 553 0211 20       		.byte	32
- 554 0212 86       		.byte	-122
+ 550 020e 24       		.byte	36
+ 551 020f 40       		.byte	64
+ 552 0210 2F       		.byte	47
+ 553 0211 80       		.byte	-128
+ 554 0212 3F       		.byte	63
  555 0213 20       		.byte	32
- 556 0214 A6       		.byte	-90
- 557 0215 20       		.byte	32
- 558 0216 AA       		.byte	-86
- 559 0217 08       		.byte	8
- 560 0218 AE       		.byte	-82
- 561 0219 04       		.byte	4
- 562 021a E6       		.byte	-26
- 563 021b 40       		.byte	64
- 564 021c EA       		.byte	-22
- 565 021d 20       		.byte	32
- 566 021e EE       		.byte	-18
- 567 021f 10       		.byte	16
- 568 0220 00       		.byte	0
- 569 0221 04       		.byte	4
- 570 0222 C0       		.byte	-64
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 11
+ 556 0214 40       		.byte	64
+ 557 0215 10       		.byte	16
+ 558 0216 41       		.byte	65
+ 559 0217 20       		.byte	32
+ 560 0218 45       		.byte	69
+ 561 0219 28       		.byte	40
+ 562 021a 48       		.byte	72
+ 563 021b 04       		.byte	4
+ 564 021c 4B       		.byte	75
+ 565 021d 10       		.byte	16
+ 566 021e 4D       		.byte	77
+ 567 021f 04       		.byte	4
+ 568 0220 4F       		.byte	79
+ 569 0221 11       		.byte	17
+ 570 0222 55       		.byte	85
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 11
 
 
- 571 0223 08       		.byte	8
- 572 0224 B4       		.byte	-76
- 573 0225 04       		.byte	4
- 574 0226 EE       		.byte	-18
- 575 0227 02       		.byte	2
- 576 0228 01       		.byte	1
- 577 0229 01       		.byte	1
- 578 022a 0F       		.byte	15
+ 571 0223 20       		.byte	32
+ 572 0224 57       		.byte	87
+ 573 0225 10       		.byte	16
+ 574 0226 5C       		.byte	92
+ 575 0227 40       		.byte	64
+ 576 0228 5D       		.byte	93
+ 577 0229 04       		.byte	4
+ 578 022a 5F       		.byte	95
  579 022b 01       		.byte	1
- 580 022c 00       		.byte	0
- 581 022d FF       		.byte	-1
- 582 022e 00       		.byte	0
- 583 022f 00       		.byte	0
- 584 0230 00       		.byte	0
- 585 0231 80       		.byte	-128
- 586 0232 80       		.byte	-128
- 587 0233 00       		.byte	0
- 588 0234 00       		.byte	0
- 589 0235 00       		.byte	0
- 590 0236 00       		.byte	0
- 591 0237 00       		.byte	0
- 592 0238 01       		.byte	1
- 593 0239 00       		.byte	0
- 594 023a 00       		.byte	0
- 595 023b 0D       		.byte	13
- 596 023c 0C       		.byte	12
- 597 023d 00       		.byte	0
- 598 023e 00       		.byte	0
- 599 023f 00       		.byte	0
- 600 0240 00       		.byte	0
- 601 0241 00       		.byte	0
- 602 0242 00       		.byte	0
- 603 0243 00       		.byte	0
- 604              		.global	cy_meta_custnvl
- 605              		.section	.cycustnvl,"a",%progbits
- 606              		.align	2
- 607              		.type	cy_meta_custnvl, %object
- 608              		.size	cy_meta_custnvl, 4
- 609              	cy_meta_custnvl:
- 610 0000 00       		.byte	0
- 611 0001 00       		.byte	0
- 612 0002 40       		.byte	64
- 613 0003 05       		.byte	5
- 614              		.global	cy_meta_wonvl
- 615              		.section	.cywolatch,"a",%progbits
- 616              		.align	2
- 617              		.type	cy_meta_wonvl, %object
- 618              		.size	cy_meta_wonvl, 4
- 619              	cy_meta_wonvl:
- 620 0000 BC       		.byte	-68
- 621 0001 90       		.byte	-112
- 622 0002 AC       		.byte	-84
- 623 0003 AF       		.byte	-81
- 624              		.global	cy_meta_flashprotect
- 625              		.section	.cyflashprotect,"a",%progbits
- 626              		.align	2
- 627              		.type	cy_meta_flashprotect, %object
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 12
+ 580 022c 67       		.byte	103
+ 581 022d 80       		.byte	-128
+ 582 022e 77       		.byte	119
+ 583 022f 40       		.byte	64
+ 584 0230 7E       		.byte	126
+ 585 0231 10       		.byte	16
+ 586 0232 87       		.byte	-121
+ 587 0233 40       		.byte	64
+ 588 0234 C0       		.byte	-64
+ 589 0235 30       		.byte	48
+ 590 0236 C2       		.byte	-62
+ 591 0237 E0       		.byte	-32
+ 592 0238 C4       		.byte	-60
+ 593 0239 80       		.byte	-128
+ 594 023a CA       		.byte	-54
+ 595 023b 80       		.byte	-128
+ 596 023c CE       		.byte	-50
+ 597 023d 20       		.byte	32
+ 598 023e D0       		.byte	-48
+ 599 023f 66       		.byte	102
+ 600 0240 D2       		.byte	-46
+ 601 0241 24       		.byte	36
+ 602 0242 D6       		.byte	-42
+ 603 0243 D0       		.byte	-48
+ 604 0244 D8       		.byte	-40
+ 605 0245 80       		.byte	-128
+ 606 0246 DE       		.byte	-34
+ 607 0247 40       		.byte	64
+ 608 0248 EE       		.byte	-18
+ 609 0249 08       		.byte	8
+ 610 024a EE       		.byte	-18
+ 611 024b 08       		.byte	8
+ 612 024c 30       		.byte	48
+ 613 024d 02       		.byte	2
+ 614 024e 33       		.byte	51
+ 615 024f 80       		.byte	-128
+ 616 0250 36       		.byte	54
+ 617 0251 20       		.byte	32
+ 618 0252 37       		.byte	55
+ 619 0253 04       		.byte	4
+ 620 0254 38       		.byte	56
+ 621 0255 40       		.byte	64
+ 622 0256 84       		.byte	-124
+ 623 0257 02       		.byte	2
+ 624 0258 CC       		.byte	-52
+ 625 0259 F0       		.byte	-16
+ 626 025a CE       		.byte	-50
+ 627 025b 10       		.byte	16
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 12
 
 
- 628              		.size	cy_meta_flashprotect, 256
- 629              	cy_meta_flashprotect:
- 630 0000 00000000 		.space	256
- 630      00000000 
- 630      00000000 
- 630      00000000 
- 630      00000000 
- 631              		.global	cy_metadata
- 632              		.section	.cymeta,"a",%progbits
- 633              		.align	2
- 634              		.type	cy_metadata, %object
- 635              		.size	cy_metadata, 12
- 636              	cy_metadata:
- 637 0000 00       		.byte	0
- 638 0001 01       		.byte	1
- 639 0002 2E       		.byte	46
- 640 0003 12       		.byte	18
- 641 0004 30       		.byte	48
- 642 0005 69       		.byte	105
- 643 0006 00       		.byte	0
- 644 0007 01       		.byte	1
- 645 0008 00       		.byte	0
- 646 0009 00       		.byte	0
- 647 000a 00       		.byte	0
- 648 000b 00       		.byte	0
- 649              		.text
- 650              	.Letext0:
- 651              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
- 652              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
- 653              		.section	.debug_info,"",%progbits
- 654              	.Ldebug_info0:
- 655 0000 3B010000 		.4byte	0x13b
- 656 0004 0200     		.2byte	0x2
- 657 0006 00000000 		.4byte	.Ldebug_abbrev0
- 658 000a 04       		.byte	0x4
- 659 000b 01       		.uleb128 0x1
- 660 000c 6C010000 		.4byte	.LASF18
- 661 0010 01       		.byte	0x1
- 662 0011 00000000 		.4byte	.LASF19
- 663 0015 82000000 		.4byte	.LASF20
- 664 0019 00000000 		.4byte	.Ldebug_line0
- 665 001d 02       		.uleb128 0x2
- 666 001e 01       		.byte	0x1
- 667 001f 06       		.byte	0x6
- 668 0020 BE010000 		.4byte	.LASF0
- 669 0024 02       		.uleb128 0x2
- 670 0025 01       		.byte	0x1
- 671 0026 08       		.byte	0x8
- 672 0027 38000000 		.4byte	.LASF1
- 673 002b 02       		.uleb128 0x2
- 674 002c 02       		.byte	0x2
- 675 002d 05       		.byte	0x5
- 676 002e 5C010000 		.4byte	.LASF2
- 677 0032 02       		.uleb128 0x2
- 678 0033 02       		.byte	0x2
- 679 0034 07       		.byte	0x7
- 680 0035 58000000 		.4byte	.LASF3
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 13
+ 628 025c E2       		.byte	-30
+ 629 025d 10       		.byte	16
+ 630 025e 83       		.byte	-125
+ 631 025f 04       		.byte	4
+ 632 0260 86       		.byte	-122
+ 633 0261 20       		.byte	32
+ 634 0262 9F       		.byte	-97
+ 635 0263 04       		.byte	4
+ 636 0264 A6       		.byte	-90
+ 637 0265 20       		.byte	32
+ 638 0266 A7       		.byte	-89
+ 639 0267 80       		.byte	-128
+ 640 0268 A8       		.byte	-88
+ 641 0269 40       		.byte	64
+ 642 026a E2       		.byte	-30
+ 643 026b 80       		.byte	-128
+ 644 026c E6       		.byte	-26
+ 645 026d 40       		.byte	64
+ 646 026e EE       		.byte	-18
+ 647 026f 20       		.byte	32
+ 648 0270 5B       		.byte	91
+ 649 0271 04       		.byte	4
+ 650 0272 A7       		.byte	-89
+ 651 0273 80       		.byte	-128
+ 652 0274 D6       		.byte	-42
+ 653 0275 40       		.byte	64
+ 654 0276 A7       		.byte	-89
+ 655 0277 80       		.byte	-128
+ 656 0278 AB       		.byte	-85
+ 657 0279 04       		.byte	4
+ 658 027a EA       		.byte	-22
+ 659 027b 80       		.byte	-128
+ 660 027c 01       		.byte	1
+ 661 027d 02       		.byte	2
+ 662 027e C0       		.byte	-64
+ 663 027f 08       		.byte	8
+ 664 0280 B5       		.byte	-75
+ 665 0281 02       		.byte	2
+ 666 0282 EA       		.byte	-22
+ 667 0283 02       		.byte	2
+ 668 0284 08       		.byte	8
+ 669 0285 08       		.byte	8
+ 670 0286 C2       		.byte	-62
+ 671 0287 08       		.byte	8
+ 672 0288 AF       		.byte	-81
+ 673 0289 80       		.byte	-128
+ 674 028a EE       		.byte	-18
+ 675 028b 10       		.byte	16
+ 676 028c AC       		.byte	-84
+ 677 028d 08       		.byte	8
+ 678 028e 01       		.byte	1
+ 679 028f 01       		.byte	1
+ 680 0290 0F       		.byte	15
+ 681 0291 01       		.byte	1
+ 682 0292 00       		.byte	0
+ 683 0293 FE       		.byte	-2
+ 684 0294 01       		.byte	1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 13
 
 
- 681 0039 02       		.uleb128 0x2
- 682 003a 04       		.byte	0x4
- 683 003b 05       		.byte	0x5
- 684 003c B5010000 		.4byte	.LASF4
- 685 0040 02       		.uleb128 0x2
- 686 0041 04       		.byte	0x4
- 687 0042 07       		.byte	0x7
- 688 0043 46000000 		.4byte	.LASF5
- 689 0047 02       		.uleb128 0x2
- 690 0048 08       		.byte	0x8
- 691 0049 05       		.byte	0x5
- 692 004a 49010000 		.4byte	.LASF6
- 693 004e 02       		.uleb128 0x2
- 694 004f 08       		.byte	0x8
- 695 0050 07       		.byte	0x7
- 696 0051 F4000000 		.4byte	.LASF7
- 697 0055 03       		.uleb128 0x3
- 698 0056 04       		.byte	0x4
- 699 0057 05       		.byte	0x5
- 700 0058 696E7400 		.ascii	"int\000"
- 701 005c 02       		.uleb128 0x2
- 702 005d 04       		.byte	0x4
- 703 005e 07       		.byte	0x7
- 704 005f E7000000 		.4byte	.LASF8
- 705 0063 04       		.uleb128 0x4
- 706 0064 66010000 		.4byte	.LASF21
- 707 0068 02       		.byte	0x2
- 708 0069 5B       		.byte	0x5b
- 709 006a 24000000 		.4byte	0x24
- 710 006e 02       		.uleb128 0x2
- 711 006f 04       		.byte	0x4
- 712 0070 04       		.byte	0x4
- 713 0071 32000000 		.4byte	.LASF9
- 714 0075 02       		.uleb128 0x2
- 715 0076 08       		.byte	0x8
- 716 0077 04       		.byte	0x4
- 717 0078 6B000000 		.4byte	.LASF10
- 718 007c 02       		.uleb128 0x2
- 719 007d 01       		.byte	0x1
- 720 007e 08       		.byte	0x8
- 721 007f 57010000 		.4byte	.LASF11
- 722 0083 05       		.uleb128 0x5
- 723 0084 63000000 		.4byte	0x63
- 724 0088 94000000 		.4byte	0x94
- 725 008c 06       		.uleb128 0x6
- 726 008d 94000000 		.4byte	0x94
- 727 0091 4302     		.2byte	0x243
- 728 0093 00       		.byte	0
- 729 0094 02       		.uleb128 0x2
- 730 0095 04       		.byte	0x4
- 731 0096 07       		.byte	0x7
- 732 0097 2E010000 		.4byte	.LASF12
- 733 009b 07       		.uleb128 0x7
- 734 009c 37010000 		.4byte	.LASF13
- 735 00a0 01       		.byte	0x1
- 736 00a1 1C       		.byte	0x1c
- 737 00a2 AD000000 		.4byte	0xad
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 14
+ 685 0295 03       		.byte	3
+ 686 0296 00       		.byte	0
+ 687 0297 00       		.byte	0
+ 688 0298 00       		.byte	0
+ 689 0299 00       		.byte	0
+ 690 029a 00       		.byte	0
+ 691 029b 00       		.byte	0
+ 692 029c 00       		.byte	0
+ 693 029d 00       		.byte	0
+ 694 029e 00       		.byte	0
+ 695 029f 00       		.byte	0
+ 696 02a0 C0       		.byte	-64
+ 697 02a1 00       		.byte	0
+ 698 02a2 00       		.byte	0
+ 699 02a3 00       		.byte	0
+ 700 02a4 00       		.byte	0
+ 701 02a5 80       		.byte	-128
+ 702 02a6 80       		.byte	-128
+ 703 02a7 00       		.byte	0
+ 704 02a8 00       		.byte	0
+ 705 02a9 00       		.byte	0
+ 706 02aa 00       		.byte	0
+ 707 02ab 00       		.byte	0
+ 708 02ac 01       		.byte	1
+ 709 02ad 00       		.byte	0
+ 710 02ae 00       		.byte	0
+ 711 02af 4D       		.byte	77
+ 712 02b0 4C       		.byte	76
+ 713 02b1 00       		.byte	0
+ 714 02b2 00       		.byte	0
+ 715 02b3 00       		.byte	0
+ 716 02b4 00       		.byte	0
+ 717 02b5 00       		.byte	0
+ 718 02b6 00       		.byte	0
+ 719 02b7 00       		.byte	0
+ 720              		.global	cy_meta_custnvl
+ 721              		.section	.cycustnvl,"a",%progbits
+ 722              		.align	2
+ 723              		.type	cy_meta_custnvl, %object
+ 724              		.size	cy_meta_custnvl, 4
+ 725              	cy_meta_custnvl:
+ 726 0000 00       		.byte	0
+ 727 0001 00       		.byte	0
+ 728 0002 40       		.byte	64
+ 729 0003 05       		.byte	5
+ 730              		.global	cy_meta_wonvl
+ 731              		.section	.cywolatch,"a",%progbits
+ 732              		.align	2
+ 733              		.type	cy_meta_wonvl, %object
+ 734              		.size	cy_meta_wonvl, 4
+ 735              	cy_meta_wonvl:
+ 736 0000 BC       		.byte	-68
+ 737 0001 90       		.byte	-112
+ 738 0002 AC       		.byte	-84
+ 739 0003 AF       		.byte	-81
+ 740              		.global	cy_meta_flashprotect
+ 741              		.section	.cyflashprotect,"a",%progbits
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 14
 
 
- 738 00a6 01       		.byte	0x1
- 739 00a7 05       		.byte	0x5
- 740 00a8 03       		.byte	0x3
- 741 00a9 00000000 		.4byte	cy_meta_configecc
- 742 00ad 08       		.uleb128 0x8
- 743 00ae 83000000 		.4byte	0x83
- 744 00b2 05       		.uleb128 0x5
- 745 00b3 63000000 		.4byte	0x63
- 746 00b7 C2000000 		.4byte	0xc2
- 747 00bb 09       		.uleb128 0x9
- 748 00bc 94000000 		.4byte	0x94
- 749 00c0 03       		.byte	0x3
- 750 00c1 00       		.byte	0
- 751 00c2 07       		.uleb128 0x7
- 752 00c3 72000000 		.4byte	.LASF14
- 753 00c7 01       		.byte	0x1
- 754 00c8 6F       		.byte	0x6f
- 755 00c9 D4000000 		.4byte	0xd4
- 756 00cd 01       		.byte	0x1
- 757 00ce 05       		.byte	0x5
- 758 00cf 03       		.byte	0x3
- 759 00d0 00000000 		.4byte	cy_meta_custnvl
- 760 00d4 08       		.uleb128 0x8
- 761 00d5 B2000000 		.4byte	0xb2
- 762 00d9 07       		.uleb128 0x7
- 763 00da 20010000 		.4byte	.LASF15
- 764 00de 01       		.byte	0x1
- 765 00df 7A       		.byte	0x7a
- 766 00e0 EB000000 		.4byte	0xeb
- 767 00e4 01       		.byte	0x1
- 768 00e5 05       		.byte	0x5
- 769 00e6 03       		.byte	0x3
- 770 00e7 00000000 		.4byte	cy_meta_wonvl
- 771 00eb 08       		.uleb128 0x8
- 772 00ec B2000000 		.4byte	0xb2
- 773 00f0 05       		.uleb128 0x5
- 774 00f1 63000000 		.4byte	0x63
- 775 00f5 00010000 		.4byte	0x100
- 776 00f9 09       		.uleb128 0x9
- 777 00fa 94000000 		.4byte	0x94
- 778 00fe FF       		.byte	0xff
- 779 00ff 00       		.byte	0
- 780 0100 07       		.uleb128 0x7
- 781 0101 0B010000 		.4byte	.LASF16
- 782 0105 01       		.byte	0x1
- 783 0106 85       		.byte	0x85
- 784 0107 12010000 		.4byte	0x112
- 785 010b 01       		.byte	0x1
- 786 010c 05       		.byte	0x5
- 787 010d 03       		.byte	0x3
- 788 010e 00000000 		.4byte	cy_meta_flashprotect
- 789 0112 08       		.uleb128 0x8
- 790 0113 F0000000 		.4byte	0xf0
- 791 0117 05       		.uleb128 0x5
- 792 0118 63000000 		.4byte	0x63
- 793 011c 27010000 		.4byte	0x127
- 794 0120 09       		.uleb128 0x9
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 15
+ 742              		.align	2
+ 743              		.type	cy_meta_flashprotect, %object
+ 744              		.size	cy_meta_flashprotect, 256
+ 745              	cy_meta_flashprotect:
+ 746 0000 00000000 		.space	256
+ 746      00000000 
+ 746      00000000 
+ 746      00000000 
+ 746      00000000 
+ 747              		.global	cy_metadata
+ 748              		.section	.cymeta,"a",%progbits
+ 749              		.align	2
+ 750              		.type	cy_metadata, %object
+ 751              		.size	cy_metadata, 12
+ 752              	cy_metadata:
+ 753 0000 00       		.byte	0
+ 754 0001 01       		.byte	1
+ 755 0002 2E       		.byte	46
+ 756 0003 12       		.byte	18
+ 757 0004 30       		.byte	48
+ 758 0005 69       		.byte	105
+ 759 0006 00       		.byte	0
+ 760 0007 01       		.byte	1
+ 761 0008 00       		.byte	0
+ 762 0009 00       		.byte	0
+ 763 000a 00       		.byte	0
+ 764 000b 00       		.byte	0
+ 765              		.text
+ 766              	.Letext0:
+ 767              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 768              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 769              		.section	.debug_info,"",%progbits
+ 770              	.Ldebug_info0:
+ 771 0000 3B010000 		.4byte	0x13b
+ 772 0004 0200     		.2byte	0x2
+ 773 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 774 000a 04       		.byte	0x4
+ 775 000b 01       		.uleb128 0x1
+ 776 000c 84010000 		.4byte	.LASF18
+ 777 0010 01       		.byte	0x1
+ 778 0011 7D000000 		.4byte	.LASF19
+ 779 0015 00000000 		.4byte	.LASF20
+ 780 0019 00000000 		.4byte	.Ldebug_line0
+ 781 001d 02       		.uleb128 0x2
+ 782 001e 01       		.byte	0x1
+ 783 001f 06       		.byte	0x6
+ 784 0020 D6010000 		.4byte	.LASF0
+ 785 0024 02       		.uleb128 0x2
+ 786 0025 01       		.byte	0x1
+ 787 0026 08       		.byte	0x8
+ 788 0027 B5000000 		.4byte	.LASF1
+ 789 002b 02       		.uleb128 0x2
+ 790 002c 02       		.byte	0x2
+ 791 002d 05       		.byte	0x5
+ 792 002e 74010000 		.4byte	.LASF2
+ 793 0032 02       		.uleb128 0x2
+ 794 0033 02       		.byte	0x2
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 15
 
 
- 795 0121 94000000 		.4byte	0x94
- 796 0125 0B       		.byte	0xb
- 797 0126 00       		.byte	0
- 798 0127 07       		.uleb128 0x7
- 799 0128 26000000 		.4byte	.LASF17
- 800 012c 01       		.byte	0x1
- 801 012d AF       		.byte	0xaf
- 802 012e 39010000 		.4byte	0x139
- 803 0132 01       		.byte	0x1
- 804 0133 05       		.byte	0x5
- 805 0134 03       		.byte	0x3
- 806 0135 00000000 		.4byte	cy_metadata
- 807 0139 08       		.uleb128 0x8
- 808 013a 17010000 		.4byte	0x117
- 809 013e 00       		.byte	0
- 810              		.section	.debug_abbrev,"",%progbits
- 811              	.Ldebug_abbrev0:
- 812 0000 01       		.uleb128 0x1
- 813 0001 11       		.uleb128 0x11
- 814 0002 01       		.byte	0x1
- 815 0003 25       		.uleb128 0x25
- 816 0004 0E       		.uleb128 0xe
- 817 0005 13       		.uleb128 0x13
- 818 0006 0B       		.uleb128 0xb
- 819 0007 03       		.uleb128 0x3
- 820 0008 0E       		.uleb128 0xe
- 821 0009 1B       		.uleb128 0x1b
- 822 000a 0E       		.uleb128 0xe
- 823 000b 10       		.uleb128 0x10
- 824 000c 06       		.uleb128 0x6
- 825 000d 00       		.byte	0
- 826 000e 00       		.byte	0
- 827 000f 02       		.uleb128 0x2
- 828 0010 24       		.uleb128 0x24
- 829 0011 00       		.byte	0
- 830 0012 0B       		.uleb128 0xb
- 831 0013 0B       		.uleb128 0xb
- 832 0014 3E       		.uleb128 0x3e
- 833 0015 0B       		.uleb128 0xb
- 834 0016 03       		.uleb128 0x3
- 835 0017 0E       		.uleb128 0xe
- 836 0018 00       		.byte	0
- 837 0019 00       		.byte	0
- 838 001a 03       		.uleb128 0x3
- 839 001b 24       		.uleb128 0x24
- 840 001c 00       		.byte	0
- 841 001d 0B       		.uleb128 0xb
- 842 001e 0B       		.uleb128 0xb
- 843 001f 3E       		.uleb128 0x3e
- 844 0020 0B       		.uleb128 0xb
- 845 0021 03       		.uleb128 0x3
- 846 0022 08       		.uleb128 0x8
- 847 0023 00       		.byte	0
- 848 0024 00       		.byte	0
- 849 0025 04       		.uleb128 0x4
- 850 0026 16       		.uleb128 0x16
- 851 0027 00       		.byte	0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 16
+ 795 0034 07       		.byte	0x7
+ 796 0035 D5000000 		.4byte	.LASF3
+ 797 0039 02       		.uleb128 0x2
+ 798 003a 04       		.byte	0x4
+ 799 003b 05       		.byte	0x5
+ 800 003c CD010000 		.4byte	.LASF4
+ 801 0040 02       		.uleb128 0x2
+ 802 0041 04       		.byte	0x4
+ 803 0042 07       		.byte	0x7
+ 804 0043 C3000000 		.4byte	.LASF5
+ 805 0047 02       		.uleb128 0x2
+ 806 0048 08       		.byte	0x8
+ 807 0049 05       		.byte	0x5
+ 808 004a 61010000 		.4byte	.LASF6
+ 809 004e 02       		.uleb128 0x2
+ 810 004f 08       		.byte	0x8
+ 811 0050 07       		.byte	0x7
+ 812 0051 1E010000 		.4byte	.LASF7
+ 813 0055 03       		.uleb128 0x3
+ 814 0056 04       		.byte	0x4
+ 815 0057 05       		.byte	0x5
+ 816 0058 696E7400 		.ascii	"int\000"
+ 817 005c 02       		.uleb128 0x2
+ 818 005d 04       		.byte	0x4
+ 819 005e 07       		.byte	0x7
+ 820 005f 11010000 		.4byte	.LASF8
+ 821 0063 04       		.uleb128 0x4
+ 822 0064 7E010000 		.4byte	.LASF21
+ 823 0068 02       		.byte	0x2
+ 824 0069 5B       		.byte	0x5b
+ 825 006a 24000000 		.4byte	0x24
+ 826 006e 02       		.uleb128 0x2
+ 827 006f 04       		.byte	0x4
+ 828 0070 04       		.byte	0x4
+ 829 0071 AF000000 		.4byte	.LASF9
+ 830 0075 02       		.uleb128 0x2
+ 831 0076 08       		.byte	0x8
+ 832 0077 04       		.byte	0x4
+ 833 0078 E8000000 		.4byte	.LASF10
+ 834 007c 02       		.uleb128 0x2
+ 835 007d 01       		.byte	0x1
+ 836 007e 08       		.byte	0x8
+ 837 007f 6F010000 		.4byte	.LASF11
+ 838 0083 05       		.uleb128 0x5
+ 839 0084 63000000 		.4byte	0x63
+ 840 0088 94000000 		.4byte	0x94
+ 841 008c 06       		.uleb128 0x6
+ 842 008d 94000000 		.4byte	0x94
+ 843 0091 B702     		.2byte	0x2b7
+ 844 0093 00       		.byte	0
+ 845 0094 02       		.uleb128 0x2
+ 846 0095 04       		.byte	0x4
+ 847 0096 07       		.byte	0x7
+ 848 0097 58010000 		.4byte	.LASF12
+ 849 009b 07       		.uleb128 0x7
+ 850 009c FF000000 		.4byte	.LASF13
+ 851 00a0 01       		.byte	0x1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 16
 
 
- 852 0028 03       		.uleb128 0x3
- 853 0029 0E       		.uleb128 0xe
- 854 002a 3A       		.uleb128 0x3a
- 855 002b 0B       		.uleb128 0xb
- 856 002c 3B       		.uleb128 0x3b
- 857 002d 0B       		.uleb128 0xb
- 858 002e 49       		.uleb128 0x49
- 859 002f 13       		.uleb128 0x13
- 860 0030 00       		.byte	0
- 861 0031 00       		.byte	0
- 862 0032 05       		.uleb128 0x5
- 863 0033 01       		.uleb128 0x1
- 864 0034 01       		.byte	0x1
- 865 0035 49       		.uleb128 0x49
- 866 0036 13       		.uleb128 0x13
- 867 0037 01       		.uleb128 0x1
- 868 0038 13       		.uleb128 0x13
- 869 0039 00       		.byte	0
- 870 003a 00       		.byte	0
- 871 003b 06       		.uleb128 0x6
- 872 003c 21       		.uleb128 0x21
- 873 003d 00       		.byte	0
- 874 003e 49       		.uleb128 0x49
- 875 003f 13       		.uleb128 0x13
- 876 0040 2F       		.uleb128 0x2f
- 877 0041 05       		.uleb128 0x5
- 878 0042 00       		.byte	0
- 879 0043 00       		.byte	0
- 880 0044 07       		.uleb128 0x7
- 881 0045 34       		.uleb128 0x34
- 882 0046 00       		.byte	0
- 883 0047 03       		.uleb128 0x3
- 884 0048 0E       		.uleb128 0xe
- 885 0049 3A       		.uleb128 0x3a
- 886 004a 0B       		.uleb128 0xb
- 887 004b 3B       		.uleb128 0x3b
- 888 004c 0B       		.uleb128 0xb
- 889 004d 49       		.uleb128 0x49
- 890 004e 13       		.uleb128 0x13
- 891 004f 3F       		.uleb128 0x3f
- 892 0050 0C       		.uleb128 0xc
- 893 0051 02       		.uleb128 0x2
- 894 0052 0A       		.uleb128 0xa
- 895 0053 00       		.byte	0
- 896 0054 00       		.byte	0
- 897 0055 08       		.uleb128 0x8
- 898 0056 26       		.uleb128 0x26
- 899 0057 00       		.byte	0
- 900 0058 49       		.uleb128 0x49
- 901 0059 13       		.uleb128 0x13
- 902 005a 00       		.byte	0
- 903 005b 00       		.byte	0
- 904 005c 09       		.uleb128 0x9
- 905 005d 21       		.uleb128 0x21
- 906 005e 00       		.byte	0
- 907 005f 49       		.uleb128 0x49
- 908 0060 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 17
+ 852 00a1 1C       		.byte	0x1c
+ 853 00a2 AD000000 		.4byte	0xad
+ 854 00a6 01       		.byte	0x1
+ 855 00a7 05       		.byte	0x5
+ 856 00a8 03       		.byte	0x3
+ 857 00a9 00000000 		.4byte	cy_meta_configecc
+ 858 00ad 08       		.uleb128 0x8
+ 859 00ae 83000000 		.4byte	0x83
+ 860 00b2 05       		.uleb128 0x5
+ 861 00b3 63000000 		.4byte	0x63
+ 862 00b7 C2000000 		.4byte	0xc2
+ 863 00bb 09       		.uleb128 0x9
+ 864 00bc 94000000 		.4byte	0x94
+ 865 00c0 03       		.byte	0x3
+ 866 00c1 00       		.byte	0
+ 867 00c2 07       		.uleb128 0x7
+ 868 00c3 EF000000 		.4byte	.LASF14
+ 869 00c7 01       		.byte	0x1
+ 870 00c8 7D       		.byte	0x7d
+ 871 00c9 D4000000 		.4byte	0xd4
+ 872 00cd 01       		.byte	0x1
+ 873 00ce 05       		.byte	0x5
+ 874 00cf 03       		.byte	0x3
+ 875 00d0 00000000 		.4byte	cy_meta_custnvl
+ 876 00d4 08       		.uleb128 0x8
+ 877 00d5 B2000000 		.4byte	0xb2
+ 878 00d9 07       		.uleb128 0x7
+ 879 00da 4A010000 		.4byte	.LASF15
+ 880 00de 01       		.byte	0x1
+ 881 00df 88       		.byte	0x88
+ 882 00e0 EB000000 		.4byte	0xeb
+ 883 00e4 01       		.byte	0x1
+ 884 00e5 05       		.byte	0x5
+ 885 00e6 03       		.byte	0x3
+ 886 00e7 00000000 		.4byte	cy_meta_wonvl
+ 887 00eb 08       		.uleb128 0x8
+ 888 00ec B2000000 		.4byte	0xb2
+ 889 00f0 05       		.uleb128 0x5
+ 890 00f1 63000000 		.4byte	0x63
+ 891 00f5 00010000 		.4byte	0x100
+ 892 00f9 09       		.uleb128 0x9
+ 893 00fa 94000000 		.4byte	0x94
+ 894 00fe FF       		.byte	0xff
+ 895 00ff 00       		.byte	0
+ 896 0100 07       		.uleb128 0x7
+ 897 0101 35010000 		.4byte	.LASF16
+ 898 0105 01       		.byte	0x1
+ 899 0106 93       		.byte	0x93
+ 900 0107 12010000 		.4byte	0x112
+ 901 010b 01       		.byte	0x1
+ 902 010c 05       		.byte	0x5
+ 903 010d 03       		.byte	0x3
+ 904 010e 00000000 		.4byte	cy_meta_flashprotect
+ 905 0112 08       		.uleb128 0x8
+ 906 0113 F0000000 		.4byte	0xf0
+ 907 0117 05       		.uleb128 0x5
+ 908 0118 63000000 		.4byte	0x63
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 17
 
 
- 909 0061 2F       		.uleb128 0x2f
- 910 0062 0B       		.uleb128 0xb
- 911 0063 00       		.byte	0
- 912 0064 00       		.byte	0
- 913 0065 00       		.byte	0
- 914              		.section	.debug_aranges,"",%progbits
- 915 0000 14000000 		.4byte	0x14
- 916 0004 0200     		.2byte	0x2
- 917 0006 00000000 		.4byte	.Ldebug_info0
- 918 000a 04       		.byte	0x4
- 919 000b 00       		.byte	0
- 920 000c 0000     		.2byte	0
- 921 000e 0000     		.2byte	0
- 922 0010 00000000 		.4byte	0
- 923 0014 00000000 		.4byte	0
- 924              		.section	.debug_line,"",%progbits
- 925              	.Ldebug_line0:
- 926 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
- 926      02004900 
- 926      00000201 
- 926      FB0E0D00 
- 926      01010101 
- 927              	.LASF19:
- 928 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
- 928      6E657261 
- 928      7465645F 
- 928      536F7572 
- 928      63655C50 
- 929              	.LASF17:
- 930 0026 63795F6D 		.ascii	"cy_metadata\000"
- 930      65746164 
- 930      61746100 
- 931              	.LASF9:
- 932 0032 666C6F61 		.ascii	"float\000"
- 932      7400
- 933              	.LASF1:
- 934 0038 756E7369 		.ascii	"unsigned char\000"
- 934      676E6564 
- 934      20636861 
- 934      7200
- 935              	.LASF5:
- 936 0046 6C6F6E67 		.ascii	"long unsigned int\000"
- 936      20756E73 
- 936      69676E65 
- 936      6420696E 
- 936      7400
- 937              	.LASF3:
- 938 0058 73686F72 		.ascii	"short unsigned int\000"
- 938      7420756E 
- 938      7369676E 
- 938      65642069 
- 938      6E7400
- 939              	.LASF10:
- 940 006b 646F7562 		.ascii	"double\000"
- 940      6C6500
- 941              	.LASF14:
- 942 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 18
+ 909 011c 27010000 		.4byte	0x127
+ 910 0120 09       		.uleb128 0x9
+ 911 0121 94000000 		.4byte	0x94
+ 912 0125 0B       		.byte	0xb
+ 913 0126 00       		.byte	0
+ 914 0127 07       		.uleb128 0x7
+ 915 0128 A3000000 		.4byte	.LASF17
+ 916 012c 01       		.byte	0x1
+ 917 012d BD       		.byte	0xbd
+ 918 012e 39010000 		.4byte	0x139
+ 919 0132 01       		.byte	0x1
+ 920 0133 05       		.byte	0x5
+ 921 0134 03       		.byte	0x3
+ 922 0135 00000000 		.4byte	cy_metadata
+ 923 0139 08       		.uleb128 0x8
+ 924 013a 17010000 		.4byte	0x117
+ 925 013e 00       		.byte	0
+ 926              		.section	.debug_abbrev,"",%progbits
+ 927              	.Ldebug_abbrev0:
+ 928 0000 01       		.uleb128 0x1
+ 929 0001 11       		.uleb128 0x11
+ 930 0002 01       		.byte	0x1
+ 931 0003 25       		.uleb128 0x25
+ 932 0004 0E       		.uleb128 0xe
+ 933 0005 13       		.uleb128 0x13
+ 934 0006 0B       		.uleb128 0xb
+ 935 0007 03       		.uleb128 0x3
+ 936 0008 0E       		.uleb128 0xe
+ 937 0009 1B       		.uleb128 0x1b
+ 938 000a 0E       		.uleb128 0xe
+ 939 000b 10       		.uleb128 0x10
+ 940 000c 06       		.uleb128 0x6
+ 941 000d 00       		.byte	0
+ 942 000e 00       		.byte	0
+ 943 000f 02       		.uleb128 0x2
+ 944 0010 24       		.uleb128 0x24
+ 945 0011 00       		.byte	0
+ 946 0012 0B       		.uleb128 0xb
+ 947 0013 0B       		.uleb128 0xb
+ 948 0014 3E       		.uleb128 0x3e
+ 949 0015 0B       		.uleb128 0xb
+ 950 0016 03       		.uleb128 0x3
+ 951 0017 0E       		.uleb128 0xe
+ 952 0018 00       		.byte	0
+ 953 0019 00       		.byte	0
+ 954 001a 03       		.uleb128 0x3
+ 955 001b 24       		.uleb128 0x24
+ 956 001c 00       		.byte	0
+ 957 001d 0B       		.uleb128 0xb
+ 958 001e 0B       		.uleb128 0xb
+ 959 001f 3E       		.uleb128 0x3e
+ 960 0020 0B       		.uleb128 0xb
+ 961 0021 03       		.uleb128 0x3
+ 962 0022 08       		.uleb128 0x8
+ 963 0023 00       		.byte	0
+ 964 0024 00       		.byte	0
+ 965 0025 04       		.uleb128 0x4
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 18
 
 
- 942      6574615F 
- 942      63757374 
- 942      6E766C00 
- 943              	.LASF20:
- 944 0082 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
- 944      73657273 
- 944      5C5A6163 
- 944      685C4472 
- 944      6F70626F 
- 945 00af 5C4E6574 		.ascii	"\\Networking\\Networking Project\\Networking Projec"
- 945      776F726B 
- 945      696E675C 
- 945      4E657477 
- 945      6F726B69 
- 946 00df 742E6379 		.ascii	"t.cydsn\000"
- 946      64736E00 
- 947              	.LASF8:
- 948 00e7 756E7369 		.ascii	"unsigned int\000"
- 948      676E6564 
- 948      20696E74 
- 948      00
- 949              	.LASF7:
- 950 00f4 6C6F6E67 		.ascii	"long long unsigned int\000"
- 950      206C6F6E 
- 950      6720756E 
- 950      7369676E 
- 950      65642069 
- 951              	.LASF16:
- 952 010b 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 952      6574615F 
- 952      666C6173 
- 952      6870726F 
- 952      74656374 
- 953              	.LASF15:
- 954 0120 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 954      6574615F 
- 954      776F6E76 
- 954      6C00
- 955              	.LASF12:
- 956 012e 73697A65 		.ascii	"sizetype\000"
- 956      74797065 
- 956      00
- 957              	.LASF13:
- 958 0137 63795F6D 		.ascii	"cy_meta_configecc\000"
- 958      6574615F 
- 958      636F6E66 
- 958      69676563 
- 958      6300
- 959              	.LASF6:
- 960 0149 6C6F6E67 		.ascii	"long long int\000"
- 960      206C6F6E 
- 960      6720696E 
- 960      7400
- 961              	.LASF11:
- 962 0157 63686172 		.ascii	"char\000"
- 962      00
- 963              	.LASF2:
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccIpBzCZ.s 			page 19
+ 966 0026 16       		.uleb128 0x16
+ 967 0027 00       		.byte	0
+ 968 0028 03       		.uleb128 0x3
+ 969 0029 0E       		.uleb128 0xe
+ 970 002a 3A       		.uleb128 0x3a
+ 971 002b 0B       		.uleb128 0xb
+ 972 002c 3B       		.uleb128 0x3b
+ 973 002d 0B       		.uleb128 0xb
+ 974 002e 49       		.uleb128 0x49
+ 975 002f 13       		.uleb128 0x13
+ 976 0030 00       		.byte	0
+ 977 0031 00       		.byte	0
+ 978 0032 05       		.uleb128 0x5
+ 979 0033 01       		.uleb128 0x1
+ 980 0034 01       		.byte	0x1
+ 981 0035 49       		.uleb128 0x49
+ 982 0036 13       		.uleb128 0x13
+ 983 0037 01       		.uleb128 0x1
+ 984 0038 13       		.uleb128 0x13
+ 985 0039 00       		.byte	0
+ 986 003a 00       		.byte	0
+ 987 003b 06       		.uleb128 0x6
+ 988 003c 21       		.uleb128 0x21
+ 989 003d 00       		.byte	0
+ 990 003e 49       		.uleb128 0x49
+ 991 003f 13       		.uleb128 0x13
+ 992 0040 2F       		.uleb128 0x2f
+ 993 0041 05       		.uleb128 0x5
+ 994 0042 00       		.byte	0
+ 995 0043 00       		.byte	0
+ 996 0044 07       		.uleb128 0x7
+ 997 0045 34       		.uleb128 0x34
+ 998 0046 00       		.byte	0
+ 999 0047 03       		.uleb128 0x3
+ 1000 0048 0E       		.uleb128 0xe
+ 1001 0049 3A       		.uleb128 0x3a
+ 1002 004a 0B       		.uleb128 0xb
+ 1003 004b 3B       		.uleb128 0x3b
+ 1004 004c 0B       		.uleb128 0xb
+ 1005 004d 49       		.uleb128 0x49
+ 1006 004e 13       		.uleb128 0x13
+ 1007 004f 3F       		.uleb128 0x3f
+ 1008 0050 0C       		.uleb128 0xc
+ 1009 0051 02       		.uleb128 0x2
+ 1010 0052 0A       		.uleb128 0xa
+ 1011 0053 00       		.byte	0
+ 1012 0054 00       		.byte	0
+ 1013 0055 08       		.uleb128 0x8
+ 1014 0056 26       		.uleb128 0x26
+ 1015 0057 00       		.byte	0
+ 1016 0058 49       		.uleb128 0x49
+ 1017 0059 13       		.uleb128 0x13
+ 1018 005a 00       		.byte	0
+ 1019 005b 00       		.byte	0
+ 1020 005c 09       		.uleb128 0x9
+ 1021 005d 21       		.uleb128 0x21
+ 1022 005e 00       		.byte	0
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 19
 
 
- 964 015c 73686F72 		.ascii	"short int\000"
- 964      7420696E 
- 964      7400
- 965              	.LASF21:
- 966 0166 75696E74 		.ascii	"uint8\000"
- 966      3800
- 967              	.LASF18:
- 968 016c 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 968      4320342E 
- 968      372E3320 
- 968      32303133 
- 968      30333132 
- 969 019f 616E6368 		.ascii	"anch revision 196615]\000"
- 969      20726576 
- 969      6973696F 
- 969      6E203139 
- 969      36363135 
- 970              	.LASF4:
- 971 01b5 6C6F6E67 		.ascii	"long int\000"
- 971      20696E74 
- 971      00
- 972              	.LASF0:
- 973 01be 7369676E 		.ascii	"signed char\000"
- 973      65642063 
- 973      68617200 
- 974              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 1023 005f 49       		.uleb128 0x49
+ 1024 0060 13       		.uleb128 0x13
+ 1025 0061 2F       		.uleb128 0x2f
+ 1026 0062 0B       		.uleb128 0xb
+ 1027 0063 00       		.byte	0
+ 1028 0064 00       		.byte	0
+ 1029 0065 00       		.byte	0
+ 1030              		.section	.debug_aranges,"",%progbits
+ 1031 0000 14000000 		.4byte	0x14
+ 1032 0004 0200     		.2byte	0x2
+ 1033 0006 00000000 		.4byte	.Ldebug_info0
+ 1034 000a 04       		.byte	0x4
+ 1035 000b 00       		.byte	0
+ 1036 000c 0000     		.2byte	0
+ 1037 000e 0000     		.2byte	0
+ 1038 0010 00000000 		.4byte	0
+ 1039 0014 00000000 		.4byte	0
+ 1040              		.section	.debug_line,"",%progbits
+ 1041              	.Ldebug_line0:
+ 1042 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 1042      02004900 
+ 1042      00000201 
+ 1042      FB0E0D00 
+ 1042      01010101 
+ 1043              	.LASF20:
+ 1044 0000 443A5C4D 		.ascii	"D:\\MSOE\\2014-2015\\Winter\\CE4950_021_Network\\la"
+ 1044      534F455C 
+ 1044      32303134 
+ 1044      2D323031 
+ 1044      355C5769 
+ 1045 002e 625C5072 		.ascii	"b\\Project\\ce4950Project\\Networking\\Networking P"
+ 1045      6F6A6563 
+ 1045      745C6365 
+ 1045      34393530 
+ 1045      50726F6A 
+ 1046 005d 726F6A65 		.ascii	"roject\\Networking Project.cydsn\000"
+ 1046      63745C4E 
+ 1046      6574776F 
+ 1046      726B696E 
+ 1046      67205072 
+ 1047              	.LASF19:
+ 1048 007d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1048      6E657261 
+ 1048      7465645F 
+ 1048      536F7572 
+ 1048      63655C50 
+ 1049              	.LASF17:
+ 1050 00a3 63795F6D 		.ascii	"cy_metadata\000"
+ 1050      65746164 
+ 1050      61746100 
+ 1051              	.LASF9:
+ 1052 00af 666C6F61 		.ascii	"float\000"
+ 1052      7400
+ 1053              	.LASF1:
+ 1054 00b5 756E7369 		.ascii	"unsigned char\000"
+ 1054      676E6564 
+ 1054      20636861 
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 20
+
+
+ 1054      7200
+ 1055              	.LASF5:
+ 1056 00c3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1056      20756E73 
+ 1056      69676E65 
+ 1056      6420696E 
+ 1056      7400
+ 1057              	.LASF3:
+ 1058 00d5 73686F72 		.ascii	"short unsigned int\000"
+ 1058      7420756E 
+ 1058      7369676E 
+ 1058      65642069 
+ 1058      6E7400
+ 1059              	.LASF10:
+ 1060 00e8 646F7562 		.ascii	"double\000"
+ 1060      6C6500
+ 1061              	.LASF14:
+ 1062 00ef 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1062      6574615F 
+ 1062      63757374 
+ 1062      6E766C00 
+ 1063              	.LASF13:
+ 1064 00ff 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1064      6574615F 
+ 1064      636F6E66 
+ 1064      69676563 
+ 1064      6300
+ 1065              	.LASF8:
+ 1066 0111 756E7369 		.ascii	"unsigned int\000"
+ 1066      676E6564 
+ 1066      20696E74 
+ 1066      00
+ 1067              	.LASF7:
+ 1068 011e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1068      206C6F6E 
+ 1068      6720756E 
+ 1068      7369676E 
+ 1068      65642069 
+ 1069              	.LASF16:
+ 1070 0135 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1070      6574615F 
+ 1070      666C6173 
+ 1070      6870726F 
+ 1070      74656374 
+ 1071              	.LASF15:
+ 1072 014a 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1072      6574615F 
+ 1072      776F6E76 
+ 1072      6C00
+ 1073              	.LASF12:
+ 1074 0158 73697A65 		.ascii	"sizetype\000"
+ 1074      74797065 
+ 1074      00
+ 1075              	.LASF6:
+ 1076 0161 6C6F6E67 		.ascii	"long long int\000"
+ 1076      206C6F6E 
+ 1076      6720696E 
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccb3Au9x.s 			page 21
+
+
+ 1076      7400
+ 1077              	.LASF11:
+ 1078 016f 63686172 		.ascii	"char\000"
+ 1078      00
+ 1079              	.LASF2:
+ 1080 0174 73686F72 		.ascii	"short int\000"
+ 1080      7420696E 
+ 1080      7400
+ 1081              	.LASF21:
+ 1082 017e 75696E74 		.ascii	"uint8\000"
+ 1082      3800
+ 1083              	.LASF18:
+ 1084 0184 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1084      4320342E 
+ 1084      372E3320 
+ 1084      32303133 
+ 1084      30333132 
+ 1085 01b7 616E6368 		.ascii	"anch revision 196615]\000"
+ 1085      20726576 
+ 1085      6973696F 
+ 1085      6E203139 
+ 1085      36363135 
+ 1086              	.LASF4:
+ 1087 01cd 6C6F6E67 		.ascii	"long int\000"
+ 1087      20696E74 
+ 1087      00
+ 1088              	.LASF0:
+ 1089 01d6 7369676E 		.ascii	"signed char\000"
+ 1089      65642063 
+ 1089      68617200 
+ 1090              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

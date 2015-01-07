@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 1
 
 
    1              		.syntax unified
@@ -24,15 +24,30 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 1
   21              		.size	currentState, 1
   22              	currentState:
   23 0000 00       		.space	1
-  24              		.section	.text.isr_FallingEdgeDetected,"ax",%progbits
-  25              		.align	2
-  26              		.global	isr_FallingEdgeDetected
-  27              		.thumb
-  28              		.thumb_func
-  29              		.type	isr_FallingEdgeDetected, %function
-  30              	isr_FallingEdgeDetected:
-  31              	.LFB56:
-  32              		.file 1 ".\\main.c"
+  24              		.comm	packetUSB,80,4
+  25              		.comm	packetHex,4,4
+  26              		.comm	packetSend,640,4
+  27              		.global	i_usb
+  28 0001 000000   		.align	2
+  29              		.type	i_usb, %object
+  30              		.size	i_usb, 4
+  31              	i_usb:
+  32 0004 00000000 		.space	4
+  33              		.global	i_send
+  34              		.align	2
+  35              		.type	i_send, %object
+  36              		.size	i_send, 4
+  37              	i_send:
+  38 0008 00000000 		.space	4
+  39              		.section	.text.isr_FallingEdgeDetected,"ax",%progbits
+  40              		.align	2
+  41              		.global	isr_FallingEdgeDetected
+  42              		.thumb
+  43              		.thumb_func
+  44              		.type	isr_FallingEdgeDetected, %function
+  45              	isr_FallingEdgeDetected:
+  46              	.LFB56:
+  47              		.file 1 ".\\main.c"
    1:.\main.c      **** /* ========================================
    2:.\main.c      ****  *
    3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
@@ -43,6 +58,9 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 1
    8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
    9:.\main.c      ****  *
   10:.\main.c      ****  * ========================================
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 2
+
+
   11:.\main.c      **** */
   12:.\main.c      **** #include <project.h>
   13:.\main.c      **** #include <stdio.h>
@@ -53,1061 +71,2076 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 1
   18:.\main.c      **** 
   19:.\main.c      **** // the state variable
   20:.\main.c      **** State currentState = IDLE;
-  21:.\main.c      **** 
-  22:.\main.c      **** 
-  23:.\main.c      **** CY_ISR(isr_FallingEdgeDetected)
-  24:.\main.c      **** {	
-  33              		.loc 1 24 0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 2
-
-
-  34              		.cfi_startproc
-  35              		@ args = 0, pretend = 0, frame = 0
-  36              		@ frame_needed = 1, uses_anonymous_args = 0
-  37 0000 80B5     		push	{r7, lr}
-  38              	.LCFI0:
-  39              		.cfi_def_cfa_offset 8
-  40              		.cfi_offset 7, -8
-  41              		.cfi_offset 14, -4
-  42 0002 00AF     		add	r7, sp, #0
-  43              	.LCFI1:
-  44              		.cfi_def_cfa_register 7
-  25:.\main.c      **** 	Timer_BusyToCollision_WriteCounter(11292);
-  45              		.loc 1 25 0
-  46 0004 42F61C40 		movw	r0, #11292
-  47 0008 FFF7FEFF 		bl	Timer_BusyToCollision_WriteCounter
-  26:.\main.c      **** 	currentState = BUSY;
-  48              		.loc 1 26 0
-  49 000c 40F20003 		movw	r3, #:lower16:currentState
-  50 0010 C0F20003 		movt	r3, #:upper16:currentState
-  51 0014 4FF00102 		mov	r2, #1
-  52 0018 1A70     		strb	r2, [r3, #0]
-  27:.\main.c      **** 	Timer_BusyToCollision_Start();
-  53              		.loc 1 27 0
-  54 001a FFF7FEFF 		bl	Timer_BusyToCollision_Start
-  28:.\main.c      **** }
-  55              		.loc 1 28 0
-  56 001e 80BD     		pop	{r7, pc}
-  57              		.cfi_endproc
-  58              	.LFE56:
-  59              		.size	isr_FallingEdgeDetected, .-isr_FallingEdgeDetected
-  60              		.section	.text.isr_RisingEdgeDetected,"ax",%progbits
-  61              		.align	2
-  62              		.global	isr_RisingEdgeDetected
-  63              		.thumb
-  64              		.thumb_func
-  65              		.type	isr_RisingEdgeDetected, %function
-  66              	isr_RisingEdgeDetected:
-  67              	.LFB57:
-  29:.\main.c      **** 
-  30:.\main.c      **** CY_ISR(isr_RisingEdgeDetected)
-  31:.\main.c      **** {
+  21:.\main.c      **** uint8 packetUSB[80];
+  22:.\main.c      **** uint8 *packetHex;
+  23:.\main.c      **** uint8 packetSend[80*8];
+  24:.\main.c      **** int i_usb = 0;
+  25:.\main.c      **** int i_send = 0;
+  26:.\main.c      **** 
+  27:.\main.c      **** CY_ISR(isr_FallingEdgeDetected)
+  28:.\main.c      **** {	
+  48              		.loc 1 28 0
+  49              		.cfi_startproc
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 1, uses_anonymous_args = 0
+  52 0000 80B5     		push	{r7, lr}
+  53              	.LCFI0:
+  54              		.cfi_def_cfa_offset 8
+  55              		.cfi_offset 7, -8
+  56              		.cfi_offset 14, -4
+  57 0002 00AF     		add	r7, sp, #0
+  58              	.LCFI1:
+  59              		.cfi_def_cfa_register 7
+  29:.\main.c      **** 	Timer_BusyToCollision_WriteCounter(11292);
+  60              		.loc 1 29 0
+  61 0004 42F61C40 		movw	r0, #11292
+  62 0008 FFF7FEFF 		bl	Timer_BusyToCollision_WriteCounter
+  30:.\main.c      **** 	currentState = BUSY;
+  63              		.loc 1 30 0
+  64 000c 40F20003 		movw	r3, #:lower16:currentState
+  65 0010 C0F20003 		movt	r3, #:upper16:currentState
+  66 0014 4FF00102 		mov	r2, #1
+  67 0018 1A70     		strb	r2, [r3, #0]
+  31:.\main.c      **** 	Timer_BusyToCollision_Start();
   68              		.loc 1 31 0
-  69              		.cfi_startproc
-  70              		@ args = 0, pretend = 0, frame = 0
-  71              		@ frame_needed = 1, uses_anonymous_args = 0
-  72 0000 80B5     		push	{r7, lr}
-  73              	.LCFI2:
-  74              		.cfi_def_cfa_offset 8
-  75              		.cfi_offset 7, -8
-  76              		.cfi_offset 14, -4
-  77 0002 00AF     		add	r7, sp, #0
-  78              	.LCFI3:
-  79              		.cfi_def_cfa_register 7
-  32:.\main.c      **** 	Timer_BusyToIdle_WriteCounter(11292);
-  80              		.loc 1 32 0
-  81 0004 42F61C40 		movw	r0, #11292
-  82 0008 FFF7FEFF 		bl	Timer_BusyToIdle_WriteCounter
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 3
+  69 001a FFF7FEFF 		bl	Timer_BusyToCollision_Start
+  32:.\main.c      **** }
+  70              		.loc 1 32 0
+  71 001e 80BD     		pop	{r7, pc}
+  72              		.cfi_endproc
+  73              	.LFE56:
+  74              		.size	isr_FallingEdgeDetected, .-isr_FallingEdgeDetected
+  75              		.section	.text.isr_RisingEdgeDetected,"ax",%progbits
+  76              		.align	2
+  77              		.global	isr_RisingEdgeDetected
+  78              		.thumb
+  79              		.thumb_func
+  80              		.type	isr_RisingEdgeDetected, %function
+  81              	isr_RisingEdgeDetected:
+  82              	.LFB57:
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 3
 
 
-  33:.\main.c      **** 	currentState = BUSY;
-  83              		.loc 1 33 0
-  84 000c 40F20003 		movw	r3, #:lower16:currentState
-  85 0010 C0F20003 		movt	r3, #:upper16:currentState
-  86 0014 4FF00102 		mov	r2, #1
-  87 0018 1A70     		strb	r2, [r3, #0]
-  34:.\main.c      **** 	Timer_BusyToIdle_Start();
-  88              		.loc 1 34 0
-  89 001a FFF7FEFF 		bl	Timer_BusyToIdle_Start
-  35:.\main.c      **** }
-  90              		.loc 1 35 0
-  91 001e 80BD     		pop	{r7, pc}
-  92              		.cfi_endproc
-  93              	.LFE57:
-  94              		.size	isr_RisingEdgeDetected, .-isr_RisingEdgeDetected
-  95              		.section	.text.isr_BusyToIdle,"ax",%progbits
-  96              		.align	2
-  97              		.global	isr_BusyToIdle
-  98              		.thumb
-  99              		.thumb_func
- 100              		.type	isr_BusyToIdle, %function
- 101              	isr_BusyToIdle:
- 102              	.LFB58:
-  36:.\main.c      **** 
-  37:.\main.c      **** // Fires when the line has been high too long, Back to Idle
-  38:.\main.c      **** CY_ISR(isr_BusyToIdle)
-  39:.\main.c      **** {
- 103              		.loc 1 39 0
- 104              		.cfi_startproc
- 105              		@ args = 0, pretend = 0, frame = 0
- 106              		@ frame_needed = 1, uses_anonymous_args = 0
- 107 0000 80B5     		push	{r7, lr}
- 108              	.LCFI4:
- 109              		.cfi_def_cfa_offset 8
- 110              		.cfi_offset 7, -8
- 111              		.cfi_offset 14, -4
- 112 0002 00AF     		add	r7, sp, #0
- 113              	.LCFI5:
- 114              		.cfi_def_cfa_register 7
-  40:.\main.c      **** 	Timer_BusyToIdle_WriteCounter(11292);
- 115              		.loc 1 40 0
- 116 0004 42F61C40 		movw	r0, #11292
- 117 0008 FFF7FEFF 		bl	Timer_BusyToIdle_WriteCounter
-  41:.\main.c      **** 	currentState = IDLE;
- 118              		.loc 1 41 0
- 119 000c 40F20003 		movw	r3, #:lower16:currentState
- 120 0010 C0F20003 		movt	r3, #:upper16:currentState
- 121 0014 4FF00002 		mov	r2, #0
- 122 0018 1A70     		strb	r2, [r3, #0]
-  42:.\main.c      **** }
- 123              		.loc 1 42 0
- 124 001a 80BD     		pop	{r7, pc}
- 125              		.cfi_endproc
- 126              	.LFE58:
- 127              		.size	isr_BusyToIdle, .-isr_BusyToIdle
- 128              		.section	.text.isr_BusyToCollision,"ax",%progbits
- 129              		.align	2
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 4
+  33:.\main.c      **** 
+  34:.\main.c      **** CY_ISR(isr_RisingEdgeDetected)
+  35:.\main.c      **** {
+  83              		.loc 1 35 0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 1, uses_anonymous_args = 0
+  87 0000 80B5     		push	{r7, lr}
+  88              	.LCFI2:
+  89              		.cfi_def_cfa_offset 8
+  90              		.cfi_offset 7, -8
+  91              		.cfi_offset 14, -4
+  92 0002 00AF     		add	r7, sp, #0
+  93              	.LCFI3:
+  94              		.cfi_def_cfa_register 7
+  36:.\main.c      **** 	Timer_BusyToIdle_WriteCounter(11292);
+  95              		.loc 1 36 0
+  96 0004 42F61C40 		movw	r0, #11292
+  97 0008 FFF7FEFF 		bl	Timer_BusyToIdle_WriteCounter
+  37:.\main.c      **** 	currentState = BUSY;
+  98              		.loc 1 37 0
+  99 000c 40F20003 		movw	r3, #:lower16:currentState
+ 100 0010 C0F20003 		movt	r3, #:upper16:currentState
+ 101 0014 4FF00102 		mov	r2, #1
+ 102 0018 1A70     		strb	r2, [r3, #0]
+  38:.\main.c      **** 	Timer_BusyToIdle_Start();
+ 103              		.loc 1 38 0
+ 104 001a FFF7FEFF 		bl	Timer_BusyToIdle_Start
+  39:.\main.c      **** }
+ 105              		.loc 1 39 0
+ 106 001e 80BD     		pop	{r7, pc}
+ 107              		.cfi_endproc
+ 108              	.LFE57:
+ 109              		.size	isr_RisingEdgeDetected, .-isr_RisingEdgeDetected
+ 110              		.section	.text.isr_BusyToIdle,"ax",%progbits
+ 111              		.align	2
+ 112              		.global	isr_BusyToIdle
+ 113              		.thumb
+ 114              		.thumb_func
+ 115              		.type	isr_BusyToIdle, %function
+ 116              	isr_BusyToIdle:
+ 117              	.LFB58:
+  40:.\main.c      **** 
+  41:.\main.c      **** // Fires when the line has been high too long, Back to Idle
+  42:.\main.c      **** CY_ISR(isr_BusyToIdle)
+  43:.\main.c      **** {
+ 118              		.loc 1 43 0
+ 119              		.cfi_startproc
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 1, uses_anonymous_args = 0
+ 122 0000 80B5     		push	{r7, lr}
+ 123              	.LCFI4:
+ 124              		.cfi_def_cfa_offset 8
+ 125              		.cfi_offset 7, -8
+ 126              		.cfi_offset 14, -4
+ 127 0002 00AF     		add	r7, sp, #0
+ 128              	.LCFI5:
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 4
 
 
- 130              		.global	isr_BusyToCollision
- 131              		.thumb
- 132              		.thumb_func
- 133              		.type	isr_BusyToCollision, %function
- 134              	isr_BusyToCollision:
- 135              	.LFB59:
-  43:.\main.c      **** 
-  44:.\main.c      **** // Fires when the line has been low too long, Go to Collision
-  45:.\main.c      **** CY_ISR(isr_BusyToCollision)
-  46:.\main.c      **** {
- 136              		.loc 1 46 0
- 137              		.cfi_startproc
- 138              		@ args = 0, pretend = 0, frame = 0
- 139              		@ frame_needed = 1, uses_anonymous_args = 0
- 140 0000 80B5     		push	{r7, lr}
- 141              	.LCFI6:
- 142              		.cfi_def_cfa_offset 8
- 143              		.cfi_offset 7, -8
- 144              		.cfi_offset 14, -4
- 145 0002 00AF     		add	r7, sp, #0
- 146              	.LCFI7:
- 147              		.cfi_def_cfa_register 7
-  47:.\main.c      **** 	Timer_BusyToCollision_WriteCounter(11292);
- 148              		.loc 1 47 0
- 149 0004 42F61C40 		movw	r0, #11292
- 150 0008 FFF7FEFF 		bl	Timer_BusyToCollision_WriteCounter
-  48:.\main.c      **** 	currentState = COLLISION;
- 151              		.loc 1 48 0
- 152 000c 40F20003 		movw	r3, #:lower16:currentState
- 153 0010 C0F20003 		movt	r3, #:upper16:currentState
- 154 0014 4FF00202 		mov	r2, #2
- 155 0018 1A70     		strb	r2, [r3, #0]
-  49:.\main.c      **** }
- 156              		.loc 1 49 0
- 157 001a 80BD     		pop	{r7, pc}
- 158              		.cfi_endproc
- 159              	.LFE59:
- 160              		.size	isr_BusyToCollision, .-isr_BusyToCollision
- 161              		.section	.text.main,"ax",%progbits
- 162              		.align	2
- 163              		.global	main
- 164              		.thumb
- 165              		.thumb_func
- 166              		.type	main, %function
- 167              	main:
- 168              	.LFB60:
-  50:.\main.c      **** 
-  51:.\main.c      **** 
-  52:.\main.c      **** int main()
-  53:.\main.c      **** {
- 169              		.loc 1 53 0
- 170              		.cfi_startproc
- 171              		@ args = 0, pretend = 0, frame = 0
- 172              		@ frame_needed = 1, uses_anonymous_args = 0
- 173 0000 80B5     		push	{r7, lr}
- 174              	.LCFI8:
- 175              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 5
+ 129              		.cfi_def_cfa_register 7
+  44:.\main.c      **** 	Timer_BusyToIdle_WriteCounter(11292);
+ 130              		.loc 1 44 0
+ 131 0004 42F61C40 		movw	r0, #11292
+ 132 0008 FFF7FEFF 		bl	Timer_BusyToIdle_WriteCounter
+  45:.\main.c      **** 	currentState = IDLE;
+ 133              		.loc 1 45 0
+ 134 000c 40F20003 		movw	r3, #:lower16:currentState
+ 135 0010 C0F20003 		movt	r3, #:upper16:currentState
+ 136 0014 4FF00002 		mov	r2, #0
+ 137 0018 1A70     		strb	r2, [r3, #0]
+  46:.\main.c      **** }
+ 138              		.loc 1 46 0
+ 139 001a 80BD     		pop	{r7, pc}
+ 140              		.cfi_endproc
+ 141              	.LFE58:
+ 142              		.size	isr_BusyToIdle, .-isr_BusyToIdle
+ 143              		.section	.text.isr_BusyToCollision,"ax",%progbits
+ 144              		.align	2
+ 145              		.global	isr_BusyToCollision
+ 146              		.thumb
+ 147              		.thumb_func
+ 148              		.type	isr_BusyToCollision, %function
+ 149              	isr_BusyToCollision:
+ 150              	.LFB59:
+  47:.\main.c      **** 
+  48:.\main.c      **** // Fires when the line has been low too long, Go to Collision
+  49:.\main.c      **** CY_ISR(isr_BusyToCollision)
+  50:.\main.c      **** {
+ 151              		.loc 1 50 0
+ 152              		.cfi_startproc
+ 153              		@ args = 0, pretend = 0, frame = 0
+ 154              		@ frame_needed = 1, uses_anonymous_args = 0
+ 155 0000 80B5     		push	{r7, lr}
+ 156              	.LCFI6:
+ 157              		.cfi_def_cfa_offset 8
+ 158              		.cfi_offset 7, -8
+ 159              		.cfi_offset 14, -4
+ 160 0002 00AF     		add	r7, sp, #0
+ 161              	.LCFI7:
+ 162              		.cfi_def_cfa_register 7
+  51:.\main.c      **** 	Timer_BusyToCollision_WriteCounter(11292);
+ 163              		.loc 1 51 0
+ 164 0004 42F61C40 		movw	r0, #11292
+ 165 0008 FFF7FEFF 		bl	Timer_BusyToCollision_WriteCounter
+  52:.\main.c      **** 	currentState = COLLISION;
+ 166              		.loc 1 52 0
+ 167 000c 40F20003 		movw	r3, #:lower16:currentState
+ 168 0010 C0F20003 		movt	r3, #:upper16:currentState
+ 169 0014 4FF00202 		mov	r2, #2
+ 170 0018 1A70     		strb	r2, [r3, #0]
+  53:.\main.c      **** }
+ 171              		.loc 1 53 0
+ 172 001a 80BD     		pop	{r7, pc}
+ 173              		.cfi_endproc
+ 174              	.LFE59:
+ 175              		.size	isr_BusyToCollision, .-isr_BusyToCollision
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 5
 
 
- 176              		.cfi_offset 7, -8
- 177              		.cfi_offset 14, -4
- 178 0002 00AF     		add	r7, sp, #0
- 179              	.LCFI9:
- 180              		.cfi_def_cfa_register 7
-  54:.\main.c      **** 	// Initialize all components
-  55:.\main.c      **** 	init();
- 181              		.loc 1 55 0
- 182 0004 FFF7FEFF 		bl	init
- 183              	.L10:
-  56:.\main.c      **** 	
-  57:.\main.c      **** 	// main program loop
-  58:.\main.c      **** 	for(;;)
-  59:.\main.c      ****     {
-  60:.\main.c      **** 		// these states are switched in the various ISR's
-  61:.\main.c      **** 		switch(currentState)
- 184              		.loc 1 61 0
- 185 0008 40F20003 		movw	r3, #:lower16:currentState
- 186 000c C0F20003 		movt	r3, #:upper16:currentState
- 187 0010 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
- 188 0012 012B     		cmp	r3, #1
- 189 0014 10D0     		beq	.L8
- 190 0016 022B     		cmp	r3, #2
- 191 0018 1BD0     		beq	.L9
- 192 001a 002B     		cmp	r3, #0
- 193 001c 26D1     		bne	.L6
- 194              	.L7:
-  62:.\main.c      **** 		{
-  63:.\main.c      **** 			case IDLE:
-  64:.\main.c      **** 				Pin_LEDBusy_Write(0);			
- 195              		.loc 1 64 0
- 196 001e 4FF00000 		mov	r0, #0
- 197 0022 FFF7FEFF 		bl	Pin_LEDBusy_Write
-  65:.\main.c      **** 				Pin_LEDIdle_Write(1);
- 198              		.loc 1 65 0
- 199 0026 4FF00100 		mov	r0, #1
- 200 002a FFF7FEFF 		bl	Pin_LEDIdle_Write
-  66:.\main.c      **** 				Pin_LEDCollision_Write(0);
- 201              		.loc 1 66 0
- 202 002e 4FF00000 		mov	r0, #0
- 203 0032 FFF7FEFF 		bl	Pin_LEDCollision_Write
-  67:.\main.c      **** 				break;
- 204              		.loc 1 67 0
- 205 0036 19E0     		b	.L6
- 206              	.L8:
-  68:.\main.c      **** 				
-  69:.\main.c      **** 			case BUSY:
-  70:.\main.c      **** 				Pin_LEDBusy_Write(1);			
- 207              		.loc 1 70 0
- 208 0038 4FF00100 		mov	r0, #1
- 209 003c FFF7FEFF 		bl	Pin_LEDBusy_Write
-  71:.\main.c      **** 				Pin_LEDIdle_Write(0);
- 210              		.loc 1 71 0
- 211 0040 4FF00000 		mov	r0, #0
- 212 0044 FFF7FEFF 		bl	Pin_LEDIdle_Write
-  72:.\main.c      **** 				Pin_LEDCollision_Write(0);
- 213              		.loc 1 72 0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 6
+ 176              		.section	.text.isr_sendingData,"ax",%progbits
+ 177              		.align	2
+ 178              		.global	isr_sendingData
+ 179              		.thumb
+ 180              		.thumb_func
+ 181              		.type	isr_sendingData, %function
+ 182              	isr_sendingData:
+ 183              	.LFB60:
+  54:.\main.c      **** 
+  55:.\main.c      **** CY_ISR(isr_sendingData)
+  56:.\main.c      **** {
+ 184              		.loc 1 56 0
+ 185              		.cfi_startproc
+ 186              		@ args = 0, pretend = 0, frame = 0
+ 187              		@ frame_needed = 1, uses_anonymous_args = 0
+ 188 0000 80B5     		push	{r7, lr}
+ 189              	.LCFI8:
+ 190              		.cfi_def_cfa_offset 8
+ 191              		.cfi_offset 7, -8
+ 192              		.cfi_offset 14, -4
+ 193 0002 00AF     		add	r7, sp, #0
+ 194              	.LCFI9:
+ 195              		.cfi_def_cfa_register 7
+  57:.\main.c      **** 	Transm_Output_Write(packetSend[i_send]);
+ 196              		.loc 1 57 0
+ 197 0004 40F20003 		movw	r3, #:lower16:i_send
+ 198 0008 C0F20003 		movt	r3, #:upper16:i_send
+ 199 000c 1A68     		ldr	r2, [r3, #0]
+ 200 000e 40F20003 		movw	r3, #:lower16:packetSend
+ 201 0012 C0F20003 		movt	r3, #:upper16:packetSend
+ 202 0016 9B5C     		ldrb	r3, [r3, r2]	@ zero_extendqisi2
+ 203 0018 1846     		mov	r0, r3
+ 204 001a FFF7FEFF 		bl	Transm_Output_Write
+  58:.\main.c      **** 	i_send++;
+ 205              		.loc 1 58 0
+ 206 001e 40F20003 		movw	r3, #:lower16:i_send
+ 207 0022 C0F20003 		movt	r3, #:upper16:i_send
+ 208 0026 1B68     		ldr	r3, [r3, #0]
+ 209 0028 03F10102 		add	r2, r3, #1
+ 210 002c 40F20003 		movw	r3, #:lower16:i_send
+ 211 0030 C0F20003 		movt	r3, #:upper16:i_send
+ 212 0034 1A60     		str	r2, [r3, #0]
+  59:.\main.c      **** }
+ 213              		.loc 1 59 0
+ 214 0036 80BD     		pop	{r7, pc}
+ 215              		.cfi_endproc
+ 216              	.LFE60:
+ 217              		.size	isr_sendingData, .-isr_sendingData
+ 218              		.section	.rodata
+ 219              		.align	2
+ 220              	.LC0:
+ 221 0000 257800   		.ascii	"%x\000"
+ 222 0003 00       		.section	.text.main,"ax",%progbits
+ 223              		.align	2
+ 224              		.global	main
+ 225              		.thumb
+ 226              		.thumb_func
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 6
 
 
- 214 0048 4FF00000 		mov	r0, #0
- 215 004c FFF7FEFF 		bl	Pin_LEDCollision_Write
-  73:.\main.c      **** 				break;
- 216              		.loc 1 73 0
- 217 0050 0CE0     		b	.L6
- 218              	.L9:
-  74:.\main.c      **** 
-  75:.\main.c      **** 			case COLLISION:			
-  76:.\main.c      **** 				Pin_LEDBusy_Write(0);			
- 219              		.loc 1 76 0
- 220 0052 4FF00000 		mov	r0, #0
- 221 0056 FFF7FEFF 		bl	Pin_LEDBusy_Write
-  77:.\main.c      **** 				Pin_LEDIdle_Write(0);
- 222              		.loc 1 77 0
- 223 005a 4FF00000 		mov	r0, #0
- 224 005e FFF7FEFF 		bl	Pin_LEDIdle_Write
-  78:.\main.c      **** 				Pin_LEDCollision_Write(1);
- 225              		.loc 1 78 0
- 226 0062 4FF00100 		mov	r0, #1
- 227 0066 FFF7FEFF 		bl	Pin_LEDCollision_Write
-  79:.\main.c      **** 				break;
- 228              		.loc 1 79 0
- 229 006a 00BF     		nop
- 230              	.L6:
-  80:.\main.c      **** 		}
-  81:.\main.c      **** 	}
- 231              		.loc 1 81 0
- 232 006c CCE7     		b	.L10
- 233              		.cfi_endproc
- 234              	.LFE60:
- 235              		.size	main, .-main
- 236 006e 00BF     		.section	.text.init,"ax",%progbits
- 237              		.align	2
- 238              		.global	init
- 239              		.thumb
- 240              		.thumb_func
- 241              		.type	init, %function
- 242              	init:
- 243              	.LFB61:
-  82:.\main.c      **** }
-  83:.\main.c      **** 
-  84:.\main.c      **** void init()
-  85:.\main.c      **** {	
- 244              		.loc 1 85 0
- 245              		.cfi_startproc
- 246              		@ args = 0, pretend = 0, frame = 0
- 247              		@ frame_needed = 1, uses_anonymous_args = 0
- 248 0000 80B5     		push	{r7, lr}
- 249              	.LCFI10:
- 250              		.cfi_def_cfa_offset 8
- 251              		.cfi_offset 7, -8
- 252              		.cfi_offset 14, -4
- 253 0002 00AF     		add	r7, sp, #0
- 254              	.LCFI11:
- 255              		.cfi_def_cfa_register 7
-  86:.\main.c      **** 	//Enable Global Interrupts
-  87:.\main.c      **** 	CYGlobalIntEnable;
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 7
+ 227              		.type	main, %function
+ 228              	main:
+ 229              	.LFB61:
+  60:.\main.c      **** 
+  61:.\main.c      **** int main()
+  62:.\main.c      **** {
+ 230              		.loc 1 62 0
+ 231              		.cfi_startproc
+ 232              		@ args = 0, pretend = 0, frame = 16
+ 233              		@ frame_needed = 1, uses_anonymous_args = 0
+ 234 0000 80B5     		push	{r7, lr}
+ 235              	.LCFI10:
+ 236              		.cfi_def_cfa_offset 8
+ 237              		.cfi_offset 7, -8
+ 238              		.cfi_offset 14, -4
+ 239 0002 84B0     		sub	sp, sp, #16
+ 240              	.LCFI11:
+ 241              		.cfi_def_cfa_offset 24
+ 242 0004 00AF     		add	r7, sp, #0
+ 243              	.LCFI12:
+ 244              		.cfi_def_cfa_register 7
+  63:.\main.c      **** 	// Initialize all components
+  64:.\main.c      **** 	init();
+ 245              		.loc 1 64 0
+ 246 0006 FFF7FEFF 		bl	init
+ 247              	.L38:
+  65:.\main.c      **** 	uint16 count;
+  66:.\main.c      **** 	// main program loop
+  67:.\main.c      **** 	for(;;)
+  68:.\main.c      ****     {
+  69:.\main.c      **** 		// these states are switched in the various ISR's
+  70:.\main.c      **** 		switch(currentState)
+ 248              		.loc 1 70 0
+ 249 000a 40F20003 		movw	r3, #:lower16:currentState
+ 250 000e C0F20003 		movt	r3, #:upper16:currentState
+ 251 0012 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 252 0014 012B     		cmp	r3, #1
+ 253 0016 00F00982 		beq	.L9
+ 254 001a 022B     		cmp	r3, #2
+ 255 001c 00F01382 		beq	.L10
+ 256 0020 002B     		cmp	r3, #0
+ 257 0022 40F02082 		bne	.L7
+ 258              	.L8:
+  71:.\main.c      **** 		{
+  72:.\main.c      **** 			case IDLE:
+  73:.\main.c      **** 				Timer_sendData_Stop();
+ 259              		.loc 1 73 0
+ 260 0026 FFF7FEFF 		bl	Timer_sendData_Stop
+  74:.\main.c      **** 				memset(packetSend,  0, (80*8));
+ 261              		.loc 1 74 0
+ 262 002a 40F20000 		movw	r0, #:lower16:packetSend
+ 263 002e C0F20000 		movt	r0, #:upper16:packetSend
+ 264 0032 4FF00001 		mov	r1, #0
+ 265 0036 4FF42072 		mov	r2, #640
+ 266 003a FFF7FEFF 		bl	memset
+  75:.\main.c      **** 				Pin_LEDBusy_Write(0);			
+ 267              		.loc 1 75 0
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 7
 
 
- 256              		.loc 1 87 0
- 257              	@ 87 ".\main.c" 1
- 258 0004 62B6     		CPSIE   i
- 259              	@ 0 "" 2
-  88:.\main.c      **** 	
-  89:.\main.c      **** 	//Init isr
-  90:.\main.c      **** 	isr_BusyToCollision_StartEx(isr_BusyToCollision);
- 260              		.loc 1 90 0
- 261              		.thumb
- 262 0006 40F20000 		movw	r0, #:lower16:isr_BusyToCollision
- 263 000a C0F20000 		movt	r0, #:upper16:isr_BusyToCollision
- 264 000e FFF7FEFF 		bl	isr_BusyToCollision_StartEx
-  91:.\main.c      **** 	isr_BusyToIdle_StartEx(isr_BusyToIdle);
- 265              		.loc 1 91 0
- 266 0012 40F20000 		movw	r0, #:lower16:isr_BusyToIdle
- 267 0016 C0F20000 		movt	r0, #:upper16:isr_BusyToIdle
- 268 001a FFF7FEFF 		bl	isr_BusyToIdle_StartEx
-  92:.\main.c      **** 	
-  93:.\main.c      **** 	isr_RisingEdge_StartEx(isr_RisingEdgeDetected);
- 269              		.loc 1 93 0
- 270 001e 40F20000 		movw	r0, #:lower16:isr_RisingEdgeDetected
- 271 0022 C0F20000 		movt	r0, #:upper16:isr_RisingEdgeDetected
- 272 0026 FFF7FEFF 		bl	isr_RisingEdge_StartEx
-  94:.\main.c      **** 	isr_FallingEdge_StartEx(isr_FallingEdgeDetected);
- 273              		.loc 1 94 0
- 274 002a 40F20000 		movw	r0, #:lower16:isr_FallingEdgeDetected
- 275 002e C0F20000 		movt	r0, #:upper16:isr_FallingEdgeDetected
- 276 0032 FFF7FEFF 		bl	isr_FallingEdge_StartEx
-  95:.\main.c      **** 	
-  96:.\main.c      **** 	//Init Components
-  97:.\main.c      **** 	//Timer_BusyToCollision_Start();
-  98:.\main.c      **** 	//Timer_BusyToIdle_Start();
-  99:.\main.c      **** 	
- 100:.\main.c      **** 	
- 101:.\main.c      **** 	
- 102:.\main.c      **** }...
- 277              		.loc 1 102 0
- 278 0036 80BD     		pop	{r7, pc}
- 279              		.cfi_endproc
- 280              	.LFE61:
- 281              		.size	init, .-init
- 282              		.text
- 283              	.Letext0:
- 284              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4
- 285              		.file 3 ".\\main.h"
- 286              		.file 4 "./Generated_Source/PSoC5/core_cm3.h"
- 287              		.section	.debug_info,"",%progbits
- 288              	.Ldebug_info0:
- 289 0000 6B010000 		.4byte	0x16b
- 290 0004 0200     		.2byte	0x2
- 291 0006 00000000 		.4byte	.Ldebug_abbrev0
- 292 000a 04       		.byte	0x4
- 293 000b 01       		.uleb128 0x1
- 294 000c 90010000 		.4byte	.LASF26
- 295 0010 01       		.byte	0x1
- 296 0011 60000000 		.4byte	.LASF27
- 297 0015 B2000000 		.4byte	.LASF28
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 8
+ 268 003e 4FF00000 		mov	r0, #0
+ 269 0042 FFF7FEFF 		bl	Pin_LEDBusy_Write
+  76:.\main.c      **** 				Pin_LEDIdle_Write(1);
+ 270              		.loc 1 76 0
+ 271 0046 4FF00100 		mov	r0, #1
+ 272 004a FFF7FEFF 		bl	Pin_LEDIdle_Write
+  77:.\main.c      **** 				Pin_LEDCollision_Write(0);
+ 273              		.loc 1 77 0
+ 274 004e 4FF00000 		mov	r0, #0
+ 275 0052 FFF7FEFF 		bl	Pin_LEDCollision_Write
+  78:.\main.c      **** 				
+  79:.\main.c      **** 				//check message from usb
+  80:.\main.c      **** 				if(USB_DataIsReady() != 0u)               /* Check for input data from PC */
+ 276              		.loc 1 80 0
+ 277 0056 FFF7FEFF 		bl	USB_DataIsReady
+ 278 005a 0346     		mov	r3, r0
+ 279 005c 002B     		cmp	r3, #0
+ 280 005e 00F00182 		beq	.L39
+ 281              	.LBB2:
+  81:.\main.c      **** 	        	{   
+  82:.\main.c      **** 		            count = USB_GetAll(packetUSB);           /* Read received data and re-enable OUT endp
+ 282              		.loc 1 82 0
+ 283 0062 40F20000 		movw	r0, #:lower16:packetUSB
+ 284 0066 C0F20000 		movt	r0, #:upper16:packetUSB
+ 285 006a FFF7FEFF 		bl	USB_GetAll
+ 286 006e 0346     		mov	r3, r0
+ 287 0070 FB80     		strh	r3, [r7, #6]	@ movhi
+  83:.\main.c      **** 		            if(count != 0u)
+ 288              		.loc 1 83 0
+ 289 0072 FB88     		ldrh	r3, [r7, #6]
+ 290 0074 002B     		cmp	r3, #0
+ 291 0076 14D0     		beq	.L12
+  84:.\main.c      **** 		            {
+  85:.\main.c      **** 		                while(USB_CDCIsReady() == 0u);    /* Wait till component is ready to send more da
+ 292              		.loc 1 85 0
+ 293 0078 00BF     		nop
+ 294              	.L13:
+ 295              		.loc 1 85 0 is_stmt 0 discriminator 1
+ 296 007a FFF7FEFF 		bl	USB_CDCIsReady
+ 297 007e 0346     		mov	r3, r0
+ 298 0080 002B     		cmp	r3, #0
+ 299 0082 FAD0     		beq	.L13
+  86:.\main.c      **** 		                /* If the last sent packet is exactly maximum packet size, 
+  87:.\main.c      **** 		                *  it shall be followed by a zero-length packet to assure the
+  88:.\main.c      **** 		                *  end of segment is properly identified by the terminal.
+  89:.\main.c      **** 		                */
+  90:.\main.c      **** 		                if(count == 80)
+ 300              		.loc 1 90 0 is_stmt 1
+ 301 0084 FB88     		ldrh	r3, [r7, #6]
+ 302 0086 502B     		cmp	r3, #80
+ 303 0088 0BD1     		bne	.L12
+  91:.\main.c      **** 		                {
+  92:.\main.c      **** 		                    while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more d
+ 304              		.loc 1 92 0
+ 305 008a 00BF     		nop
+ 306              	.L14:
+ 307              		.loc 1 92 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 8
 
 
- 298 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 299 001d 00000000 		.4byte	0
- 300 0021 00000000 		.4byte	0
- 301 0025 00000000 		.4byte	.Ldebug_line0
- 302 0029 02       		.uleb128 0x2
- 303 002a 01       		.byte	0x1
- 304 002b 06       		.byte	0x6
- 305 002c EE010000 		.4byte	.LASF0
- 306 0030 02       		.uleb128 0x2
- 307 0031 01       		.byte	0x1
- 308 0032 08       		.byte	0x8
- 309 0033 52000000 		.4byte	.LASF1
- 310 0037 02       		.uleb128 0x2
- 311 0038 02       		.byte	0x2
- 312 0039 05       		.byte	0x5
- 313 003a 86010000 		.4byte	.LASF2
- 314 003e 02       		.uleb128 0x2
- 315 003f 02       		.byte	0x2
- 316 0040 07       		.byte	0x7
- 317 0041 7B000000 		.4byte	.LASF3
- 318 0045 03       		.uleb128 0x3
- 319 0046 52010000 		.4byte	.LASF17
- 320 004a 02       		.byte	0x2
- 321 004b 4F       		.byte	0x4f
- 322 004c 50000000 		.4byte	0x50
- 323 0050 02       		.uleb128 0x2
- 324 0051 04       		.byte	0x4
- 325 0052 05       		.byte	0x5
- 326 0053 D9010000 		.4byte	.LASF4
- 327 0057 02       		.uleb128 0x2
- 328 0058 04       		.byte	0x4
- 329 0059 07       		.byte	0x7
- 330 005a 69000000 		.4byte	.LASF5
- 331 005e 02       		.uleb128 0x2
- 332 005f 08       		.byte	0x8
- 333 0060 05       		.byte	0x5
- 334 0061 00000000 		.4byte	.LASF6
- 335 0065 02       		.uleb128 0x2
- 336 0066 08       		.byte	0x8
- 337 0067 07       		.byte	0x7
- 338 0068 3B010000 		.4byte	.LASF7
- 339 006c 04       		.uleb128 0x4
- 340 006d 04       		.byte	0x4
- 341 006e 05       		.byte	0x5
- 342 006f 696E7400 		.ascii	"int\000"
- 343 0073 02       		.uleb128 0x2
- 344 0074 04       		.byte	0x4
- 345 0075 07       		.byte	0x7
- 346 0076 2E010000 		.4byte	.LASF8
- 347 007a 02       		.uleb128 0x2
- 348 007b 04       		.byte	0x4
- 349 007c 04       		.byte	0x4
- 350 007d 4C000000 		.4byte	.LASF9
- 351 0081 02       		.uleb128 0x2
- 352 0082 08       		.byte	0x8
- 353 0083 04       		.byte	0x4
- 354 0084 A6000000 		.4byte	.LASF10
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 9
+ 308 008c FFF7FEFF 		bl	USB_CDCIsReady
+ 309 0090 0346     		mov	r3, r0
+ 310 0092 002B     		cmp	r3, #0
+ 311 0094 FAD0     		beq	.L14
+  93:.\main.c      **** 		                    USB_PutData(NULL, 0u);         /* Send zero-length packet to PC */
+ 312              		.loc 1 93 0 is_stmt 1
+ 313 0096 4FF00000 		mov	r0, #0
+ 314 009a 4FF00001 		mov	r1, #0
+ 315 009e FFF7FEFF 		bl	USB_PutData
+ 316              	.L12:
+  94:.\main.c      **** 		                }
+  95:.\main.c      **** 		            }
+  96:.\main.c      **** 					//generate packet and send packet
+  97:.\main.c      **** 					i_send = 0;
+ 317              		.loc 1 97 0
+ 318 00a2 40F20003 		movw	r3, #:lower16:i_send
+ 319 00a6 C0F20003 		movt	r3, #:upper16:i_send
+ 320 00aa 4FF00002 		mov	r2, #0
+ 321 00ae 1A60     		str	r2, [r3, #0]
+  98:.\main.c      **** 					i_usb = 0;
+ 322              		.loc 1 98 0
+ 323 00b0 40F20003 		movw	r3, #:lower16:i_usb
+ 324 00b4 C0F20003 		movt	r3, #:upper16:i_usb
+ 325 00b8 4FF00002 		mov	r2, #0
+ 326 00bc 1A60     		str	r2, [r3, #0]
+  99:.\main.c      **** 					int l;
+ 100:.\main.c      **** 					for(l = 0; l < count; l++)
+ 327              		.loc 1 100 0
+ 328 00be 4FF00003 		mov	r3, #0
+ 329 00c2 FB60     		str	r3, [r7, #12]
+ 330 00c4 AAE1     		b	.L15
+ 331              	.L37:
+ 332              	.LBB3:
+ 101:.\main.c      **** 					{
+ 102:.\main.c      **** 						//convert to hex
+ 103:.\main.c      **** 						sprintf(packetHex, "%x", packetUSB[l]);	
+ 333              		.loc 1 103 0
+ 334 00c6 40F20003 		movw	r3, #:lower16:packetHex
+ 335 00ca C0F20003 		movt	r3, #:upper16:packetHex
+ 336 00ce 1A68     		ldr	r2, [r3, #0]
+ 337 00d0 40F20003 		movw	r3, #:lower16:packetUSB
+ 338 00d4 C0F20003 		movt	r3, #:upper16:packetUSB
+ 339 00d8 F968     		ldr	r1, [r7, #12]
+ 340 00da 5B18     		adds	r3, r3, r1
+ 341 00dc 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 342 00de 1046     		mov	r0, r2
+ 343 00e0 40F20001 		movw	r1, #:lower16:.LC0
+ 344 00e4 C0F20001 		movt	r1, #:upper16:.LC0
+ 345 00e8 1A46     		mov	r2, r3
+ 346 00ea FFF7FEFF 		bl	sprintf
+ 104:.\main.c      **** 						uint8 packetBin[4];
+ 105:.\main.c      **** 						
+ 106:.\main.c      **** 						switch(*packetHex){
+ 347              		.loc 1 106 0
+ 348 00ee 40F20003 		movw	r3, #:lower16:packetHex
+ 349 00f2 C0F20003 		movt	r3, #:upper16:packetHex
+ 350 00f6 1B68     		ldr	r3, [r3, #0]
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 9
 
 
- 355 0088 02       		.uleb128 0x2
- 356 0089 01       		.byte	0x1
- 357 008a 08       		.byte	0x8
- 358 008b 6D010000 		.4byte	.LASF11
- 359 008f 02       		.uleb128 0x2
- 360 0090 04       		.byte	0x4
- 361 0091 07       		.byte	0x7
- 362 0092 5A010000 		.4byte	.LASF12
- 363 0096 02       		.uleb128 0x2
- 364 0097 08       		.byte	0x8
- 365 0098 04       		.byte	0x4
- 366 0099 E2010000 		.4byte	.LASF13
- 367 009d 05       		.uleb128 0x5
- 368 009e 01       		.byte	0x1
- 369 009f 03       		.byte	0x3
- 370 00a0 1D       		.byte	0x1d
- 371 00a1 B8000000 		.4byte	0xb8
- 372 00a5 06       		.uleb128 0x6
- 373 00a6 42000000 		.4byte	.LASF14
- 374 00aa 00       		.sleb128 0
- 375 00ab 06       		.uleb128 0x6
- 376 00ac A1000000 		.4byte	.LASF15
- 377 00b0 01       		.sleb128 1
- 378 00b1 06       		.uleb128 0x6
- 379 00b2 63010000 		.4byte	.LASF16
- 380 00b6 02       		.sleb128 2
- 381 00b7 00       		.byte	0
- 382 00b8 03       		.uleb128 0x3
- 383 00b9 8E000000 		.4byte	.LASF18
- 384 00bd 03       		.byte	0x3
- 385 00be 1D       		.byte	0x1d
- 386 00bf 9D000000 		.4byte	0x9d
- 387 00c3 07       		.uleb128 0x7
- 388 00c4 01       		.byte	0x1
- 389 00c5 0E000000 		.4byte	.LASF19
- 390 00c9 01       		.byte	0x1
- 391 00ca 17       		.byte	0x17
- 392 00cb 01       		.byte	0x1
- 393 00cc 00000000 		.4byte	.LFB56
- 394 00d0 20000000 		.4byte	.LFE56
- 395 00d4 00000000 		.4byte	.LLST0
- 396 00d8 01       		.byte	0x1
- 397 00d9 07       		.uleb128 0x7
- 398 00da 01       		.byte	0x1
- 399 00db 17010000 		.4byte	.LASF20
- 400 00df 01       		.byte	0x1
- 401 00e0 1E       		.byte	0x1e
- 402 00e1 01       		.byte	0x1
- 403 00e2 00000000 		.4byte	.LFB57
- 404 00e6 20000000 		.4byte	.LFE57
- 405 00ea 2C000000 		.4byte	.LLST1
- 406 00ee 01       		.byte	0x1
- 407 00ef 07       		.uleb128 0x7
- 408 00f0 01       		.byte	0x1
- 409 00f1 33000000 		.4byte	.LASF21
- 410 00f5 01       		.byte	0x1
- 411 00f6 26       		.byte	0x26
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 10
+ 351 00f8 1B78     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 352 00fa 462B     		cmp	r3, #70
+ 353 00fc 00F26281 		bhi	.L40
+ 354 0100 01A2     		adr	r2, .L33
+ 355 0102 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 356 0106 00BF     		.align	2
+ 357              	.L33:
+ 358 0108 25020000 		.word	.L17+1
+ 359 010c 3F020000 		.word	.L18+1
+ 360 0110 59020000 		.word	.L19+1
+ 361 0114 73020000 		.word	.L20+1
+ 362 0118 8D020000 		.word	.L21+1
+ 363 011c A7020000 		.word	.L22+1
+ 364 0120 C1020000 		.word	.L23+1
+ 365 0124 DB020000 		.word	.L24+1
+ 366 0128 F5020000 		.word	.L25+1
+ 367 012c 0F030000 		.word	.L26+1
+ 368 0130 C5030000 		.word	.L40+1
+ 369 0134 C5030000 		.word	.L40+1
+ 370 0138 C5030000 		.word	.L40+1
+ 371 013c C5030000 		.word	.L40+1
+ 372 0140 C5030000 		.word	.L40+1
+ 373 0144 C5030000 		.word	.L40+1
+ 374 0148 C5030000 		.word	.L40+1
+ 375 014c C5030000 		.word	.L40+1
+ 376 0150 C5030000 		.word	.L40+1
+ 377 0154 C5030000 		.word	.L40+1
+ 378 0158 C5030000 		.word	.L40+1
+ 379 015c C5030000 		.word	.L40+1
+ 380 0160 C5030000 		.word	.L40+1
+ 381 0164 C5030000 		.word	.L40+1
+ 382 0168 C5030000 		.word	.L40+1
+ 383 016c C5030000 		.word	.L40+1
+ 384 0170 C5030000 		.word	.L40+1
+ 385 0174 C5030000 		.word	.L40+1
+ 386 0178 C5030000 		.word	.L40+1
+ 387 017c C5030000 		.word	.L40+1
+ 388 0180 C5030000 		.word	.L40+1
+ 389 0184 C5030000 		.word	.L40+1
+ 390 0188 C5030000 		.word	.L40+1
+ 391 018c C5030000 		.word	.L40+1
+ 392 0190 C5030000 		.word	.L40+1
+ 393 0194 C5030000 		.word	.L40+1
+ 394 0198 C5030000 		.word	.L40+1
+ 395 019c C5030000 		.word	.L40+1
+ 396 01a0 C5030000 		.word	.L40+1
+ 397 01a4 C5030000 		.word	.L40+1
+ 398 01a8 C5030000 		.word	.L40+1
+ 399 01ac C5030000 		.word	.L40+1
+ 400 01b0 C5030000 		.word	.L40+1
+ 401 01b4 C5030000 		.word	.L40+1
+ 402 01b8 C5030000 		.word	.L40+1
+ 403 01bc C5030000 		.word	.L40+1
+ 404 01c0 C5030000 		.word	.L40+1
+ 405 01c4 C5030000 		.word	.L40+1
+ 406 01c8 C5030000 		.word	.L40+1
+ 407 01cc C5030000 		.word	.L40+1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 10
 
 
- 412 00f7 01       		.byte	0x1
- 413 00f8 00000000 		.4byte	.LFB58
- 414 00fc 1C000000 		.4byte	.LFE58
- 415 0100 58000000 		.4byte	.LLST2
- 416 0104 01       		.byte	0x1
- 417 0105 07       		.uleb128 0x7
- 418 0106 01       		.byte	0x1
- 419 0107 72010000 		.4byte	.LASF22
- 420 010b 01       		.byte	0x1
- 421 010c 2D       		.byte	0x2d
- 422 010d 01       		.byte	0x1
- 423 010e 00000000 		.4byte	.LFB59
- 424 0112 1C000000 		.4byte	.LFE59
- 425 0116 84000000 		.4byte	.LLST3
- 426 011a 01       		.byte	0x1
- 427 011b 08       		.uleb128 0x8
- 428 011c 01       		.byte	0x1
- 429 011d AD000000 		.4byte	.LASF23
- 430 0121 01       		.byte	0x1
- 431 0122 34       		.byte	0x34
- 432 0123 6C000000 		.4byte	0x6c
- 433 0127 00000000 		.4byte	.LFB60
- 434 012b 6E000000 		.4byte	.LFE60
- 435 012f B0000000 		.4byte	.LLST4
- 436 0133 01       		.byte	0x1
- 437 0134 09       		.uleb128 0x9
- 438 0135 01       		.byte	0x1
- 439 0136 47000000 		.4byte	.LASF29
- 440 013a 01       		.byte	0x1
- 441 013b 54       		.byte	0x54
- 442 013c 00000000 		.4byte	.LFB61
- 443 0140 38000000 		.4byte	.LFE61
- 444 0144 DC000000 		.4byte	.LLST5
- 445 0148 01       		.byte	0x1
- 446 0149 0A       		.uleb128 0xa
- 447 014a 94000000 		.4byte	.LASF24
- 448 014e 04       		.byte	0x4
- 449 014f 1606     		.2byte	0x616
- 450 0151 57010000 		.4byte	0x157
- 451 0155 01       		.byte	0x1
- 452 0156 01       		.byte	0x1
- 453 0157 0B       		.uleb128 0xb
- 454 0158 45000000 		.4byte	0x45
- 455 015c 0C       		.uleb128 0xc
- 456 015d 26000000 		.4byte	.LASF25
- 457 0161 01       		.byte	0x1
- 458 0162 14       		.byte	0x14
- 459 0163 B8000000 		.4byte	0xb8
- 460 0167 01       		.byte	0x1
- 461 0168 05       		.byte	0x5
- 462 0169 03       		.byte	0x3
- 463 016a 00000000 		.4byte	currentState
- 464 016e 00       		.byte	0
- 465              		.section	.debug_abbrev,"",%progbits
- 466              	.Ldebug_abbrev0:
- 467 0000 01       		.uleb128 0x1
- 468 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 11
+ 408 01d0 C5030000 		.word	.L40+1
+ 409 01d4 C5030000 		.word	.L40+1
+ 410 01d8 C5030000 		.word	.L40+1
+ 411 01dc C5030000 		.word	.L40+1
+ 412 01e0 C5030000 		.word	.L40+1
+ 413 01e4 C5030000 		.word	.L40+1
+ 414 01e8 C5030000 		.word	.L40+1
+ 415 01ec C5030000 		.word	.L40+1
+ 416 01f0 C5030000 		.word	.L40+1
+ 417 01f4 C5030000 		.word	.L40+1
+ 418 01f8 C5030000 		.word	.L40+1
+ 419 01fc C5030000 		.word	.L40+1
+ 420 0200 C5030000 		.word	.L40+1
+ 421 0204 C5030000 		.word	.L40+1
+ 422 0208 C5030000 		.word	.L40+1
+ 423 020c 29030000 		.word	.L27+1
+ 424 0210 43030000 		.word	.L28+1
+ 425 0214 5D030000 		.word	.L29+1
+ 426 0218 77030000 		.word	.L30+1
+ 427 021c 91030000 		.word	.L31+1
+ 428 0220 AB030000 		.word	.L32+1
+ 429              	.L17:
+ 107:.\main.c      **** 							case 0:
+ 108:.\main.c      **** 								packetBin[0] = 0;
+ 430              		.loc 1 108 0
+ 431 0224 4FF00003 		mov	r3, #0
+ 432 0228 3B70     		strb	r3, [r7, #0]
+ 109:.\main.c      **** 								packetBin[1] = 0;
+ 433              		.loc 1 109 0
+ 434 022a 4FF00003 		mov	r3, #0
+ 435 022e 7B70     		strb	r3, [r7, #1]
+ 110:.\main.c      **** 								packetBin[2] = 0;
+ 436              		.loc 1 110 0
+ 437 0230 4FF00003 		mov	r3, #0
+ 438 0234 BB70     		strb	r3, [r7, #2]
+ 111:.\main.c      **** 								packetBin[3] = 0;
+ 439              		.loc 1 111 0
+ 440 0236 4FF00003 		mov	r3, #0
+ 441 023a FB70     		strb	r3, [r7, #3]
+ 112:.\main.c      **** 								break;
+ 442              		.loc 1 112 0
+ 443 023c C3E0     		b	.L34
+ 444              	.L18:
+ 113:.\main.c      **** 							case 1:
+ 114:.\main.c      **** 								packetBin[0] = 0;
+ 445              		.loc 1 114 0
+ 446 023e 4FF00003 		mov	r3, #0
+ 447 0242 3B70     		strb	r3, [r7, #0]
+ 115:.\main.c      **** 								packetBin[1] = 0;
+ 448              		.loc 1 115 0
+ 449 0244 4FF00003 		mov	r3, #0
+ 450 0248 7B70     		strb	r3, [r7, #1]
+ 116:.\main.c      **** 								packetBin[2] = 0;
+ 451              		.loc 1 116 0
+ 452 024a 4FF00003 		mov	r3, #0
+ 453 024e BB70     		strb	r3, [r7, #2]
+ 117:.\main.c      **** 								packetBin[3] = 1;
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 11
 
 
- 469 0002 01       		.byte	0x1
- 470 0003 25       		.uleb128 0x25
- 471 0004 0E       		.uleb128 0xe
- 472 0005 13       		.uleb128 0x13
- 473 0006 0B       		.uleb128 0xb
- 474 0007 03       		.uleb128 0x3
- 475 0008 0E       		.uleb128 0xe
- 476 0009 1B       		.uleb128 0x1b
- 477 000a 0E       		.uleb128 0xe
- 478 000b 55       		.uleb128 0x55
- 479 000c 06       		.uleb128 0x6
- 480 000d 11       		.uleb128 0x11
- 481 000e 01       		.uleb128 0x1
- 482 000f 52       		.uleb128 0x52
- 483 0010 01       		.uleb128 0x1
- 484 0011 10       		.uleb128 0x10
- 485 0012 06       		.uleb128 0x6
- 486 0013 00       		.byte	0
- 487 0014 00       		.byte	0
- 488 0015 02       		.uleb128 0x2
- 489 0016 24       		.uleb128 0x24
- 490 0017 00       		.byte	0
- 491 0018 0B       		.uleb128 0xb
- 492 0019 0B       		.uleb128 0xb
- 493 001a 3E       		.uleb128 0x3e
- 494 001b 0B       		.uleb128 0xb
- 495 001c 03       		.uleb128 0x3
- 496 001d 0E       		.uleb128 0xe
- 497 001e 00       		.byte	0
- 498 001f 00       		.byte	0
- 499 0020 03       		.uleb128 0x3
- 500 0021 16       		.uleb128 0x16
- 501 0022 00       		.byte	0
- 502 0023 03       		.uleb128 0x3
- 503 0024 0E       		.uleb128 0xe
- 504 0025 3A       		.uleb128 0x3a
- 505 0026 0B       		.uleb128 0xb
- 506 0027 3B       		.uleb128 0x3b
- 507 0028 0B       		.uleb128 0xb
- 508 0029 49       		.uleb128 0x49
- 509 002a 13       		.uleb128 0x13
- 510 002b 00       		.byte	0
- 511 002c 00       		.byte	0
- 512 002d 04       		.uleb128 0x4
- 513 002e 24       		.uleb128 0x24
- 514 002f 00       		.byte	0
- 515 0030 0B       		.uleb128 0xb
- 516 0031 0B       		.uleb128 0xb
- 517 0032 3E       		.uleb128 0x3e
- 518 0033 0B       		.uleb128 0xb
- 519 0034 03       		.uleb128 0x3
- 520 0035 08       		.uleb128 0x8
- 521 0036 00       		.byte	0
- 522 0037 00       		.byte	0
- 523 0038 05       		.uleb128 0x5
- 524 0039 04       		.uleb128 0x4
- 525 003a 01       		.byte	0x1
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 12
+ 454              		.loc 1 117 0
+ 455 0250 4FF00103 		mov	r3, #1
+ 456 0254 FB70     		strb	r3, [r7, #3]
+ 118:.\main.c      **** 								break;
+ 457              		.loc 1 118 0
+ 458 0256 B6E0     		b	.L34
+ 459              	.L19:
+ 119:.\main.c      **** 							case 2:
+ 120:.\main.c      **** 								packetBin[0] = 0;
+ 460              		.loc 1 120 0
+ 461 0258 4FF00003 		mov	r3, #0
+ 462 025c 3B70     		strb	r3, [r7, #0]
+ 121:.\main.c      **** 								packetBin[1] = 0;
+ 463              		.loc 1 121 0
+ 464 025e 4FF00003 		mov	r3, #0
+ 465 0262 7B70     		strb	r3, [r7, #1]
+ 122:.\main.c      **** 								packetBin[2] = 1;
+ 466              		.loc 1 122 0
+ 467 0264 4FF00103 		mov	r3, #1
+ 468 0268 BB70     		strb	r3, [r7, #2]
+ 123:.\main.c      **** 								packetBin[3] = 0;
+ 469              		.loc 1 123 0
+ 470 026a 4FF00003 		mov	r3, #0
+ 471 026e FB70     		strb	r3, [r7, #3]
+ 124:.\main.c      **** 								break;
+ 472              		.loc 1 124 0
+ 473 0270 A9E0     		b	.L34
+ 474              	.L20:
+ 125:.\main.c      **** 							case 3:
+ 126:.\main.c      **** 								packetBin[0] = 0;
+ 475              		.loc 1 126 0
+ 476 0272 4FF00003 		mov	r3, #0
+ 477 0276 3B70     		strb	r3, [r7, #0]
+ 127:.\main.c      **** 								packetBin[1] = 0;
+ 478              		.loc 1 127 0
+ 479 0278 4FF00003 		mov	r3, #0
+ 480 027c 7B70     		strb	r3, [r7, #1]
+ 128:.\main.c      **** 								packetBin[2] = 1;
+ 481              		.loc 1 128 0
+ 482 027e 4FF00103 		mov	r3, #1
+ 483 0282 BB70     		strb	r3, [r7, #2]
+ 129:.\main.c      **** 								packetBin[3] = 1;
+ 484              		.loc 1 129 0
+ 485 0284 4FF00103 		mov	r3, #1
+ 486 0288 FB70     		strb	r3, [r7, #3]
+ 130:.\main.c      **** 								break;
+ 487              		.loc 1 130 0
+ 488 028a 9CE0     		b	.L34
+ 489              	.L21:
+ 131:.\main.c      **** 							case 4:
+ 132:.\main.c      **** 								packetBin[0] = 0;
+ 490              		.loc 1 132 0
+ 491 028c 4FF00003 		mov	r3, #0
+ 492 0290 3B70     		strb	r3, [r7, #0]
+ 133:.\main.c      **** 								packetBin[1] = 1;
+ 493              		.loc 1 133 0
+ 494 0292 4FF00103 		mov	r3, #1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 12
 
 
- 526 003b 0B       		.uleb128 0xb
- 527 003c 0B       		.uleb128 0xb
- 528 003d 3A       		.uleb128 0x3a
- 529 003e 0B       		.uleb128 0xb
- 530 003f 3B       		.uleb128 0x3b
- 531 0040 0B       		.uleb128 0xb
- 532 0041 01       		.uleb128 0x1
- 533 0042 13       		.uleb128 0x13
- 534 0043 00       		.byte	0
- 535 0044 00       		.byte	0
- 536 0045 06       		.uleb128 0x6
- 537 0046 28       		.uleb128 0x28
- 538 0047 00       		.byte	0
- 539 0048 03       		.uleb128 0x3
- 540 0049 0E       		.uleb128 0xe
- 541 004a 1C       		.uleb128 0x1c
- 542 004b 0D       		.uleb128 0xd
- 543 004c 00       		.byte	0
- 544 004d 00       		.byte	0
- 545 004e 07       		.uleb128 0x7
- 546 004f 2E       		.uleb128 0x2e
- 547 0050 00       		.byte	0
- 548 0051 3F       		.uleb128 0x3f
- 549 0052 0C       		.uleb128 0xc
- 550 0053 03       		.uleb128 0x3
- 551 0054 0E       		.uleb128 0xe
- 552 0055 3A       		.uleb128 0x3a
- 553 0056 0B       		.uleb128 0xb
- 554 0057 3B       		.uleb128 0x3b
- 555 0058 0B       		.uleb128 0xb
- 556 0059 27       		.uleb128 0x27
- 557 005a 0C       		.uleb128 0xc
- 558 005b 11       		.uleb128 0x11
- 559 005c 01       		.uleb128 0x1
- 560 005d 12       		.uleb128 0x12
- 561 005e 01       		.uleb128 0x1
- 562 005f 40       		.uleb128 0x40
- 563 0060 06       		.uleb128 0x6
- 564 0061 9642     		.uleb128 0x2116
- 565 0063 0C       		.uleb128 0xc
- 566 0064 00       		.byte	0
- 567 0065 00       		.byte	0
- 568 0066 08       		.uleb128 0x8
- 569 0067 2E       		.uleb128 0x2e
- 570 0068 00       		.byte	0
- 571 0069 3F       		.uleb128 0x3f
- 572 006a 0C       		.uleb128 0xc
- 573 006b 03       		.uleb128 0x3
- 574 006c 0E       		.uleb128 0xe
- 575 006d 3A       		.uleb128 0x3a
- 576 006e 0B       		.uleb128 0xb
- 577 006f 3B       		.uleb128 0x3b
- 578 0070 0B       		.uleb128 0xb
- 579 0071 49       		.uleb128 0x49
- 580 0072 13       		.uleb128 0x13
- 581 0073 11       		.uleb128 0x11
- 582 0074 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 13
+ 495 0296 7B70     		strb	r3, [r7, #1]
+ 134:.\main.c      **** 								packetBin[2] = 0;
+ 496              		.loc 1 134 0
+ 497 0298 4FF00003 		mov	r3, #0
+ 498 029c BB70     		strb	r3, [r7, #2]
+ 135:.\main.c      **** 								packetBin[3] = 0;
+ 499              		.loc 1 135 0
+ 500 029e 4FF00003 		mov	r3, #0
+ 501 02a2 FB70     		strb	r3, [r7, #3]
+ 136:.\main.c      **** 								break;
+ 502              		.loc 1 136 0
+ 503 02a4 8FE0     		b	.L34
+ 504              	.L22:
+ 137:.\main.c      **** 							case 5:
+ 138:.\main.c      **** 								packetBin[0] = 0;
+ 505              		.loc 1 138 0
+ 506 02a6 4FF00003 		mov	r3, #0
+ 507 02aa 3B70     		strb	r3, [r7, #0]
+ 139:.\main.c      **** 								packetBin[1] = 1;
+ 508              		.loc 1 139 0
+ 509 02ac 4FF00103 		mov	r3, #1
+ 510 02b0 7B70     		strb	r3, [r7, #1]
+ 140:.\main.c      **** 								packetBin[2] = 0;
+ 511              		.loc 1 140 0
+ 512 02b2 4FF00003 		mov	r3, #0
+ 513 02b6 BB70     		strb	r3, [r7, #2]
+ 141:.\main.c      **** 								packetBin[3] = 1;
+ 514              		.loc 1 141 0
+ 515 02b8 4FF00103 		mov	r3, #1
+ 516 02bc FB70     		strb	r3, [r7, #3]
+ 142:.\main.c      **** 								break;
+ 517              		.loc 1 142 0
+ 518 02be 82E0     		b	.L34
+ 519              	.L23:
+ 143:.\main.c      **** 							case 6:
+ 144:.\main.c      **** 								packetBin[0] = 0;
+ 520              		.loc 1 144 0
+ 521 02c0 4FF00003 		mov	r3, #0
+ 522 02c4 3B70     		strb	r3, [r7, #0]
+ 145:.\main.c      **** 								packetBin[1] = 1;
+ 523              		.loc 1 145 0
+ 524 02c6 4FF00103 		mov	r3, #1
+ 525 02ca 7B70     		strb	r3, [r7, #1]
+ 146:.\main.c      **** 								packetBin[2] = 1;
+ 526              		.loc 1 146 0
+ 527 02cc 4FF00103 		mov	r3, #1
+ 528 02d0 BB70     		strb	r3, [r7, #2]
+ 147:.\main.c      **** 								packetBin[3] = 0;
+ 529              		.loc 1 147 0
+ 530 02d2 4FF00003 		mov	r3, #0
+ 531 02d6 FB70     		strb	r3, [r7, #3]
+ 148:.\main.c      **** 								break;
+ 532              		.loc 1 148 0
+ 533 02d8 75E0     		b	.L34
+ 534              	.L24:
+ 149:.\main.c      **** 							case 7:
+ 150:.\main.c      **** 								packetBin[0] = 0;
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 13
 
 
- 583 0075 12       		.uleb128 0x12
- 584 0076 01       		.uleb128 0x1
- 585 0077 40       		.uleb128 0x40
- 586 0078 06       		.uleb128 0x6
- 587 0079 9642     		.uleb128 0x2116
- 588 007b 0C       		.uleb128 0xc
- 589 007c 00       		.byte	0
- 590 007d 00       		.byte	0
- 591 007e 09       		.uleb128 0x9
- 592 007f 2E       		.uleb128 0x2e
- 593 0080 00       		.byte	0
- 594 0081 3F       		.uleb128 0x3f
- 595 0082 0C       		.uleb128 0xc
- 596 0083 03       		.uleb128 0x3
- 597 0084 0E       		.uleb128 0xe
- 598 0085 3A       		.uleb128 0x3a
- 599 0086 0B       		.uleb128 0xb
- 600 0087 3B       		.uleb128 0x3b
- 601 0088 0B       		.uleb128 0xb
- 602 0089 11       		.uleb128 0x11
- 603 008a 01       		.uleb128 0x1
- 604 008b 12       		.uleb128 0x12
- 605 008c 01       		.uleb128 0x1
- 606 008d 40       		.uleb128 0x40
- 607 008e 06       		.uleb128 0x6
- 608 008f 9642     		.uleb128 0x2116
- 609 0091 0C       		.uleb128 0xc
- 610 0092 00       		.byte	0
- 611 0093 00       		.byte	0
- 612 0094 0A       		.uleb128 0xa
- 613 0095 34       		.uleb128 0x34
- 614 0096 00       		.byte	0
- 615 0097 03       		.uleb128 0x3
- 616 0098 0E       		.uleb128 0xe
- 617 0099 3A       		.uleb128 0x3a
- 618 009a 0B       		.uleb128 0xb
- 619 009b 3B       		.uleb128 0x3b
- 620 009c 05       		.uleb128 0x5
- 621 009d 49       		.uleb128 0x49
- 622 009e 13       		.uleb128 0x13
- 623 009f 3F       		.uleb128 0x3f
- 624 00a0 0C       		.uleb128 0xc
- 625 00a1 3C       		.uleb128 0x3c
- 626 00a2 0C       		.uleb128 0xc
- 627 00a3 00       		.byte	0
- 628 00a4 00       		.byte	0
- 629 00a5 0B       		.uleb128 0xb
- 630 00a6 35       		.uleb128 0x35
- 631 00a7 00       		.byte	0
- 632 00a8 49       		.uleb128 0x49
- 633 00a9 13       		.uleb128 0x13
- 634 00aa 00       		.byte	0
- 635 00ab 00       		.byte	0
- 636 00ac 0C       		.uleb128 0xc
- 637 00ad 34       		.uleb128 0x34
- 638 00ae 00       		.byte	0
- 639 00af 03       		.uleb128 0x3
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 14
+ 535              		.loc 1 150 0
+ 536 02da 4FF00003 		mov	r3, #0
+ 537 02de 3B70     		strb	r3, [r7, #0]
+ 151:.\main.c      **** 								packetBin[1] = 1;
+ 538              		.loc 1 151 0
+ 539 02e0 4FF00103 		mov	r3, #1
+ 540 02e4 7B70     		strb	r3, [r7, #1]
+ 152:.\main.c      **** 								packetBin[2] = 1;
+ 541              		.loc 1 152 0
+ 542 02e6 4FF00103 		mov	r3, #1
+ 543 02ea BB70     		strb	r3, [r7, #2]
+ 153:.\main.c      **** 								packetBin[3] = 1;
+ 544              		.loc 1 153 0
+ 545 02ec 4FF00103 		mov	r3, #1
+ 546 02f0 FB70     		strb	r3, [r7, #3]
+ 154:.\main.c      **** 								break;
+ 547              		.loc 1 154 0
+ 548 02f2 68E0     		b	.L34
+ 549              	.L25:
+ 155:.\main.c      **** 							case 8:
+ 156:.\main.c      **** 								packetBin[0] = 1;
+ 550              		.loc 1 156 0
+ 551 02f4 4FF00103 		mov	r3, #1
+ 552 02f8 3B70     		strb	r3, [r7, #0]
+ 157:.\main.c      **** 								packetBin[1] = 0;
+ 553              		.loc 1 157 0
+ 554 02fa 4FF00003 		mov	r3, #0
+ 555 02fe 7B70     		strb	r3, [r7, #1]
+ 158:.\main.c      **** 								packetBin[2] = 0;
+ 556              		.loc 1 158 0
+ 557 0300 4FF00003 		mov	r3, #0
+ 558 0304 BB70     		strb	r3, [r7, #2]
+ 159:.\main.c      **** 								packetBin[3] = 0;
+ 559              		.loc 1 159 0
+ 560 0306 4FF00003 		mov	r3, #0
+ 561 030a FB70     		strb	r3, [r7, #3]
+ 160:.\main.c      **** 								break;
+ 562              		.loc 1 160 0
+ 563 030c 5BE0     		b	.L34
+ 564              	.L26:
+ 161:.\main.c      **** 							case 9:
+ 162:.\main.c      **** 								packetBin[0] = 1;
+ 565              		.loc 1 162 0
+ 566 030e 4FF00103 		mov	r3, #1
+ 567 0312 3B70     		strb	r3, [r7, #0]
+ 163:.\main.c      **** 								packetBin[1] = 0;
+ 568              		.loc 1 163 0
+ 569 0314 4FF00003 		mov	r3, #0
+ 570 0318 7B70     		strb	r3, [r7, #1]
+ 164:.\main.c      **** 								packetBin[2] = 0;
+ 571              		.loc 1 164 0
+ 572 031a 4FF00003 		mov	r3, #0
+ 573 031e BB70     		strb	r3, [r7, #2]
+ 165:.\main.c      **** 								packetBin[3] = 1;
+ 574              		.loc 1 165 0
+ 575 0320 4FF00103 		mov	r3, #1
+ 576 0324 FB70     		strb	r3, [r7, #3]
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 14
 
 
- 640 00b0 0E       		.uleb128 0xe
- 641 00b1 3A       		.uleb128 0x3a
- 642 00b2 0B       		.uleb128 0xb
- 643 00b3 3B       		.uleb128 0x3b
- 644 00b4 0B       		.uleb128 0xb
- 645 00b5 49       		.uleb128 0x49
- 646 00b6 13       		.uleb128 0x13
- 647 00b7 3F       		.uleb128 0x3f
- 648 00b8 0C       		.uleb128 0xc
- 649 00b9 02       		.uleb128 0x2
- 650 00ba 0A       		.uleb128 0xa
- 651 00bb 00       		.byte	0
- 652 00bc 00       		.byte	0
- 653 00bd 00       		.byte	0
- 654              		.section	.debug_loc,"",%progbits
- 655              	.Ldebug_loc0:
- 656              	.LLST0:
- 657 0000 00000000 		.4byte	.LFB56
- 658 0004 02000000 		.4byte	.LCFI0
- 659 0008 0200     		.2byte	0x2
- 660 000a 7D       		.byte	0x7d
- 661 000b 00       		.sleb128 0
- 662 000c 02000000 		.4byte	.LCFI0
- 663 0010 04000000 		.4byte	.LCFI1
- 664 0014 0200     		.2byte	0x2
- 665 0016 7D       		.byte	0x7d
- 666 0017 08       		.sleb128 8
- 667 0018 04000000 		.4byte	.LCFI1
- 668 001c 20000000 		.4byte	.LFE56
- 669 0020 0200     		.2byte	0x2
- 670 0022 77       		.byte	0x77
- 671 0023 08       		.sleb128 8
- 672 0024 00000000 		.4byte	0
- 673 0028 00000000 		.4byte	0
- 674              	.LLST1:
- 675 002c 00000000 		.4byte	.LFB57
- 676 0030 02000000 		.4byte	.LCFI2
- 677 0034 0200     		.2byte	0x2
- 678 0036 7D       		.byte	0x7d
- 679 0037 00       		.sleb128 0
- 680 0038 02000000 		.4byte	.LCFI2
- 681 003c 04000000 		.4byte	.LCFI3
- 682 0040 0200     		.2byte	0x2
- 683 0042 7D       		.byte	0x7d
- 684 0043 08       		.sleb128 8
- 685 0044 04000000 		.4byte	.LCFI3
- 686 0048 20000000 		.4byte	.LFE57
- 687 004c 0200     		.2byte	0x2
- 688 004e 77       		.byte	0x77
- 689 004f 08       		.sleb128 8
- 690 0050 00000000 		.4byte	0
- 691 0054 00000000 		.4byte	0
- 692              	.LLST2:
- 693 0058 00000000 		.4byte	.LFB58
- 694 005c 02000000 		.4byte	.LCFI4
- 695 0060 0200     		.2byte	0x2
- 696 0062 7D       		.byte	0x7d
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 15
+ 166:.\main.c      **** 								break;
+ 577              		.loc 1 166 0
+ 578 0326 4EE0     		b	.L34
+ 579              	.L27:
+ 167:.\main.c      **** 							case 'A':
+ 168:.\main.c      **** 								packetBin[0] = 1;
+ 580              		.loc 1 168 0
+ 581 0328 4FF00103 		mov	r3, #1
+ 582 032c 3B70     		strb	r3, [r7, #0]
+ 169:.\main.c      **** 								packetBin[1] = 0;
+ 583              		.loc 1 169 0
+ 584 032e 4FF00003 		mov	r3, #0
+ 585 0332 7B70     		strb	r3, [r7, #1]
+ 170:.\main.c      **** 								packetBin[2] = 1;
+ 586              		.loc 1 170 0
+ 587 0334 4FF00103 		mov	r3, #1
+ 588 0338 BB70     		strb	r3, [r7, #2]
+ 171:.\main.c      **** 								packetBin[3] = 0;
+ 589              		.loc 1 171 0
+ 590 033a 4FF00003 		mov	r3, #0
+ 591 033e FB70     		strb	r3, [r7, #3]
+ 172:.\main.c      **** 								break;
+ 592              		.loc 1 172 0
+ 593 0340 41E0     		b	.L34
+ 594              	.L28:
+ 173:.\main.c      **** 							case 'B':
+ 174:.\main.c      **** 								packetBin[0] = 1;
+ 595              		.loc 1 174 0
+ 596 0342 4FF00103 		mov	r3, #1
+ 597 0346 3B70     		strb	r3, [r7, #0]
+ 175:.\main.c      **** 								packetBin[1] = 0;
+ 598              		.loc 1 175 0
+ 599 0348 4FF00003 		mov	r3, #0
+ 600 034c 7B70     		strb	r3, [r7, #1]
+ 176:.\main.c      **** 								packetBin[2] = 1;
+ 601              		.loc 1 176 0
+ 602 034e 4FF00103 		mov	r3, #1
+ 603 0352 BB70     		strb	r3, [r7, #2]
+ 177:.\main.c      **** 								packetBin[3] = 1;
+ 604              		.loc 1 177 0
+ 605 0354 4FF00103 		mov	r3, #1
+ 606 0358 FB70     		strb	r3, [r7, #3]
+ 178:.\main.c      **** 								break;
+ 607              		.loc 1 178 0
+ 608 035a 34E0     		b	.L34
+ 609              	.L29:
+ 179:.\main.c      **** 							case 'C':
+ 180:.\main.c      **** 								packetBin[0] = 1;
+ 610              		.loc 1 180 0
+ 611 035c 4FF00103 		mov	r3, #1
+ 612 0360 3B70     		strb	r3, [r7, #0]
+ 181:.\main.c      **** 								packetBin[1] = 1;
+ 613              		.loc 1 181 0
+ 614 0362 4FF00103 		mov	r3, #1
+ 615 0366 7B70     		strb	r3, [r7, #1]
+ 182:.\main.c      **** 								packetBin[2] = 0;
+ 616              		.loc 1 182 0
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 15
 
 
- 697 0063 00       		.sleb128 0
- 698 0064 02000000 		.4byte	.LCFI4
- 699 0068 04000000 		.4byte	.LCFI5
- 700 006c 0200     		.2byte	0x2
- 701 006e 7D       		.byte	0x7d
- 702 006f 08       		.sleb128 8
- 703 0070 04000000 		.4byte	.LCFI5
- 704 0074 1C000000 		.4byte	.LFE58
- 705 0078 0200     		.2byte	0x2
- 706 007a 77       		.byte	0x77
- 707 007b 08       		.sleb128 8
- 708 007c 00000000 		.4byte	0
- 709 0080 00000000 		.4byte	0
- 710              	.LLST3:
- 711 0084 00000000 		.4byte	.LFB59
- 712 0088 02000000 		.4byte	.LCFI6
- 713 008c 0200     		.2byte	0x2
- 714 008e 7D       		.byte	0x7d
- 715 008f 00       		.sleb128 0
- 716 0090 02000000 		.4byte	.LCFI6
- 717 0094 04000000 		.4byte	.LCFI7
- 718 0098 0200     		.2byte	0x2
- 719 009a 7D       		.byte	0x7d
- 720 009b 08       		.sleb128 8
- 721 009c 04000000 		.4byte	.LCFI7
- 722 00a0 1C000000 		.4byte	.LFE59
- 723 00a4 0200     		.2byte	0x2
- 724 00a6 77       		.byte	0x77
- 725 00a7 08       		.sleb128 8
- 726 00a8 00000000 		.4byte	0
- 727 00ac 00000000 		.4byte	0
- 728              	.LLST4:
- 729 00b0 00000000 		.4byte	.LFB60
- 730 00b4 02000000 		.4byte	.LCFI8
- 731 00b8 0200     		.2byte	0x2
- 732 00ba 7D       		.byte	0x7d
- 733 00bb 00       		.sleb128 0
- 734 00bc 02000000 		.4byte	.LCFI8
- 735 00c0 04000000 		.4byte	.LCFI9
- 736 00c4 0200     		.2byte	0x2
- 737 00c6 7D       		.byte	0x7d
- 738 00c7 08       		.sleb128 8
- 739 00c8 04000000 		.4byte	.LCFI9
- 740 00cc 6E000000 		.4byte	.LFE60
- 741 00d0 0200     		.2byte	0x2
- 742 00d2 77       		.byte	0x77
- 743 00d3 08       		.sleb128 8
- 744 00d4 00000000 		.4byte	0
- 745 00d8 00000000 		.4byte	0
- 746              	.LLST5:
- 747 00dc 00000000 		.4byte	.LFB61
- 748 00e0 02000000 		.4byte	.LCFI10
- 749 00e4 0200     		.2byte	0x2
- 750 00e6 7D       		.byte	0x7d
- 751 00e7 00       		.sleb128 0
- 752 00e8 02000000 		.4byte	.LCFI10
- 753 00ec 04000000 		.4byte	.LCFI11
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 16
+ 617 0368 4FF00003 		mov	r3, #0
+ 618 036c BB70     		strb	r3, [r7, #2]
+ 183:.\main.c      **** 								packetBin[3] = 0;
+ 619              		.loc 1 183 0
+ 620 036e 4FF00003 		mov	r3, #0
+ 621 0372 FB70     		strb	r3, [r7, #3]
+ 184:.\main.c      **** 								break;
+ 622              		.loc 1 184 0
+ 623 0374 27E0     		b	.L34
+ 624              	.L30:
+ 185:.\main.c      **** 							case 'D':
+ 186:.\main.c      **** 								packetBin[0] = 1;
+ 625              		.loc 1 186 0
+ 626 0376 4FF00103 		mov	r3, #1
+ 627 037a 3B70     		strb	r3, [r7, #0]
+ 187:.\main.c      **** 								packetBin[1] = 1;
+ 628              		.loc 1 187 0
+ 629 037c 4FF00103 		mov	r3, #1
+ 630 0380 7B70     		strb	r3, [r7, #1]
+ 188:.\main.c      **** 								packetBin[2] = 0;
+ 631              		.loc 1 188 0
+ 632 0382 4FF00003 		mov	r3, #0
+ 633 0386 BB70     		strb	r3, [r7, #2]
+ 189:.\main.c      **** 								packetBin[3] = 1;
+ 634              		.loc 1 189 0
+ 635 0388 4FF00103 		mov	r3, #1
+ 636 038c FB70     		strb	r3, [r7, #3]
+ 190:.\main.c      **** 								break;
+ 637              		.loc 1 190 0
+ 638 038e 1AE0     		b	.L34
+ 639              	.L31:
+ 191:.\main.c      **** 							case 'E':
+ 192:.\main.c      **** 								packetBin[0] = 1;
+ 640              		.loc 1 192 0
+ 641 0390 4FF00103 		mov	r3, #1
+ 642 0394 3B70     		strb	r3, [r7, #0]
+ 193:.\main.c      **** 								packetBin[1] = 1;
+ 643              		.loc 1 193 0
+ 644 0396 4FF00103 		mov	r3, #1
+ 645 039a 7B70     		strb	r3, [r7, #1]
+ 194:.\main.c      **** 								packetBin[2] = 1;
+ 646              		.loc 1 194 0
+ 647 039c 4FF00103 		mov	r3, #1
+ 648 03a0 BB70     		strb	r3, [r7, #2]
+ 195:.\main.c      **** 								packetBin[3] = 0;
+ 649              		.loc 1 195 0
+ 650 03a2 4FF00003 		mov	r3, #0
+ 651 03a6 FB70     		strb	r3, [r7, #3]
+ 196:.\main.c      **** 								break;
+ 652              		.loc 1 196 0
+ 653 03a8 0DE0     		b	.L34
+ 654              	.L32:
+ 197:.\main.c      **** 							case 'F':
+ 198:.\main.c      **** 								packetBin[0] = 1;
+ 655              		.loc 1 198 0
+ 656 03aa 4FF00103 		mov	r3, #1
+ 657 03ae 3B70     		strb	r3, [r7, #0]
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 16
 
 
- 754 00f0 0200     		.2byte	0x2
- 755 00f2 7D       		.byte	0x7d
- 756 00f3 08       		.sleb128 8
- 757 00f4 04000000 		.4byte	.LCFI11
- 758 00f8 38000000 		.4byte	.LFE61
- 759 00fc 0200     		.2byte	0x2
- 760 00fe 77       		.byte	0x77
- 761 00ff 08       		.sleb128 8
- 762 0100 00000000 		.4byte	0
- 763 0104 00000000 		.4byte	0
- 764              		.section	.debug_aranges,"",%progbits
- 765 0000 44000000 		.4byte	0x44
- 766 0004 0200     		.2byte	0x2
- 767 0006 00000000 		.4byte	.Ldebug_info0
- 768 000a 04       		.byte	0x4
- 769 000b 00       		.byte	0
- 770 000c 0000     		.2byte	0
- 771 000e 0000     		.2byte	0
- 772 0010 00000000 		.4byte	.LFB56
- 773 0014 20000000 		.4byte	.LFE56-.LFB56
- 774 0018 00000000 		.4byte	.LFB57
- 775 001c 20000000 		.4byte	.LFE57-.LFB57
- 776 0020 00000000 		.4byte	.LFB58
- 777 0024 1C000000 		.4byte	.LFE58-.LFB58
- 778 0028 00000000 		.4byte	.LFB59
- 779 002c 1C000000 		.4byte	.LFE59-.LFB59
- 780 0030 00000000 		.4byte	.LFB60
- 781 0034 6E000000 		.4byte	.LFE60-.LFB60
- 782 0038 00000000 		.4byte	.LFB61
- 783 003c 38000000 		.4byte	.LFE61-.LFB61
- 784 0040 00000000 		.4byte	0
- 785 0044 00000000 		.4byte	0
- 786              		.section	.debug_ranges,"",%progbits
- 787              	.Ldebug_ranges0:
- 788 0000 00000000 		.4byte	.LFB56
- 789 0004 20000000 		.4byte	.LFE56
- 790 0008 00000000 		.4byte	.LFB57
- 791 000c 20000000 		.4byte	.LFE57
- 792 0010 00000000 		.4byte	.LFB58
- 793 0014 1C000000 		.4byte	.LFE58
- 794 0018 00000000 		.4byte	.LFB59
- 795 001c 1C000000 		.4byte	.LFE59
- 796 0020 00000000 		.4byte	.LFB60
- 797 0024 6E000000 		.4byte	.LFE60
- 798 0028 00000000 		.4byte	.LFB61
- 799 002c 38000000 		.4byte	.LFE61
- 800 0030 00000000 		.4byte	0
- 801 0034 00000000 		.4byte	0
- 802              		.section	.debug_line,"",%progbits
- 803              	.Ldebug_line0:
- 804 0000 7C010000 		.section	.debug_str,"MS",%progbits,1
- 804      0200F800 
- 804      00000201 
- 804      FB0E0D00 
- 804      01010101 
- 805              	.LASF6:
- 806 0000 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 17
+ 199:.\main.c      **** 								packetBin[1] = 1;
+ 658              		.loc 1 199 0
+ 659 03b0 4FF00103 		mov	r3, #1
+ 660 03b4 7B70     		strb	r3, [r7, #1]
+ 200:.\main.c      **** 								packetBin[2] = 1;
+ 661              		.loc 1 200 0
+ 662 03b6 4FF00103 		mov	r3, #1
+ 663 03ba BB70     		strb	r3, [r7, #2]
+ 201:.\main.c      **** 								packetBin[3] = 1;
+ 664              		.loc 1 201 0
+ 665 03bc 4FF00103 		mov	r3, #1
+ 666 03c0 FB70     		strb	r3, [r7, #3]
+ 202:.\main.c      **** 								break;
+ 667              		.loc 1 202 0
+ 668 03c2 00E0     		b	.L34
+ 669              	.L40:
+ 203:.\main.c      **** 							default:
+ 204:.\main.c      **** 								break;
+ 670              		.loc 1 204 0
+ 671 03c4 00BF     		nop
+ 672              	.L34:
+ 205:.\main.c      **** 						}
+ 206:.\main.c      **** 						int l2;
+ 207:.\main.c      **** 						for(l2 = 0; l2 <4; l2++)
+ 673              		.loc 1 207 0
+ 674 03c6 4FF00003 		mov	r3, #0
+ 675 03ca BB60     		str	r3, [r7, #8]
+ 676 03cc 13E0     		b	.L35
+ 677              	.L36:
+ 208:.\main.c      **** 						{
+ 209:.\main.c      **** 							packetSend[i_send + l2] = packetBin[l2]; 	
+ 678              		.loc 1 209 0 discriminator 2
+ 679 03ce 40F20003 		movw	r3, #:lower16:i_send
+ 680 03d2 C0F20003 		movt	r3, #:upper16:i_send
+ 681 03d6 1A68     		ldr	r2, [r3, #0]
+ 682 03d8 BB68     		ldr	r3, [r7, #8]
+ 683 03da D218     		adds	r2, r2, r3
+ 684 03dc 3946     		mov	r1, r7
+ 685 03de BB68     		ldr	r3, [r7, #8]
+ 686 03e0 CB18     		adds	r3, r1, r3
+ 687 03e2 1978     		ldrb	r1, [r3, #0]	@ zero_extendqisi2
+ 688 03e4 40F20003 		movw	r3, #:lower16:packetSend
+ 689 03e8 C0F20003 		movt	r3, #:upper16:packetSend
+ 690 03ec 9954     		strb	r1, [r3, r2]
+ 207:.\main.c      **** 						for(l2 = 0; l2 <4; l2++)
+ 691              		.loc 1 207 0 discriminator 2
+ 692 03ee BB68     		ldr	r3, [r7, #8]
+ 693 03f0 03F10103 		add	r3, r3, #1
+ 694 03f4 BB60     		str	r3, [r7, #8]
+ 695              	.L35:
+ 207:.\main.c      **** 						for(l2 = 0; l2 <4; l2++)
+ 696              		.loc 1 207 0 is_stmt 0 discriminator 1
+ 697 03f6 BB68     		ldr	r3, [r7, #8]
+ 698 03f8 032B     		cmp	r3, #3
+ 699 03fa E8DD     		ble	.L36
+ 210:.\main.c      **** 						}
+ 211:.\main.c      **** 						i_send++;
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 17
 
 
- 806      206C6F6E 
- 806      6720696E 
- 806      7400
- 807              	.LASF19:
- 808 000e 6973725F 		.ascii	"isr_FallingEdgeDetected\000"
- 808      46616C6C 
- 808      696E6745 
- 808      64676544 
- 808      65746563 
- 809              	.LASF25:
- 810 0026 63757272 		.ascii	"currentState\000"
- 810      656E7453 
- 810      74617465 
- 810      00
- 811              	.LASF21:
- 812 0033 6973725F 		.ascii	"isr_BusyToIdle\000"
- 812      42757379 
- 812      546F4964 
- 812      6C6500
- 813              	.LASF14:
- 814 0042 49444C45 		.ascii	"IDLE\000"
- 814      00
- 815              	.LASF29:
- 816 0047 696E6974 		.ascii	"init\000"
- 816      00
- 817              	.LASF9:
- 818 004c 666C6F61 		.ascii	"float\000"
- 818      7400
- 819              	.LASF1:
- 820 0052 756E7369 		.ascii	"unsigned char\000"
- 820      676E6564 
- 820      20636861 
- 820      7200
- 821              	.LASF27:
- 822 0060 2E5C6D61 		.ascii	".\\main.c\000"
- 822      696E2E63 
- 822      00
- 823              	.LASF5:
- 824 0069 6C6F6E67 		.ascii	"long unsigned int\000"
- 824      20756E73 
- 824      69676E65 
- 824      6420696E 
- 824      7400
- 825              	.LASF3:
- 826 007b 73686F72 		.ascii	"short unsigned int\000"
- 826      7420756E 
- 826      7369676E 
- 826      65642069 
- 826      6E7400
- 827              	.LASF18:
- 828 008e 53746174 		.ascii	"State\000"
- 828      6500
- 829              	.LASF24:
- 830 0094 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 830      52784275 
- 830      66666572 
- 830      00
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 18
+ 700              		.loc 1 211 0 is_stmt 1
+ 701 03fc 40F20003 		movw	r3, #:lower16:i_send
+ 702 0400 C0F20003 		movt	r3, #:upper16:i_send
+ 703 0404 1B68     		ldr	r3, [r3, #0]
+ 704 0406 03F10102 		add	r2, r3, #1
+ 705 040a 40F20003 		movw	r3, #:lower16:i_send
+ 706 040e C0F20003 		movt	r3, #:upper16:i_send
+ 707 0412 1A60     		str	r2, [r3, #0]
+ 708              	.LBE3:
+ 100:.\main.c      **** 					for(l = 0; l < count; l++)
+ 709              		.loc 1 100 0
+ 710 0414 FB68     		ldr	r3, [r7, #12]
+ 711 0416 03F10103 		add	r3, r3, #1
+ 712 041a FB60     		str	r3, [r7, #12]
+ 713              	.L15:
+ 100:.\main.c      **** 					for(l = 0; l < count; l++)
+ 714              		.loc 1 100 0 is_stmt 0 discriminator 1
+ 715 041c FA88     		ldrh	r2, [r7, #6]
+ 716 041e FB68     		ldr	r3, [r7, #12]
+ 717 0420 9A42     		cmp	r2, r3
+ 718 0422 3FF750AE 		bgt	.L37
+ 212:.\main.c      **** 					}
+ 213:.\main.c      **** 					
+ 214:.\main.c      **** 					Timer_sendData_Start();
+ 719              		.loc 1 214 0 is_stmt 1
+ 720 0426 FFF7FEFF 		bl	Timer_sendData_Start
+ 721              	.LBE2:
+ 215:.\main.c      **** 	        	}
+ 216:.\main.c      **** 				
+ 217:.\main.c      **** 				
+ 218:.\main.c      **** 				break;
+ 722              		.loc 1 218 0
+ 723 042a 1BE0     		b	.L39
+ 724              	.L9:
+ 219:.\main.c      **** 				
+ 220:.\main.c      **** 			case BUSY:
+ 221:.\main.c      **** 				Pin_LEDBusy_Write(1);			
+ 725              		.loc 1 221 0
+ 726 042c 4FF00100 		mov	r0, #1
+ 727 0430 FFF7FEFF 		bl	Pin_LEDBusy_Write
+ 222:.\main.c      **** 				Pin_LEDIdle_Write(0);
+ 728              		.loc 1 222 0
+ 729 0434 4FF00000 		mov	r0, #0
+ 730 0438 FFF7FEFF 		bl	Pin_LEDIdle_Write
+ 223:.\main.c      **** 				Pin_LEDCollision_Write(0);
+ 731              		.loc 1 223 0
+ 732 043c 4FF00000 		mov	r0, #0
+ 733 0440 FFF7FEFF 		bl	Pin_LEDCollision_Write
+ 224:.\main.c      **** 				break;
+ 734              		.loc 1 224 0
+ 735 0444 0FE0     		b	.L7
+ 736              	.L10:
+ 225:.\main.c      **** 
+ 226:.\main.c      **** 			case COLLISION:	
+ 227:.\main.c      **** 				Timer_sendData_Stop();
+ 737              		.loc 1 227 0
+ 738 0446 FFF7FEFF 		bl	Timer_sendData_Stop
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 18
 
 
- 831              	.LASF15:
- 832 00a1 42555359 		.ascii	"BUSY\000"
- 832      00
- 833              	.LASF10:
- 834 00a6 646F7562 		.ascii	"double\000"
- 834      6C6500
- 835              	.LASF23:
- 836 00ad 6D61696E 		.ascii	"main\000"
- 836      00
- 837              	.LASF28:
- 838 00b2 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
- 838      73657273 
- 838      5C5A6163 
- 838      685C4472 
- 838      6F70626F 
- 839 00df 5C4E6574 		.ascii	"\\Networking\\Networking Project\\Networking Projec"
- 839      776F726B 
- 839      696E675C 
- 839      4E657477 
- 839      6F726B69 
- 840 010f 742E6379 		.ascii	"t.cydsn\000"
- 840      64736E00 
- 841              	.LASF20:
- 842 0117 6973725F 		.ascii	"isr_RisingEdgeDetected\000"
- 842      52697369 
- 842      6E674564 
- 842      67654465 
- 842      74656374 
- 843              	.LASF8:
- 844 012e 756E7369 		.ascii	"unsigned int\000"
- 844      676E6564 
- 844      20696E74 
- 844      00
- 845              	.LASF7:
- 846 013b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 846      206C6F6E 
- 846      6720756E 
- 846      7369676E 
- 846      65642069 
- 847              	.LASF17:
- 848 0152 696E7433 		.ascii	"int32_t\000"
- 848      325F7400 
- 849              	.LASF12:
- 850 015a 73697A65 		.ascii	"sizetype\000"
- 850      74797065 
- 850      00
- 851              	.LASF16:
- 852 0163 434F4C4C 		.ascii	"COLLISION\000"
- 852      4953494F 
- 852      4E00
- 853              	.LASF11:
- 854 016d 63686172 		.ascii	"char\000"
- 854      00
- 855              	.LASF22:
- 856 0172 6973725F 		.ascii	"isr_BusyToCollision\000"
- 856      42757379 
- 856      546F436F 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccyyB8Hs.s 			page 19
+ 228:.\main.c      **** 				Pin_LEDBusy_Write(0);			
+ 739              		.loc 1 228 0
+ 740 044a 4FF00000 		mov	r0, #0
+ 741 044e FFF7FEFF 		bl	Pin_LEDBusy_Write
+ 229:.\main.c      **** 				Pin_LEDIdle_Write(0);
+ 742              		.loc 1 229 0
+ 743 0452 4FF00000 		mov	r0, #0
+ 744 0456 FFF7FEFF 		bl	Pin_LEDIdle_Write
+ 230:.\main.c      **** 				Pin_LEDCollision_Write(1);
+ 745              		.loc 1 230 0
+ 746 045a 4FF00100 		mov	r0, #1
+ 747 045e FFF7FEFF 		bl	Pin_LEDCollision_Write
+ 231:.\main.c      **** 				break;
+ 748              		.loc 1 231 0
+ 749 0462 00E0     		b	.L7
+ 750              	.L39:
+ 218:.\main.c      **** 				break;
+ 751              		.loc 1 218 0
+ 752 0464 00BF     		nop
+ 753              	.L7:
+ 232:.\main.c      **** 		}
+ 233:.\main.c      **** 	}
+ 754              		.loc 1 233 0
+ 755 0466 D0E5     		b	.L38
+ 756              		.cfi_endproc
+ 757              	.LFE61:
+ 758              		.size	main, .-main
+ 759              		.section	.text.init,"ax",%progbits
+ 760              		.align	2
+ 761              		.global	init
+ 762              		.thumb
+ 763              		.thumb_func
+ 764              		.type	init, %function
+ 765              	init:
+ 766              	.LFB62:
+ 234:.\main.c      **** }
+ 235:.\main.c      **** 
+ 236:.\main.c      **** void init()
+ 237:.\main.c      **** {	
+ 767              		.loc 1 237 0
+ 768              		.cfi_startproc
+ 769              		@ args = 0, pretend = 0, frame = 0
+ 770              		@ frame_needed = 1, uses_anonymous_args = 0
+ 771 0000 80B5     		push	{r7, lr}
+ 772              	.LCFI13:
+ 773              		.cfi_def_cfa_offset 8
+ 774              		.cfi_offset 7, -8
+ 775              		.cfi_offset 14, -4
+ 776 0002 00AF     		add	r7, sp, #0
+ 777              	.LCFI14:
+ 778              		.cfi_def_cfa_register 7
+ 238:.\main.c      **** 	//Enable Global Interrupts
+ 239:.\main.c      **** 	CYGlobalIntEnable;
+ 779              		.loc 1 239 0
+ 780              	@ 239 ".\main.c" 1
+ 781 0004 62B6     		CPSIE   i
+ 782              	@ 0 "" 2
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 19
 
 
- 856      6C6C6973 
- 856      696F6E00 
- 857              	.LASF2:
- 858 0186 73686F72 		.ascii	"short int\000"
- 858      7420696E 
- 858      7400
- 859              	.LASF26:
- 860 0190 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 860      4320342E 
- 860      372E3320 
- 860      32303133 
- 860      30333132 
- 861 01c3 616E6368 		.ascii	"anch revision 196615]\000"
- 861      20726576 
- 861      6973696F 
- 861      6E203139 
- 861      36363135 
- 862              	.LASF4:
- 863 01d9 6C6F6E67 		.ascii	"long int\000"
- 863      20696E74 
- 863      00
- 864              	.LASF13:
- 865 01e2 6C6F6E67 		.ascii	"long double\000"
- 865      20646F75 
- 865      626C6500 
- 866              	.LASF0:
- 867 01ee 7369676E 		.ascii	"signed char\000"
- 867      65642063 
- 867      68617200 
- 868              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 240:.\main.c      **** 	
+ 241:.\main.c      **** 	//Init isr
+ 242:.\main.c      **** 	isr_BusyToCollision_StartEx(isr_BusyToCollision);
+ 783              		.loc 1 242 0
+ 784              		.thumb
+ 785 0006 40F20000 		movw	r0, #:lower16:isr_BusyToCollision
+ 786 000a C0F20000 		movt	r0, #:upper16:isr_BusyToCollision
+ 787 000e FFF7FEFF 		bl	isr_BusyToCollision_StartEx
+ 243:.\main.c      **** 	isr_BusyToIdle_StartEx(isr_BusyToIdle);
+ 788              		.loc 1 243 0
+ 789 0012 40F20000 		movw	r0, #:lower16:isr_BusyToIdle
+ 790 0016 C0F20000 		movt	r0, #:upper16:isr_BusyToIdle
+ 791 001a FFF7FEFF 		bl	isr_BusyToIdle_StartEx
+ 244:.\main.c      **** 	
+ 245:.\main.c      **** 	isr_RisingEdge_StartEx(isr_RisingEdgeDetected);
+ 792              		.loc 1 245 0
+ 793 001e 40F20000 		movw	r0, #:lower16:isr_RisingEdgeDetected
+ 794 0022 C0F20000 		movt	r0, #:upper16:isr_RisingEdgeDetected
+ 795 0026 FFF7FEFF 		bl	isr_RisingEdge_StartEx
+ 246:.\main.c      **** 	isr_FallingEdge_StartEx(isr_FallingEdgeDetected);
+ 796              		.loc 1 246 0
+ 797 002a 40F20000 		movw	r0, #:lower16:isr_FallingEdgeDetected
+ 798 002e C0F20000 		movt	r0, #:upper16:isr_FallingEdgeDetected
+ 799 0032 FFF7FEFF 		bl	isr_FallingEdge_StartEx
+ 247:.\main.c      **** 	
+ 248:.\main.c      **** 	isr_sendData_StartEx(isr_sendingData);
+ 800              		.loc 1 248 0
+ 801 0036 40F20000 		movw	r0, #:lower16:isr_sendingData
+ 802 003a C0F20000 		movt	r0, #:upper16:isr_sendingData
+ 803 003e FFF7FEFF 		bl	isr_sendData_StartEx
+ 249:.\main.c      **** 	
+ 250:.\main.c      **** 	    /* Start USBFS Operation with 3V operation */
+ 251:.\main.c      ****     USB_Start(0u, USB_3V_OPERATION);
+ 804              		.loc 1 251 0
+ 805 0042 4FF00000 		mov	r0, #0
+ 806 0046 4FF00001 		mov	r1, #0
+ 807 004a FFF7FEFF 		bl	USB_Start
+ 252:.\main.c      **** 	 /* Wait for Device to enumerate */
+ 253:.\main.c      ****     while(!USB_GetConfiguration());
+ 808              		.loc 1 253 0
+ 809 004e 00BF     		nop
+ 810              	.L42:
+ 811              		.loc 1 253 0 is_stmt 0 discriminator 1
+ 812 0050 FFF7FEFF 		bl	USB_GetConfiguration
+ 813 0054 0346     		mov	r3, r0
+ 814 0056 002B     		cmp	r3, #0
+ 815 0058 FAD0     		beq	.L42
+ 254:.\main.c      **** 
+ 255:.\main.c      ****     /* Enumeration is done, enable OUT endpoint for receive data from Host */
+ 256:.\main.c      ****     USB_CDC_Init();
+ 816              		.loc 1 256 0 is_stmt 1
+ 817 005a FFF7FEFF 		bl	USB_CDC_Init
+ 257:.\main.c      **** 	
+ 258:.\main.c      **** 	//Init Components
+ 259:.\main.c      **** 	//Timer_BusyToCollision_Start();
+ 260:.\main.c      **** 	//Timer_BusyToIdle_Start();
+ 261:.\main.c      **** 	
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 20
+
+
+ 262:.\main.c      **** 		
+ 263:.\main.c      **** }...
+ 818              		.loc 1 263 0
+ 819 005e 80BD     		pop	{r7, pc}
+ 820              		.cfi_endproc
+ 821              	.LFE62:
+ 822              		.size	init, .-init
+ 823              		.text
+ 824              	.Letext0:
+ 825              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4
+ 826              		.file 3 "./Generated_Source/PSoC5/cytypes.h"
+ 827              		.file 4 ".\\main.h"
+ 828              		.file 5 "./Generated_Source/PSoC5/core_cm3.h"
+ 829              		.section	.debug_info,"",%progbits
+ 830              	.Ldebug_info0:
+ 831 0000 76020000 		.4byte	0x276
+ 832 0004 0200     		.2byte	0x2
+ 833 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 834 000a 04       		.byte	0x4
+ 835 000b 01       		.uleb128 0x1
+ 836 000c F6010000 		.4byte	.LASF35
+ 837 0010 01       		.byte	0x1
+ 838 0011 E3000000 		.4byte	.LASF36
+ 839 0015 52000000 		.4byte	.LASF37
+ 840 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 841 001d 00000000 		.4byte	0
+ 842 0021 00000000 		.4byte	0
+ 843 0025 00000000 		.4byte	.Ldebug_line0
+ 844 0029 02       		.uleb128 0x2
+ 845 002a 01       		.byte	0x1
+ 846 002b 06       		.byte	0x6
+ 847 002c 5F020000 		.4byte	.LASF0
+ 848 0030 02       		.uleb128 0x2
+ 849 0031 01       		.byte	0x1
+ 850 0032 08       		.byte	0x8
+ 851 0033 D5000000 		.4byte	.LASF1
+ 852 0037 02       		.uleb128 0x2
+ 853 0038 02       		.byte	0x2
+ 854 0039 05       		.byte	0x5
+ 855 003a E6010000 		.4byte	.LASF2
+ 856 003e 02       		.uleb128 0x2
+ 857 003f 02       		.byte	0x2
+ 858 0040 07       		.byte	0x7
+ 859 0041 FE000000 		.4byte	.LASF3
+ 860 0045 03       		.uleb128 0x3
+ 861 0046 97010000 		.4byte	.LASF9
+ 862 004a 02       		.byte	0x2
+ 863 004b 4F       		.byte	0x4f
+ 864 004c 50000000 		.4byte	0x50
+ 865 0050 02       		.uleb128 0x2
+ 866 0051 04       		.byte	0x4
+ 867 0052 05       		.byte	0x5
+ 868 0053 4A020000 		.4byte	.LASF4
+ 869 0057 02       		.uleb128 0x2
+ 870 0058 04       		.byte	0x4
+ 871 0059 07       		.byte	0x7
+ 872 005a EC000000 		.4byte	.LASF5
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 21
+
+
+ 873 005e 02       		.uleb128 0x2
+ 874 005f 08       		.byte	0x8
+ 875 0060 05       		.byte	0x5
+ 876 0061 00000000 		.4byte	.LASF6
+ 877 0065 02       		.uleb128 0x2
+ 878 0066 08       		.byte	0x8
+ 879 0067 07       		.byte	0x7
+ 880 0068 7A010000 		.4byte	.LASF7
+ 881 006c 04       		.uleb128 0x4
+ 882 006d 04       		.byte	0x4
+ 883 006e 05       		.byte	0x5
+ 884 006f 696E7400 		.ascii	"int\000"
+ 885 0073 02       		.uleb128 0x2
+ 886 0074 04       		.byte	0x4
+ 887 0075 07       		.byte	0x7
+ 888 0076 6D010000 		.4byte	.LASF8
+ 889 007a 03       		.uleb128 0x3
+ 890 007b F0010000 		.4byte	.LASF10
+ 891 007f 03       		.byte	0x3
+ 892 0080 5B       		.byte	0x5b
+ 893 0081 30000000 		.4byte	0x30
+ 894 0085 03       		.uleb128 0x3
+ 895 0086 4A010000 		.4byte	.LASF11
+ 896 008a 03       		.byte	0x3
+ 897 008b 5C       		.byte	0x5c
+ 898 008c 3E000000 		.4byte	0x3e
+ 899 0090 02       		.uleb128 0x2
+ 900 0091 04       		.byte	0x4
+ 901 0092 04       		.byte	0x4
+ 902 0093 CF000000 		.4byte	.LASF12
+ 903 0097 02       		.uleb128 0x2
+ 904 0098 08       		.byte	0x8
+ 905 0099 04       		.byte	0x4
+ 906 009a 33010000 		.4byte	.LASF13
+ 907 009e 02       		.uleb128 0x2
+ 908 009f 01       		.byte	0x1
+ 909 00a0 08       		.byte	0x8
+ 910 00a1 B9010000 		.4byte	.LASF14
+ 911 00a5 02       		.uleb128 0x2
+ 912 00a6 04       		.byte	0x4
+ 913 00a7 07       		.byte	0x7
+ 914 00a8 9F010000 		.4byte	.LASF15
+ 915 00ac 05       		.uleb128 0x5
+ 916 00ad 7A000000 		.4byte	0x7a
+ 917 00b1 BC000000 		.4byte	0xbc
+ 918 00b5 06       		.uleb128 0x6
+ 919 00b6 A5000000 		.4byte	0xa5
+ 920 00ba 03       		.byte	0x3
+ 921 00bb 00       		.byte	0
+ 922 00bc 02       		.uleb128 0x2
+ 923 00bd 08       		.byte	0x8
+ 924 00be 04       		.byte	0x4
+ 925 00bf 53020000 		.4byte	.LASF16
+ 926 00c3 07       		.uleb128 0x7
+ 927 00c4 01       		.byte	0x1
+ 928 00c5 04       		.byte	0x4
+ 929 00c6 20       		.byte	0x20
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 22
+
+
+ 930 00c7 DE000000 		.4byte	0xde
+ 931 00cb 08       		.uleb128 0x8
+ 932 00cc 48000000 		.4byte	.LASF17
+ 933 00d0 00       		.sleb128 0
+ 934 00d1 08       		.uleb128 0x8
+ 935 00d2 2E010000 		.4byte	.LASF18
+ 936 00d6 01       		.sleb128 1
+ 937 00d7 08       		.uleb128 0x8
+ 938 00d8 A8010000 		.4byte	.LASF19
+ 939 00dc 02       		.sleb128 2
+ 940 00dd 00       		.byte	0
+ 941 00de 03       		.uleb128 0x3
+ 942 00df 1B010000 		.4byte	.LASF20
+ 943 00e3 04       		.byte	0x4
+ 944 00e4 20       		.byte	0x20
+ 945 00e5 C3000000 		.4byte	0xc3
+ 946 00e9 09       		.uleb128 0x9
+ 947 00ea 01       		.byte	0x1
+ 948 00eb 0E000000 		.4byte	.LASF21
+ 949 00ef 01       		.byte	0x1
+ 950 00f0 1B       		.byte	0x1b
+ 951 00f1 01       		.byte	0x1
+ 952 00f2 00000000 		.4byte	.LFB56
+ 953 00f6 20000000 		.4byte	.LFE56
+ 954 00fa 00000000 		.4byte	.LLST0
+ 955 00fe 01       		.byte	0x1
+ 956 00ff 09       		.uleb128 0x9
+ 957 0100 01       		.byte	0x1
+ 958 0101 51010000 		.4byte	.LASF22
+ 959 0105 01       		.byte	0x1
+ 960 0106 22       		.byte	0x22
+ 961 0107 01       		.byte	0x1
+ 962 0108 00000000 		.4byte	.LFB57
+ 963 010c 20000000 		.4byte	.LFE57
+ 964 0110 2C000000 		.4byte	.LLST1
+ 965 0114 01       		.byte	0x1
+ 966 0115 09       		.uleb128 0x9
+ 967 0116 01       		.byte	0x1
+ 968 0117 33000000 		.4byte	.LASF23
+ 969 011b 01       		.byte	0x1
+ 970 011c 2A       		.byte	0x2a
+ 971 011d 01       		.byte	0x1
+ 972 011e 00000000 		.4byte	.LFB58
+ 973 0122 1C000000 		.4byte	.LFE58
+ 974 0126 58000000 		.4byte	.LLST2
+ 975 012a 01       		.byte	0x1
+ 976 012b 09       		.uleb128 0x9
+ 977 012c 01       		.byte	0x1
+ 978 012d C8010000 		.4byte	.LASF24
+ 979 0131 01       		.byte	0x1
+ 980 0132 31       		.byte	0x31
+ 981 0133 01       		.byte	0x1
+ 982 0134 00000000 		.4byte	.LFB59
+ 983 0138 1C000000 		.4byte	.LFE59
+ 984 013c 84000000 		.4byte	.LLST3
+ 985 0140 01       		.byte	0x1
+ 986 0141 09       		.uleb128 0x9
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 23
+
+
+ 987 0142 01       		.byte	0x1
+ 988 0143 3A010000 		.4byte	.LASF25
+ 989 0147 01       		.byte	0x1
+ 990 0148 37       		.byte	0x37
+ 991 0149 01       		.byte	0x1
+ 992 014a 00000000 		.4byte	.LFB60
+ 993 014e 38000000 		.4byte	.LFE60
+ 994 0152 B0000000 		.4byte	.LLST4
+ 995 0156 01       		.byte	0x1
+ 996 0157 0A       		.uleb128 0xa
+ 997 0158 01       		.byte	0x1
+ 998 0159 68010000 		.4byte	.LASF38
+ 999 015d 01       		.byte	0x1
+ 1000 015e 3D       		.byte	0x3d
+ 1001 015f 6C000000 		.4byte	0x6c
+ 1002 0163 00000000 		.4byte	.LFB61
+ 1003 0167 68040000 		.4byte	.LFE61
+ 1004 016b DC000000 		.4byte	.LLST5
+ 1005 016f 01       		.byte	0x1
+ 1006 0170 BE010000 		.4byte	0x1be
+ 1007 0174 0B       		.uleb128 0xb
+ 1008 0175 42000000 		.4byte	.LASF26
+ 1009 0179 01       		.byte	0x1
+ 1010 017a 41       		.byte	0x41
+ 1011 017b 85000000 		.4byte	0x85
+ 1012 017f 02       		.byte	0x2
+ 1013 0180 91       		.byte	0x91
+ 1014 0181 6E       		.sleb128 -18
+ 1015 0182 0C       		.uleb128 0xc
+ 1016 0183 62000000 		.4byte	.LBB2
+ 1017 0187 2A040000 		.4byte	.LBE2
+ 1018 018b 0D       		.uleb128 0xd
+ 1019 018c 6C00     		.ascii	"l\000"
+ 1020 018e 01       		.byte	0x1
+ 1021 018f 63       		.byte	0x63
+ 1022 0190 6C000000 		.4byte	0x6c
+ 1023 0194 02       		.byte	0x2
+ 1024 0195 91       		.byte	0x91
+ 1025 0196 74       		.sleb128 -12
+ 1026 0197 0C       		.uleb128 0xc
+ 1027 0198 C6000000 		.4byte	.LBB3
+ 1028 019c 14040000 		.4byte	.LBE3
+ 1029 01a0 0B       		.uleb128 0xb
+ 1030 01a1 BE010000 		.4byte	.LASF27
+ 1031 01a5 01       		.byte	0x1
+ 1032 01a6 68       		.byte	0x68
+ 1033 01a7 AC000000 		.4byte	0xac
+ 1034 01ab 02       		.byte	0x2
+ 1035 01ac 91       		.byte	0x91
+ 1036 01ad 68       		.sleb128 -24
+ 1037 01ae 0D       		.uleb128 0xd
+ 1038 01af 6C3200   		.ascii	"l2\000"
+ 1039 01b2 01       		.byte	0x1
+ 1040 01b3 CE       		.byte	0xce
+ 1041 01b4 6C000000 		.4byte	0x6c
+ 1042 01b8 02       		.byte	0x2
+ 1043 01b9 91       		.byte	0x91
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 24
+
+
+ 1044 01ba 70       		.sleb128 -16
+ 1045 01bb 00       		.byte	0
+ 1046 01bc 00       		.byte	0
+ 1047 01bd 00       		.byte	0
+ 1048 01be 0E       		.uleb128 0xe
+ 1049 01bf 01       		.byte	0x1
+ 1050 01c0 4D000000 		.4byte	.LASF39
+ 1051 01c4 01       		.byte	0x1
+ 1052 01c5 EC       		.byte	0xec
+ 1053 01c6 00000000 		.4byte	.LFB62
+ 1054 01ca 60000000 		.4byte	.LFE62
+ 1055 01ce 14010000 		.4byte	.LLST6
+ 1056 01d2 01       		.byte	0x1
+ 1057 01d3 0F       		.uleb128 0xf
+ 1058 01d4 21010000 		.4byte	.LASF28
+ 1059 01d8 05       		.byte	0x5
+ 1060 01d9 1606     		.2byte	0x616
+ 1061 01db E1010000 		.4byte	0x1e1
+ 1062 01df 01       		.byte	0x1
+ 1063 01e0 01       		.byte	0x1
+ 1064 01e1 10       		.uleb128 0x10
+ 1065 01e2 45000000 		.4byte	0x45
+ 1066 01e6 11       		.uleb128 0x11
+ 1067 01e7 26000000 		.4byte	.LASF29
+ 1068 01eb 01       		.byte	0x1
+ 1069 01ec 14       		.byte	0x14
+ 1070 01ed DE000000 		.4byte	0xde
+ 1071 01f1 01       		.byte	0x1
+ 1072 01f2 05       		.byte	0x5
+ 1073 01f3 03       		.byte	0x3
+ 1074 01f4 00000000 		.4byte	currentState
+ 1075 01f8 05       		.uleb128 0x5
+ 1076 01f9 7A000000 		.4byte	0x7a
+ 1077 01fd 08020000 		.4byte	0x208
+ 1078 0201 06       		.uleb128 0x6
+ 1079 0202 A5000000 		.4byte	0xa5
+ 1080 0206 4F       		.byte	0x4f
+ 1081 0207 00       		.byte	0
+ 1082 0208 11       		.uleb128 0x11
+ 1083 0209 11010000 		.4byte	.LASF30
+ 1084 020d 01       		.byte	0x1
+ 1085 020e 15       		.byte	0x15
+ 1086 020f F8010000 		.4byte	0x1f8
+ 1087 0213 01       		.byte	0x1
+ 1088 0214 05       		.byte	0x5
+ 1089 0215 03       		.byte	0x3
+ 1090 0216 00000000 		.4byte	packetUSB
+ 1091 021a 11       		.uleb128 0x11
+ 1092 021b DC010000 		.4byte	.LASF31
+ 1093 021f 01       		.byte	0x1
+ 1094 0220 16       		.byte	0x16
+ 1095 0221 2C020000 		.4byte	0x22c
+ 1096 0225 01       		.byte	0x1
+ 1097 0226 05       		.byte	0x5
+ 1098 0227 03       		.byte	0x3
+ 1099 0228 00000000 		.4byte	packetHex
+ 1100 022c 12       		.uleb128 0x12
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 25
+
+
+ 1101 022d 04       		.byte	0x4
+ 1102 022e 7A000000 		.4byte	0x7a
+ 1103 0232 05       		.uleb128 0x5
+ 1104 0233 7A000000 		.4byte	0x7a
+ 1105 0237 43020000 		.4byte	0x243
+ 1106 023b 13       		.uleb128 0x13
+ 1107 023c A5000000 		.4byte	0xa5
+ 1108 0240 7F02     		.2byte	0x27f
+ 1109 0242 00       		.byte	0
+ 1110 0243 11       		.uleb128 0x11
+ 1111 0244 3F020000 		.4byte	.LASF32
+ 1112 0248 01       		.byte	0x1
+ 1113 0249 17       		.byte	0x17
+ 1114 024a 32020000 		.4byte	0x232
+ 1115 024e 01       		.byte	0x1
+ 1116 024f 05       		.byte	0x5
+ 1117 0250 03       		.byte	0x3
+ 1118 0251 00000000 		.4byte	packetSend
+ 1119 0255 11       		.uleb128 0x11
+ 1120 0256 91010000 		.4byte	.LASF33
+ 1121 025a 01       		.byte	0x1
+ 1122 025b 18       		.byte	0x18
+ 1123 025c 6C000000 		.4byte	0x6c
+ 1124 0260 01       		.byte	0x1
+ 1125 0261 05       		.byte	0x5
+ 1126 0262 03       		.byte	0x3
+ 1127 0263 00000000 		.4byte	i_usb
+ 1128 0267 11       		.uleb128 0x11
+ 1129 0268 B2010000 		.4byte	.LASF34
+ 1130 026c 01       		.byte	0x1
+ 1131 026d 19       		.byte	0x19
+ 1132 026e 6C000000 		.4byte	0x6c
+ 1133 0272 01       		.byte	0x1
+ 1134 0273 05       		.byte	0x5
+ 1135 0274 03       		.byte	0x3
+ 1136 0275 00000000 		.4byte	i_send
+ 1137 0279 00       		.byte	0
+ 1138              		.section	.debug_abbrev,"",%progbits
+ 1139              	.Ldebug_abbrev0:
+ 1140 0000 01       		.uleb128 0x1
+ 1141 0001 11       		.uleb128 0x11
+ 1142 0002 01       		.byte	0x1
+ 1143 0003 25       		.uleb128 0x25
+ 1144 0004 0E       		.uleb128 0xe
+ 1145 0005 13       		.uleb128 0x13
+ 1146 0006 0B       		.uleb128 0xb
+ 1147 0007 03       		.uleb128 0x3
+ 1148 0008 0E       		.uleb128 0xe
+ 1149 0009 1B       		.uleb128 0x1b
+ 1150 000a 0E       		.uleb128 0xe
+ 1151 000b 55       		.uleb128 0x55
+ 1152 000c 06       		.uleb128 0x6
+ 1153 000d 11       		.uleb128 0x11
+ 1154 000e 01       		.uleb128 0x1
+ 1155 000f 52       		.uleb128 0x52
+ 1156 0010 01       		.uleb128 0x1
+ 1157 0011 10       		.uleb128 0x10
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 26
+
+
+ 1158 0012 06       		.uleb128 0x6
+ 1159 0013 00       		.byte	0
+ 1160 0014 00       		.byte	0
+ 1161 0015 02       		.uleb128 0x2
+ 1162 0016 24       		.uleb128 0x24
+ 1163 0017 00       		.byte	0
+ 1164 0018 0B       		.uleb128 0xb
+ 1165 0019 0B       		.uleb128 0xb
+ 1166 001a 3E       		.uleb128 0x3e
+ 1167 001b 0B       		.uleb128 0xb
+ 1168 001c 03       		.uleb128 0x3
+ 1169 001d 0E       		.uleb128 0xe
+ 1170 001e 00       		.byte	0
+ 1171 001f 00       		.byte	0
+ 1172 0020 03       		.uleb128 0x3
+ 1173 0021 16       		.uleb128 0x16
+ 1174 0022 00       		.byte	0
+ 1175 0023 03       		.uleb128 0x3
+ 1176 0024 0E       		.uleb128 0xe
+ 1177 0025 3A       		.uleb128 0x3a
+ 1178 0026 0B       		.uleb128 0xb
+ 1179 0027 3B       		.uleb128 0x3b
+ 1180 0028 0B       		.uleb128 0xb
+ 1181 0029 49       		.uleb128 0x49
+ 1182 002a 13       		.uleb128 0x13
+ 1183 002b 00       		.byte	0
+ 1184 002c 00       		.byte	0
+ 1185 002d 04       		.uleb128 0x4
+ 1186 002e 24       		.uleb128 0x24
+ 1187 002f 00       		.byte	0
+ 1188 0030 0B       		.uleb128 0xb
+ 1189 0031 0B       		.uleb128 0xb
+ 1190 0032 3E       		.uleb128 0x3e
+ 1191 0033 0B       		.uleb128 0xb
+ 1192 0034 03       		.uleb128 0x3
+ 1193 0035 08       		.uleb128 0x8
+ 1194 0036 00       		.byte	0
+ 1195 0037 00       		.byte	0
+ 1196 0038 05       		.uleb128 0x5
+ 1197 0039 01       		.uleb128 0x1
+ 1198 003a 01       		.byte	0x1
+ 1199 003b 49       		.uleb128 0x49
+ 1200 003c 13       		.uleb128 0x13
+ 1201 003d 01       		.uleb128 0x1
+ 1202 003e 13       		.uleb128 0x13
+ 1203 003f 00       		.byte	0
+ 1204 0040 00       		.byte	0
+ 1205 0041 06       		.uleb128 0x6
+ 1206 0042 21       		.uleb128 0x21
+ 1207 0043 00       		.byte	0
+ 1208 0044 49       		.uleb128 0x49
+ 1209 0045 13       		.uleb128 0x13
+ 1210 0046 2F       		.uleb128 0x2f
+ 1211 0047 0B       		.uleb128 0xb
+ 1212 0048 00       		.byte	0
+ 1213 0049 00       		.byte	0
+ 1214 004a 07       		.uleb128 0x7
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 27
+
+
+ 1215 004b 04       		.uleb128 0x4
+ 1216 004c 01       		.byte	0x1
+ 1217 004d 0B       		.uleb128 0xb
+ 1218 004e 0B       		.uleb128 0xb
+ 1219 004f 3A       		.uleb128 0x3a
+ 1220 0050 0B       		.uleb128 0xb
+ 1221 0051 3B       		.uleb128 0x3b
+ 1222 0052 0B       		.uleb128 0xb
+ 1223 0053 01       		.uleb128 0x1
+ 1224 0054 13       		.uleb128 0x13
+ 1225 0055 00       		.byte	0
+ 1226 0056 00       		.byte	0
+ 1227 0057 08       		.uleb128 0x8
+ 1228 0058 28       		.uleb128 0x28
+ 1229 0059 00       		.byte	0
+ 1230 005a 03       		.uleb128 0x3
+ 1231 005b 0E       		.uleb128 0xe
+ 1232 005c 1C       		.uleb128 0x1c
+ 1233 005d 0D       		.uleb128 0xd
+ 1234 005e 00       		.byte	0
+ 1235 005f 00       		.byte	0
+ 1236 0060 09       		.uleb128 0x9
+ 1237 0061 2E       		.uleb128 0x2e
+ 1238 0062 00       		.byte	0
+ 1239 0063 3F       		.uleb128 0x3f
+ 1240 0064 0C       		.uleb128 0xc
+ 1241 0065 03       		.uleb128 0x3
+ 1242 0066 0E       		.uleb128 0xe
+ 1243 0067 3A       		.uleb128 0x3a
+ 1244 0068 0B       		.uleb128 0xb
+ 1245 0069 3B       		.uleb128 0x3b
+ 1246 006a 0B       		.uleb128 0xb
+ 1247 006b 27       		.uleb128 0x27
+ 1248 006c 0C       		.uleb128 0xc
+ 1249 006d 11       		.uleb128 0x11
+ 1250 006e 01       		.uleb128 0x1
+ 1251 006f 12       		.uleb128 0x12
+ 1252 0070 01       		.uleb128 0x1
+ 1253 0071 40       		.uleb128 0x40
+ 1254 0072 06       		.uleb128 0x6
+ 1255 0073 9642     		.uleb128 0x2116
+ 1256 0075 0C       		.uleb128 0xc
+ 1257 0076 00       		.byte	0
+ 1258 0077 00       		.byte	0
+ 1259 0078 0A       		.uleb128 0xa
+ 1260 0079 2E       		.uleb128 0x2e
+ 1261 007a 01       		.byte	0x1
+ 1262 007b 3F       		.uleb128 0x3f
+ 1263 007c 0C       		.uleb128 0xc
+ 1264 007d 03       		.uleb128 0x3
+ 1265 007e 0E       		.uleb128 0xe
+ 1266 007f 3A       		.uleb128 0x3a
+ 1267 0080 0B       		.uleb128 0xb
+ 1268 0081 3B       		.uleb128 0x3b
+ 1269 0082 0B       		.uleb128 0xb
+ 1270 0083 49       		.uleb128 0x49
+ 1271 0084 13       		.uleb128 0x13
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 28
+
+
+ 1272 0085 11       		.uleb128 0x11
+ 1273 0086 01       		.uleb128 0x1
+ 1274 0087 12       		.uleb128 0x12
+ 1275 0088 01       		.uleb128 0x1
+ 1276 0089 40       		.uleb128 0x40
+ 1277 008a 06       		.uleb128 0x6
+ 1278 008b 9642     		.uleb128 0x2116
+ 1279 008d 0C       		.uleb128 0xc
+ 1280 008e 01       		.uleb128 0x1
+ 1281 008f 13       		.uleb128 0x13
+ 1282 0090 00       		.byte	0
+ 1283 0091 00       		.byte	0
+ 1284 0092 0B       		.uleb128 0xb
+ 1285 0093 34       		.uleb128 0x34
+ 1286 0094 00       		.byte	0
+ 1287 0095 03       		.uleb128 0x3
+ 1288 0096 0E       		.uleb128 0xe
+ 1289 0097 3A       		.uleb128 0x3a
+ 1290 0098 0B       		.uleb128 0xb
+ 1291 0099 3B       		.uleb128 0x3b
+ 1292 009a 0B       		.uleb128 0xb
+ 1293 009b 49       		.uleb128 0x49
+ 1294 009c 13       		.uleb128 0x13
+ 1295 009d 02       		.uleb128 0x2
+ 1296 009e 0A       		.uleb128 0xa
+ 1297 009f 00       		.byte	0
+ 1298 00a0 00       		.byte	0
+ 1299 00a1 0C       		.uleb128 0xc
+ 1300 00a2 0B       		.uleb128 0xb
+ 1301 00a3 01       		.byte	0x1
+ 1302 00a4 11       		.uleb128 0x11
+ 1303 00a5 01       		.uleb128 0x1
+ 1304 00a6 12       		.uleb128 0x12
+ 1305 00a7 01       		.uleb128 0x1
+ 1306 00a8 00       		.byte	0
+ 1307 00a9 00       		.byte	0
+ 1308 00aa 0D       		.uleb128 0xd
+ 1309 00ab 34       		.uleb128 0x34
+ 1310 00ac 00       		.byte	0
+ 1311 00ad 03       		.uleb128 0x3
+ 1312 00ae 08       		.uleb128 0x8
+ 1313 00af 3A       		.uleb128 0x3a
+ 1314 00b0 0B       		.uleb128 0xb
+ 1315 00b1 3B       		.uleb128 0x3b
+ 1316 00b2 0B       		.uleb128 0xb
+ 1317 00b3 49       		.uleb128 0x49
+ 1318 00b4 13       		.uleb128 0x13
+ 1319 00b5 02       		.uleb128 0x2
+ 1320 00b6 0A       		.uleb128 0xa
+ 1321 00b7 00       		.byte	0
+ 1322 00b8 00       		.byte	0
+ 1323 00b9 0E       		.uleb128 0xe
+ 1324 00ba 2E       		.uleb128 0x2e
+ 1325 00bb 00       		.byte	0
+ 1326 00bc 3F       		.uleb128 0x3f
+ 1327 00bd 0C       		.uleb128 0xc
+ 1328 00be 03       		.uleb128 0x3
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 29
+
+
+ 1329 00bf 0E       		.uleb128 0xe
+ 1330 00c0 3A       		.uleb128 0x3a
+ 1331 00c1 0B       		.uleb128 0xb
+ 1332 00c2 3B       		.uleb128 0x3b
+ 1333 00c3 0B       		.uleb128 0xb
+ 1334 00c4 11       		.uleb128 0x11
+ 1335 00c5 01       		.uleb128 0x1
+ 1336 00c6 12       		.uleb128 0x12
+ 1337 00c7 01       		.uleb128 0x1
+ 1338 00c8 40       		.uleb128 0x40
+ 1339 00c9 06       		.uleb128 0x6
+ 1340 00ca 9642     		.uleb128 0x2116
+ 1341 00cc 0C       		.uleb128 0xc
+ 1342 00cd 00       		.byte	0
+ 1343 00ce 00       		.byte	0
+ 1344 00cf 0F       		.uleb128 0xf
+ 1345 00d0 34       		.uleb128 0x34
+ 1346 00d1 00       		.byte	0
+ 1347 00d2 03       		.uleb128 0x3
+ 1348 00d3 0E       		.uleb128 0xe
+ 1349 00d4 3A       		.uleb128 0x3a
+ 1350 00d5 0B       		.uleb128 0xb
+ 1351 00d6 3B       		.uleb128 0x3b
+ 1352 00d7 05       		.uleb128 0x5
+ 1353 00d8 49       		.uleb128 0x49
+ 1354 00d9 13       		.uleb128 0x13
+ 1355 00da 3F       		.uleb128 0x3f
+ 1356 00db 0C       		.uleb128 0xc
+ 1357 00dc 3C       		.uleb128 0x3c
+ 1358 00dd 0C       		.uleb128 0xc
+ 1359 00de 00       		.byte	0
+ 1360 00df 00       		.byte	0
+ 1361 00e0 10       		.uleb128 0x10
+ 1362 00e1 35       		.uleb128 0x35
+ 1363 00e2 00       		.byte	0
+ 1364 00e3 49       		.uleb128 0x49
+ 1365 00e4 13       		.uleb128 0x13
+ 1366 00e5 00       		.byte	0
+ 1367 00e6 00       		.byte	0
+ 1368 00e7 11       		.uleb128 0x11
+ 1369 00e8 34       		.uleb128 0x34
+ 1370 00e9 00       		.byte	0
+ 1371 00ea 03       		.uleb128 0x3
+ 1372 00eb 0E       		.uleb128 0xe
+ 1373 00ec 3A       		.uleb128 0x3a
+ 1374 00ed 0B       		.uleb128 0xb
+ 1375 00ee 3B       		.uleb128 0x3b
+ 1376 00ef 0B       		.uleb128 0xb
+ 1377 00f0 49       		.uleb128 0x49
+ 1378 00f1 13       		.uleb128 0x13
+ 1379 00f2 3F       		.uleb128 0x3f
+ 1380 00f3 0C       		.uleb128 0xc
+ 1381 00f4 02       		.uleb128 0x2
+ 1382 00f5 0A       		.uleb128 0xa
+ 1383 00f6 00       		.byte	0
+ 1384 00f7 00       		.byte	0
+ 1385 00f8 12       		.uleb128 0x12
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 30
+
+
+ 1386 00f9 0F       		.uleb128 0xf
+ 1387 00fa 00       		.byte	0
+ 1388 00fb 0B       		.uleb128 0xb
+ 1389 00fc 0B       		.uleb128 0xb
+ 1390 00fd 49       		.uleb128 0x49
+ 1391 00fe 13       		.uleb128 0x13
+ 1392 00ff 00       		.byte	0
+ 1393 0100 00       		.byte	0
+ 1394 0101 13       		.uleb128 0x13
+ 1395 0102 21       		.uleb128 0x21
+ 1396 0103 00       		.byte	0
+ 1397 0104 49       		.uleb128 0x49
+ 1398 0105 13       		.uleb128 0x13
+ 1399 0106 2F       		.uleb128 0x2f
+ 1400 0107 05       		.uleb128 0x5
+ 1401 0108 00       		.byte	0
+ 1402 0109 00       		.byte	0
+ 1403 010a 00       		.byte	0
+ 1404              		.section	.debug_loc,"",%progbits
+ 1405              	.Ldebug_loc0:
+ 1406              	.LLST0:
+ 1407 0000 00000000 		.4byte	.LFB56
+ 1408 0004 02000000 		.4byte	.LCFI0
+ 1409 0008 0200     		.2byte	0x2
+ 1410 000a 7D       		.byte	0x7d
+ 1411 000b 00       		.sleb128 0
+ 1412 000c 02000000 		.4byte	.LCFI0
+ 1413 0010 04000000 		.4byte	.LCFI1
+ 1414 0014 0200     		.2byte	0x2
+ 1415 0016 7D       		.byte	0x7d
+ 1416 0017 08       		.sleb128 8
+ 1417 0018 04000000 		.4byte	.LCFI1
+ 1418 001c 20000000 		.4byte	.LFE56
+ 1419 0020 0200     		.2byte	0x2
+ 1420 0022 77       		.byte	0x77
+ 1421 0023 08       		.sleb128 8
+ 1422 0024 00000000 		.4byte	0
+ 1423 0028 00000000 		.4byte	0
+ 1424              	.LLST1:
+ 1425 002c 00000000 		.4byte	.LFB57
+ 1426 0030 02000000 		.4byte	.LCFI2
+ 1427 0034 0200     		.2byte	0x2
+ 1428 0036 7D       		.byte	0x7d
+ 1429 0037 00       		.sleb128 0
+ 1430 0038 02000000 		.4byte	.LCFI2
+ 1431 003c 04000000 		.4byte	.LCFI3
+ 1432 0040 0200     		.2byte	0x2
+ 1433 0042 7D       		.byte	0x7d
+ 1434 0043 08       		.sleb128 8
+ 1435 0044 04000000 		.4byte	.LCFI3
+ 1436 0048 20000000 		.4byte	.LFE57
+ 1437 004c 0200     		.2byte	0x2
+ 1438 004e 77       		.byte	0x77
+ 1439 004f 08       		.sleb128 8
+ 1440 0050 00000000 		.4byte	0
+ 1441 0054 00000000 		.4byte	0
+ 1442              	.LLST2:
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 31
+
+
+ 1443 0058 00000000 		.4byte	.LFB58
+ 1444 005c 02000000 		.4byte	.LCFI4
+ 1445 0060 0200     		.2byte	0x2
+ 1446 0062 7D       		.byte	0x7d
+ 1447 0063 00       		.sleb128 0
+ 1448 0064 02000000 		.4byte	.LCFI4
+ 1449 0068 04000000 		.4byte	.LCFI5
+ 1450 006c 0200     		.2byte	0x2
+ 1451 006e 7D       		.byte	0x7d
+ 1452 006f 08       		.sleb128 8
+ 1453 0070 04000000 		.4byte	.LCFI5
+ 1454 0074 1C000000 		.4byte	.LFE58
+ 1455 0078 0200     		.2byte	0x2
+ 1456 007a 77       		.byte	0x77
+ 1457 007b 08       		.sleb128 8
+ 1458 007c 00000000 		.4byte	0
+ 1459 0080 00000000 		.4byte	0
+ 1460              	.LLST3:
+ 1461 0084 00000000 		.4byte	.LFB59
+ 1462 0088 02000000 		.4byte	.LCFI6
+ 1463 008c 0200     		.2byte	0x2
+ 1464 008e 7D       		.byte	0x7d
+ 1465 008f 00       		.sleb128 0
+ 1466 0090 02000000 		.4byte	.LCFI6
+ 1467 0094 04000000 		.4byte	.LCFI7
+ 1468 0098 0200     		.2byte	0x2
+ 1469 009a 7D       		.byte	0x7d
+ 1470 009b 08       		.sleb128 8
+ 1471 009c 04000000 		.4byte	.LCFI7
+ 1472 00a0 1C000000 		.4byte	.LFE59
+ 1473 00a4 0200     		.2byte	0x2
+ 1474 00a6 77       		.byte	0x77
+ 1475 00a7 08       		.sleb128 8
+ 1476 00a8 00000000 		.4byte	0
+ 1477 00ac 00000000 		.4byte	0
+ 1478              	.LLST4:
+ 1479 00b0 00000000 		.4byte	.LFB60
+ 1480 00b4 02000000 		.4byte	.LCFI8
+ 1481 00b8 0200     		.2byte	0x2
+ 1482 00ba 7D       		.byte	0x7d
+ 1483 00bb 00       		.sleb128 0
+ 1484 00bc 02000000 		.4byte	.LCFI8
+ 1485 00c0 04000000 		.4byte	.LCFI9
+ 1486 00c4 0200     		.2byte	0x2
+ 1487 00c6 7D       		.byte	0x7d
+ 1488 00c7 08       		.sleb128 8
+ 1489 00c8 04000000 		.4byte	.LCFI9
+ 1490 00cc 38000000 		.4byte	.LFE60
+ 1491 00d0 0200     		.2byte	0x2
+ 1492 00d2 77       		.byte	0x77
+ 1493 00d3 08       		.sleb128 8
+ 1494 00d4 00000000 		.4byte	0
+ 1495 00d8 00000000 		.4byte	0
+ 1496              	.LLST5:
+ 1497 00dc 00000000 		.4byte	.LFB61
+ 1498 00e0 02000000 		.4byte	.LCFI10
+ 1499 00e4 0200     		.2byte	0x2
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 32
+
+
+ 1500 00e6 7D       		.byte	0x7d
+ 1501 00e7 00       		.sleb128 0
+ 1502 00e8 02000000 		.4byte	.LCFI10
+ 1503 00ec 04000000 		.4byte	.LCFI11
+ 1504 00f0 0200     		.2byte	0x2
+ 1505 00f2 7D       		.byte	0x7d
+ 1506 00f3 08       		.sleb128 8
+ 1507 00f4 04000000 		.4byte	.LCFI11
+ 1508 00f8 06000000 		.4byte	.LCFI12
+ 1509 00fc 0200     		.2byte	0x2
+ 1510 00fe 7D       		.byte	0x7d
+ 1511 00ff 18       		.sleb128 24
+ 1512 0100 06000000 		.4byte	.LCFI12
+ 1513 0104 68040000 		.4byte	.LFE61
+ 1514 0108 0200     		.2byte	0x2
+ 1515 010a 77       		.byte	0x77
+ 1516 010b 18       		.sleb128 24
+ 1517 010c 00000000 		.4byte	0
+ 1518 0110 00000000 		.4byte	0
+ 1519              	.LLST6:
+ 1520 0114 00000000 		.4byte	.LFB62
+ 1521 0118 02000000 		.4byte	.LCFI13
+ 1522 011c 0200     		.2byte	0x2
+ 1523 011e 7D       		.byte	0x7d
+ 1524 011f 00       		.sleb128 0
+ 1525 0120 02000000 		.4byte	.LCFI13
+ 1526 0124 04000000 		.4byte	.LCFI14
+ 1527 0128 0200     		.2byte	0x2
+ 1528 012a 7D       		.byte	0x7d
+ 1529 012b 08       		.sleb128 8
+ 1530 012c 04000000 		.4byte	.LCFI14
+ 1531 0130 60000000 		.4byte	.LFE62
+ 1532 0134 0200     		.2byte	0x2
+ 1533 0136 77       		.byte	0x77
+ 1534 0137 08       		.sleb128 8
+ 1535 0138 00000000 		.4byte	0
+ 1536 013c 00000000 		.4byte	0
+ 1537              		.section	.debug_aranges,"",%progbits
+ 1538 0000 4C000000 		.4byte	0x4c
+ 1539 0004 0200     		.2byte	0x2
+ 1540 0006 00000000 		.4byte	.Ldebug_info0
+ 1541 000a 04       		.byte	0x4
+ 1542 000b 00       		.byte	0
+ 1543 000c 0000     		.2byte	0
+ 1544 000e 0000     		.2byte	0
+ 1545 0010 00000000 		.4byte	.LFB56
+ 1546 0014 20000000 		.4byte	.LFE56-.LFB56
+ 1547 0018 00000000 		.4byte	.LFB57
+ 1548 001c 20000000 		.4byte	.LFE57-.LFB57
+ 1549 0020 00000000 		.4byte	.LFB58
+ 1550 0024 1C000000 		.4byte	.LFE58-.LFB58
+ 1551 0028 00000000 		.4byte	.LFB59
+ 1552 002c 1C000000 		.4byte	.LFE59-.LFB59
+ 1553 0030 00000000 		.4byte	.LFB60
+ 1554 0034 38000000 		.4byte	.LFE60-.LFB60
+ 1555 0038 00000000 		.4byte	.LFB61
+ 1556 003c 68040000 		.4byte	.LFE61-.LFB61
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 33
+
+
+ 1557 0040 00000000 		.4byte	.LFB62
+ 1558 0044 60000000 		.4byte	.LFE62-.LFB62
+ 1559 0048 00000000 		.4byte	0
+ 1560 004c 00000000 		.4byte	0
+ 1561              		.section	.debug_ranges,"",%progbits
+ 1562              	.Ldebug_ranges0:
+ 1563 0000 00000000 		.4byte	.LFB56
+ 1564 0004 20000000 		.4byte	.LFE56
+ 1565 0008 00000000 		.4byte	.LFB57
+ 1566 000c 20000000 		.4byte	.LFE57
+ 1567 0010 00000000 		.4byte	.LFB58
+ 1568 0014 1C000000 		.4byte	.LFE58
+ 1569 0018 00000000 		.4byte	.LFB59
+ 1570 001c 1C000000 		.4byte	.LFE59
+ 1571 0020 00000000 		.4byte	.LFB60
+ 1572 0024 38000000 		.4byte	.LFE60
+ 1573 0028 00000000 		.4byte	.LFB61
+ 1574 002c 68040000 		.4byte	.LFE61
+ 1575 0030 00000000 		.4byte	.LFB62
+ 1576 0034 60000000 		.4byte	.LFE62
+ 1577 0038 00000000 		.4byte	0
+ 1578 003c 00000000 		.4byte	0
+ 1579              		.section	.debug_line,"",%progbits
+ 1580              	.Ldebug_line0:
+ 1581 0000 3F020000 		.section	.debug_str,"MS",%progbits,1
+ 1581      02000501 
+ 1581      00000201 
+ 1581      FB0E0D00 
+ 1581      01010101 
+ 1582              	.LASF6:
+ 1583 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1583      206C6F6E 
+ 1583      6720696E 
+ 1583      7400
+ 1584              	.LASF21:
+ 1585 000e 6973725F 		.ascii	"isr_FallingEdgeDetected\000"
+ 1585      46616C6C 
+ 1585      696E6745 
+ 1585      64676544 
+ 1585      65746563 
+ 1586              	.LASF29:
+ 1587 0026 63757272 		.ascii	"currentState\000"
+ 1587      656E7453 
+ 1587      74617465 
+ 1587      00
+ 1588              	.LASF23:
+ 1589 0033 6973725F 		.ascii	"isr_BusyToIdle\000"
+ 1589      42757379 
+ 1589      546F4964 
+ 1589      6C6500
+ 1590              	.LASF26:
+ 1591 0042 636F756E 		.ascii	"count\000"
+ 1591      7400
+ 1592              	.LASF17:
+ 1593 0048 49444C45 		.ascii	"IDLE\000"
+ 1593      00
+ 1594              	.LASF39:
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 34
+
+
+ 1595 004d 696E6974 		.ascii	"init\000"
+ 1595      00
+ 1596              	.LASF37:
+ 1597 0052 443A5C4D 		.ascii	"D:\\MSOE\\2014-2015\\Winter\\CE4950_021_Network\\la"
+ 1597      534F455C 
+ 1597      32303134 
+ 1597      2D323031 
+ 1597      355C5769 
+ 1598 0080 625C5072 		.ascii	"b\\Project\\ce4950Project\\Networking\\Networking P"
+ 1598      6F6A6563 
+ 1598      745C6365 
+ 1598      34393530 
+ 1598      50726F6A 
+ 1599 00af 726F6A65 		.ascii	"roject\\Networking Project.cydsn\000"
+ 1599      63745C4E 
+ 1599      6574776F 
+ 1599      726B696E 
+ 1599      67205072 
+ 1600              	.LASF12:
+ 1601 00cf 666C6F61 		.ascii	"float\000"
+ 1601      7400
+ 1602              	.LASF1:
+ 1603 00d5 756E7369 		.ascii	"unsigned char\000"
+ 1603      676E6564 
+ 1603      20636861 
+ 1603      7200
+ 1604              	.LASF36:
+ 1605 00e3 2E5C6D61 		.ascii	".\\main.c\000"
+ 1605      696E2E63 
+ 1605      00
+ 1606              	.LASF5:
+ 1607 00ec 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1607      20756E73 
+ 1607      69676E65 
+ 1607      6420696E 
+ 1607      7400
+ 1608              	.LASF3:
+ 1609 00fe 73686F72 		.ascii	"short unsigned int\000"
+ 1609      7420756E 
+ 1609      7369676E 
+ 1609      65642069 
+ 1609      6E7400
+ 1610              	.LASF30:
+ 1611 0111 7061636B 		.ascii	"packetUSB\000"
+ 1611      65745553 
+ 1611      4200
+ 1612              	.LASF20:
+ 1613 011b 53746174 		.ascii	"State\000"
+ 1613      6500
+ 1614              	.LASF28:
+ 1615 0121 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1615      52784275 
+ 1615      66666572 
+ 1615      00
+ 1616              	.LASF18:
+ 1617 012e 42555359 		.ascii	"BUSY\000"
+ 1617      00
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 35
+
+
+ 1618              	.LASF13:
+ 1619 0133 646F7562 		.ascii	"double\000"
+ 1619      6C6500
+ 1620              	.LASF25:
+ 1621 013a 6973725F 		.ascii	"isr_sendingData\000"
+ 1621      73656E64 
+ 1621      696E6744 
+ 1621      61746100 
+ 1622              	.LASF11:
+ 1623 014a 75696E74 		.ascii	"uint16\000"
+ 1623      313600
+ 1624              	.LASF22:
+ 1625 0151 6973725F 		.ascii	"isr_RisingEdgeDetected\000"
+ 1625      52697369 
+ 1625      6E674564 
+ 1625      67654465 
+ 1625      74656374 
+ 1626              	.LASF38:
+ 1627 0168 6D61696E 		.ascii	"main\000"
+ 1627      00
+ 1628              	.LASF8:
+ 1629 016d 756E7369 		.ascii	"unsigned int\000"
+ 1629      676E6564 
+ 1629      20696E74 
+ 1629      00
+ 1630              	.LASF7:
+ 1631 017a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1631      206C6F6E 
+ 1631      6720756E 
+ 1631      7369676E 
+ 1631      65642069 
+ 1632              	.LASF33:
+ 1633 0191 695F7573 		.ascii	"i_usb\000"
+ 1633      6200
+ 1634              	.LASF9:
+ 1635 0197 696E7433 		.ascii	"int32_t\000"
+ 1635      325F7400 
+ 1636              	.LASF15:
+ 1637 019f 73697A65 		.ascii	"sizetype\000"
+ 1637      74797065 
+ 1637      00
+ 1638              	.LASF19:
+ 1639 01a8 434F4C4C 		.ascii	"COLLISION\000"
+ 1639      4953494F 
+ 1639      4E00
+ 1640              	.LASF34:
+ 1641 01b2 695F7365 		.ascii	"i_send\000"
+ 1641      6E6400
+ 1642              	.LASF14:
+ 1643 01b9 63686172 		.ascii	"char\000"
+ 1643      00
+ 1644              	.LASF27:
+ 1645 01be 7061636B 		.ascii	"packetBin\000"
+ 1645      65744269 
+ 1645      6E00
+ 1646              	.LASF24:
+ 1647 01c8 6973725F 		.ascii	"isr_BusyToCollision\000"
+ARM GAS  C:\Users\makij\AppData\Local\Temp\cc3KQ7DP.s 			page 36
+
+
+ 1647      42757379 
+ 1647      546F436F 
+ 1647      6C6C6973 
+ 1647      696F6E00 
+ 1648              	.LASF31:
+ 1649 01dc 7061636B 		.ascii	"packetHex\000"
+ 1649      65744865 
+ 1649      7800
+ 1650              	.LASF2:
+ 1651 01e6 73686F72 		.ascii	"short int\000"
+ 1651      7420696E 
+ 1651      7400
+ 1652              	.LASF10:
+ 1653 01f0 75696E74 		.ascii	"uint8\000"
+ 1653      3800
+ 1654              	.LASF35:
+ 1655 01f6 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1655      4320342E 
+ 1655      372E3320 
+ 1655      32303133 
+ 1655      30333132 
+ 1656 0229 616E6368 		.ascii	"anch revision 196615]\000"
+ 1656      20726576 
+ 1656      6973696F 
+ 1656      6E203139 
+ 1656      36363135 
+ 1657              	.LASF32:
+ 1658 023f 7061636B 		.ascii	"packetSend\000"
+ 1658      65745365 
+ 1658      6E6400
+ 1659              	.LASF4:
+ 1660 024a 6C6F6E67 		.ascii	"long int\000"
+ 1660      20696E74 
+ 1660      00
+ 1661              	.LASF16:
+ 1662 0253 6C6F6E67 		.ascii	"long double\000"
+ 1662      20646F75 
+ 1662      626C6500 
+ 1663              	.LASF0:
+ 1664 025f 7369676E 		.ascii	"signed char\000"
+ 1664      65642063 
+ 1664      68617200 
+ 1665              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

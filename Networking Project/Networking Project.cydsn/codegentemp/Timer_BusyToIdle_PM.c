@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: Timer_BusyToIdle_PM.c
-* Version 2.50
+* Version 2.60
 *
 *  Description:
 *     This file provides the power management source code to API for the
@@ -10,13 +10,14 @@
 *     None
 *
 *******************************************************************************
-* Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
 ********************************************************************************/
 
 #include "Timer_BusyToIdle.h"
+
 static Timer_BusyToIdle_backupStruct Timer_BusyToIdle_backup;
 
 
@@ -42,25 +43,13 @@ static Timer_BusyToIdle_backupStruct Timer_BusyToIdle_backup;
 void Timer_BusyToIdle_SaveConfig(void) 
 {
     #if (!Timer_BusyToIdle_UsingFixedFunction)
-        /* Backup the UDB non-rentention registers for CY_UDB_V0 */
-        #if (CY_UDB_V0)
-            Timer_BusyToIdle_backup.TimerUdb = Timer_BusyToIdle_ReadCounter();
-            Timer_BusyToIdle_backup.TimerPeriod = Timer_BusyToIdle_ReadPeriod();
-            Timer_BusyToIdle_backup.InterruptMaskValue = Timer_BusyToIdle_STATUS_MASK;
-            #if (Timer_BusyToIdle_UsingHWCaptureCounter)
-                Timer_BusyToIdle_backup.TimerCaptureCounter = Timer_BusyToIdle_ReadCaptureCount();
-            #endif /* Backup the UDB non-rentention register capture counter for CY_UDB_V0 */
-        #endif /* Backup the UDB non-rentention registers for CY_UDB_V0 */
+        Timer_BusyToIdle_backup.TimerUdb = Timer_BusyToIdle_ReadCounter();
+        Timer_BusyToIdle_backup.InterruptMaskValue = Timer_BusyToIdle_STATUS_MASK;
+        #if (Timer_BusyToIdle_UsingHWCaptureCounter)
+            Timer_BusyToIdle_backup.TimerCaptureCounter = Timer_BusyToIdle_ReadCaptureCount();
+        #endif /* Back Up capture counter register  */
 
-        #if (CY_UDB_V1)
-            Timer_BusyToIdle_backup.TimerUdb = Timer_BusyToIdle_ReadCounter();
-            Timer_BusyToIdle_backup.InterruptMaskValue = Timer_BusyToIdle_STATUS_MASK;
-            #if (Timer_BusyToIdle_UsingHWCaptureCounter)
-                Timer_BusyToIdle_backup.TimerCaptureCounter = Timer_BusyToIdle_ReadCaptureCount();
-            #endif /* Back Up capture counter register  */
-        #endif /* Backup non retention registers, interrupt mask and capture counter for CY_UDB_V1 */
-
-        #if(!Timer_BusyToIdle_ControlRegRemoved)
+        #if(!Timer_BusyToIdle_UDB_CONTROL_REG_REMOVED)
             Timer_BusyToIdle_backup.TimerControlRegister = Timer_BusyToIdle_ReadControlRegister();
         #endif /* Backup the enable state of the Timer component */
     #endif /* Backup non retention registers in UDB implementation. All fixed function registers are retention */
@@ -88,35 +77,14 @@ void Timer_BusyToIdle_SaveConfig(void)
 void Timer_BusyToIdle_RestoreConfig(void) 
 {   
     #if (!Timer_BusyToIdle_UsingFixedFunction)
-        /* Restore the UDB non-rentention registers for CY_UDB_V0 */
-        #if (CY_UDB_V0)
-            /* Interrupt State Backup for Critical Region*/
-            uint8 Timer_BusyToIdle_interruptState;
 
-            Timer_BusyToIdle_WriteCounter(Timer_BusyToIdle_backup.TimerUdb);
-            Timer_BusyToIdle_WritePeriod(Timer_BusyToIdle_backup.TimerPeriod);
-            /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region critical*/
-            /* Enter Critical Region*/
-            Timer_BusyToIdle_interruptState = CyEnterCriticalSection();
-            /* Use the interrupt output of the status register for IRQ output */
-            Timer_BusyToIdle_STATUS_AUX_CTRL |= Timer_BusyToIdle_STATUS_ACTL_INT_EN_MASK;
-            /* Exit Critical Region*/
-            CyExitCriticalSection(Timer_BusyToIdle_interruptState);
-            Timer_BusyToIdle_STATUS_MASK =Timer_BusyToIdle_backup.InterruptMaskValue;
-            #if (Timer_BusyToIdle_UsingHWCaptureCounter)
-                Timer_BusyToIdle_SetCaptureCount(Timer_BusyToIdle_backup.TimerCaptureCounter);
-            #endif /* Restore the UDB non-rentention register capture counter for CY_UDB_V0 */
-        #endif /* Restore the UDB non-rentention registers for CY_UDB_V0 */
+        Timer_BusyToIdle_WriteCounter(Timer_BusyToIdle_backup.TimerUdb);
+        Timer_BusyToIdle_STATUS_MASK =Timer_BusyToIdle_backup.InterruptMaskValue;
+        #if (Timer_BusyToIdle_UsingHWCaptureCounter)
+            Timer_BusyToIdle_SetCaptureCount(Timer_BusyToIdle_backup.TimerCaptureCounter);
+        #endif /* Restore Capture counter register*/
 
-        #if (CY_UDB_V1)
-            Timer_BusyToIdle_WriteCounter(Timer_BusyToIdle_backup.TimerUdb);
-            Timer_BusyToIdle_STATUS_MASK =Timer_BusyToIdle_backup.InterruptMaskValue;
-            #if (Timer_BusyToIdle_UsingHWCaptureCounter)
-                Timer_BusyToIdle_SetCaptureCount(Timer_BusyToIdle_backup.TimerCaptureCounter);
-            #endif /* Restore Capture counter register*/
-        #endif /* Restore up non retention registers, interrupt mask and capture counter for CY_UDB_V1 */
-
-        #if(!Timer_BusyToIdle_ControlRegRemoved)
+        #if(!Timer_BusyToIdle_UDB_CONTROL_REG_REMOVED)
             Timer_BusyToIdle_WriteControlRegister(Timer_BusyToIdle_backup.TimerControlRegister);
         #endif /* Restore the enable state of the Timer component */
     #endif /* Restore non retention registers in the UDB implementation only */
@@ -143,7 +111,7 @@ void Timer_BusyToIdle_RestoreConfig(void)
 *******************************************************************************/
 void Timer_BusyToIdle_Sleep(void) 
 {
-    #if(!Timer_BusyToIdle_ControlRegRemoved)
+    #if(!Timer_BusyToIdle_UDB_CONTROL_REG_REMOVED)
         /* Save Counter's enable state */
         if(Timer_BusyToIdle_CTRL_ENABLE == (Timer_BusyToIdle_CONTROL & Timer_BusyToIdle_CTRL_ENABLE))
         {
@@ -182,7 +150,7 @@ void Timer_BusyToIdle_Sleep(void)
 void Timer_BusyToIdle_Wakeup(void) 
 {
     Timer_BusyToIdle_RestoreConfig();
-    #if(!Timer_BusyToIdle_ControlRegRemoved)
+    #if(!Timer_BusyToIdle_UDB_CONTROL_REG_REMOVED)
         if(Timer_BusyToIdle_backup.TimerEnableState == 1u)
         {     /* Enable Timer's operation */
                 Timer_BusyToIdle_Enable();

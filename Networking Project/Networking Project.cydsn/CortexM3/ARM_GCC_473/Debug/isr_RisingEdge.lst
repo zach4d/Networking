@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
   29:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
   30:.\Generated_Source\PSoC5/isr_RisingEdge.c **** /* `#END` */
   31:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 2
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/isr_RisingEdge.c **** #ifndef CYINT_IRQ_BASE
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
   46 0014 4FF00700 		mov	r0, #7
   47 0018 FFF7FEFF 		bl	isr_RisingEdge_SetPriority
   67:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 3
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 3
 
 
   68:.\Generated_Source\PSoC5/isr_RisingEdge.c ****     /* Enable it. */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
   79              		.loc 1 90 0
   80 0008 FFF7FEFF 		bl	isr_RisingEdge_Disable
   91:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 4
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 4
 
 
   92:.\Generated_Source\PSoC5/isr_RisingEdge.c ****     /* Set the ISR to point to the isr_RisingEdge Interrupt. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  109              	.LCFI5:
  110              		.cfi_def_cfa_offset 8
  111              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 5
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 5
 
 
  112              		.cfi_offset 14, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  140 0000 80B4     		push	{r7}
  141              	.LCFI7:
  142              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 6
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 6
 
 
  143              		.cfi_offset 7, -4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  172              	.LCFI10:
  173              		.cfi_def_cfa_offset 24
  174 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 7
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 7
 
 
  175              	.LCFI11:
@@ -376,7 +376,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  173:.\Generated_Source\PSoC5/isr_RisingEdge.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_RisingEdge__INTC_NUMBER] = address;
  183              		.loc 1 173 0
  184 0014 FB68     		ldr	r3, [r7, #12]
- 185 0016 03F14C03 		add	r3, r3, #76
+ 185 0016 03F15003 		add	r3, r3, #80
  186 001a 7A68     		ldr	r2, [r7, #4]
  187 001c 1A60     		str	r2, [r3, #0]
  174:.\Generated_Source\PSoC5/isr_RisingEdge.c **** }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  205              		.cfi_startproc
  206              		@ args = 0, pretend = 0, frame = 8
  207              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 8
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 8
 
 
  208              		@ link register save eliminated.
@@ -444,7 +444,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  197:.\Generated_Source\PSoC5/isr_RisingEdge.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)isr_RisingEdge__INTC_NUMBER];
  224              		.loc 1 197 0
  225 0012 7B68     		ldr	r3, [r7, #4]
- 226 0014 DB6C     		ldr	r3, [r3, #76]
+ 226 0014 1B6D     		ldr	r3, [r3, #80]
  198:.\Generated_Source\PSoC5/isr_RisingEdge.c **** }
  227              		.loc 1 198 0
  228 0016 1846     		mov	r0, r3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  211:.\Generated_Source\PSoC5/isr_RisingEdge.c **** *
  212:.\Generated_Source\PSoC5/isr_RisingEdge.c **** * Parameters:
  213:.\Generated_Source\PSoC5/isr_RisingEdge.c **** *   priority: Priority of the interrupt. 0 - 7, 0 being the highest.
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 9
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 9
 
 
  214:.\Generated_Source\PSoC5/isr_RisingEdge.c **** *
@@ -507,7 +507,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  260 0008 FB71     		strb	r3, [r7, #7]
  221:.\Generated_Source\PSoC5/isr_RisingEdge.c ****     *isr_RisingEdge_INTC_PRIOR = priority << 5;
  261              		.loc 1 221 0
- 262 000a 4EF20343 		movw	r3, #58371
+ 262 000a 4EF20443 		movw	r3, #58372
  263 000e CEF20003 		movt	r3, 57344
  264 0012 FA79     		ldrb	r2, [r7, #7]
  265 0014 4FEA4212 		lsl	r2, r2, #5
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  228:.\Generated_Source\PSoC5/isr_RisingEdge.c **** *
  229:.\Generated_Source\PSoC5/isr_RisingEdge.c **** * Summary:
  230:.\Generated_Source\PSoC5/isr_RisingEdge.c **** *   Gets the Priority of the Interrupt.
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 10
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 10
 
 
  231:.\Generated_Source\PSoC5/isr_RisingEdge.c **** *
@@ -571,7 +571,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  243:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
  244:.\Generated_Source\PSoC5/isr_RisingEdge.c ****     priority = *isr_RisingEdge_INTC_PRIOR >> 5;
  299              		.loc 1 244 0
- 300 0006 4EF20343 		movw	r3, #58371
+ 300 0006 4EF20443 		movw	r3, #58372
  301 000a CEF20003 		movt	r3, 57344
  302 000e 1B78     		ldrb	r3, [r3, #0]
  303 0010 DBB2     		uxtb	r3, r3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  321              		.thumb_func
  322              		.type	isr_RisingEdge_Enable, %function
  323              	isr_RisingEdge_Enable:
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 11
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 11
 
 
  324              	.LFB8:
@@ -637,7 +637,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  337              		.loc 1 267 0
  338 0004 4FF46143 		mov	r3, #57600
  339 0008 CEF20003 		movt	r3, 57344
- 340 000c 4FF00802 		mov	r2, #8
+ 340 000c 4FF01002 		mov	r2, #16
  341 0010 1A60     		str	r2, [r3, #0]
  268:.\Generated_Source\PSoC5/isr_RisingEdge.c **** }
  342              		.loc 1 268 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  269:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
  270:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
  271:.\Generated_Source\PSoC5/isr_RisingEdge.c **** /*******************************************************************************
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 12
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 12
 
 
  272:.\Generated_Source\PSoC5/isr_RisingEdge.c **** * Function Name: isr_RisingEdge_GetState
@@ -694,7 +694,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  370 0004 4FF46143 		mov	r3, #57600
  371 0008 CEF20003 		movt	r3, 57344
  372 000c 1B68     		ldr	r3, [r3, #0]
- 373 000e 03F00803 		and	r3, r3, #8
+ 373 000e 03F01003 		and	r3, r3, #16
  374 0012 002B     		cmp	r3, #0
  375 0014 02D0     		beq	.L13
  376              		.loc 1 288 0 is_stmt 0 discriminator 1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  393              		.global	isr_RisingEdge_Disable
  394              		.thumb
  395              		.thumb_func
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 13
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 13
 
 
  396              		.type	isr_RisingEdge_Disable, %function
@@ -759,7 +759,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  411              		.loc 1 309 0
  412 0004 4EF28013 		movw	r3, #57728
  413 0008 CEF20003 		movt	r3, 57344
- 414 000c 4FF00802 		mov	r2, #8
+ 414 000c 4FF01002 		mov	r2, #16
  415 0010 1A60     		str	r2, [r3, #0]
  310:.\Generated_Source\PSoC5/isr_RisingEdge.c **** }
  416              		.loc 1 310 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  429              	isr_RisingEdge_SetPending:
  430              	.LFB11:
  311:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 14
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 14
 
 
  312:.\Generated_Source\PSoC5/isr_RisingEdge.c **** 
@@ -815,7 +815,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  443              		.loc 1 330 0
  444 0004 4FF46243 		mov	r3, #57856
  445 0008 CEF20003 		movt	r3, 57344
- 446 000c 4FF00802 		mov	r2, #8
+ 446 000c 4FF01002 		mov	r2, #16
  447 0010 1A60     		str	r2, [r3, #0]
  331:.\Generated_Source\PSoC5/isr_RisingEdge.c **** }
  448              		.loc 1 331 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  334:.\Generated_Source\PSoC5/isr_RisingEdge.c **** /*******************************************************************************
  335:.\Generated_Source\PSoC5/isr_RisingEdge.c **** * Function Name: isr_RisingEdge_ClearPending
  336:.\Generated_Source\PSoC5/isr_RisingEdge.c **** ********************************************************************************
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 15
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 15
 
 
  337:.\Generated_Source\PSoC5/isr_RisingEdge.c **** *
@@ -870,7 +870,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  475              		.loc 1 350 0
  476 0004 4EF28023 		movw	r3, #57984
  477 0008 CEF20003 		movt	r3, 57344
- 478 000c 4FF00802 		mov	r2, #8
+ 478 000c 4FF01002 		mov	r2, #16
  479 0010 1A60     		str	r2, [r3, #0]
  351:.\Generated_Source\PSoC5/isr_RisingEdge.c **** }
  480              		.loc 1 351 0
@@ -890,29 +890,29 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  494 0006 00000000 		.4byte	.Ldebug_abbrev0
  495 000a 04       		.byte	0x4
  496 000b 01       		.uleb128 0x1
- 497 000c 68020000 		.4byte	.LASF33
+ 497 000c 80020000 		.4byte	.LASF33
  498 0010 01       		.byte	0x1
- 499 0011 7B000000 		.4byte	.LASF34
- 500 0015 5D010000 		.4byte	.LASF35
+ 499 0011 F8000000 		.4byte	.LASF34
+ 500 0015 66000000 		.4byte	.LASF35
  501 0019 00000000 		.4byte	.Ldebug_ranges0+0
  502 001d 00000000 		.4byte	0
  503 0021 00000000 		.4byte	0
  504 0025 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 16
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 16
 
 
  505 0029 02       		.uleb128 0x2
  506 002a 01       		.byte	0x1
  507 002b 06       		.byte	0x6
- 508 002c D3020000 		.4byte	.LASF0
+ 508 002c EB020000 		.4byte	.LASF0
  509 0030 02       		.uleb128 0x2
  510 0031 01       		.byte	0x1
  511 0032 08       		.byte	0x8
- 512 0033 D7000000 		.4byte	.LASF1
+ 512 0033 54010000 		.4byte	.LASF1
  513 0037 02       		.uleb128 0x2
  514 0038 02       		.byte	0x2
  515 0039 05       		.byte	0x5
- 516 003a 5E020000 		.4byte	.LASF2
+ 516 003a 76020000 		.4byte	.LASF2
  517 003e 02       		.uleb128 0x2
  518 003f 02       		.byte	0x2
  519 0040 07       		.byte	0x7
@@ -924,27 +924,27 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  525 004c 02       		.uleb128 0x2
  526 004d 04       		.byte	0x4
  527 004e 07       		.byte	0x7
- 528 004f E0010000 		.4byte	.LASF4
+ 528 004f F8010000 		.4byte	.LASF4
  529 0053 02       		.uleb128 0x2
  530 0054 08       		.byte	0x8
  531 0055 05       		.byte	0x5
- 532 0056 22020000 		.4byte	.LASF5
+ 532 0056 3A020000 		.4byte	.LASF5
  533 005a 02       		.uleb128 0x2
  534 005b 08       		.byte	0x8
  535 005c 07       		.byte	0x7
- 536 005d F5010000 		.4byte	.LASF6
+ 536 005d 0D020000 		.4byte	.LASF6
  537 0061 02       		.uleb128 0x2
  538 0062 04       		.byte	0x4
  539 0063 05       		.byte	0x5
- 540 0064 B1020000 		.4byte	.LASF7
+ 540 0064 C9020000 		.4byte	.LASF7
  541 0068 02       		.uleb128 0x2
  542 0069 04       		.byte	0x4
  543 006a 07       		.byte	0x7
- 544 006b 19020000 		.4byte	.LASF8
+ 544 006b 31020000 		.4byte	.LASF8
  545 006f 02       		.uleb128 0x2
  546 0070 04       		.byte	0x4
  547 0071 07       		.byte	0x7
- 548 0072 EA000000 		.4byte	.LASF9
+ 548 0072 67010000 		.4byte	.LASF9
  549 0076 04       		.uleb128 0x4
  550 0077 01       		.byte	0x1
  551 0078 05       		.uleb128 0x5
@@ -953,30 +953,30 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  554 007e 02       		.uleb128 0x2
  555 007f 01       		.byte	0x1
  556 0080 08       		.byte	0x8
- 557 0081 30020000 		.4byte	.LASF10
+ 557 0081 48020000 		.4byte	.LASF10
  558 0085 06       		.uleb128 0x6
- 559 0086 FC000000 		.4byte	.LASF11
+ 559 0086 79010000 		.4byte	.LASF11
  560 008a 02       		.byte	0x2
  561 008b 5B       		.byte	0x5b
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 17
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 17
 
 
  562 008c 30000000 		.4byte	0x30
  563 0090 06       		.uleb128 0x6
- 564 0091 C2010000 		.4byte	.LASF12
+ 564 0091 DA010000 		.4byte	.LASF12
  565 0095 02       		.byte	0x2
  566 0096 5D       		.byte	0x5d
  567 0097 6F000000 		.4byte	0x6f
  568 009b 02       		.uleb128 0x2
  569 009c 04       		.byte	0x4
  570 009d 04       		.byte	0x4
- 571 009e B9000000 		.4byte	.LASF13
+ 571 009e 36010000 		.4byte	.LASF13
  572 00a2 02       		.uleb128 0x2
  573 00a3 08       		.byte	0x8
  574 00a4 04       		.byte	0x4
- 575 00a5 22010000 		.4byte	.LASF14
+ 575 00a5 9F010000 		.4byte	.LASF14
  576 00a9 06       		.uleb128 0x6
- 577 00aa E5000000 		.4byte	.LASF15
+ 577 00aa 62010000 		.4byte	.LASF15
  578 00ae 02       		.byte	0x2
  579 00af F0       		.byte	0xf0
  580 00b0 B4000000 		.4byte	0xb4
@@ -990,13 +990,13 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  588 00c4 07       		.uleb128 0x7
  589 00c5 90000000 		.4byte	0x90
  590 00c9 08       		.uleb128 0x8
- 591 00ca 0C020000 		.4byte	.LASF17
+ 591 00ca 24020000 		.4byte	.LASF17
  592 00ce 02       		.byte	0x2
  593 00cf 0201     		.2byte	0x102
  594 00d1 78000000 		.4byte	0x78
  595 00d5 09       		.uleb128 0x9
  596 00d6 01       		.byte	0x1
- 597 00d7 66000000 		.4byte	.LASF18
+ 597 00d7 E3000000 		.4byte	.LASF18
  598 00db 01       		.byte	0x1
  599 00dc 39       		.byte	0x39
  600 00dd 01       		.byte	0x1
@@ -1006,7 +1006,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  604 00ea 01       		.byte	0x1
  605 00eb 0A       		.uleb128 0xa
  606 00ec 01       		.byte	0x1
- 607 00ed 02010000 		.4byte	.LASF21
+ 607 00ed 7F010000 		.4byte	.LASF21
  608 00f1 01       		.byte	0x1
  609 00f2 57       		.byte	0x57
  610 00f3 01       		.byte	0x1
@@ -1016,9 +1016,9 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  614 0100 01       		.byte	0x1
  615 0101 14010000 		.4byte	0x114
  616 0105 0B       		.uleb128 0xb
- 617 0106 ED010000 		.4byte	.LASF23
+ 617 0106 05020000 		.4byte	.LASF23
  618 010a 01       		.byte	0x1
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 18
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 18
 
 
  619 010b 57       		.byte	0x57
@@ -1029,7 +1029,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  624 0113 00       		.byte	0
  625 0114 09       		.uleb128 0x9
  626 0115 01       		.byte	0x1
- 627 0116 A5000000 		.4byte	.LASF19
+ 627 0116 22010000 		.4byte	.LASF19
  628 011a 01       		.byte	0x1
  629 011b 74       		.byte	0x74
  630 011c 01       		.byte	0x1
@@ -1039,7 +1039,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  634 0129 01       		.byte	0x1
  635 012a 0C       		.uleb128 0xc
  636 012b 01       		.byte	0x1
- 637 012c BA020000 		.4byte	.LASF20
+ 637 012c D2020000 		.4byte	.LASF20
  638 0130 01       		.byte	0x1
  639 0131 8E       		.byte	0x8e
  640 0132 01       		.byte	0x1
@@ -1049,7 +1049,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  644 013f 01       		.byte	0x1
  645 0140 0D       		.uleb128 0xd
  646 0141 01       		.byte	0x1
- 647 0142 DF020000 		.4byte	.LASF22
+ 647 0142 F7020000 		.4byte	.LASF22
  648 0146 01       		.byte	0x1
  649 0147 A7       		.byte	0xa7
  650 0148 01       		.byte	0x1
@@ -1059,7 +1059,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  654 0155 01       		.byte	0x1
  655 0156 77010000 		.4byte	0x177
  656 015a 0B       		.uleb128 0xb
- 657 015b ED010000 		.4byte	.LASF23
+ 657 015b 05020000 		.4byte	.LASF23
  658 015f 01       		.byte	0x1
  659 0160 A7       		.byte	0xa7
  660 0161 C9000000 		.4byte	0xc9
@@ -1067,7 +1067,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  662 0166 91       		.byte	0x91
  663 0167 6C       		.sleb128 -20
  664 0168 0E       		.uleb128 0xe
- 665 0169 35020000 		.4byte	.LASF24
+ 665 0169 4D020000 		.4byte	.LASF24
  666 016d 01       		.byte	0x1
  667 016e A9       		.byte	0xa9
  668 016f 77010000 		.4byte	0x177
@@ -1078,12 +1078,12 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  673 0177 05       		.uleb128 0x5
  674 0178 04       		.byte	0x4
  675 0179 C9000000 		.4byte	0xc9
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 19
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 19
 
 
  676 017d 0F       		.uleb128 0xf
  677 017e 01       		.byte	0x1
- 678 017f 44010000 		.4byte	.LASF27
+ 678 017f C1010000 		.4byte	.LASF27
  679 0183 01       		.byte	0x1
  680 0184 BF       		.byte	0xbf
  681 0185 01       		.byte	0x1
@@ -1094,7 +1094,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  686 0196 01       		.byte	0x1
  687 0197 AA010000 		.4byte	0x1aa
  688 019b 0E       		.uleb128 0xe
- 689 019c 35020000 		.4byte	.LASF24
+ 689 019c 4D020000 		.4byte	.LASF24
  690 01a0 01       		.byte	0x1
  691 01a1 C1       		.byte	0xc1
  692 01a2 77010000 		.4byte	0x177
@@ -1104,7 +1104,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  696 01a9 00       		.byte	0
  697 01aa 0D       		.uleb128 0xd
  698 01ab 01       		.byte	0x1
- 699 01ac 29010000 		.4byte	.LASF25
+ 699 01ac A6010000 		.4byte	.LASF25
  700 01b0 01       		.byte	0x1
  701 01b1 DB       		.byte	0xdb
  702 01b2 01       		.byte	0x1
@@ -1114,7 +1114,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  706 01bf 01       		.byte	0x1
  707 01c0 D3010000 		.4byte	0x1d3
  708 01c4 0B       		.uleb128 0xb
- 709 01c5 19010000 		.4byte	.LASF26
+ 709 01c5 96010000 		.4byte	.LASF26
  710 01c9 01       		.byte	0x1
  711 01ca DB       		.byte	0xdb
  712 01cb 85000000 		.4byte	0x85
@@ -1135,10 +1135,10 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  727 01ec 01       		.byte	0x1
  728 01ed 00020000 		.4byte	0x200
  729 01f1 0E       		.uleb128 0xe
- 730 01f2 19010000 		.4byte	.LASF26
+ 730 01f2 96010000 		.4byte	.LASF26
  731 01f6 01       		.byte	0x1
  732 01f7 F1       		.byte	0xf1
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 20
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 20
 
 
  733 01f8 85000000 		.4byte	0x85
@@ -1158,7 +1158,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  747 0216 01       		.byte	0x1
  748 0217 11       		.uleb128 0x11
  749 0218 01       		.byte	0x1
- 750 0219 BF000000 		.4byte	.LASF36
+ 750 0219 3C010000 		.4byte	.LASF36
  751 021d 01       		.byte	0x1
  752 021e 1D01     		.2byte	0x11d
  753 0220 01       		.byte	0x1
@@ -1169,7 +1169,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  758 0231 01       		.byte	0x1
  759 0232 10       		.uleb128 0x10
  760 0233 01       		.byte	0x1
- 761 0234 C9010000 		.4byte	.LASF30
+ 761 0234 E1010000 		.4byte	.LASF30
  762 0238 01       		.byte	0x1
  763 0239 3201     		.2byte	0x132
  764 023b 01       		.byte	0x1
@@ -1179,7 +1179,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  768 0248 01       		.byte	0x1
  769 0249 10       		.uleb128 0x10
  770 024a 01       		.byte	0x1
- 771 024b 44020000 		.4byte	.LASF31
+ 771 024b 5C020000 		.4byte	.LASF31
  772 024f 01       		.byte	0x1
  773 0250 4801     		.2byte	0x148
  774 0252 01       		.byte	0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  787 0272 4C020000 		.4byte	.LLST12
  788 0276 01       		.byte	0x1
  789 0277 00       		.byte	0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 21
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 21
 
 
  790              		.section	.debug_abbrev,"",%progbits
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  844 0034 00       		.byte	0
  845 0035 0B       		.uleb128 0xb
  846 0036 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 22
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 22
 
 
  847 0037 49       		.uleb128 0x49
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  901 006d 40       		.uleb128 0x40
  902 006e 06       		.uleb128 0x6
  903 006f 9642     		.uleb128 0x2116
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 23
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 23
 
 
  904 0071 0C       		.uleb128 0xc
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  958 00a8 27       		.uleb128 0x27
  959 00a9 0C       		.uleb128 0xc
  960 00aa 11       		.uleb128 0x11
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 24
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 24
 
 
  961 00ab 01       		.uleb128 0x1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1015 00e3 03       		.uleb128 0x3
  1016 00e4 0E       		.uleb128 0xe
  1017 00e5 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 25
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 25
 
 
  1018 00e6 0B       		.uleb128 0xb
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1072 011e 0C       		.uleb128 0xc
  1073 011f 49       		.uleb128 0x49
  1074 0120 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 26
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 26
 
 
  1075 0121 11       		.uleb128 0x11
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1129              	.LLST2:
  1130 0064 00000000 		.4byte	.LFB2
  1131 0068 02000000 		.4byte	.LCFI5
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 27
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 27
 
 
  1132 006c 0200     		.2byte	0x2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1186 00ec 00000000 		.4byte	0
  1187 00f0 00000000 		.4byte	0
  1188              	.LLST5:
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 28
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 28
 
 
  1189 00f4 00000000 		.4byte	.LFB5
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1243 017a 7D       		.byte	0x7d
  1244 017b 04       		.sleb128 4
  1245 017c 04000000 		.4byte	.LCFI19
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 29
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 29
 
 
  1246 0180 06000000 		.4byte	.LCFI20
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1300 0204 04000000 		.4byte	.LCFI26
  1301 0208 0200     		.2byte	0x2
  1302 020a 7D       		.byte	0x7d
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 30
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 30
 
 
  1303 020b 04       		.sleb128 4
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1357 0018 00000000 		.4byte	.LFB1
  1358 001c 26000000 		.4byte	.LFE1-.LFB1
  1359 0020 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 31
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 31
 
 
  1360 0024 16000000 		.4byte	.LFE2-.LFB2
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1414              	.Ldebug_line0:
  1415 0000 55010000 		.section	.debug_str,"MS",%progbits,1
  1415      02004D00 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 32
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 32
 
 
  1415      00000201 
@@ -1891,179 +1891,182 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 1
  1425      6E674564 
  1425      67655F47 
  1425      65745072 
- 1426              	.LASF18:
- 1427 0066 6973725F 		.ascii	"isr_RisingEdge_Start\000"
- 1427      52697369 
- 1427      6E674564 
- 1427      67655F53 
- 1427      74617274 
- 1428              	.LASF34:
- 1429 007b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\isr_RisingEdge.c\000"
- 1429      6E657261 
- 1429      7465645F 
- 1429      536F7572 
- 1429      63655C50 
- 1430              	.LASF19:
- 1431 00a5 6973725F 		.ascii	"isr_RisingEdge_Stop\000"
+ 1426              	.LASF35:
+ 1427 0066 443A5C4D 		.ascii	"D:\\MSOE\\2014-2015\\Winter\\CE4950_021_Network\\la"
+ 1427      534F455C 
+ 1427      32303134 
+ 1427      2D323031 
+ 1427      355C5769 
+ 1428 0094 625C5072 		.ascii	"b\\Project\\ce4950Project\\Networking\\Networking P"
+ 1428      6F6A6563 
+ 1428      745C6365 
+ 1428      34393530 
+ 1428      50726F6A 
+ 1429 00c3 726F6A65 		.ascii	"roject\\Networking Project.cydsn\000"
+ 1429      63745C4E 
+ 1429      6574776F 
+ 1429      726B696E 
+ 1429      67205072 
+ 1430              	.LASF18:
+ 1431 00e3 6973725F 		.ascii	"isr_RisingEdge_Start\000"
  1431      52697369 
  1431      6E674564 
  1431      67655F53 
- 1431      746F7000 
- 1432              	.LASF13:
- 1433 00b9 666C6F61 		.ascii	"float\000"
- 1433      7400
- 1434              	.LASF36:
- 1435 00bf 6973725F 		.ascii	"isr_RisingEdge_GetState\000"
+ 1431      74617274 
+ 1432              	.LASF34:
+ 1433 00f8 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\isr_RisingEdge.c\000"
+ 1433      6E657261 
+ 1433      7465645F 
+ 1433      536F7572 
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 33
+
+
+ 1433      63655C50 
+ 1434              	.LASF19:
+ 1435 0122 6973725F 		.ascii	"isr_RisingEdge_Stop\000"
  1435      52697369 
  1435      6E674564 
- 1435      67655F47 
- 1435      65745374 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 33
+ 1435      67655F53 
+ 1435      746F7000 
+ 1436              	.LASF13:
+ 1437 0136 666C6F61 		.ascii	"float\000"
+ 1437      7400
+ 1438              	.LASF36:
+ 1439 013c 6973725F 		.ascii	"isr_RisingEdge_GetState\000"
+ 1439      52697369 
+ 1439      6E674564 
+ 1439      67655F47 
+ 1439      65745374 
+ 1440              	.LASF1:
+ 1441 0154 756E7369 		.ascii	"unsigned char\000"
+ 1441      676E6564 
+ 1441      20636861 
+ 1441      7200
+ 1442              	.LASF15:
+ 1443 0162 72656738 		.ascii	"reg8\000"
+ 1443      00
+ 1444              	.LASF9:
+ 1445 0167 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1445      20756E73 
+ 1445      69676E65 
+ 1445      6420696E 
+ 1445      7400
+ 1446              	.LASF11:
+ 1447 0179 75696E74 		.ascii	"uint8\000"
+ 1447      3800
+ 1448              	.LASF21:
+ 1449 017f 6973725F 		.ascii	"isr_RisingEdge_StartEx\000"
+ 1449      52697369 
+ 1449      6E674564 
+ 1449      67655F53 
+ 1449      74617274 
+ 1450              	.LASF26:
+ 1451 0196 7072696F 		.ascii	"priority\000"
+ 1451      72697479 
+ 1451      00
+ 1452              	.LASF14:
+ 1453 019f 646F7562 		.ascii	"double\000"
+ 1453      6C6500
+ 1454              	.LASF25:
+ 1455 01a6 6973725F 		.ascii	"isr_RisingEdge_SetPriority\000"
+ 1455      52697369 
+ 1455      6E674564 
+ 1455      67655F53 
+ 1455      65745072 
+ 1456              	.LASF27:
+ 1457 01c1 6973725F 		.ascii	"isr_RisingEdge_GetVector\000"
+ 1457      52697369 
+ 1457      6E674564 
+ 1457      67655F47 
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 34
 
 
- 1436              	.LASF1:
- 1437 00d7 756E7369 		.ascii	"unsigned char\000"
- 1437      676E6564 
- 1437      20636861 
- 1437      7200
- 1438              	.LASF15:
- 1439 00e5 72656738 		.ascii	"reg8\000"
- 1439      00
- 1440              	.LASF9:
- 1441 00ea 6C6F6E67 		.ascii	"long unsigned int\000"
- 1441      20756E73 
- 1441      69676E65 
- 1441      6420696E 
- 1441      7400
- 1442              	.LASF11:
- 1443 00fc 75696E74 		.ascii	"uint8\000"
- 1443      3800
- 1444              	.LASF21:
- 1445 0102 6973725F 		.ascii	"isr_RisingEdge_StartEx\000"
- 1445      52697369 
- 1445      6E674564 
- 1445      67655F53 
- 1445      74617274 
- 1446              	.LASF26:
- 1447 0119 7072696F 		.ascii	"priority\000"
- 1447      72697479 
- 1447      00
- 1448              	.LASF14:
- 1449 0122 646F7562 		.ascii	"double\000"
- 1449      6C6500
- 1450              	.LASF25:
- 1451 0129 6973725F 		.ascii	"isr_RisingEdge_SetPriority\000"
- 1451      52697369 
- 1451      6E674564 
- 1451      67655F53 
- 1451      65745072 
- 1452              	.LASF27:
- 1453 0144 6973725F 		.ascii	"isr_RisingEdge_GetVector\000"
- 1453      52697369 
- 1453      6E674564 
- 1453      67655F47 
- 1453      65745665 
- 1454              	.LASF35:
- 1455 015d 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
- 1455      73657273 
- 1455      5C5A6163 
- 1455      685C4472 
- 1455      6F70626F 
- 1456 018a 5C4E6574 		.ascii	"\\Networking\\Networking Project\\Networking Projec"
- 1456      776F726B 
- 1456      696E675C 
- 1456      4E657477 
- 1456      6F726B69 
- 1457 01ba 742E6379 		.ascii	"t.cydsn\000"
- 1457      64736E00 
+ 1457      65745665 
  1458              	.LASF12:
- 1459 01c2 75696E74 		.ascii	"uint32\000"
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 34
-
-
+ 1459 01da 75696E74 		.ascii	"uint32\000"
  1459      333200
  1460              	.LASF30:
- 1461 01c9 6973725F 		.ascii	"isr_RisingEdge_Disable\000"
+ 1461 01e1 6973725F 		.ascii	"isr_RisingEdge_Disable\000"
  1461      52697369 
  1461      6E674564 
  1461      67655F44 
  1461      69736162 
  1462              	.LASF4:
- 1463 01e0 756E7369 		.ascii	"unsigned int\000"
+ 1463 01f8 756E7369 		.ascii	"unsigned int\000"
  1463      676E6564 
  1463      20696E74 
  1463      00
  1464              	.LASF23:
- 1465 01ed 61646472 		.ascii	"address\000"
+ 1465 0205 61646472 		.ascii	"address\000"
  1465      65737300 
  1466              	.LASF6:
- 1467 01f5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1467 020d 6C6F6E67 		.ascii	"long long unsigned int\000"
  1467      206C6F6E 
  1467      6720756E 
  1467      7369676E 
  1467      65642069 
  1468              	.LASF17:
- 1469 020c 63796973 		.ascii	"cyisraddress\000"
+ 1469 0224 63796973 		.ascii	"cyisraddress\000"
  1469      72616464 
  1469      72657373 
  1469      00
  1470              	.LASF8:
- 1471 0219 73697A65 		.ascii	"sizetype\000"
+ 1471 0231 73697A65 		.ascii	"sizetype\000"
  1471      74797065 
  1471      00
  1472              	.LASF5:
- 1473 0222 6C6F6E67 		.ascii	"long long int\000"
+ 1473 023a 6C6F6E67 		.ascii	"long long int\000"
  1473      206C6F6E 
  1473      6720696E 
  1473      7400
  1474              	.LASF10:
- 1475 0230 63686172 		.ascii	"char\000"
+ 1475 0248 63686172 		.ascii	"char\000"
  1475      00
  1476              	.LASF24:
- 1477 0235 72616D56 		.ascii	"ramVectorTable\000"
+ 1477 024d 72616D56 		.ascii	"ramVectorTable\000"
  1477      6563746F 
  1477      72546162 
  1477      6C6500
  1478              	.LASF31:
- 1479 0244 6973725F 		.ascii	"isr_RisingEdge_SetPending\000"
+ 1479 025c 6973725F 		.ascii	"isr_RisingEdge_SetPending\000"
  1479      52697369 
  1479      6E674564 
  1479      67655F53 
  1479      65745065 
  1480              	.LASF2:
- 1481 025e 73686F72 		.ascii	"short int\000"
+ 1481 0276 73686F72 		.ascii	"short int\000"
  1481      7420696E 
  1481      7400
  1482              	.LASF33:
- 1483 0268 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccTBZGQH.s 			page 35
+
+
+ 1483 0280 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
  1483      4320342E 
  1483      372E3320 
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccA96Ap6.s 			page 35
-
-
  1483      32303133 
  1483      30333132 
- 1484 029b 616E6368 		.ascii	"anch revision 196615]\000"
+ 1484 02b3 616E6368 		.ascii	"anch revision 196615]\000"
  1484      20726576 
  1484      6973696F 
  1484      6E203139 
  1484      36363135 
  1485              	.LASF7:
- 1486 02b1 6C6F6E67 		.ascii	"long int\000"
+ 1486 02c9 6C6F6E67 		.ascii	"long int\000"
  1486      20696E74 
  1486      00
  1487              	.LASF20:
- 1488 02ba 6973725F 		.ascii	"isr_RisingEdge_Interrupt\000"
+ 1488 02d2 6973725F 		.ascii	"isr_RisingEdge_Interrupt\000"
  1488      52697369 
  1488      6E674564 
  1488      67655F49 
  1488      6E746572 
  1489              	.LASF0:
- 1490 02d3 7369676E 		.ascii	"signed char\000"
+ 1490 02eb 7369676E 		.ascii	"signed char\000"
  1490      65642063 
  1490      68617200 
  1491              	.LASF22:
- 1492 02df 6973725F 		.ascii	"isr_RisingEdge_SetVector\000"
+ 1492 02f7 6973725F 		.ascii	"isr_RisingEdge_SetVector\000"
  1492      52697369 
  1492      6E674564 
  1492      67655F53 

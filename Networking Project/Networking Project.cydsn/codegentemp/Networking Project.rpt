@@ -1,13 +1,13 @@
-Loading plugins phase: Elapsed time ==> 0s.227ms
-Initializing data phase: Elapsed time ==> 2s.385ms
+Loading plugins phase: Elapsed time ==> 0s.298ms
+Initializing data phase: Elapsed time ==> 2s.207ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -d CY8C5868AXI-LP035 -s C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Generated_Source\PSoC5 -- -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE</CYPRESSTAG>
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -d CY8C5868AXI-LP035 -s D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Generated_Source\PSoC5 -- -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 3s.441ms
+Elaboration phase: Elapsed time ==> 4s.582ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.164ms
+HDL generation phase: Elapsed time ==> 0s.141ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -25,23 +25,23 @@ HDL generation phase: Elapsed time ==> 0s.164ms
 ======================================================================
 Compiling:  Networking Project.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 Networking Project.v -verilog
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 Networking Project.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Networking Project.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 Networking Project.v -verilog
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 Networking Project.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Networking Project.v
 Program  :   vlogfe
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 -verilog Networking Project.v
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 -verilog Networking Project.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Wed Jan 07 15:55:54 2015
+Wed Jan 07 16:44:01 2015
 
 
 ======================================================================
@@ -51,14 +51,14 @@ Options  :    -yv2 -q10 Networking Project.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Wed Jan 07 15:55:54 2015
+Wed Jan 07 16:44:01 2015
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EdgeDetect_v1_0\EdgeDetect_v1_0.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_50\B_Timer_v2_50.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_60\B_Timer_v2_60.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'
@@ -78,8 +78,8 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
 Using control file 'Networking Project.ctl'.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_50\B_Timer_v2_50.v (line 368, col 46):  Note: Substituting module 'cmp_vv_vv' for '='.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_50\B_Timer_v2_50.v (line 374, col 62):  Note: Substituting module 'add_vv_vv' for '+'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_60\B_Timer_v2_60.v (line 368, col 46):  Note: Substituting module 'cmp_vv_vv' for '='.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_60\B_Timer_v2_60.v (line 374, col 62):  Note: Substituting module 'add_vv_vv' for '+'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
 
@@ -89,11 +89,11 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  Networking Project.v
 Program  :   tovif
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 -verilog Networking Project.v
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 -verilog Networking Project.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Wed Jan 07 15:55:54 2015
+Wed Jan 07 16:44:01 2015
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -104,14 +104,14 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.ctl'.
+Linking 'D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EdgeDetect_v1_0\EdgeDetect_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.v'.
+Linking 'D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_50\B_Timer_v2_50.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_60\B_Timer_v2_60.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
@@ -123,11 +123,11 @@ tovif:  No errors.
 ======================================================================
 Compiling:  Networking Project.v
 Program  :   topld
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 -verilog Networking Project.v
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -dcpsoc3 -verilog Networking Project.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Wed Jan 07 15:55:56 2015
+Wed Jan 07 16:44:02 2015
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -138,14 +138,14 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.ctl'.
+Linking 'D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EdgeDetect_v1_0\EdgeDetect_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.v'.
+Linking 'D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Networking Project.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_50\B_Timer_v2_50.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_60\B_Timer_v2_60.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
@@ -184,9 +184,26 @@ Detecting unused logic.
 	\Timer_BusyToIdle:TimerUDB:zeros_2\
 	\Timer_BusyToIdle:Net_102\
 	\Timer_BusyToIdle:Net_266\
+	\USB:dma_nrq_0\
+	\USB:Net_1800\
+	\USB:dma_nrq_3\
+	\USB:Net_1803\
+	\USB:Net_1801\
+	\USB:dma_nrq_1\
+	\USB:dma_nrq_4\
+	\USB:Net_1804\
+	\USB:dma_nrq_5\
+	\USB:Net_1805\
+	\USB:dma_nrq_6\
+	\USB:Net_1806\
+	\USB:dma_nrq_7\
+	\USB:Net_1807\
+	\USB:dma_nrq_2\
+	\USB:Net_1802\
+	Net_778
 
 
-Deleted 28 User equations/components.
+Deleted 45 User equations/components.
 Deleted 0 Synthesized equations/components.
 
 ------------------------------------------------------
@@ -208,6 +225,12 @@ Aliasing \Timer_BusyToIdle:TimerUDB:status_6\ to zero
 Aliasing \Timer_BusyToIdle:TimerUDB:status_5\ to zero
 Aliasing \Timer_BusyToIdle:TimerUDB:status_4\ to zero
 Aliasing \Timer_BusyToIdle:TimerUDB:status_0\ to \Timer_BusyToIdle:TimerUDB:tc_i\
+Aliasing \USB:tmpOE__Dm_net_0\ to tmpOE__Pin_LEDBusy_net_0
+Aliasing \USB:tmpOE__Dp_net_0\ to tmpOE__Pin_LEDBusy_net_0
+Aliasing \Timer_sendData:Net_260\ to zero
+Aliasing Net_12 to zero
+Aliasing \Timer_sendData:Net_102\ to tmpOE__Pin_LEDBusy_net_0
+Aliasing tmpOE__Transm_Output_net_0 to tmpOE__Pin_LEDBusy_net_0
 Aliasing \Rising_EdgeDetect:last\\D\ to \Timer_BusyToCollision:TimerUDB:cs_addr_2\
 Aliasing \Falling_EdgeDetect:last\\D\ to \Timer_BusyToCollision:TimerUDB:cs_addr_2\
 Aliasing \Timer_BusyToCollision:TimerUDB:capture_last\\D\ to zero
@@ -256,19 +279,27 @@ Removing Rhs of wire \Timer_BusyToIdle:TimerUDB:status_3\[230] = \Timer_BusyToId
 Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:cs_addr_2\[233] = Net_573[220]
 Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:cs_addr_1\[234] = \Timer_BusyToIdle:TimerUDB:trig_reg\[222]
 Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:cs_addr_0\[235] = \Timer_BusyToIdle:TimerUDB:per_zero\[212]
-Removing Lhs of wire \Rising_EdgeDetect:last\\D\[321] = Net_648[2]
-Removing Lhs of wire \Falling_EdgeDetect:last\\D\[322] = Net_648[2]
-Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:capture_last\\D\[323] = zero[13]
-Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:hwEnable_reg\\D\[324] = \Timer_BusyToCollision:TimerUDB:control_7\[48]
-Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:tc_reg_i\\D\[325] = \Timer_BusyToCollision:TimerUDB:status_tc\[70]
-Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:capture_out_reg_i\\D\[326] = \Timer_BusyToCollision:TimerUDB:capt_fifo_load\[66]
-Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:capture_last\\D\[329] = zero[13]
-Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:hwEnable_reg\\D\[330] = \Timer_BusyToIdle:TimerUDB:control_7\[188]
-Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:tc_reg_i\\D\[331] = \Timer_BusyToIdle:TimerUDB:status_tc\[210]
-Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:capture_out_reg_i\\D\[332] = \Timer_BusyToIdle:TimerUDB:capt_fifo_load\[206]
+Removing Lhs of wire \USB:tmpOE__Dm_net_0\[350] = tmpOE__Pin_LEDBusy_net_0[12]
+Removing Lhs of wire \USB:tmpOE__Dp_net_0\[357] = tmpOE__Pin_LEDBusy_net_0[12]
+Removing Lhs of wire \Timer_sendData:Net_260\[384] = zero[13]
+Removing Lhs of wire \Timer_sendData:Net_266\[385] = tmpOE__Pin_LEDBusy_net_0[12]
+Removing Lhs of wire Net_12[386] = zero[13]
+Removing Rhs of wire Net_773[390] = \Timer_sendData:Net_57\[389]
+Removing Lhs of wire \Timer_sendData:Net_102\[392] = tmpOE__Pin_LEDBusy_net_0[12]
+Removing Lhs of wire tmpOE__Transm_Output_net_0[396] = tmpOE__Pin_LEDBusy_net_0[12]
+Removing Lhs of wire \Rising_EdgeDetect:last\\D\[401] = Net_648[2]
+Removing Lhs of wire \Falling_EdgeDetect:last\\D\[402] = Net_648[2]
+Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:capture_last\\D\[403] = zero[13]
+Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:hwEnable_reg\\D\[404] = \Timer_BusyToCollision:TimerUDB:control_7\[48]
+Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:tc_reg_i\\D\[405] = \Timer_BusyToCollision:TimerUDB:status_tc\[70]
+Removing Lhs of wire \Timer_BusyToCollision:TimerUDB:capture_out_reg_i\\D\[406] = \Timer_BusyToCollision:TimerUDB:capt_fifo_load\[66]
+Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:capture_last\\D\[409] = zero[13]
+Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:hwEnable_reg\\D\[410] = \Timer_BusyToIdle:TimerUDB:control_7\[188]
+Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:tc_reg_i\\D\[411] = \Timer_BusyToIdle:TimerUDB:status_tc\[210]
+Removing Lhs of wire \Timer_BusyToIdle:TimerUDB:capture_out_reg_i\\D\[412] = \Timer_BusyToIdle:TimerUDB:capt_fifo_load\[206]
 
 ------------------------------------------------------
-Aliased 0 equations, 52 wires.
+Aliased 0 equations, 60 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -349,16 +380,16 @@ topld:  No errors.
 
 CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
-Warp Arguments : -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj" -dcpsoc3 "Networking Project.v" -verilog
+Warp Arguments : -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya "-.fftprj=D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj" -dcpsoc3 "Networking Project.v" -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 2s.384ms
+Warp synthesis phase: Elapsed time ==> 2s.111ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.0.0.3023, Family: PSoC3, Started at: Wednesday, 07 January 2015 15:55:56
-Options: -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Zach\Dropbox\2014-2015\Winter\CE4950\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -d CY8C5868AXI-LP035 Networking Project.v -verilog
+cyp3fit: V3.0.0.3140, Family: PSoC3, Started at: Wednesday, 07 January 2015 16:44:03
+Options: -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\Networking Project.cyprj -d CY8C5868AXI-LP035 Networking Project.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.024ms
+Design parsing phase: Elapsed time ==> 0s.101ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -368,8 +399,10 @@ Design parsing phase: Elapsed time ==> 0s.024ms
     Converted constant MacroCell: \Timer_BusyToIdle:TimerUDB:capture_out_reg_i\ from registered to combinatorial
 Assigning clock Clock_collision_2 to clock BUS_CLK because it is a pass-through
 Assigning clock Clock_collision_3 to clock BUS_CLK because it is a pass-through
+Assigning clock USB_Clock_vbus to clock BUS_CLK because it is a pass-through
 Assigning clock timer_clock to clock BUS_CLK because it is a pass-through
 Assigning clock timer_clock_1 to clock BUS_CLK because it is a pass-through
+Assigning clock timer_clock_2 to clock BUS_CLK because it is a pass-through
 <CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
 </CYPRESSTAG>
 
@@ -399,6 +432,8 @@ Done removing unused cells.
         EnableIn: Constant 1 was determined to be synchronous to ClockIn
         ClockOut: BUS_CLK, EnableOut: Constant 1
 </CYPRESSTAG>
+ADD: pft.M0040: information: The following 2 pin(s) will be assigned a location by the fitter: \USB:Dm(0)\, \USB:Dp(0)\
+
 
 Removing unused cells resulting from optimization
     Removed unused cell/equation '\Timer_BusyToCollision:TimerUDB:runmode_enable\\D\:macrocell'
@@ -591,6 +626,116 @@ Design Equations
         Properties:
         {
         }
+
+    Pin : Name = Transm_Output(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Transm_Output(0)__PA ,
+            pad => Transm_Output(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = \USB:Dm(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: USB_D_MINUS
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \USB:Dm(0)\__PA ,
+            analog_term => \USB:Net_597\ ,
+            pad => \USB:Dm(0)_PAD\ );
+
+    Pin : Name = \USB:Dp(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: AUTO
+            Interrupt generated: True
+            Interrupt mode: FALLING
+            Drive mode: HI_Z_ANALOG
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: USB_D_PLUS
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \USB:Dp(0)\__PA ,
+            analog_term => \USB:Net_1000\ ,
+            pad => \USB:Dp(0)_PAD\ );
     </CYPRESSTAG>
     <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
 
@@ -755,6 +900,16 @@ Design Equations
             + Net_648 * \Timer_BusyToIdle:TimerUDB:trig_disable\
         );
         Output = \Timer_BusyToIdle:TimerUDB:trig_disable\ (fanout=2)
+
+    MacroCell: Name=__ONE__, Mode=(Combinatorial)
+        Total # of inputs        : 0
+        Total # of product terms : 0
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = __ONE__ (fanout=1)
     </CYPRESSTAG>
     <CYPRESSTAG name="Datapath listing">
 
@@ -1012,6 +1167,54 @@ Design Equations
     Interrupt listing
     ------------------------------------------------------------
 
+    interrupt: Name =\USB:arb_int\
+        PORT MAP (
+            interrupt => \USB:Net_79\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB:bus_reset\
+        PORT MAP (
+            interrupt => \USB:Net_81\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB:dp_int\
+        PORT MAP (
+            interrupt => \USB:Net_1010\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB:ep_0\
+        PORT MAP (
+            interrupt => \USB:ept_int_0\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB:ep_1\
+        PORT MAP (
+            interrupt => \USB:ept_int_1\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB:sof_int\
+        PORT MAP (
+            interrupt => Net_783 );
+        Properties:
+        {
+            int_type = "10"
+        }
+
     interrupt: Name =isr_BusyToCollision
         PORT MAP (
             interrupt => Net_123 );
@@ -1043,6 +1246,14 @@ Design Equations
         {
             int_type = "10"
         }
+
+    interrupt: Name =isr_sendData
+        PORT MAP (
+            interrupt => Net_773 );
+        Properties:
+        {
+            int_type = "10"
+        }
     </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Technology mapping summary" expanded>
@@ -1055,8 +1266,8 @@ Resource Type                 : Used : Free :  Max :  % Used
 ============================================================
 Digital clock dividers        :    0 :    8 :    8 :   0.00%
 Analog clock dividers         :    0 :    4 :    4 :   0.00%
-Pins                          :    7 :   65 :   72 :   9.72%
-UDB Macrocells                :   12 :  180 :  192 :   6.25%
+Pins                          :   10 :   62 :   72 :  13.89%
+UDB Macrocells                :   13 :  179 :  192 :   6.77%
 UDB Unique Pterms             :   18 :  366 :  384 :   4.69%
 UDB Total Pterms              :   18 :      :      : 
 UDB Datapath Cells            :    4 :   20 :   24 :  16.67%
@@ -1065,7 +1276,7 @@ UDB Status Cells              :    2 :   22 :   24 :   8.33%
 UDB Control Cells             :    2 :   22 :   24 :   8.33%
             Control Registers :    2 
 DMA Channels                  :    0 :   24 :   24 :   0.00%
-Interrupts                    :    4 :   28 :   32 :  12.50%
+Interrupts                    :   11 :   21 :   32 :  34.38%
 DSM Fixed Blocks              :    0 :    1 :    1 :   0.00%
 VIDAC Fixed Blocks            :    0 :    4 :    4 :   0.00%
 SC Fixed Blocks               :    0 :    4 :    4 :   0.00%
@@ -1075,17 +1286,17 @@ CapSense Buffers              :    0 :    2 :    2 :   0.00%
 CAN Fixed Blocks              :    0 :    1 :    1 :   0.00%
 Decimator Fixed Blocks        :    0 :    1 :    1 :   0.00%
 I2C Fixed Blocks              :    0 :    1 :    1 :   0.00%
-Timer Fixed Blocks            :    0 :    4 :    4 :   0.00%
+Timer Fixed Blocks            :    1 :    3 :    4 :  25.00%
 DFB Fixed Blocks              :    0 :    1 :    1 :   0.00%
-USB Fixed Blocks              :    0 :    1 :    1 :   0.00%
+USB Fixed Blocks              :    1 :    0 :    1 : 100.00%
 LCD Fixed Blocks              :    0 :    1 :    1 :   0.00%
 EMIF Fixed Blocks             :    0 :    1 :    1 :   0.00%
 LPF Fixed Blocks              :    0 :    2 :    2 :   0.00%
 SAR Fixed Blocks              :    0 :    2 :    2 :   0.00%
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.319ms
+Technology Mapping: Elapsed time ==> 0s.375ms
 Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
-Tech mapping phase: Elapsed time ==> 0s.555ms
+Tech mapping phase: Elapsed time ==> 0s.548ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Initial Analog Placement Results:
@@ -1093,7 +1304,11 @@ IO_2@[IOP=(6)][IoId=(2)] : Pin_LEDBusy(0) (fixed)
 IO_7@[IOP=(3)][IoId=(7)] : Pin_LEDCollision(0) (fixed)
 IO_3@[IOP=(6)][IoId=(3)] : Pin_LEDIdle(0) (fixed)
 IO_0@[IOP=(6)][IoId=(0)] : Recieve_Input(0) (fixed)
-Analog Placement phase: Elapsed time ==> 0s.041ms
+IO_6@[IOP=(6)][IoId=(6)] : Transm_Output(0) (fixed)
+IO_7@[IOP=(15)][IoId=(7)] : \USB:Dm(0)\ (fixed)
+IO_6@[IOP=(15)][IoId=(6)] : \USB:Dp(0)\ (fixed)
+USB[0]@[FFB(USB,0)] : \USB:USB\
+Analog Placement phase: Elapsed time ==> 0s.049ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 Analog Routing phase: Elapsed time ==> 0s.000ms
@@ -1111,11 +1326,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.854ms
+Analog Code Generation phase: Elapsed time ==> 0s.526ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 1.1 sec.
+I2076: Total run-time: 0.9 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -1134,25 +1349,25 @@ PLD Packing Summary
     =======================================
                    Inputs :            4.00
                    Pterms :            4.50
-               Macrocells :            3.00
+               Macrocells :            3.25
 </CYPRESSTAG>
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.002ms
+PLD Packing: Elapsed time ==> 0s.001ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.029ms
+Partitioning: Elapsed time ==> 0s.043ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Simulated Annealing">
 Annealing: Elapsed time ==> 0s.003ms
 <CYPRESSTAG name="Simulated Annealing Results">
 The seed used for moves was 114161200.
-Inital cost was 72, final cost is 72 (0.00% improvement).</CYPRESSTAG>
+Inital cost was 170, final cost is 170 (0.00% improvement).</CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -1162,7 +1377,7 @@ Final Placement Summary
 
        Resource Type :      Count : Avg Inputs : Avg Outputs
     ========================================================
-                 UDB :          4 :       3.50 :       3.00
+                 UDB :          4 :       3.50 :       3.25
 <CYPRESSTAG name="Final Placement Details">
 <CYPRESSTAG name="Component Details">
 
@@ -1176,7 +1391,291 @@ UDB [UDB=(0,3)] is empty.
 UDB [UDB=(0,4)] contents:
 LAB@[UDB=(0,4)][LB=0] #macrocells=4, #inputs=6, #pterms=7
 {
-    [McSlotId=0]:     MacroCell: Name=Net_573, Mode=(Combinatorial) @ [UDB=(0,4)][LB=0][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:timer_enable\, Mode=(D-Register) @ [UDB=(0,4)][LB=0][MC=0]
+        Total # of inputs        : 6
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (ClockBlock_BUS_CLK) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !Net_648 * \Timer_BusyToCollision:TimerUDB:control_7\ * 
+              !\Timer_BusyToCollision:TimerUDB:timer_enable\ * 
+              !\Timer_BusyToCollision:TimerUDB:trig_disable\
+            + !Net_648 * \Timer_BusyToCollision:TimerUDB:control_7\ * 
+              !\Timer_BusyToCollision:TimerUDB:run_mode\ * 
+              !\Timer_BusyToCollision:TimerUDB:trig_disable\
+            + !Net_648 * \Timer_BusyToCollision:TimerUDB:control_7\ * 
+              !\Timer_BusyToCollision:TimerUDB:per_zero\ * 
+              !\Timer_BusyToCollision:TimerUDB:trig_disable\
+        );
+        Output = \Timer_BusyToCollision:TimerUDB:timer_enable\ (fanout=4)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:trig_disable\, Mode=(D-Register) @ [UDB=(0,4)][LB=0][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (ClockBlock_BUS_CLK) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !Net_648 * \Timer_BusyToCollision:TimerUDB:timer_enable\ * 
+              \Timer_BusyToCollision:TimerUDB:run_mode\ * 
+              \Timer_BusyToCollision:TimerUDB:per_zero\
+            + !Net_648 * \Timer_BusyToCollision:TimerUDB:trig_disable\
+        );
+        Output = \Timer_BusyToCollision:TimerUDB:trig_disable\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:run_mode\, Mode=(D-Register) @ [UDB=(0,4)][LB=0][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (ClockBlock_BUS_CLK) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Timer_BusyToCollision:TimerUDB:control_7\
+        );
+        Output = \Timer_BusyToCollision:TimerUDB:run_mode\ (fanout=3)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:status_tc\, Mode=(Combinatorial) @ [UDB=(0,4)][LB=0][MC=3]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Timer_BusyToCollision:TimerUDB:run_mode\ * 
+              \Timer_BusyToCollision:TimerUDB:per_zero\
+        );
+        Output = \Timer_BusyToCollision:TimerUDB:status_tc\ (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+datapathcell: Name =\Timer_BusyToCollision:TimerUDB:sT16:timerdp:u1\
+    PORT MAP (
+        clock => ClockBlock_BUS_CLK ,
+        cs_addr_2 => Net_648 ,
+        cs_addr_1 => \Timer_BusyToCollision:TimerUDB:timer_enable\ ,
+        cs_addr_0 => \Timer_BusyToCollision:TimerUDB:per_zero\ ,
+        z0_comb => \Timer_BusyToCollision:TimerUDB:per_zero\ ,
+        f0_bus_stat_comb => \Timer_BusyToCollision:TimerUDB:status_3\ ,
+        f0_blk_stat_comb => \Timer_BusyToCollision:TimerUDB:status_2\ ,
+        chain_in => \Timer_BusyToCollision:TimerUDB:sT16:timerdp:carry\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111100000110000000000000001000000110000000000011000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+    Previous in chain : \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0\
+
+statusicell: Name =\Timer_BusyToCollision:TimerUDB:rstSts:stsreg\
+    PORT MAP (
+        reset => Net_648 ,
+        clock => ClockBlock_BUS_CLK ,
+        status_3 => \Timer_BusyToCollision:TimerUDB:status_3\ ,
+        status_2 => \Timer_BusyToCollision:TimerUDB:status_2\ ,
+        status_0 => \Timer_BusyToCollision:TimerUDB:status_tc\ ,
+        interrupt => Net_123 );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_int_mask = "1111111"
+        cy_md_select = "0000011"
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+controlcell: Name =\Timer_BusyToCollision:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\
+    PORT MAP (
+        clock => ClockBlock_BUS_CLK ,
+        control_7 => \Timer_BusyToCollision:TimerUDB:control_7\ ,
+        control_6 => \Timer_BusyToCollision:TimerUDB:control_6\ ,
+        control_5 => \Timer_BusyToCollision:TimerUDB:control_5\ ,
+        control_4 => \Timer_BusyToCollision:TimerUDB:control_4\ ,
+        control_3 => \Timer_BusyToCollision:TimerUDB:control_3\ ,
+        control_2 => \Timer_BusyToCollision:TimerUDB:control_2\ ,
+        control_1 => \Timer_BusyToCollision:TimerUDB:control_1\ ,
+        control_0 => \Timer_BusyToCollision:TimerUDB:control_0\ );
+    Properties:
+    {
+        cy_ctrl_mode_0 = "11111111"
+        cy_ctrl_mode_1 = "00000000"
+        cy_ext_reset = 0
+        cy_force_order = 1
+        cy_init_value = "00000000"
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(0,5)] contents:
+datapathcell: Name =\Timer_BusyToIdle:TimerUDB:sT16:timerdp:u0\
+    PORT MAP (
+        clock => ClockBlock_BUS_CLK ,
+        cs_addr_2 => Net_573 ,
+        cs_addr_1 => \Timer_BusyToIdle:TimerUDB:timer_enable\ ,
+        cs_addr_0 => \Timer_BusyToIdle:TimerUDB:per_zero\ ,
+        chain_out => \Timer_BusyToIdle:TimerUDB:sT16:timerdp:carry\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111000000000000000000000001000000000000000000011000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+    Next in chain : \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u1\
+
+UDB [UDB=(1,0)] is empty.
+UDB [UDB=(1,1)] is empty.
+UDB [UDB=(1,2)] is empty.
+UDB [UDB=(1,3)] is empty.
+UDB [UDB=(1,4)] contents:
+LAB@[UDB=(1,4)][LB=0] #macrocells=4, #inputs=2, #pterms=3
+{
+    [McSlotId=0]:     MacroCell: Name=Net_1, Mode=(Combinatorial) @ [UDB=(1,4)][LB=0][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_648 * !\Falling_EdgeDetect:last\
+        );
+        Output = Net_1 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\Falling_EdgeDetect:last\, Mode=(D-Register) @ [UDB=(1,4)][LB=0][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (ClockBlock_BUS_CLK) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_648
+        );
+        Output = \Falling_EdgeDetect:last\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_3, Mode=(Combinatorial) @ [UDB=(1,4)][LB=0][MC=2]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_648 * \Falling_EdgeDetect:last\
+        );
+        Output = Net_3 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=__ONE__, Mode=(Combinatorial) @ [UDB=(1,4)][LB=0][MC=3]
+        Total # of inputs        : 0
+        Total # of product terms : 0
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = __ONE__ (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+datapathcell: Name =\Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0\
+    PORT MAP (
+        clock => ClockBlock_BUS_CLK ,
+        cs_addr_2 => Net_648 ,
+        cs_addr_1 => \Timer_BusyToCollision:TimerUDB:timer_enable\ ,
+        cs_addr_0 => \Timer_BusyToCollision:TimerUDB:per_zero\ ,
+        chain_out => \Timer_BusyToCollision:TimerUDB:sT16:timerdp:carry\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111000000000000000000000001000000000000000000011000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+    Next in chain : \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u1\
+
+UDB [UDB=(1,5)] contents:
+LAB@[UDB=(1,5)][LB=0] #macrocells=4, #inputs=6, #pterms=7
+{
+    [McSlotId=0]:     MacroCell: Name=Net_573, Mode=(Combinatorial) @ [UDB=(1,5)][LB=0][MC=0]
         Total # of inputs        : 1
         Total # of product terms : 1
             Clock Enable: True
@@ -1189,7 +1688,7 @@ LAB@[UDB=(0,4)][LB=0] #macrocells=4, #inputs=6, #pterms=7
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:timer_enable\, Mode=(D-Register) @ [UDB=(0,4)][LB=0][MC=1]
+    [McSlotId=1]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:timer_enable\, Mode=(D-Register) @ [UDB=(1,5)][LB=0][MC=1]
         Total # of inputs        : 6
         Total # of product terms : 3
         List of special equations: 
@@ -1212,7 +1711,7 @@ LAB@[UDB=(0,4)][LB=0] #macrocells=4, #inputs=6, #pterms=7
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:trig_disable\, Mode=(D-Register) @ [UDB=(0,4)][LB=0][MC=2]
+    [McSlotId=2]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:trig_disable\, Mode=(D-Register) @ [UDB=(1,5)][LB=0][MC=2]
         Total # of inputs        : 5
         Total # of product terms : 2
         List of special equations: 
@@ -1230,7 +1729,7 @@ LAB@[UDB=(0,4)][LB=0] #macrocells=4, #inputs=6, #pterms=7
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:run_mode\, Mode=(D-Register) @ [UDB=(0,4)][LB=0][MC=3]
+    [McSlotId=3]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:run_mode\, Mode=(D-Register) @ [UDB=(1,5)][LB=0][MC=3]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -1246,9 +1745,9 @@ LAB@[UDB=(0,4)][LB=0] #macrocells=4, #inputs=6, #pterms=7
         }
 }
 
-LAB@[UDB=(0,4)][LB=1] #macrocells=1, #inputs=2, #pterms=1
+LAB@[UDB=(1,5)][LB=1] #macrocells=1, #inputs=2, #pterms=1
 {
-    [McSlotId=0]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:status_tc\, Mode=(Combinatorial) @ [UDB=(0,4)][LB=1][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\Timer_BusyToIdle:TimerUDB:status_tc\, Mode=(Combinatorial) @ [UDB=(1,5)][LB=1][MC=0]
         Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
@@ -1344,279 +1843,6 @@ controlcell: Name =\Timer_BusyToIdle:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\
     Clock Polarity: Active High
     Clock Enable: True
 
-UDB [UDB=(0,5)] contents:
-LAB@[UDB=(0,5)][LB=0] #macrocells=3, #inputs=2, #pterms=3
-{
-    [McSlotId=0]:     MacroCell: Name=Net_3, Mode=(Combinatorial) @ [UDB=(0,5)][LB=0][MC=0]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_648 * \Falling_EdgeDetect:last\
-        );
-        Output = Net_3 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=\Falling_EdgeDetect:last\, Mode=(D-Register) @ [UDB=(0,5)][LB=0][MC=1]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (ClockBlock_BUS_CLK) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_648
-        );
-        Output = \Falling_EdgeDetect:last\ (fanout=2)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_1, Mode=(Combinatorial) @ [UDB=(0,5)][LB=0][MC=2]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_648 * !\Falling_EdgeDetect:last\
-        );
-        Output = Net_1 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]: (empty)
-}
-
-datapathcell: Name =\Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0\
-    PORT MAP (
-        clock => ClockBlock_BUS_CLK ,
-        cs_addr_2 => Net_648 ,
-        cs_addr_1 => \Timer_BusyToCollision:TimerUDB:timer_enable\ ,
-        cs_addr_0 => \Timer_BusyToCollision:TimerUDB:per_zero\ ,
-        chain_out => \Timer_BusyToCollision:TimerUDB:sT16:timerdp:carry\ );
-    Properties:
-    {
-        a0_init = "00000000"
-        a1_init = "00000000"
-        ce0_sync = 1
-        ce1_sync = 1
-        cl0_sync = 1
-        cl1_sync = 1
-        cmsb_sync = 1
-        co_msb_sync = 1
-        cy_dpconfig = "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111000000000000000000000001000000000000000000011000"
-        d0_init = "00000000"
-        d1_init = "00000000"
-        f0_blk_sync = 1
-        f0_bus_sync = 1
-        f1_blk_sync = 1
-        f1_bus_sync = 1
-        ff0_sync = 1
-        ff1_sync = 1
-        ov_msb_sync = 1
-        so_sync = 1
-        z0_sync = 1
-        z1_sync = 1
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-    Next in chain : \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u1\
-
-UDB [UDB=(1,0)] is empty.
-UDB [UDB=(1,1)] is empty.
-UDB [UDB=(1,2)] is empty.
-UDB [UDB=(1,3)] is empty.
-UDB [UDB=(1,4)] contents:
-datapathcell: Name =\Timer_BusyToIdle:TimerUDB:sT16:timerdp:u0\
-    PORT MAP (
-        clock => ClockBlock_BUS_CLK ,
-        cs_addr_2 => Net_573 ,
-        cs_addr_1 => \Timer_BusyToIdle:TimerUDB:timer_enable\ ,
-        cs_addr_0 => \Timer_BusyToIdle:TimerUDB:per_zero\ ,
-        chain_out => \Timer_BusyToIdle:TimerUDB:sT16:timerdp:carry\ );
-    Properties:
-    {
-        a0_init = "00000000"
-        a1_init = "00000000"
-        ce0_sync = 1
-        ce1_sync = 1
-        cl0_sync = 1
-        cl1_sync = 1
-        cmsb_sync = 1
-        co_msb_sync = 1
-        cy_dpconfig = "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111000000000000000000000001000000000000000000011000"
-        d0_init = "00000000"
-        d1_init = "00000000"
-        f0_blk_sync = 1
-        f0_bus_sync = 1
-        f1_blk_sync = 1
-        f1_bus_sync = 1
-        ff0_sync = 1
-        ff1_sync = 1
-        ov_msb_sync = 1
-        so_sync = 1
-        z0_sync = 1
-        z1_sync = 1
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-    Next in chain : \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u1\
-
-UDB [UDB=(1,5)] contents:
-LAB@[UDB=(1,5)][LB=0] #macrocells=4, #inputs=6, #pterms=7
-{
-    [McSlotId=0]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:timer_enable\, Mode=(D-Register) @ [UDB=(1,5)][LB=0][MC=0]
-        Total # of inputs        : 6
-        Total # of product terms : 3
-        List of special equations: 
-            Clock  = (ClockBlock_BUS_CLK) => Global
-            Clock Enable: True
-        Main Equation            : 3 pterms
-        (
-              !Net_648 * \Timer_BusyToCollision:TimerUDB:control_7\ * 
-              !\Timer_BusyToCollision:TimerUDB:timer_enable\ * 
-              !\Timer_BusyToCollision:TimerUDB:trig_disable\
-            + !Net_648 * \Timer_BusyToCollision:TimerUDB:control_7\ * 
-              !\Timer_BusyToCollision:TimerUDB:run_mode\ * 
-              !\Timer_BusyToCollision:TimerUDB:trig_disable\
-            + !Net_648 * \Timer_BusyToCollision:TimerUDB:control_7\ * 
-              !\Timer_BusyToCollision:TimerUDB:per_zero\ * 
-              !\Timer_BusyToCollision:TimerUDB:trig_disable\
-        );
-        Output = \Timer_BusyToCollision:TimerUDB:timer_enable\ (fanout=4)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:trig_disable\, Mode=(D-Register) @ [UDB=(1,5)][LB=0][MC=1]
-        Total # of inputs        : 5
-        Total # of product terms : 2
-        List of special equations: 
-            Clock  = (ClockBlock_BUS_CLK) => Global
-            Clock Enable: True
-        Main Equation            : 2 pterms
-        (
-              !Net_648 * \Timer_BusyToCollision:TimerUDB:timer_enable\ * 
-              \Timer_BusyToCollision:TimerUDB:run_mode\ * 
-              \Timer_BusyToCollision:TimerUDB:per_zero\
-            + !Net_648 * \Timer_BusyToCollision:TimerUDB:trig_disable\
-        );
-        Output = \Timer_BusyToCollision:TimerUDB:trig_disable\ (fanout=2)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:run_mode\, Mode=(D-Register) @ [UDB=(1,5)][LB=0][MC=2]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (ClockBlock_BUS_CLK) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Timer_BusyToCollision:TimerUDB:control_7\
-        );
-        Output = \Timer_BusyToCollision:TimerUDB:run_mode\ (fanout=3)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=\Timer_BusyToCollision:TimerUDB:status_tc\, Mode=(Combinatorial) @ [UDB=(1,5)][LB=0][MC=3]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Timer_BusyToCollision:TimerUDB:run_mode\ * 
-              \Timer_BusyToCollision:TimerUDB:per_zero\
-        );
-        Output = \Timer_BusyToCollision:TimerUDB:status_tc\ (fanout=1)
-        Properties               : 
-        {
-        }
-}
-
-datapathcell: Name =\Timer_BusyToCollision:TimerUDB:sT16:timerdp:u1\
-    PORT MAP (
-        clock => ClockBlock_BUS_CLK ,
-        cs_addr_2 => Net_648 ,
-        cs_addr_1 => \Timer_BusyToCollision:TimerUDB:timer_enable\ ,
-        cs_addr_0 => \Timer_BusyToCollision:TimerUDB:per_zero\ ,
-        z0_comb => \Timer_BusyToCollision:TimerUDB:per_zero\ ,
-        f0_bus_stat_comb => \Timer_BusyToCollision:TimerUDB:status_3\ ,
-        f0_blk_stat_comb => \Timer_BusyToCollision:TimerUDB:status_2\ ,
-        chain_in => \Timer_BusyToCollision:TimerUDB:sT16:timerdp:carry\ );
-    Properties:
-    {
-        a0_init = "00000000"
-        a1_init = "00000000"
-        ce0_sync = 1
-        ce1_sync = 1
-        cl0_sync = 1
-        cl1_sync = 1
-        cmsb_sync = 1
-        co_msb_sync = 1
-        cy_dpconfig = "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111100000110000000000000001000000110000000000011000"
-        d0_init = "00000000"
-        d1_init = "00000000"
-        f0_blk_sync = 1
-        f0_bus_sync = 1
-        f1_blk_sync = 1
-        f1_bus_sync = 1
-        ff0_sync = 1
-        ff1_sync = 1
-        ov_msb_sync = 1
-        so_sync = 1
-        z0_sync = 1
-        z1_sync = 1
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-    Previous in chain : \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0\
-
-statusicell: Name =\Timer_BusyToCollision:TimerUDB:rstSts:stsreg\
-    PORT MAP (
-        reset => Net_648 ,
-        clock => ClockBlock_BUS_CLK ,
-        status_3 => \Timer_BusyToCollision:TimerUDB:status_3\ ,
-        status_2 => \Timer_BusyToCollision:TimerUDB:status_2\ ,
-        status_0 => \Timer_BusyToCollision:TimerUDB:status_tc\ ,
-        interrupt => Net_123 );
-    Properties:
-    {
-        cy_force_order = 1
-        cy_int_mask = "1111111"
-        cy_md_select = "0000011"
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
-controlcell: Name =\Timer_BusyToCollision:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\
-    PORT MAP (
-        clock => ClockBlock_BUS_CLK ,
-        control_7 => \Timer_BusyToCollision:TimerUDB:control_7\ ,
-        control_6 => \Timer_BusyToCollision:TimerUDB:control_6\ ,
-        control_5 => \Timer_BusyToCollision:TimerUDB:control_5\ ,
-        control_4 => \Timer_BusyToCollision:TimerUDB:control_4\ ,
-        control_3 => \Timer_BusyToCollision:TimerUDB:control_3\ ,
-        control_2 => \Timer_BusyToCollision:TimerUDB:control_2\ ,
-        control_1 => \Timer_BusyToCollision:TimerUDB:control_1\ ,
-        control_0 => \Timer_BusyToCollision:TimerUDB:control_0\ );
-    Properties:
-    {
-        cy_ctrl_mode_0 = "11111111"
-        cy_ctrl_mode_1 = "00000000"
-        cy_ext_reset = 0
-        cy_force_order = 1
-        cy_init_value = "00000000"
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
 UDB [UDB=(2,0)] is empty.
 UDB [UDB=(2,1)] is empty.
 UDB [UDB=(2,2)] is empty.
@@ -1631,6 +1857,14 @@ UDB [UDB=(3,4)] is empty.
 UDB [UDB=(3,5)] is empty.
 Intr hod @ [IntrHod=(0)]: 
   Intr@ [IntrHod=(0)][IntrId=(0)] 
+    interrupt: Name =\USB:ep_1\
+        PORT MAP (
+            interrupt => \USB:ept_int_1\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(1)] 
     interrupt: Name =isr_BusyToCollision
         PORT MAP (
             interrupt => Net_123 );
@@ -1638,7 +1872,7 @@ Intr hod @ [IntrHod=(0)]:
         {
             int_type = "10"
         }
-  Intr@ [IntrHod=(0)][IntrId=(1)] 
+  Intr@ [IntrHod=(0)][IntrId=(2)] 
     interrupt: Name =isr_BusyToIdle
         PORT MAP (
             interrupt => Net_129 );
@@ -1646,7 +1880,7 @@ Intr hod @ [IntrHod=(0)]:
         {
             int_type = "10"
         }
-  Intr@ [IntrHod=(0)][IntrId=(2)] 
+  Intr@ [IntrHod=(0)][IntrId=(3)] 
     interrupt: Name =isr_FallingEdge
         PORT MAP (
             interrupt => Net_3 );
@@ -1654,10 +1888,58 @@ Intr hod @ [IntrHod=(0)]:
         {
             int_type = "10"
         }
-  Intr@ [IntrHod=(0)][IntrId=(3)] 
+  Intr@ [IntrHod=(0)][IntrId=(4)] 
     interrupt: Name =isr_RisingEdge
         PORT MAP (
             interrupt => Net_1 );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(12)] 
+    interrupt: Name =\USB:dp_int\
+        PORT MAP (
+            interrupt => \USB:Net_1010\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(17)] 
+    interrupt: Name =isr_sendData
+        PORT MAP (
+            interrupt => Net_773 );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(21)] 
+    interrupt: Name =\USB:sof_int\
+        PORT MAP (
+            interrupt => Net_783 );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(22)] 
+    interrupt: Name =\USB:arb_int\
+        PORT MAP (
+            interrupt => \USB:Net_79\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(23)] 
+    interrupt: Name =\USB:bus_reset\
+        PORT MAP (
+            interrupt => \USB:Net_81\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(24)] 
+    interrupt: Name =\USB:ep_0\
+        PORT MAP (
+            interrupt => \USB:ept_int_0\ );
         Properties:
         {
             int_type = "10"
@@ -1827,8 +2109,189 @@ Pin : Name = Pin_LEDIdle(0)
     {
     }
 
+[IoId=6]: 
+Pin : Name = Transm_Output(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Transm_Output(0)__PA ,
+        pad => Transm_Output(0)_PAD );
+    Properties:
+    {
+    }
+
 Port 12 is empty
-Port 15 is empty
+Port 15 generates interrupt for logical port:
+    logicalport: Name =\USB:Dp\
+        PORT MAP (
+            in_clock_en => tmpOE__Pin_LEDBusy_net_0 ,
+            in_reset => zero ,
+            out_clock_en => tmpOE__Pin_LEDBusy_net_0 ,
+            out_reset => zero ,
+            interrupt => \USB:Net_1010\ ,
+            in_clock => ClockBlock_BUS_CLK );
+        Properties:
+        {
+            drive_mode = "000"
+            ibuf_enabled = "0"
+            id = "5977eed1-84e2-4567-8155-dd39d82f633e/618a72fc-5ddd-4df5-958f-a3d55102db42"
+            init_dr_st = "0"
+            input_clk_en = 0
+            input_sync = "1"
+            input_sync_mode = "0"
+            intr_mode = "10"
+            invert_in_clock = 0
+            invert_in_clock_en = 0
+            invert_in_reset = 0
+            invert_out_clock = 0
+            invert_out_clock_en = 0
+            invert_out_reset = 0
+            io_voltage = ""
+            layout_mode = "CONTIGUOUS"
+            oe_conn = "0"
+            oe_reset = 0
+            oe_sync = "0"
+            output_clk_en = 0
+            output_clock_mode = "0"
+            output_conn = "0"
+            output_mode = "0"
+            output_reset = 0
+            output_sync = "0"
+            pa_in_clock = -1
+            pa_in_clock_en = -1
+            pa_in_reset = -1
+            pa_out_clock = -1
+            pa_out_clock_en = -1
+            pa_out_reset = -1
+            pin_aliases = ""
+            pin_mode = "I"
+            por_state = 4
+            port_alias_group = ""
+            port_alias_required = 0
+            sio_group_cnt = 0
+            sio_hifreq = ""
+            sio_hyst = "0"
+            sio_ibuf = "00000000"
+            sio_info = "00"
+            sio_obuf = "00000000"
+            sio_refsel = "00000000"
+            sio_vtrip = "00000000"
+            slew_rate = "0"
+            spanning = 0
+            sw_only = 0
+            use_annotation = "0"
+            vtrip = "00"
+            width = 1
+        }
+    and contains the following IO cells:
+[IoId=6]: 
+Pin : Name = \USB:Dp(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: AUTO
+        Interrupt generated: True
+        Interrupt mode: FALLING
+        Drive mode: HI_Z_ANALOG
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: USB_D_PLUS
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \USB:Dp(0)\__PA ,
+        analog_term => \USB:Net_1000\ ,
+        pad => \USB:Dp(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=7]: 
+Pin : Name = \USB:Dm(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: USB_D_MINUS
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \USB:Dm(0)\__PA ,
+        analog_term => \USB:Net_597\ ,
+        pad => \USB:Dm(0)_PAD\ );
+    Properties:
+    {
+    }
+
 Fixed Function block hod @ [FFB(CAN,0)]: empty
 Fixed Function block hod @ [FFB(Cache,0)]: empty
 Fixed Function block hod @ [FFB(CapSense,0)]: empty
@@ -1861,8 +2324,51 @@ Fixed Function block hod @ [FFB(LVD,0)]: empty
 Fixed Function block hod @ [FFB(PM,0)]: empty
 Fixed Function block hod @ [FFB(SC,0)]: empty
 Fixed Function block hod @ [FFB(SPC,0)]: empty
-Fixed Function block hod @ [FFB(Timer,0)]: empty
-Fixed Function block hod @ [FFB(USB,0)]: empty
+Fixed Function block hod @ [FFB(Timer,0)]: 
+    Timer Block @ [FFB(Timer,0)]: 
+    timercell: Name =\Timer_sendData:TimerHW\
+        PORT MAP (
+            clock => ClockBlock_BUS_CLK ,
+            enable => __ONE__ ,
+            tc => \Timer_sendData:Net_51\ ,
+            cmp => \Timer_sendData:Net_261\ ,
+            irq => Net_773 );
+        Properties:
+        {
+            cy_registers = ""
+        }
+Fixed Function block hod @ [FFB(USB,0)]: 
+    USB Block @ [FFB(USB,0)]: 
+    usbcell: Name =\USB:USB\
+        PORT MAP (
+            dp => \USB:Net_1000\ ,
+            dm => \USB:Net_597\ ,
+            sof_int => Net_783 ,
+            arb_int => \USB:Net_79\ ,
+            usb_int => \USB:Net_81\ ,
+            ept_int_8 => \USB:ept_int_8\ ,
+            ept_int_7 => \USB:ept_int_7\ ,
+            ept_int_6 => \USB:ept_int_6\ ,
+            ept_int_5 => \USB:ept_int_5\ ,
+            ept_int_4 => \USB:ept_int_4\ ,
+            ept_int_3 => \USB:ept_int_3\ ,
+            ept_int_2 => \USB:ept_int_2\ ,
+            ept_int_1 => \USB:ept_int_1\ ,
+            ept_int_0 => \USB:ept_int_0\ ,
+            ord_int => \USB:Net_95\ ,
+            dma_req_7 => \USB:dma_req_7\ ,
+            dma_req_6 => \USB:dma_req_6\ ,
+            dma_req_5 => \USB:dma_req_5\ ,
+            dma_req_4 => \USB:dma_req_4\ ,
+            dma_req_3 => \USB:dma_req_3\ ,
+            dma_req_2 => \USB:dma_req_2\ ,
+            dma_req_1 => \USB:dma_req_1\ ,
+            dma_req_0 => \USB:dma_req_0\ ,
+            dma_termin => \USB:Net_824\ );
+        Properties:
+        {
+            cy_registers = ""
+        }
 Fixed Function block hod @ [FFB(VIDAC,0)]: empty
 Fixed Function block hod @ [FFB(OpAmp,0)]: empty
 Fixed Function block hod @ [FFB(CsAbuf,0)]: empty
@@ -1877,42 +2383,46 @@ Port Configuration report
 ------------------------------------------------------------
      |     |       | Interrupt |                  |                     | 
 Port | Pin | Fixed |      Type |       Drive Mode |                Name | Connections
------+-----+-------+-----------+------------------+---------------------+------------
+-----+-----+-------+-----------+------------------+---------------------+-----------------------
    3 |   7 |     * |      NONE |         CMOS_OUT | Pin_LEDCollision(0) | 
------+-----+-------+-----------+------------------+---------------------+------------
+-----+-----+-------+-----------+------------------+---------------------+-----------------------
    6 |   0 |     * |      NONE |      RES_PULL_UP |    Recieve_Input(0) | FB(Net_648)
      |   2 |     * |      NONE |         CMOS_OUT |      Pin_LEDBusy(0) | 
      |   3 |     * |      NONE |         CMOS_OUT |      Pin_LEDIdle(0) | 
--------------------------------------------------------------------------------------
+     |   6 |     * |      NONE |         CMOS_OUT |    Transm_Output(0) | 
+-----+-----+-------+-----------+------------------+---------------------+-----------------------
+  15 |   6 |       |   FALLING |      HI_Z_ANALOG |         \USB:Dp(0)\ | Analog(\USB:Net_1000\)
+     |   7 |       |      NONE |      HI_Z_ANALOG |         \USB:Dm(0)\ | Analog(\USB:Net_597\)
+------------------------------------------------------------------------------------------------
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.002ms
-Digital Placement phase: Elapsed time ==> 1s.451ms
+Digital component placer commit/Report: Elapsed time ==> 0s.003ms
+Digital Placement phase: Elapsed time ==> 1s.332ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 2s.037ms
+Digital Routing phase: Elapsed time ==> 1s.953ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 0s.441ms
+Bitstream and API generation phase: Elapsed time ==> 0s.370ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream verification">
-Bitstream verification phase: Elapsed time ==> 0s.073ms
+Bitstream verification phase: Elapsed time ==> 0s.060ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in Networking Project_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.442ms
+Static timing analysis phase: Elapsed time ==> 0s.337ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.285ms
+Design database save phase: Elapsed time ==> 0s.223ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 6s.229ms
+cydsfit: Elapsed time ==> 5s.524ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 6s.270ms
-API generation phase: Elapsed time ==> 1s.154ms
-Dependency generation phase: Elapsed time ==> 0s.015ms
+Fitter phase: Elapsed time ==> 5s.575ms
+API generation phase: Elapsed time ==> 1s.966ms
+Dependency generation phase: Elapsed time ==> 0s.041ms
 Cleanup phase: Elapsed time ==> 0s.001ms

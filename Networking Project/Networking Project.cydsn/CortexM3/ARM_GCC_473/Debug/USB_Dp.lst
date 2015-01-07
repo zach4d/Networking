@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
   29:.\Generated_Source\PSoC5/USB_Dp.c **** * Summary:
   30:.\Generated_Source\PSoC5/USB_Dp.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/USB_Dp.c **** *
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 2
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/USB_Dp.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
   69              	.LFE0:
   70              		.size	USB_Dp_Write, .-USB_Dp_Write
   71              		.section	.text.USB_Dp_SetDriveMode,"ax",%progbits
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 3
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 3
 
 
   72              		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
   98 000e C4F20003 		movt	r3, 16384
   99 0012 45F27E02 		movw	r2, #20606
  100 0016 C4F20002 		movt	r2, 16384
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 4
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 4
 
 
  101 001a 1278     		ldrb	r2, [r2, #0]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  132              		@ frame_needed = 1, uses_anonymous_args = 0
  133              		@ link register save eliminated.
  134 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 5
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 5
 
 
  135              	.LCFI6:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  169              		@ link register save eliminated.
  170 0000 80B4     		push	{r7}
  171              	.LCFI8:
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 6
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 6
 
 
  172              		.cfi_def_cfa_offset 4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  203              		@ args = 0, pretend = 0, frame = 0
  204              		@ frame_needed = 1, uses_anonymous_args = 0
  205              		@ link register save eliminated.
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 7
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 7
 
 
  206 0000 80B4     		push	{r7}
@@ -396,10 +396,10 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  236 0006 00000000 		.4byte	.Ldebug_abbrev0
  237 000a 04       		.byte	0x4
  238 000b 01       		.uleb128 0x1
- 239 000c 6C010000 		.4byte	.LASF21
+ 239 000c 84010000 		.4byte	.LASF21
  240 0010 01       		.byte	0x1
  241 0011 00000000 		.4byte	.LASF22
- 242 0015 9A000000 		.4byte	.LASF23
+ 242 0015 28000000 		.4byte	.LASF23
  243 0019 00000000 		.4byte	.Ldebug_ranges0+0
  244 001d 00000000 		.4byte	0
  245 0021 00000000 		.4byte	0
@@ -407,38 +407,38 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  247 0029 02       		.uleb128 0x2
  248 002a 01       		.byte	0x1
  249 002b 06       		.byte	0x6
- 250 002c BE010000 		.4byte	.LASF0
+ 250 002c D6010000 		.4byte	.LASF0
  251 0030 02       		.uleb128 0x2
  252 0031 01       		.byte	0x1
  253 0032 08       		.byte	0x8
- 254 0033 45000000 		.4byte	.LASF1
+ 254 0033 C2000000 		.4byte	.LASF1
  255 0037 02       		.uleb128 0x2
  256 0038 02       		.byte	0x2
  257 0039 05       		.byte	0x5
- 258 003a 5C010000 		.4byte	.LASF2
+ 258 003a 74010000 		.4byte	.LASF2
  259 003e 02       		.uleb128 0x2
  260 003f 02       		.byte	0x2
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 8
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 8
 
 
  261 0040 07       		.byte	0x7
- 262 0041 80000000 		.4byte	.LASF3
+ 262 0041 FD000000 		.4byte	.LASF3
  263 0045 02       		.uleb128 0x2
  264 0046 04       		.byte	0x4
  265 0047 05       		.byte	0x5
- 266 0048 B5010000 		.4byte	.LASF4
+ 266 0048 CD010000 		.4byte	.LASF4
  267 004c 02       		.uleb128 0x2
  268 004d 04       		.byte	0x4
  269 004e 07       		.byte	0x7
- 270 004f 6E000000 		.4byte	.LASF5
+ 270 004f EB000000 		.4byte	.LASF5
  271 0053 02       		.uleb128 0x2
  272 0054 08       		.byte	0x8
  273 0055 05       		.byte	0x5
- 274 0056 3C010000 		.4byte	.LASF6
+ 274 0056 54010000 		.4byte	.LASF6
  275 005a 02       		.uleb128 0x2
  276 005b 08       		.byte	0x8
  277 005c 07       		.byte	0x7
- 278 005d 0C010000 		.4byte	.LASF7
+ 278 005d 24010000 		.4byte	.LASF7
  279 0061 03       		.uleb128 0x3
  280 0062 04       		.byte	0x4
  281 0063 05       		.byte	0x5
@@ -446,26 +446,26 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  283 0068 02       		.uleb128 0x2
  284 0069 04       		.byte	0x4
  285 006a 07       		.byte	0x7
- 286 006b FF000000 		.4byte	.LASF8
+ 286 006b 17010000 		.4byte	.LASF8
  287 006f 04       		.uleb128 0x4
- 288 0070 66010000 		.4byte	.LASF12
+ 288 0070 7E010000 		.4byte	.LASF12
  289 0074 02       		.byte	0x2
  290 0075 5B       		.byte	0x5b
  291 0076 30000000 		.4byte	0x30
  292 007a 02       		.uleb128 0x2
  293 007b 04       		.byte	0x4
  294 007c 04       		.byte	0x4
- 295 007d 3F000000 		.4byte	.LASF9
+ 295 007d BC000000 		.4byte	.LASF9
  296 0081 02       		.uleb128 0x2
  297 0082 08       		.byte	0x8
  298 0083 04       		.byte	0x4
- 299 0084 93000000 		.4byte	.LASF10
+ 299 0084 10010000 		.4byte	.LASF10
  300 0088 02       		.uleb128 0x2
  301 0089 01       		.byte	0x1
  302 008a 08       		.byte	0x8
- 303 008b 57010000 		.4byte	.LASF11
+ 303 008b 6F010000 		.4byte	.LASF11
  304 008f 04       		.uleb128 0x4
- 305 0090 69000000 		.4byte	.LASF13
+ 305 0090 E6000000 		.4byte	.LASF13
  306 0094 02       		.byte	0x2
  307 0095 F0       		.byte	0xf0
  308 0096 9A000000 		.4byte	0x9a
@@ -473,12 +473,12 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  310 009b 6F000000 		.4byte	0x6f
  311 009f 06       		.uleb128 0x6
  312 00a0 01       		.byte	0x1
- 313 00a1 4A010000 		.4byte	.LASF14
+ 313 00a1 62010000 		.4byte	.LASF14
  314 00a5 01       		.byte	0x1
  315 00a6 27       		.byte	0x27
  316 00a7 01       		.byte	0x1
  317 00a8 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 9
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 9
 
 
  318 00ac 44000000 		.4byte	.LFE0
@@ -494,7 +494,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  328 00c5 91       		.byte	0x91
  329 00c6 6F       		.sleb128 -17
  330 00c7 08       		.uleb128 0x8
- 331 00c8 28000000 		.4byte	.LASF24
+ 331 00c8 A5000000 		.4byte	.LASF24
  332 00cc 01       		.byte	0x1
  333 00cd 29       		.byte	0x29
  334 00ce 6F000000 		.4byte	0x6f
@@ -504,7 +504,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  338 00d5 00       		.byte	0
  339 00d6 06       		.uleb128 0x6
  340 00d7 01       		.byte	0x1
- 341 00d8 28010000 		.4byte	.LASF15
+ 341 00d8 40010000 		.4byte	.LASF15
  342 00dc 01       		.byte	0x1
  343 00dd 45       		.byte	0x45
  344 00de 01       		.byte	0x1
@@ -514,7 +514,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  348 00eb 01       		.byte	0x1
  349 00ec FF000000 		.4byte	0xff
  350 00f0 07       		.uleb128 0x7
- 351 00f1 23010000 		.4byte	.LASF17
+ 351 00f1 3B010000 		.4byte	.LASF17
  352 00f5 01       		.byte	0x1
  353 00f6 45       		.byte	0x45
  354 00f7 6F000000 		.4byte	0x6f
@@ -524,7 +524,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  358 00fe 00       		.byte	0
  359 00ff 09       		.uleb128 0x9
  360 0100 01       		.byte	0x1
- 361 0101 33000000 		.4byte	.LASF18
+ 361 0101 B0000000 		.4byte	.LASF18
  362 0105 01       		.byte	0x1
  363 0106 5D       		.byte	0x5d
  364 0107 01       		.byte	0x1
@@ -535,10 +535,10 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  369 0118 01       		.byte	0x1
  370 0119 09       		.uleb128 0x9
  371 011a 01       		.byte	0x1
- 372 011b CA010000 		.4byte	.LASF19
+ 372 011b E2010000 		.4byte	.LASF19
  373 011f 01       		.byte	0x1
  374 0120 71       		.byte	0x71
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 10
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 10
 
 
  375 0121 01       		.byte	0x1
@@ -549,7 +549,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  380 0132 01       		.byte	0x1
  381 0133 09       		.uleb128 0x9
  382 0134 01       		.byte	0x1
- 383 0135 53000000 		.4byte	.LASF20
+ 383 0135 D0000000 		.4byte	.LASF20
  384 0139 01       		.byte	0x1
  385 013a 88       		.byte	0x88
  386 013b 01       		.byte	0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  429 0022 00       		.byte	0
  430 0023 0B       		.uleb128 0xb
  431 0024 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 11
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 11
 
 
  432 0025 3E       		.uleb128 0x3e
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  486 005c 03       		.uleb128 0x3
  487 005d 0E       		.uleb128 0xe
  488 005e 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 12
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 12
 
 
  489 005f 0B       		.uleb128 0xb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  543 0004 02000000 		.4byte	.LCFI0
  544 0008 0200     		.2byte	0x2
  545 000a 7D       		.byte	0x7d
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 13
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 13
 
 
  546 000b 00       		.sleb128 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  600 0090 0200     		.2byte	0x2
  601 0092 77       		.byte	0x77
  602 0093 04       		.sleb128 4
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 14
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 14
 
 
  603 0094 00000000 		.4byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  657 0030 00000000 		.4byte	.LFB4
  658 0034 22000000 		.4byte	.LFE4-.LFB4
  659 0038 00000000 		.4byte	0
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 15
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 15
 
 
  660 003c 00000000 		.4byte	0
@@ -872,126 +872,129 @@ ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 1
  680              	.LASF16:
  681 0022 76616C75 		.ascii	"value\000"
  681      6500
- 682              	.LASF24:
- 683 0028 73746174 		.ascii	"staticBits\000"
- 683      69634269 
- 683      747300
- 684              	.LASF18:
- 685 0033 5553425F 		.ascii	"USB_Dp_Read\000"
- 685      44705F52 
- 685      65616400 
- 686              	.LASF9:
- 687 003f 666C6F61 		.ascii	"float\000"
- 687      7400
- 688              	.LASF1:
- 689 0045 756E7369 		.ascii	"unsigned char\000"
- 689      676E6564 
- 689      20636861 
- 689      7200
- 690              	.LASF20:
- 691 0053 5553425F 		.ascii	"USB_Dp_ClearInterrupt\000"
- 691      44705F43 
- 691      6C656172 
- 691      496E7465 
- 691      72727570 
- 692              	.LASF13:
- 693 0069 72656738 		.ascii	"reg8\000"
- 693      00
- 694              	.LASF5:
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 16
+ 682              	.LASF23:
+ 683 0028 443A5C4D 		.ascii	"D:\\MSOE\\2014-2015\\Winter\\CE4950_021_Network\\la"
+ 683      534F455C 
+ 683      32303134 
+ 683      2D323031 
+ 683      355C5769 
+ 684 0056 625C5072 		.ascii	"b\\Project\\ce4950Project\\Networking\\Networking P"
+ 684      6F6A6563 
+ 684      745C6365 
+ 684      34393530 
+ 684      50726F6A 
+ 685 0085 726F6A65 		.ascii	"roject\\Networking Project.cydsn\000"
+ 685      63745C4E 
+ 685      6574776F 
+ 685      726B696E 
+ 685      67205072 
+ 686              	.LASF24:
+ 687 00a5 73746174 		.ascii	"staticBits\000"
+ 687      69634269 
+ 687      747300
+ 688              	.LASF18:
+ 689 00b0 5553425F 		.ascii	"USB_Dp_Read\000"
+ 689      44705F52 
+ 689      65616400 
+ 690              	.LASF9:
+ 691 00bc 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 16
 
 
- 695 006e 6C6F6E67 		.ascii	"long unsigned int\000"
- 695      20756E73 
- 695      69676E65 
- 695      6420696E 
- 695      7400
- 696              	.LASF3:
- 697 0080 73686F72 		.ascii	"short unsigned int\000"
- 697      7420756E 
- 697      7369676E 
- 697      65642069 
- 697      6E7400
- 698              	.LASF10:
- 699 0093 646F7562 		.ascii	"double\000"
- 699      6C6500
- 700              	.LASF23:
- 701 009a 433A5C55 		.ascii	"C:\\Users\\Zach\\Dropbox\\2014-2015\\Winter\\CE4950"
- 701      73657273 
- 701      5C5A6163 
- 701      685C4472 
- 701      6F70626F 
- 702 00c7 5C4E6574 		.ascii	"\\Networking\\Networking Project\\Networking Projec"
- 702      776F726B 
- 702      696E675C 
- 702      4E657477 
- 702      6F726B69 
- 703 00f7 742E6379 		.ascii	"t.cydsn\000"
- 703      64736E00 
+ 691      7400
+ 692              	.LASF1:
+ 693 00c2 756E7369 		.ascii	"unsigned char\000"
+ 693      676E6564 
+ 693      20636861 
+ 693      7200
+ 694              	.LASF20:
+ 695 00d0 5553425F 		.ascii	"USB_Dp_ClearInterrupt\000"
+ 695      44705F43 
+ 695      6C656172 
+ 695      496E7465 
+ 695      72727570 
+ 696              	.LASF13:
+ 697 00e6 72656738 		.ascii	"reg8\000"
+ 697      00
+ 698              	.LASF5:
+ 699 00eb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 699      20756E73 
+ 699      69676E65 
+ 699      6420696E 
+ 699      7400
+ 700              	.LASF3:
+ 701 00fd 73686F72 		.ascii	"short unsigned int\000"
+ 701      7420756E 
+ 701      7369676E 
+ 701      65642069 
+ 701      6E7400
+ 702              	.LASF10:
+ 703 0110 646F7562 		.ascii	"double\000"
+ 703      6C6500
  704              	.LASF8:
- 705 00ff 756E7369 		.ascii	"unsigned int\000"
+ 705 0117 756E7369 		.ascii	"unsigned int\000"
  705      676E6564 
  705      20696E74 
  705      00
  706              	.LASF7:
- 707 010c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 707 0124 6C6F6E67 		.ascii	"long long unsigned int\000"
  707      206C6F6E 
  707      6720756E 
  707      7369676E 
  707      65642069 
  708              	.LASF17:
- 709 0123 6D6F6465 		.ascii	"mode\000"
+ 709 013b 6D6F6465 		.ascii	"mode\000"
  709      00
  710              	.LASF15:
- 711 0128 5553425F 		.ascii	"USB_Dp_SetDriveMode\000"
+ 711 0140 5553425F 		.ascii	"USB_Dp_SetDriveMode\000"
  711      44705F53 
  711      65744472 
  711      6976654D 
  711      6F646500 
  712              	.LASF6:
- 713 013c 6C6F6E67 		.ascii	"long long int\000"
+ 713 0154 6C6F6E67 		.ascii	"long long int\000"
  713      206C6F6E 
  713      6720696E 
  713      7400
  714              	.LASF14:
- 715 014a 5553425F 		.ascii	"USB_Dp_Write\000"
+ 715 0162 5553425F 		.ascii	"USB_Dp_Write\000"
+ARM GAS  C:\Users\makij\AppData\Local\Temp\ccLF1iAe.s 			page 17
+
+
  715      44705F57 
  715      72697465 
  715      00
-ARM GAS  C:\Users\Zach\AppData\Local\Temp\ccl3fl0l.s 			page 17
-
-
  716              	.LASF11:
- 717 0157 63686172 		.ascii	"char\000"
+ 717 016f 63686172 		.ascii	"char\000"
  717      00
  718              	.LASF2:
- 719 015c 73686F72 		.ascii	"short int\000"
+ 719 0174 73686F72 		.ascii	"short int\000"
  719      7420696E 
  719      7400
  720              	.LASF12:
- 721 0166 75696E74 		.ascii	"uint8\000"
+ 721 017e 75696E74 		.ascii	"uint8\000"
  721      3800
  722              	.LASF21:
- 723 016c 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 723 0184 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
  723      4320342E 
  723      372E3320 
  723      32303133 
  723      30333132 
- 724 019f 616E6368 		.ascii	"anch revision 196615]\000"
+ 724 01b7 616E6368 		.ascii	"anch revision 196615]\000"
  724      20726576 
  724      6973696F 
  724      6E203139 
  724      36363135 
  725              	.LASF4:
- 726 01b5 6C6F6E67 		.ascii	"long int\000"
+ 726 01cd 6C6F6E67 		.ascii	"long int\000"
  726      20696E74 
  726      00
  727              	.LASF0:
- 728 01be 7369676E 		.ascii	"signed char\000"
+ 728 01d6 7369676E 		.ascii	"signed char\000"
  728      65642063 
  728      68617200 
  729              	.LASF19:
- 730 01ca 5553425F 		.ascii	"USB_Dp_ReadDataReg\000"
+ 730 01e2 5553425F 		.ascii	"USB_Dp_ReadDataReg\000"
  730      44705F52 
  730      65616444 
  730      61746152 
