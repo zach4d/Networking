@@ -119,6 +119,36 @@
 .set USB_ep_1__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set USB_ep_1__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
 
+/* USB_ep_2 */
+.set USB_ep_2__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
+.set USB_ep_2__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
+.set USB_ep_2__INTC_MASK, 0x02
+.set USB_ep_2__INTC_NUMBER, 1
+.set USB_ep_2__INTC_PRIOR_NUM, 7
+.set USB_ep_2__INTC_PRIOR_REG, CYREG_NVIC_PRI_1
+.set USB_ep_2__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
+.set USB_ep_2__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
+
+/* USB_ep_3 */
+.set USB_ep_3__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
+.set USB_ep_3__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
+.set USB_ep_3__INTC_MASK, 0x04
+.set USB_ep_3__INTC_NUMBER, 2
+.set USB_ep_3__INTC_PRIOR_NUM, 7
+.set USB_ep_3__INTC_PRIOR_REG, CYREG_NVIC_PRI_2
+.set USB_ep_3__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
+.set USB_ep_3__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
+
+/* USB_ord_int */
+.set USB_ord_int__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
+.set USB_ord_int__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
+.set USB_ord_int__INTC_MASK, 0x2000000
+.set USB_ord_int__INTC_NUMBER, 25
+.set USB_ord_int__INTC_PRIOR_NUM, 7
+.set USB_ord_int__INTC_PRIOR_REG, CYREG_NVIC_PRI_25
+.set USB_ord_int__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
+.set USB_ord_int__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
+
 /* USB_sof_int */
 .set USB_sof_int__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
 .set USB_sof_int__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
@@ -414,30 +444,30 @@
 /* isr_BusyToIdle */
 .set isr_BusyToIdle__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
 .set isr_BusyToIdle__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
-.set isr_BusyToIdle__INTC_MASK, 0x04
-.set isr_BusyToIdle__INTC_NUMBER, 2
+.set isr_BusyToIdle__INTC_MASK, 0x10
+.set isr_BusyToIdle__INTC_NUMBER, 4
 .set isr_BusyToIdle__INTC_PRIOR_NUM, 7
-.set isr_BusyToIdle__INTC_PRIOR_REG, CYREG_NVIC_PRI_2
+.set isr_BusyToIdle__INTC_PRIOR_REG, CYREG_NVIC_PRI_4
 .set isr_BusyToIdle__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set isr_BusyToIdle__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
 
 /* isr_RisingEdge */
 .set isr_RisingEdge__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
 .set isr_RisingEdge__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
-.set isr_RisingEdge__INTC_MASK, 0x10
-.set isr_RisingEdge__INTC_NUMBER, 4
+.set isr_RisingEdge__INTC_MASK, 0x40
+.set isr_RisingEdge__INTC_NUMBER, 6
 .set isr_RisingEdge__INTC_PRIOR_NUM, 7
-.set isr_RisingEdge__INTC_PRIOR_REG, CYREG_NVIC_PRI_4
+.set isr_RisingEdge__INTC_PRIOR_REG, CYREG_NVIC_PRI_6
 .set isr_RisingEdge__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set isr_RisingEdge__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
 
 /* isr_FallingEdge */
 .set isr_FallingEdge__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
 .set isr_FallingEdge__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
-.set isr_FallingEdge__INTC_MASK, 0x08
-.set isr_FallingEdge__INTC_NUMBER, 3
+.set isr_FallingEdge__INTC_MASK, 0x20
+.set isr_FallingEdge__INTC_NUMBER, 5
 .set isr_FallingEdge__INTC_PRIOR_NUM, 7
-.set isr_FallingEdge__INTC_PRIOR_REG, CYREG_NVIC_PRI_3
+.set isr_FallingEdge__INTC_PRIOR_REG, CYREG_NVIC_PRI_5
 .set isr_FallingEdge__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set isr_FallingEdge__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
 
@@ -532,10 +562,10 @@
 /* isr_BusyToCollision */
 .set isr_BusyToCollision__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
 .set isr_BusyToCollision__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
-.set isr_BusyToCollision__INTC_MASK, 0x02
-.set isr_BusyToCollision__INTC_NUMBER, 1
+.set isr_BusyToCollision__INTC_MASK, 0x08
+.set isr_BusyToCollision__INTC_NUMBER, 3
 .set isr_BusyToCollision__INTC_PRIOR_NUM, 7
-.set isr_BusyToCollision__INTC_PRIOR_REG, CYREG_NVIC_PRI_1
+.set isr_BusyToCollision__INTC_PRIOR_REG, CYREG_NVIC_PRI_3
 .set isr_BusyToCollision__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set isr_BusyToCollision__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
 
@@ -690,7 +720,7 @@
 .set CYDEV_ECC_ENABLE, 0
 .set CYDEV_HEAP_SIZE, 0x1000
 .set CYDEV_INSTRUCT_CACHE_ENABLED, 1
-.set CYDEV_INTR_RISING, 0x0000001E
+.set CYDEV_INTR_RISING, 0x00000078
 .set CYDEV_PROJ_TYPE, 0
 .set CYDEV_PROJ_TYPE_BOOTLOADER, 1
 .set CYDEV_PROJ_TYPE_LOADABLE, 2

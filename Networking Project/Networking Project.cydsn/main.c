@@ -10,6 +10,7 @@
  * ========================================
 */
 #include <project.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -18,10 +19,14 @@
 
 // the state variable
 State currentState = IDLE;
+
+//usb and sending data
 uint8 packetUSB[80];
-uint8 *packetHex;
+uint8 packetHex[80*2];
+uint8 packetBinary[4];
 uint8 packetSend[80*8];
-int i_usb = 0;
+uint8 dec;
+
 int i_send = 0;
 
 CY_ISR(isr_FallingEdgeDetected)
@@ -54,9 +59,64 @@ CY_ISR(isr_BusyToCollision)
 
 CY_ISR(isr_sendingData)
 {
+	LCD_PrintString("here");
 	Transm_Output_Write(packetSend[i_send]);
 	i_send++;
 }
+
+void mystrrev(char hex[])
+{
+	int length;
+	for(length = 0; hex[length] != '\0'; ++length);
+	
+	char temp[length];
+	strcpy(temp, hex);
+	int i;
+	for(i = 0; i <length; i++)
+	{
+		hex[i] = temp[length];	
+		length--;
+	}
+}
+
+void decimal_hex(int n, uint8 hex[]) /* Function to convert decimal to hexadecimal. */
+{
+    int i=0,rem;
+    while (n!=0)
+    {
+        rem=n%16;
+        switch(rem)
+        {
+            case 10:
+              hex[i]='A';
+              break;
+            case 11:
+              hex[i]='B';
+              break;
+            case 12:
+              hex[i]='C';
+              break;
+            case 13:
+              hex[i]='D';
+              break;
+            case 14:
+              hex[i]='E';
+              break;
+            case 15:
+              hex[i]='F';
+              break;
+            default:
+              hex[i]=rem+'0';
+              break;
+        }
+        ++i;
+        n/=16;
+    }
+    hex[i]='\0';
+    mystrrev(hex);   /* Reverse string */
+}
+
+
 
 int main()
 {
@@ -69,7 +129,7 @@ int main()
 		// these states are switched in the various ISR's
 		switch(currentState)
 		{
-			case IDLE:
+			case IDLE:				
 				Timer_sendData_Stop();
 				memset(packetSend,  0, (80*8));
 				Pin_LEDBusy_Write(0);			
@@ -83,6 +143,7 @@ int main()
 		            if(count != 0u)
 		            {
 		                while(USB_CDCIsReady() == 0u);    /* Wait till component is ready to send more data to the PC */
+						 USB_PutData(packetUSB, count); 
 		                /* If the last sent packet is exactly maximum packet size, 
 		                *  it shall be followed by a zero-length packet to assure the
 		                *  end of segment is properly identified by the terminal.
@@ -95,120 +156,105 @@ int main()
 		            }
 					//generate packet and send packet
 					i_send = 0;
-					i_usb = 0;
-					int l;
-					for(l = 0; l < count; l++)
+					
+					int l, l2;
+					for(l = 0; packetUSB[l] != '\0'; l++)
 					{
-						//convert to hex
-						sprintf(packetHex, "%x", packetUSB[l]);	
-						uint8 packetBin[4];
+						dec = (unsigned int) packetUSB[l];
+						decimal_hex(dec, packetHex);
 						
-						switch(*packetHex){
-							case 0:
-								packetBin[0] = 0;
-								packetBin[1] = 0;
-								packetBin[2] = 0;
-								packetBin[3] = 0;
-								break;
-							case 1:
-								packetBin[0] = 0;
-								packetBin[1] = 0;
-								packetBin[2] = 0;
-								packetBin[3] = 1;
-								break;
-							case 2:
-								packetBin[0] = 0;
-								packetBin[1] = 0;
-								packetBin[2] = 1;
-								packetBin[3] = 0;
-								break;
-							case 3:
-								packetBin[0] = 0;
-								packetBin[1] = 0;
-								packetBin[2] = 1;
-								packetBin[3] = 1;
-								break;
-							case 4:
-								packetBin[0] = 0;
-								packetBin[1] = 1;
-								packetBin[2] = 0;
-								packetBin[3] = 0;
-								break;
-							case 5:
-								packetBin[0] = 0;
-								packetBin[1] = 1;
-								packetBin[2] = 0;
-								packetBin[3] = 1;
-								break;
-							case 6:
-								packetBin[0] = 0;
-								packetBin[1] = 1;
-								packetBin[2] = 1;
-								packetBin[3] = 0;
-								break;
-							case 7:
-								packetBin[0] = 0;
-								packetBin[1] = 1;
-								packetBin[2] = 1;
-								packetBin[3] = 1;
-								break;
-							case 8:
-								packetBin[0] = 1;
-								packetBin[1] = 0;
-								packetBin[2] = 0;
-								packetBin[3] = 0;
-								break;
-							case 9:
-								packetBin[0] = 1;
-								packetBin[1] = 0;
-								packetBin[2] = 0;
-								packetBin[3] = 1;
-								break;
-							case 'A':
-								packetBin[0] = 1;
-								packetBin[1] = 0;
-								packetBin[2] = 1;
-								packetBin[3] = 0;
-								break;
-							case 'B':
-								packetBin[0] = 1;
-								packetBin[1] = 0;
-								packetBin[2] = 1;
-								packetBin[3] = 1;
-								break;
-							case 'C':
-								packetBin[0] = 1;
-								packetBin[1] = 1;
-								packetBin[2] = 0;
-								packetBin[3] = 0;
-								break;
-							case 'D':
-								packetBin[0] = 1;
-								packetBin[1] = 1;
-								packetBin[2] = 0;
-								packetBin[3] = 1;
-								break;
-							case 'E':
-								packetBin[0] = 1;
-								packetBin[1] = 1;
-								packetBin[2] = 1;
-								packetBin[3] = 0;
-								break;
-							case 'F':
-								packetBin[0] = 1;
-								packetBin[1] = 1;
-								packetBin[2] = 1;
-								packetBin[3] = 1;
-								break;
-							default:
-								break;
-						}
-						int l2;
-						for(l2 = 0; l2 <4; l2++)
+						for(l2 = 0; packetHex[l2] != '\0'; l2++)
 						{
-							packetSend[i_send + l2] = packetBin[l2]; 	
+							if(packetHex[l2] == '0'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 0;
+								packetBinary[2] = 0;
+								packetBinary[3] = 0;
+							}else if(packetHex[l2] == '1'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 0;
+								packetBinary[2] = 0;
+								packetBinary[3] = 1;
+							}else if(packetHex[l2] == '2'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 0;
+								packetBinary[2] = 1;
+								packetBinary[3] = 0;
+							}else if(packetHex[l2] == '3'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 0;
+								packetBinary[2] = 1;
+								packetBinary[3] = 1;
+							}else if(packetHex[l2] == '4'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 1;
+								packetBinary[2] = 0;
+								packetBinary[3] = 0;
+							}else if(packetHex[l2] == '5'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 1;
+								packetBinary[2] = 0;
+								packetBinary[3] = 1;
+							}else if(packetHex[l2] == '6'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 1;
+								packetBinary[2] = 1;
+								packetBinary[3] = 0;
+							}else if(packetHex[l2] == '7'){
+								packetBinary[0] = 0;
+								packetBinary[1] = 1;
+								packetBinary[2] = 1;
+								packetBinary[3] = 1;
+							}else if(packetHex[l2] == '8'){
+								packetBinary[0] = 1;
+								packetBinary[1] = 0;
+								packetBinary[2] = 0;
+								packetBinary[3] = 0;
+							}else if(packetHex[l2] == '9'){
+								packetBinary[0] = 1;
+								packetBinary[1] = 0;
+								packetBinary[2] = 0;
+								packetBinary[3] = 1;
+							}else if(packetHex[l2] == 'A'){
+								packetBinary[0] = 1;
+								packetBinary[1] = 0;
+								packetBinary[2] = 1;
+								packetBinary[3] = 0;
+							}else if(packetHex[l2] == 'B'){
+								packetBinary[0] = 1;
+								packetBinary[1] = 0;
+								packetBinary[2] = 1;
+								packetBinary[3] = 1;
+							}else if(packetHex[l2] == 'C'){
+								packetBinary[0] = 1;
+								packetBinary[1] = 1;
+								packetBinary[2] = 0;
+								packetBinary[3] = 0;
+							}else if(packetHex[l2] =='D'){
+								packetBinary[0] = 1;
+								packetBinary[1] = 1;
+								packetBinary[2] = 0;
+								packetBinary[3] = 1;
+							}else if(packetHex[l2] == 'E'){
+								packetBinary[0] = 1;
+								packetBinary[1] = 1;
+								packetBinary[2] = 1;
+								packetBinary[3] = 0;
+							}else {
+								packetBinary[0] = 1;
+								packetBinary[1] = 1;
+								packetBinary[2] = 1;
+								packetBinary[3] = 1;
+							}
+			
+							int l3;
+							for(l3 = 0; l3 <4; l3++)
+							{
+								packetSend[i_send + l2] = packetBinary[l2]; 	
+				
+							}//generates binary values
+							i_send++;
 						}
-						i_send++;
 					}
 					
 					Timer_sendData_Start();
@@ -235,6 +281,7 @@ int main()
 
 void init()
 {	
+	
 	//Enable Global Interrupts
 	CYGlobalIntEnable;
 	
@@ -244,6 +291,9 @@ void init()
 	
 	isr_RisingEdge_StartEx(isr_RisingEdgeDetected);
 	isr_FallingEdge_StartEx(isr_FallingEdgeDetected);
+	
+	
+	
 	
 	isr_sendData_StartEx(isr_sendingData);
 	

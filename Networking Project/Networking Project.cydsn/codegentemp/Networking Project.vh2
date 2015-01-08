@@ -2,7 +2,7 @@
 --	Conversion of Networking Project.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jan 07 16:44:03 2015
+--	Wed Jan 07 22:04:18 2015
 --
 
 USE cypress.cypress.all;
@@ -442,6 +442,7 @@ SIGNAL \USB:dma_nrq_7\ : bit;
 SIGNAL \USB:Net_1807\ : bit;
 SIGNAL \USB:Net_81\ : bit;
 SIGNAL \USB:Net_79\ : bit;
+SIGNAL \USB:ept_int_2\ : bit;
 SIGNAL \USB:ept_int_1\ : bit;
 SIGNAL \USB:Net_1784\ : bit;
 SIGNAL \USB:dma_nrq_2\ : bit;
@@ -458,14 +459,13 @@ SIGNAL \USB:tmpFB_0__Dp_net_0\ : bit;
 TERMINAL \USB:Net_1000\ : bit;
 SIGNAL \USB:tmpIO_0__Dp_net_0\ : bit;
 TERMINAL \USB:tmpSIOVREF__Dp_net_0\ : bit;
-SIGNAL Net_783 : bit;
+SIGNAL Net_807 : bit;
 SIGNAL \USB:ept_int_8\ : bit;
 SIGNAL \USB:ept_int_7\ : bit;
 SIGNAL \USB:ept_int_6\ : bit;
 SIGNAL \USB:ept_int_5\ : bit;
 SIGNAL \USB:ept_int_4\ : bit;
 SIGNAL \USB:ept_int_3\ : bit;
-SIGNAL \USB:ept_int_2\ : bit;
 SIGNAL \USB:Net_95\ : bit;
 SIGNAL \USB:dma_req_7\ : bit;
 SIGNAL \USB:dma_req_6\ : bit;
@@ -1258,12 +1258,15 @@ isr_BusyToIdle:cy_isr_v1_0
 \USB:arb_int\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>\USB:Net_79\);
+\USB:ep_2\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USB:ept_int_2\);
 \USB:ep_1\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>\USB:ept_int_1\);
 \USB:Clock_vbus\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
-		id=>"5977eed1-84e2-4567-8155-dd39d82f633e/03f503a7-085a-4304-b786-de885b1c2f21",
+		id=>"c39ef993-d787-4c0c-8ad6-c0c81f866442/03f503a7-085a-4304-b786-de885b1c2f21",
 		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
 		divisor=>0,
 		period=>"0",
@@ -1275,7 +1278,7 @@ isr_BusyToIdle:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>\USB:Net_1010\);
 \USB:Dm\:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"5977eed1-84e2-4567-8155-dd39d82f633e/8b77a6c4-10a0-4390-971c-672353e2a49c",
+	GENERIC MAP(id=>"c39ef993-d787-4c0c-8ad6-c0c81f866442/8b77a6c4-10a0-4390-971c-672353e2a49c",
 		drive_mode=>"000",
 		ibuf_enabled=>"0",
 		init_dr_st=>"0",
@@ -1340,7 +1343,7 @@ isr_BusyToIdle:cy_isr_v1_0
 		out_reset=>zero,
 		interrupt=>\USB:tmpINTERRUPT_0__Dm_net_0\);
 \USB:Dp\:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"5977eed1-84e2-4567-8155-dd39d82f633e/618a72fc-5ddd-4df5-958f-a3d55102db42",
+	GENERIC MAP(id=>"c39ef993-d787-4c0c-8ad6-c0c81f866442/618a72fc-5ddd-4df5-958f-a3d55102db42",
 		drive_mode=>"000",
 		ibuf_enabled=>"0",
 		init_dr_st=>"0",
@@ -1408,7 +1411,7 @@ isr_BusyToIdle:cy_isr_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(dp=>\USB:Net_1000\,
 		dm=>\USB:Net_597\,
-		sof_int=>Net_783,
+		sof_int=>Net_807,
 		arb_int=>\USB:Net_79\,
 		usb_int=>\USB:Net_81\,
 		ept_int=>(\USB:ept_int_8\, \USB:ept_int_7\, \USB:ept_int_6\, \USB:ept_int_5\,
@@ -1418,9 +1421,15 @@ isr_BusyToIdle:cy_isr_v1_0
 		dma_req=>(\USB:dma_req_7\, \USB:dma_req_6\, \USB:dma_req_5\, \USB:dma_req_4\,
 			\USB:dma_req_3\, \USB:dma_req_2\, \USB:dma_req_1\, \USB:dma_req_0\),
 		dma_termin=>\USB:Net_824\);
+\USB:ord_int\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USB:Net_95\);
+\USB:ep_3\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USB:ept_int_3\);
 \USB:sof_int\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>Net_783);
+	PORT MAP(int_signal=>Net_807);
 \Timer_sendData:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_771,

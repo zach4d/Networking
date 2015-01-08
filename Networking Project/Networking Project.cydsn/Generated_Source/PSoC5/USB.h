@@ -74,17 +74,26 @@
 ***************************************/
 
 #define USB_NUM_DEVICES   (1u)
+#define USB_ENABLE_CDC_CLASS   
+#define USB_ENABLE_DESCRIPTOR_STRINGS   
+#define USB_ENABLE_MSOS_STRING   
+#define USB_ENABLE_SN_STRING   
+#define USB_ENABLE_IDSN_STRING   
+#define USB_ENABLE_STRINGS   
+#define USB_ENABLE_HID_CLASS   
+#define USB_HID_RPT_1_SIZE_LSB   (0x32u)
+#define USB_HID_RPT_1_SIZE_MSB   (0x00u)
 #define USB_MAX_REPORTID_NUMBER   (0u)
 
 #define USB_MON_VBUS                       (0u)
 #define USB_EXTERN_VBUS                    (0u)
 #define USB_EXTERN_VND                     (0u)
 #define USB_EXTERN_CLS                     (0u)
-#define USB_MAX_INTERFACES_NUMBER          (1u)
+#define USB_MAX_INTERFACES_NUMBER          (2u)
 #define USB_EP0_ISR_REMOVE                 (0u)
 #define USB_EP1_ISR_REMOVE                 (0u)
-#define USB_EP2_ISR_REMOVE                 (1u)
-#define USB_EP3_ISR_REMOVE                 (1u)
+#define USB_EP2_ISR_REMOVE                 (0u)
+#define USB_EP3_ISR_REMOVE                 (0u)
 #define USB_EP4_ISR_REMOVE                 (1u)
 #define USB_EP5_ISR_REMOVE                 (1u)
 #define USB_EP6_ISR_REMOVE                 (1u)

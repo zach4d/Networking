@@ -119,6 +119,36 @@
 #define USB_ep_1__INTC_SET_EN_REG CYREG_NVIC_SETENA0
 #define USB_ep_1__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
 
+/* USB_ep_2 */
+#define USB_ep_2__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
+#define USB_ep_2__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
+#define USB_ep_2__INTC_MASK 0x02u
+#define USB_ep_2__INTC_NUMBER 1u
+#define USB_ep_2__INTC_PRIOR_NUM 7u
+#define USB_ep_2__INTC_PRIOR_REG CYREG_NVIC_PRI_1
+#define USB_ep_2__INTC_SET_EN_REG CYREG_NVIC_SETENA0
+#define USB_ep_2__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
+
+/* USB_ep_3 */
+#define USB_ep_3__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
+#define USB_ep_3__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
+#define USB_ep_3__INTC_MASK 0x04u
+#define USB_ep_3__INTC_NUMBER 2u
+#define USB_ep_3__INTC_PRIOR_NUM 7u
+#define USB_ep_3__INTC_PRIOR_REG CYREG_NVIC_PRI_2
+#define USB_ep_3__INTC_SET_EN_REG CYREG_NVIC_SETENA0
+#define USB_ep_3__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
+
+/* USB_ord_int */
+#define USB_ord_int__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
+#define USB_ord_int__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
+#define USB_ord_int__INTC_MASK 0x2000000u
+#define USB_ord_int__INTC_NUMBER 25u
+#define USB_ord_int__INTC_PRIOR_NUM 7u
+#define USB_ord_int__INTC_PRIOR_REG CYREG_NVIC_PRI_25
+#define USB_ord_int__INTC_SET_EN_REG CYREG_NVIC_SETENA0
+#define USB_ord_int__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
+
 /* USB_sof_int */
 #define USB_sof_int__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
 #define USB_sof_int__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
@@ -414,30 +444,30 @@
 /* isr_BusyToIdle */
 #define isr_BusyToIdle__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
 #define isr_BusyToIdle__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
-#define isr_BusyToIdle__INTC_MASK 0x04u
-#define isr_BusyToIdle__INTC_NUMBER 2u
+#define isr_BusyToIdle__INTC_MASK 0x10u
+#define isr_BusyToIdle__INTC_NUMBER 4u
 #define isr_BusyToIdle__INTC_PRIOR_NUM 7u
-#define isr_BusyToIdle__INTC_PRIOR_REG CYREG_NVIC_PRI_2
+#define isr_BusyToIdle__INTC_PRIOR_REG CYREG_NVIC_PRI_4
 #define isr_BusyToIdle__INTC_SET_EN_REG CYREG_NVIC_SETENA0
 #define isr_BusyToIdle__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
 
 /* isr_RisingEdge */
 #define isr_RisingEdge__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
 #define isr_RisingEdge__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
-#define isr_RisingEdge__INTC_MASK 0x10u
-#define isr_RisingEdge__INTC_NUMBER 4u
+#define isr_RisingEdge__INTC_MASK 0x40u
+#define isr_RisingEdge__INTC_NUMBER 6u
 #define isr_RisingEdge__INTC_PRIOR_NUM 7u
-#define isr_RisingEdge__INTC_PRIOR_REG CYREG_NVIC_PRI_4
+#define isr_RisingEdge__INTC_PRIOR_REG CYREG_NVIC_PRI_6
 #define isr_RisingEdge__INTC_SET_EN_REG CYREG_NVIC_SETENA0
 #define isr_RisingEdge__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
 
 /* isr_FallingEdge */
 #define isr_FallingEdge__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
 #define isr_FallingEdge__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
-#define isr_FallingEdge__INTC_MASK 0x08u
-#define isr_FallingEdge__INTC_NUMBER 3u
+#define isr_FallingEdge__INTC_MASK 0x20u
+#define isr_FallingEdge__INTC_NUMBER 5u
 #define isr_FallingEdge__INTC_PRIOR_NUM 7u
-#define isr_FallingEdge__INTC_PRIOR_REG CYREG_NVIC_PRI_3
+#define isr_FallingEdge__INTC_PRIOR_REG CYREG_NVIC_PRI_5
 #define isr_FallingEdge__INTC_SET_EN_REG CYREG_NVIC_SETENA0
 #define isr_FallingEdge__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
 
@@ -532,10 +562,10 @@
 /* isr_BusyToCollision */
 #define isr_BusyToCollision__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
 #define isr_BusyToCollision__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
-#define isr_BusyToCollision__INTC_MASK 0x02u
-#define isr_BusyToCollision__INTC_NUMBER 1u
+#define isr_BusyToCollision__INTC_MASK 0x08u
+#define isr_BusyToCollision__INTC_NUMBER 3u
 #define isr_BusyToCollision__INTC_PRIOR_NUM 7u
-#define isr_BusyToCollision__INTC_PRIOR_REG CYREG_NVIC_PRI_1
+#define isr_BusyToCollision__INTC_PRIOR_REG CYREG_NVIC_PRI_3
 #define isr_BusyToCollision__INTC_SET_EN_REG CYREG_NVIC_SETENA0
 #define isr_BusyToCollision__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
 
@@ -690,7 +720,7 @@
 #define CYDEV_ECC_ENABLE 0
 #define CYDEV_HEAP_SIZE 0x1000
 #define CYDEV_INSTRUCT_CACHE_ENABLED 1
-#define CYDEV_INTR_RISING 0x0000001Eu
+#define CYDEV_INTR_RISING 0x00000078u
 #define CYDEV_PROJ_TYPE 0
 #define CYDEV_PROJ_TYPE_BOOTLOADER 1
 #define CYDEV_PROJ_TYPE_LOADABLE 2

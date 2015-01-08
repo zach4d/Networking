@@ -1,5 +1,5 @@
 -- Project:   Networking Project
--- Generated: 01/07/2015 16:44:04
+-- Generated: 01/07/2015 22:04:20
 -- 
 
 ENTITY \Networking Project\ IS
@@ -38,7 +38,7 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     SIGNAL Net_573 : bit;
     SIGNAL Net_648 : bit;
     SIGNAL Net_773 : bit;
-    SIGNAL Net_783 : bit;
+    SIGNAL Net_807 : bit;
     SIGNAL Pin_LEDBusy(0)__PA : bit;
     SIGNAL Pin_LEDCollision(0)__PA : bit;
     SIGNAL Pin_LEDIdle(0)__PA : bit;
@@ -1973,7 +1973,7 @@ BEGIN
         GENERIC MAP(
             drive_mode => "000",
             ibuf_enabled => "0",
-            id => "5977eed1-84e2-4567-8155-dd39d82f633e/8b77a6c4-10a0-4390-971c-672353e2a49c",
+            id => "c39ef993-d787-4c0c-8ad6-c0c81f866442/8b77a6c4-10a0-4390-971c-672353e2a49c",
             init_dr_st => "0",
             input_clk_en => 0,
             input_sync => "1",
@@ -2057,7 +2057,7 @@ BEGIN
         GENERIC MAP(
             drive_mode => "000",
             ibuf_enabled => "0",
-            id => "5977eed1-84e2-4567-8155-dd39d82f633e/618a72fc-5ddd-4df5-958f-a3d55102db42",
+            id => "c39ef993-d787-4c0c-8ad6-c0c81f866442/618a72fc-5ddd-4df5-958f-a3d55102db42",
             init_dr_st => "0",
             input_clk_en => 0,
             input_sync => "1",
@@ -2125,7 +2125,7 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            sof_int => Net_783,
+            sof_int => Net_807,
             arb_int => \USB:Net_79\,
             usb_int => \USB:Net_81\,
             ept_int_8 => \USB:ept_int_8\,
@@ -2183,11 +2183,32 @@ BEGIN
             interrupt => \USB:ept_int_1\,
             clock => ClockBlock_BUS_CLK);
 
+    \USB:ep_2\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USB:ept_int_2\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USB:ep_3\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USB:ept_int_3\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USB:ord_int\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USB:Net_95\,
+            clock => ClockBlock_BUS_CLK);
+
     \USB:sof_int\:interrupt
         GENERIC MAP(
             int_type => "10")
         PORT MAP(
-            interrupt => Net_783,
+            interrupt => Net_807,
             clock => ClockBlock_BUS_CLK);
 
     __ONE__:macrocell
