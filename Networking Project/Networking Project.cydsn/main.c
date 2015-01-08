@@ -71,11 +71,12 @@ void mystrrev(char hex[])
 	
 	char temp[length];
 	strcpy(temp, hex);
-	int i;
+	int i, i2;
+	i2 = length-1;
 	for(i = 0; i <length; i++)
 	{
-		hex[i] = temp[length];	
-		length--;
+		hex[i] = temp[i2];	
+		i2--;
 	}
 }
 
