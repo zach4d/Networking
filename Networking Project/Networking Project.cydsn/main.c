@@ -21,12 +21,13 @@
 State currentState = IDLE;
 
 //usb and sending data
-uint8 packetUSB[80];
-uint8 packetHex[80*2];
+char packetUSB[80];
+char packetHex[80*2];
 uint8 packetBinary[4];
 uint8 packetSend[80*8];
 uint8 dec;
-
+uint8 flag = 1;
+bool dataReady = false;
 int i_send = 0;
 
 CY_ISR(isr_FallingEdgeDetected)
@@ -59,7 +60,8 @@ CY_ISR(isr_BusyToCollision)
 
 CY_ISR(isr_sendingData)
 {
-	LCD_PrintString("here");
+	//flag = !flag;
+	//Transm_Output_Write(flag);
 	Transm_Output_Write(packetSend[i_send]);
 	i_send++;
 }
@@ -80,7 +82,7 @@ void mystrrev(char hex[])
 	}
 }
 
-void decimal_hex(int n, uint8 hex[]) /* Function to convert decimal to hexadecimal. */
+void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecimal. */
 {
     int i=0,rem;
     while (n!=0)
@@ -130,12 +132,26 @@ int main()
 		// these states are switched in the various ISR's
 		switch(currentState)
 		{
-			case IDLE:				
-				Timer_sendData_Stop();
+			case IDLE:
+			/****************************************
+			uncommented as the current state was not changing
+			*********************************************/
+			/*
+				Timer_sendData_Sleep();
+				Transm_Output_Write(1);
+				dataReady = false;
+			*/
 				memset(packetSend,  0, (80*8));
 				Pin_LEDBusy_Write(0);			
 				Pin_LEDIdle_Write(1);
 				Pin_LEDCollision_Write(0);
+				/*****************************************************************************
+				
+				The USB need to watch for the return key before it creates the buffer
+				Currently it fires on every key press (1/8/2015) James Maki
+				
+				******************************************************************************/
+				
 				
 				//check message from usb
 				if(USB_DataIsReady() != 0u)               /* Check for input data from PC */
@@ -257,11 +273,13 @@ int main()
 							i_send++;
 						}
 					}
-					
-					Timer_sendData_Start();
+					dataReady = true;
 	        	}
-				
-				
+				i_send = 0;
+				if(dataReady){
+					//Transm_Output_Write(0); /* uncomment this line to see that Output change on each key pressed*/
+					Timer_sendData_Enable();
+				}
 				break;
 				
 			case BUSY:
@@ -271,7 +289,9 @@ int main()
 				break;
 
 			case COLLISION:	
-				Timer_sendData_Stop();
+				Timer_sendData_Sleep();
+				Transm_Output_Write(1);
+				dataReady = false;
 				Pin_LEDBusy_Write(0);			
 				Pin_LEDIdle_Write(0);
 				Pin_LEDCollision_Write(1);
@@ -282,7 +302,7 @@ int main()
 
 void init()
 {	
-	
+	Transm_Output_Write(1);
 	//Enable Global Interrupts
 	CYGlobalIntEnable;
 	
@@ -293,7 +313,8 @@ void init()
 	isr_RisingEdge_StartEx(isr_RisingEdgeDetected);
 	isr_FallingEdge_StartEx(isr_FallingEdgeDetected);
 	
-	
+	Timer_sendData_Start();
+	Timer_sendData_Sleep();
 	
 	
 	isr_sendData_StartEx(isr_sendingData);

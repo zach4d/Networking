@@ -169,13 +169,13 @@ void Timer_sendData_Wakeup(void)        ;
 ***************************************/
 
 #define Timer_sendData_INIT_PERIOD             9999u
-#define Timer_sendData_INIT_CAPTURE_MODE       ((uint8)((uint8)1u << Timer_sendData_CTRL_CAP_MODE_SHIFT))
+#define Timer_sendData_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << Timer_sendData_CTRL_CAP_MODE_SHIFT))
 #define Timer_sendData_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << Timer_sendData_CTRL_TRIG_MODE_SHIFT))
 #if (Timer_sendData_UsingFixedFunction)
-    #define Timer_sendData_INIT_INTERRUPT_MODE (((uint8)((uint8)0u << Timer_sendData_STATUS_TC_INT_MASK_SHIFT)) | \
+    #define Timer_sendData_INIT_INTERRUPT_MODE (((uint8)((uint8)1u << Timer_sendData_STATUS_TC_INT_MASK_SHIFT)) | \
                                                   ((uint8)((uint8)0 << Timer_sendData_STATUS_CAPTURE_INT_MASK_SHIFT)))
 #else
-    #define Timer_sendData_INIT_INTERRUPT_MODE (((uint8)((uint8)0u << Timer_sendData_STATUS_TC_INT_MASK_SHIFT)) | \
+    #define Timer_sendData_INIT_INTERRUPT_MODE (((uint8)((uint8)1u << Timer_sendData_STATUS_TC_INT_MASK_SHIFT)) | \
                                                  ((uint8)((uint8)0 << Timer_sendData_STATUS_CAPTURE_INT_MASK_SHIFT)) | \
                                                  ((uint8)((uint8)0 << Timer_sendData_STATUS_FIFOFULL_INT_MASK_SHIFT)))
 #endif /* (Timer_sendData_UsingFixedFunction) */
