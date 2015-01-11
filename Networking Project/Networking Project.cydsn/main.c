@@ -22,6 +22,7 @@ State currentState = IDLE;
 
 //usb and sending data
 char packetUSB[80];
+char packetMessage[80];
 char packetHex[80*2];
 uint8 packetBinary[4];
 uint8 packetSend[80*8];
@@ -29,6 +30,7 @@ uint8 dec;
 uint8 flag = 1;
 bool dataReady = false;
 int i_send = 0;
+uint8 messageBufferPosition = 0;
 
 CY_ISR(isr_FallingEdgeDetected)
 {	
@@ -63,6 +65,7 @@ CY_ISR(isr_sendingData)
 	//flag = !flag;
 	//Transm_Output_Write(flag);
 	Transm_Output_Write(packetSend[i_send]);
+	//USB_PutData(packetSend[i_send], 1);
 	i_send++;
 }
 
@@ -126,6 +129,8 @@ int main()
 	// Initialize all components
 	init();
 	uint16 count;
+	bool messageReady = false;
+	uint16 forLoopCounter;
 	// main program loop
 	for(;;)
     {
@@ -137,10 +142,17 @@ int main()
 			uncommented as the current state was not changing
 			*********************************************/
 			/*
+			if(i_send == 0 || i_send == forLoopCounter)
+			{
 				Timer_sendData_Sleep();
-				Transm_Output_Write(1);
-				dataReady = false;
+			}
 			*/
+			
+			/*
+				Transm_Output_Write(1);
+			*/
+				dataReady = false;
+			
 				memset(packetSend,  0, (80*8));
 				Pin_LEDBusy_Write(0);			
 				Pin_LEDIdle_Write(1);
@@ -155,29 +167,40 @@ int main()
 				
 				//check message from usb
 				if(USB_DataIsReady() != 0u)               /* Check for input data from PC */
-	        	{   
-		            count = USB_GetAll(packetUSB);           /* Read received data and re-enable OUT endpoint */
-		            if(count != 0u)
-		            {
-		                while(USB_CDCIsReady() == 0u);    /* Wait till component is ready to send more data to the PC */
-						 USB_PutData(packetUSB, count); 
-		                /* If the last sent packet is exactly maximum packet size, 
-		                *  it shall be followed by a zero-length packet to assure the
-		                *  end of segment is properly identified by the terminal.
-		                */
-		                if(count == 80)
-		                {
-		                    while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */ 
-		                    USB_PutData(NULL, 0u);         /* Send zero-length packet to PC */
-		                }
-		            }
+	       	{   
+		           count = USB_GetAll(packetUSB);           /* Read received data and re-enable OUT endpoint */
+		           if(count != 0u)
+		           {
+						for(forLoopCounter=0; forLoopCounter<count;forLoopCounter++)
+						//USB_PutData(packetUSB, count); 
+		               /* If the last sent packet is exactly maximum packet size, 
+		               *  it shall be followed by a zero-length packet to assure the
+		               *  end of segment is properly identified by the terminal.
+		               */
+		               if(packetUSB[forLoopCounter] == '\r' || count == 80)
+		               {
+							messageReady = true;
+		                   packetMessage[messageBufferPosition] = 0;
+							messageBufferPosition=0;
+							}
+						else{
+							messageReady = false;
+							messageBufferPosition++;
+							packetMessage[messageBufferPosition]=0;
+						}
+		           }
+					while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */
+		                   USB_PutData(packetUSB, count);         /* Send zero-length packet to PC */
 					//generate packet and send packet
 					i_send = 0;
+
 					
 					int l, l2;
-					for(l = 0; packetUSB[l] != '\0'; l++)
+					for(l = 0; packetMessage[l] != '\0'; l++)
 					{
 						dec = (unsigned int) packetUSB[l];
+						USB_PutChar((char *)dec);
+					
 						decimal_hex(dec, packetHex);
 						
 						for(l2 = 0; packetHex[l2] != '\0'; l2++)
@@ -263,25 +286,30 @@ int main()
 								packetBinary[2] = 1;
 								packetBinary[3] = 1;
 							}
-			
+						
 							int l3;
 							for(l3 = 0; l3 <4; l3++)
 							{
-								packetSend[i_send + l2] = packetBinary[l2]; 	
-				
+								packetSend[i_send + l3] = packetBinary[l3];
+								
 							}//generates binary values
+							
 							i_send++;
 						}
 					}
 					dataReady = true;
 	        	}
-				i_send = 0;
-				if(dataReady){
+				
+				if(dataReady && messageReady){ 
+					i_send = 0;
 					//Transm_Output_Write(0); /* uncomment this line to see that Output change on each key pressed*/
+					USB_PutChar('\r');
+							USB_PutChar('\n');
+							
 					Timer_sendData_Enable();
+					
 				}
 				break;
-				
 			case BUSY:
 				Pin_LEDBusy_Write(1);			
 				Pin_LEDIdle_Write(0);

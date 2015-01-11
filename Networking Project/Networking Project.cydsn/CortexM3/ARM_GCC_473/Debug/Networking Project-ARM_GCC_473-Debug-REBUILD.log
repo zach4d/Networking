@@ -1,4 +1,4 @@
---------------- Rebuild Started: 01/08/2015 08:52:10 Project: Networking Project, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Rebuild Started: 01/09/2015 13:27:49 Project: Networking Project, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_473\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o"
 Deleting file ".\CortexM3\ARM_GCC_473\Debug\cymetadata.o"
@@ -70,20 +70,15 @@ API Generation ...
 Dependency Generation ...
 Clean Temporary Files ...
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM3\ARM_GCC_473\Debug\main.o
-.\main.c: In function 'decimal_hex':
-.\main.c:118:5: warning: pointer targets in passing argument 1 of 'mystrrev' differ in signedness [-Wpointer-sign]
-.\main.c:68:6: note: expected 'char *' but argument is of type 'uint8 *'
 .\main.c: In function 'main':
-.\main.c:144:15: warning: pointer targets in passing argument 1 of 'USB_GetAll' differ in signedness [-Wpointer-sign]
+.\main.c:159:15: warning: pointer targets in passing argument 1 of 'USB_GetAll' differ in signedness [-Wpointer-sign]
 In file included from ./Generated_Source/PSoC5/project.h:38:0,
                  from .\main.c:12:
 ./Generated_Source/PSoC5/USB_cdc.h:39:12: note: expected 'uint8 *' but argument is of type 'char *'
-.\main.c:148:8: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
+.\main.c:163:8: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
 In file included from ./Generated_Source/PSoC5/project.h:38:0,
                  from .\main.c:12:
 ./Generated_Source/PSoC5/USB_cdc.h:31:10: note: expected 'const uint8 *' but argument is of type 'char *'
-.\main.c:166:7: warning: pointer targets in passing argument 2 of 'decimal_hex' differ in signedness [-Wpointer-sign]
-.\main.c:84:6: note: expected 'uint8 *' but argument is of type 'char *'
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cymetadata.lst -ffunction-sections -c .\Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\isr_RisingEdge.lst -ffunction-sections -c .\Generated_Source\PSoC5\isr_RisingEdge.c -o .\CortexM3\ARM_GCC_473\Debug\isr_RisingEdge.o
@@ -130,6 +125,6 @@ arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_473\Debug\Networking Project.a
 arm-none-eabi-gcc.exe -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g "-Wl,-Map,.\CortexM3\ARM_GCC_473\Debug\Networking Project.map" -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o ".\CortexM3\ARM_GCC_473\Debug\Networking Project.elf" .\CortexM3\ARM_GCC_473\Debug\main.o .\CortexM3\ARM_GCC_473\Debug\cymetadata.o .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o ".\CortexM3\ARM_GCC_473\Debug\Networking Project.a" "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
 cyelftool.exe -C "D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\CortexM3\ARM_GCC_473\Debug\Networking Project.elf" --flash_size 262144 --flash_row_size 256
 cyelftool.exe -S "D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\CortexM3\ARM_GCC_473\Debug\Networking Project.elf"
-Flash used: 19382 of 262144 bytes (7.4 %).
-SRAM used: 21917 of 65536 bytes (33.4 %).
---------------- Rebuild Succeeded: 01/08/2015 08:52:35 ---------------
+Flash used: 19430 of 262144 bytes (7.4 %).
+SRAM used: 21925 of 65536 bytes (33.5 %).
+--------------- Rebuild Succeeded: 01/09/2015 13:28:19 ---------------
