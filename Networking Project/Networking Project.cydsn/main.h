@@ -12,8 +12,7 @@
 
 #ifndef MAIN_H
 #define MAIN_H
-	
-#define USB_BUFFER_LENGTH 80u
+	#define USB_BUFFER_LENGTH 80u
 #define MAX_MESSAGE_LENGTH 74u
 #define HEADER_LENGTH 6u
 	

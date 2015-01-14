@@ -74,12 +74,18 @@
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Transm_Output_aliases.h" value="NONE;Transm_Output" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Transm_Output.c" value="ARM_C_FILE;Transm_Output" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Transm_Output.h" value="NONE;Transm_Output" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\LCD.c" value="ARM_C_FILE;LCD" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\LCD.h" value="NONE;LCD" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\LCD_PM.c" value="ARM_C_FILE;LCD" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\USB_Dm_aliases.h" value="NONE;USB_Dm" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\USB_Dm.c" value="ARM_C_FILE;USB_Dm" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\USB_Dm.h" value="NONE;USB_Dm" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\USB_Dp_aliases.h" value="NONE;USB_Dp" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\USB_Dp.c" value="ARM_C_FILE;USB_Dp" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\USB_Dp.h" value="NONE;USB_Dp" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="NONE;LCD_LCDPort" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\LCD_LCDPort.c" value="ARM_C_FILE;LCD_LCDPort" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\LCD_LCDPort.h" value="NONE;LCD_LCDPort" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\cm3gcc.ld" value="NONE;cy_boot" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Cm3RealView.scat" value="NONE;cy_boot" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Cm3Start.c" value="ARM_C_FILE;cy_boot" />

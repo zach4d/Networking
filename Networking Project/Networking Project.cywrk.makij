@@ -65,6 +65,14 @@
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\isr_sendData</v>
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\isr_sendData\isr_sendData.c</v>
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\isr_sendData\isr_sendData.h</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD\LCD.c</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD\LCD.h</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD\LCD_PM.c</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD_LCDPort</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD_LCDPort\LCD_LCDPort.c</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD_LCDPort\LCD_LCDPort.h</v>
+<v>Networking Project\Networking Project\Generated_Source\PSoC5\LCD_LCDPort\LCD_LCDPort_aliases.h</v>
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\Pin_LEDBusy</v>
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\Pin_LEDBusy\Pin_LEDBusy.c</v>
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\Pin_LEDBusy\Pin_LEDBusy.h</v>
@@ -233,6 +241,9 @@
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\isr_FallingEdge.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\isr_RisingEdge.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\isr_sendData.lst</v>
+<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\LCD.lst</v>
+<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\LCD_PM.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\main.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Pin_LEDBusy.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Pin_LEDCollision.lst</v>
@@ -288,6 +299,9 @@
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\isr_FallingEdge.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\isr_RisingEdge.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\isr_sendData.lst</v>
+<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\LCD.lst</v>
+<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\LCD_PM.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\main.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Pin_LEDBusy.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Pin_LEDCollision.lst</v>
@@ -313,9 +327,6 @@
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\USB_hid.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\USB_midi.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\USB_pm.lst</v>
-<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\USB_std.lst</v>
-<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\USB_vnd.lst</v>
-<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Networking Project.elf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -330,6 +341,7 @@
 <v>Networking Project\Networking Project\PSoC 5 Architecture TRM</v>
 <v>Networking Project\Networking Project\CY8C58LP Family Datasheet</v>
 <v>Networking Project\Networking Project\System Reference Guide v4_11</v>
+<v>Networking Project\Networking Project\CharLCD_v2_0</v>
 <v>Networking Project\Networking Project\cy_clock_v2_20</v>
 <v>Networking Project\Networking Project\cy_isr_v1_70</v>
 <v>Networking Project\Networking Project\cy_pins_v2_5</v>
@@ -345,6 +357,7 @@
 <v>Networking Project\Networking Project\PSoC 5 Architecture TRM</v>
 <v>Networking Project\Networking Project\CY8C58LP Family Datasheet</v>
 <v>Networking Project\Networking Project\System Reference Guide v4_11</v>
+<v>Networking Project\Networking Project\CharLCD_v2_0</v>
 <v>Networking Project\Networking Project\cy_clock_v2_20</v>
 <v>Networking Project\Networking Project\cy_isr_v1_70</v>
 <v>Networking Project\Networking Project\cy_pins_v2_5</v>

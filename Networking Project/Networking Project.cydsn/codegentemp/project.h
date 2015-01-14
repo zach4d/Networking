@@ -43,10 +43,13 @@
 #include <isr_sendData.h>
 #include <Transm_Output_aliases.h>
 #include <Transm_Output.h>
+#include <LCD.h>
 #include <USB_Dm_aliases.h>
 #include <USB_Dm.h>
 #include <USB_Dp_aliases.h>
 #include <USB_Dp.h>
+#include <LCD_LCDPort_aliases.h>
+#include <LCD_LCDPort.h>
 #include <core_cm3_psoc5.h>
 #include <core_cm3.h>
 #include <CyDmac.h>

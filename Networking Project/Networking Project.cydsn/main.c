@@ -32,6 +32,17 @@ bool dataReady = false;
 int i_send = 0;
 uint8 messageBufferPosition = 0;
 
+void printbinchar(char c)
+{
+	int counter;
+	for(counter = 7; counter >= 0; --counter)
+	{
+		//USB_PutChar( (c & (1 << counter)) ? '1' : '0' );	
+	}
+	USB_PutChar('\r');
+	USB_PutChar('\n');
+}
+
 CY_ISR(isr_FallingEdgeDetected)
 {	
 	Timer_BusyToCollision_WriteCounter(11292);
@@ -65,7 +76,7 @@ CY_ISR(isr_sendingData)
 	//flag = !flag;
 	//Transm_Output_Write(flag);
 	Transm_Output_Write(packetSend[i_send]);
-	//USB_PutData(packetSend[i_send], 1);
+	//printCharAsBinary(packetSend[i_send]);
 	i_send++;
 }
 
@@ -84,7 +95,20 @@ void mystrrev(char hex[])
 		i2--;
 	}
 }
-
+void printCharAsBinary(char c) {
+	int i;
+	for(i = 0; i < 8; i++){
+		USB_PutChar((c >> i) & 0x1);
+	}
+}
+ 
+void printStringAsBinary(char* s){
+	for(; *s; s++){
+		printCharAsBinary(*s);
+		USB_PutChar(' ');
+	}
+	USB_PutChar('\n');
+}
 void decimal_hex(int n, char hex[]) /* Function to convert decimal to hexadecimal. */
 {
     int i=0,rem;
@@ -186,7 +210,7 @@ int main()
 						else{
 							messageReady = false;
 							messageBufferPosition++;
-							packetMessage[messageBufferPosition]=0;
+							packetMessage[messageBufferPosition]=packetUSB[forLoopCounter];
 						}
 		           }
 					while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */
@@ -196,15 +220,23 @@ int main()
 
 					
 					int l, l2;
+						USB_PutChar('b');
+						USB_PutChar(packetMessage[0]);
+						
 					for(l = 0; packetMessage[l] != '\0'; l++)
 					{
+						USB_PutChar('a');
 						dec = (unsigned int) packetUSB[l];
-						USB_PutChar((char *)dec);
-					
+						//USB_PutChar((char *)dec);
+						
 						decimal_hex(dec, packetHex);
+						//printStringAsBinary(packetHex);
+						//LCD_Position(1,0);
+						
 						
 						for(l2 = 0; packetHex[l2] != '\0'; l2++)
 						{
+							printbinchar(packetHex[l2]);
 							if(packetHex[l2] == '0'){
 								packetBinary[0] = 0;
 								packetBinary[1] = 0;
@@ -303,10 +335,13 @@ int main()
 				if(dataReady && messageReady){ 
 					i_send = 0;
 					//Transm_Output_Write(0); /* uncomment this line to see that Output change on each key pressed*/
-					USB_PutChar('\r');
-							USB_PutChar('\n');
-							
-					Timer_sendData_Enable();
+				//	USB_PutChar('\r');
+				//	USB_PutChar('\n');
+					int l2;
+					for(l2 = 0; l2 <10; l2++){
+					printbinchar(packetHex[l2]);
+					}
+					//Timer_sendData_Enable();
 					
 				}
 				break;
@@ -330,6 +365,11 @@ int main()
 
 void init()
 {	
+	LCD_Start();
+	LCD_Position(0,0);
+	LCD_PrintString("Welcome");
+	
+	
 	Transm_Output_Write(1);
 	//Enable Global Interrupts
 	CYGlobalIntEnable;
@@ -359,5 +399,5 @@ void init()
 	//Timer_BusyToCollision_Start();
 	//Timer_BusyToIdle_Start();
 	
-		
 }
+
