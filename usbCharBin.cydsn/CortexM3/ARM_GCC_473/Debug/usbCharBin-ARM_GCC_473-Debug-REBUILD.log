@@ -1,0 +1,61 @@
+--------------- Rebuild Started: 01/15/2015 07:22:08 Project: usbCharBin, Configuration: ARM GCC 4.7.3 Debug ---------------
+Deleting file ".\usbCharBin.cycdx"
+Deleting file ".\usbCharBin.svd"
+Deleting file ".\usbCharBin.rpt"
+Deleting file ".\usbCharBin_timing.html"
+cydsfit.exe "-.appdatapath" "C:\Users\makij\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\usbCharBin.cydsn\usbCharBin.cyprj" "-d" "CY8C5868AXI-LP035" "-s" "D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\usbCharBin.cydsn\Generated_Source\PSoC5" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
+Elaborating Design...
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 2 pin(s) will be assigned a location by the fitter: \USB:Dm(0)\, \USB:Dp(0)\
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Analog Placement ...
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM3\ARM_GCC_473\Debug\main.o
+.\main.c:21:1: error: unknown type name 'State'
+.\main.c:21:22: error: 'IDLE' undeclared here (not in a function)
+.\main.c:31:1: error: unknown type name 'bool'
+.\main.c:31:18: error: 'false' undeclared here (not in a function)
+.\main.c: In function 'isr_sendingData':
+.\main.c:39:2: warning: implicit declaration of function 'Transm_Output_Write' [-Wimplicit-function-declaration]
+.\main.c: In function 'main':
+.\main.c:115:2: warning: implicit declaration of function 'init' [-Wimplicit-function-declaration]
+.\main.c:117:2: error: unknown type name 'bool'
+.\main.c:141:5: warning: implicit declaration of function 'Pin_LEDBusy_Write' [-Wimplicit-function-declaration]
+.\main.c:142:5: warning: implicit declaration of function 'Pin_LEDIdle_Write' [-Wimplicit-function-declaration]
+.\main.c:143:5: warning: implicit declaration of function 'Pin_LEDCollision_Write' [-Wimplicit-function-declaration]
+.\main.c:155:14: warning: pointer targets in passing argument 1 of 'USB_GetAll' differ in signedness [-Wpointer-sign]
+In file included from ./Generated_Source/PSoC5/project.h:24:0,
+                 from .\main.c:12:
+./Generated_Source/PSoC5/USB_cdc.h:39:12: note: expected 'uint8 *' but argument is of type 'char *'
+.\main.c:167:23: error: 'true' undeclared (first use in this function)
+.\main.c:167:23: note: each undeclared identifier is reported only once for each function it appears in
+.\main.c:179:22: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
+In file included from ./Generated_Source/PSoC5/project.h:24:0,
+                 from .\main.c:12:
+./Generated_Source/PSoC5/USB_cdc.h:31:10: note: expected 'const uint8 *' but argument is of type 'char *'
+.\main.c:320:6: warning: implicit declaration of function 'printbinchar' [-Wimplicit-function-declaration]
+.\main.c: At top level:
+.\main.c:328:6: warning: conflicting types for 'init' [enabled by default]
+.\main.c:115:2: note: previous implicit declaration of 'init' was here
+.\main.c: In function 'init':
+.\main.c:336:2: warning: implicit declaration of function 'isr_BusyToCollision_StartEx' [-Wimplicit-function-declaration]
+.\main.c:336:30: error: 'isr_BusyToCollision' undeclared (first use in this function)
+.\main.c:337:2: warning: implicit declaration of function 'isr_BusyToIdle_StartEx' [-Wimplicit-function-declaration]
+.\main.c:337:25: error: 'isr_BusyToIdle' undeclared (first use in this function)
+.\main.c:339:2: warning: implicit declaration of function 'isr_RisingEdge_StartEx' [-Wimplicit-function-declaration]
+.\main.c:339:25: error: 'isr_RisingEdgeDetected' undeclared (first use in this function)
+.\main.c:340:2: warning: implicit declaration of function 'isr_FallingEdge_StartEx' [-Wimplicit-function-declaration]
+.\main.c:340:26: error: 'isr_FallingEdgeDetected' undeclared (first use in this function)
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 01/15/2015 07:22:32 ---------------

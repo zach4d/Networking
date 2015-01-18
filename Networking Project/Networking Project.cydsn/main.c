@@ -40,7 +40,6 @@ void printbinchar(char c)
 		//USB_PutChar( (c & (1 << counter)) ? '1' : '0' );	
 	}
 	USB_PutChar('\r');
-	USB_PutChar('\n');
 }
 
 CY_ISR(isr_FallingEdgeDetected)
@@ -201,42 +200,56 @@ int main()
 		               *  it shall be followed by a zero-length packet to assure the
 		               *  end of segment is properly identified by the terminal.
 		               */
-		               if(packetUSB[forLoopCounter] == '\r' || count == 80)
+						
+		               if(packetUSB[forLoopCounter] == '\r' || count >= 80)
 		               {
 							messageReady = true;
-		                   packetMessage[messageBufferPosition] = 0;
+		                   packetMessage[messageBufferPosition] = '\0';
 							messageBufferPosition=0;
-							}
-						else{
+							//USB_PutChar(packetUSB[forLoopCounter]);
+						}else{
 							messageReady = false;
 							messageBufferPosition++;
 							packetMessage[messageBufferPosition]=packetUSB[forLoopCounter];
+							//USB_PutChar(packetUSB[forLoopCounter]);
 						}
 		           }
 					while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */
 		                   USB_PutData(packetUSB, count);         /* Send zero-length packet to PC */
 					//generate packet and send packet
+			}
+			
+			if(messageReady){
 					i_send = 0;
-
+				
+					packetMessage[0] = 'H';	
+					packetMessage[1] = 'i';
+					packetMessage[2] = '\r';
 					
 					int l, l2;
-						USB_PutChar('b');
-						USB_PutChar(packetMessage[0]);
+						//USB_PutChar('r');
 						
-					for(l = 0; packetMessage[l] != '\0'; l++)
+						//USB_PutChar('\r');
+						//USB_PutChar('\n');
+					for(l = 0; packetMessage[l] != '\r'; l++)
 					{
-						USB_PutChar('a');
-						dec = (unsigned int) packetUSB[l];
-						//USB_PutChar((char *)dec);
-						
+						//USB_PutChar('a');
+						//USB_PutChar(packetMessage[l]);
+						dec = (unsigned int) packetMessage[l];
+						//USB_PutChar(dec);
+					
 						decimal_hex(dec, packetHex);
+						//USB_PutChar(packetHex[l]);
 						//printStringAsBinary(packetHex);
 						//LCD_Position(1,0);
+					
 						
-						
-						for(l2 = 0; packetHex[l2] != '\0'; l2++)
+						for(l2 = 0; packetHex[l2] != '\r'; l2++)
 						{
-							printbinchar(packetHex[l2]);
+							USB_PutChar(packetHex[l2]);
+							USB_PutChar('\r');
+							USB_PutChar('\n');
+							//printbinchar(packetHex[l2]);
 							if(packetHex[l2] == '0'){
 								packetBinary[0] = 0;
 								packetBinary[1] = 0;
@@ -322,13 +335,17 @@ int main()
 							int l3;
 							for(l3 = 0; l3 <4; l3++)
 							{
-								packetSend[i_send + l3] = packetBinary[l3];
-								
+								//packetSend[i_send + l3] = packetBinary[l3];
+								USB_PutChar(packetBinary[l3]);
 							}//generates binary values
 							
 							i_send++;
 						}
+						if(packetMessage[l] == '\r'){
+							messageReady = false;
+						}
 					}
+					
 					dataReady = true;
 	        	}
 				
@@ -364,11 +381,7 @@ int main()
 }
 
 void init()
-{	
-	LCD_Start();
-	LCD_Position(0,0);
-	LCD_PrintString("Welcome");
-	
+{		
 	
 	Transm_Output_Write(1);
 	//Enable Global Interrupts

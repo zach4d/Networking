@@ -1,5 +1,5 @@
 # Networking Project
-# 2015-01-14 21:32:09Z
+# 2015-01-15 04:38:15Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -14,16 +14,9 @@ set_location "Net_573" 1 5 0 0
 set_io "Pin_LEDBusy(0)" iocell 6 2
 set_io "Pin_LEDCollision(0)" iocell 3 7
 set_io "Pin_LEDIdle(0)" iocell 6 3
-set_io "Recieve_Input(0)" iocell 12 4
+set_io "Recieve_Input(0)" iocell 6 0
 set_io "Transm_Output(0)" iocell 6 6
 set_location "\Falling_EdgeDetect:last\" 1 4 0 1
-set_io "\LCD:LCDPort(0)\" iocell 0 0
-set_io "\LCD:LCDPort(1)\" iocell 0 1
-set_io "\LCD:LCDPort(2)\" iocell 0 2
-set_io "\LCD:LCDPort(3)\" iocell 0 3
-set_io "\LCD:LCDPort(4)\" iocell 0 4
-set_io "\LCD:LCDPort(5)\" iocell 0 5
-set_io "\LCD:LCDPort(6)\" iocell 0 6
 set_location "\Timer_BusyToCollision:TimerUDB:rstSts:stsreg\" 0 4 4
 set_location "\Timer_BusyToCollision:TimerUDB:run_mode\" 0 4 0 2
 set_location "\Timer_BusyToCollision:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" 0 4 6
