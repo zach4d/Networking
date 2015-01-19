@@ -27,18 +27,21 @@ char packetSend[80*8];
 unsigned int dec;
 uint8 messageSize = 0;
 
+uint8 rxData;
+
 //memset(usb, '0', 80);
 //memset(hex, '0', (80*2));
 //memset(packetBin, '0', 4);
 //memset(packetSend, '0', (80*8));
 
-char packetUSB[80];
+char buffer[];
 //char packetMessage[80];
 //char packetHex[80*2];
 //uint8 packetBinary[4];
 //uint8 packetSend[80*8];
 //uint8 dec;
 //uint8 flag = 1;
+bool returnFound = false;
 bool dataReady = false;
 int i_send = 0;
 
@@ -154,7 +157,7 @@ int main()
 			*/
 				dataReady = false;
 			
-				memset(packetSend,  0, (80*8));
+				//memset(packetSend,  0, (80*8));
 				//Pin_LEDBusy_Write(0);			
 				//Pin_LEDIdle_Write(1);
 				//Pin_LEDCollision_Write(0);
@@ -165,59 +168,43 @@ int main()
 				
 				******************************************************************************/
 				
-				
 				//check message from usb
+		
 				if(USB_DataIsReady() != 0u)               /* Check for input data from PC */
 	       		{   
-		           count = USB_GetAll(packetUSB);           /* Read received data and re-enable OUT endpoint */
-		           if(count != 0u)
+		           count = USB_GetAll(buffer);           /* Read received data and re-enable OUT endpoint */
+		          if(count != 0u)
 		           {    
-					while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */
-		                   USB_PutData(packetUSB, count);         /* Send zero-length packet to PC */
-						if((packetUSB[count-1] == '\r'))
-			             {
+					
+				
+					//while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */
+		              //USB_PutData(buffer, count);         /* Send zero-length packet to PC */
+					int counter;
+					for(counter = 0; counter < count && messageReady == false; counter++)
+					{
+						while(USB_CDCIsReady() ==0u);
+						USB_PutChar(buffer[counter]);
+						usb[messageSize] = buffer[counter];
+						
+					
+						
+						messageSize++;
+						if(buffer[counter] == '\r'){
 							messageReady = true;
-							/*
-							int inputLength;
-							for(inputLength = 0; inputLength < count && inputLength < 79; inputLength++)
-							{
-								
-								while(USB_CDCIsReady() == 0u);
-								USB_PutChar(packetUSB[inputLength]);
-								
-								while(USB_CDCIsReady() == 0u);
-								USB_PutChar('\r');
-								
-								while(USB_CDCIsReady() == 0u);
-								USB_PutChar('\n');
-								
-								
-								usb[messageSize] = packetUSB[inputLength];
-								messageSize++;
-							}
-							usb[messageSize] = '\r';
-							messageSize++;
-							*/
-							usb[0] = 'H';
-							usb[1] = 'e';
-							usb[2] = 'l';
-							usb[3] = 'l';
-							usb[4] = 'o';
-							
-							usb[5] = ' ';
-							
-							usb[6] = 'W';
-							usb[7] = 'r';
-							usb[8] = 'o';
-							usb[9] = 'l';
-							usb[10] = 'd';
-							
-							usb[11] = '\r';
-							messageSize = 11;
 						}
 					}
+					
+					
+				
+					}
 				}
+				
+				
+				
+							
+				
 if(messageReady){
+	
 	//cout << "usb: " <<endl;
 	int i;
 	for(i = 0; usb[i] != '\r'; i++)

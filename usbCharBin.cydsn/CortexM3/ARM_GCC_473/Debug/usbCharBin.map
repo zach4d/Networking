@@ -64,6 +64,7 @@ Common symbol       size              file
 
 USB_lineControlBitmap
                     0x2               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+rxData              0x1               .\CortexM3\ARM_GCC_473\Debug\main.o
 packetSend          0x280             .\CortexM3\ARM_GCC_473\Debug\main.o
 USB_hidProtocol     0x2               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
 USB_transferState   0x1               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
@@ -73,7 +74,6 @@ USB_lastPacketSize  0x1               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(
 USB_interfaceClass  0x4               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
 USB_interfaceSetting
                     0x2               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-packetUSB           0x50              .\CortexM3\ARM_GCC_473\Debug\main.o
 USB_ep0Mode         0x1               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
 USB_device          0x1               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
 USB_cdc_data_out_ep
@@ -86,6 +86,7 @@ USB_configurationChanged
                     0x1               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
 messageReady        0x1               .\CortexM3\ARM_GCC_473\Debug\main.o
 dec                 0x4               .\CortexM3\ARM_GCC_473\Debug\main.o
+buffer              0x1               .\CortexM3\ARM_GCC_473\Debug\main.o
 USB_interfaceStatus
                     0x2               .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
 USB_transferByteCount
@@ -551,7 +552,7 @@ END GROUP
                 0x00000001                CY_APPL_NUM = 0x1
                 0x00000001                CY_APPL_MAX = 0x1
                 0x00000040                CY_METADATA_SIZE = 0x40
-                0x1fff8600                PROVIDE (__cy_heap_start, _end)
+                0x1fff85b8                PROVIDE (__cy_heap_start, _end)
                 0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
                 0x20008000                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x10000))
                 0x20004000                PROVIDE (__cy_heap_end, (__cy_stack - 0x4000))
@@ -566,7 +567,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x4492
+.text           0x00000000     0x4432
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -592,259 +593,259 @@ END GROUP
  .text.decimal_hex
                 0x0000016c       0xf8 .\CortexM3\ARM_GCC_473\Debug\main.o
                 0x0000016c                decimal_hex
- .text.main     0x00000264      0x8bc .\CortexM3\ARM_GCC_473\Debug\main.o
+ .text.main     0x00000264      0x85c .\CortexM3\ARM_GCC_473\Debug\main.o
                 0x00000264                main
- .text.init     0x00000b20       0x98 .\CortexM3\ARM_GCC_473\Debug\main.o
-                0x00000b20                init
+ .text.init     0x00000ac0       0x98 .\CortexM3\ARM_GCC_473\Debug\main.o
+                0x00000ac0                init
  .text.IntDefaultHandler
-                0x00000bb8        0x8 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00000bb8                IntDefaultHandler
- .text.Start_c  0x00000bc0       0xcc .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00000bc0                Start_c
+                0x00000b58        0x8 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x00000b58                IntDefaultHandler
+ .text.Start_c  0x00000b60       0xcc .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x00000b60                Start_c
  .text.initialize_psoc
-                0x00000c8c       0xb4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x00000c8c                initialize_psoc
+                0x00000c2c       0xb4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x00000c2c                initialize_psoc
  .text.CYMEMZERO
-                0x00000d40       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+                0x00000ce0       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x00000d60       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+                0x00000d00       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x00000d80       0x84 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+                0x00000d20       0x84 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x00000e04      0x10c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+                0x00000da4      0x10c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x00000f10       0x50 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+                0x00000eb0       0x50 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
  .text.cyfitter_cfg
-                0x00000f60      0x160 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
-                0x00000f60                cyfitter_cfg
+                0x00000f00      0x160 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+                0x00000f00                cyfitter_cfg
  .text.USB_Start
-                0x000010c0       0x44 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x000010c0                USB_Start
+                0x00001060       0x44 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x00001060                USB_Start
  .text.USB_Init
-                0x00001104      0x238 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x00001104                USB_Init
+                0x000010a4      0x238 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x000010a4                USB_Init
  .text.USB_InitComponent
-                0x0000133c      0x160 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x0000133c                USB_InitComponent
+                0x000012dc      0x160 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x000012dc                USB_InitComponent
  .text.USB_ReInitComponent
-                0x0000149c       0xb4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x0000149c                USB_ReInitComponent
+                0x0000143c       0xb4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x0000143c                USB_ReInitComponent
  .text.USB_GetConfiguration
-                0x00001550       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x00001550                USB_GetConfiguration
+                0x000014f0       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x000014f0                USB_GetConfiguration
  .text.USB_GetEPCount
-                0x00001568       0x74 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x00001568                USB_GetEPCount
+                0x00001508       0x74 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x00001508                USB_GetEPCount
  .text.USB_LoadInEP
-                0x000015dc      0x150 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x000015dc                USB_LoadInEP
+                0x0000157c      0x150 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x0000157c                USB_LoadInEP
  .text.USB_ReadOutEP
-                0x0000172c       0x98 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x0000172c                USB_ReadOutEP
+                0x000016cc       0x98 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x000016cc                USB_ReadOutEP
  .text.USB_EnableOutEP
-                0x000017c4       0x78 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
-                0x000017c4                USB_EnableOutEP
+                0x00001764       0x78 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+                0x00001764                USB_EnableOutEP
  .text.USB_DispatchCDCClassRqst
-                0x0000183c      0x11c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x0000183c                USB_DispatchCDCClassRqst
+                0x000017dc      0x11c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x000017dc                USB_DispatchCDCClassRqst
  .text.USB_CDC_Init
-                0x00001958       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x00001958                USB_CDC_Init
+                0x000018f8       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x000018f8                USB_CDC_Init
  .text.USB_PutData
-                0x00001980       0x94 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x00001980                USB_PutData
+                0x00001920       0x94 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x00001920                USB_PutData
  .text.USB_PutChar
-                0x00001a14       0x34 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x00001a14                USB_PutChar
+                0x000019b4       0x34 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x000019b4                USB_PutChar
  .text.USB_DataIsReady
-                0x00001a48       0x34 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x00001a48                USB_DataIsReady
+                0x000019e8       0x34 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x000019e8                USB_DataIsReady
  .text.USB_CDCIsReady
-                0x00001a7c       0x34 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x00001a7c                USB_CDCIsReady
+                0x00001a1c       0x34 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x00001a1c                USB_CDCIsReady
  .text.USB_GetAll
-                0x00001ab0       0x54 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x00001ab0                USB_GetAll
+                0x00001a50       0x54 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x00001a50                USB_GetAll
  .text.USB_EP_0_ISR
-                0x00001b04      0x140 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001b04                USB_EP_0_ISR
+                0x00001aa4      0x140 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001aa4                USB_EP_0_ISR
  .text.USB_HandleSetup
-                0x00001c44       0xa8 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001c44                USB_HandleSetup
+                0x00001be4       0xa8 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001be4                USB_HandleSetup
  .text.USB_HandleIN
-                0x00001cec       0x50 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001cec                USB_HandleIN
+                0x00001c8c       0x50 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001c8c                USB_HandleIN
  .text.USB_HandleOUT
-                0x00001d3c       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001d3c                USB_HandleOUT
+                0x00001cdc       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001cdc                USB_HandleOUT
  .text.USB_LoadEP0
-                0x00001d9c      0x138 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001d9c                USB_LoadEP0
+                0x00001d3c      0x138 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001d3c                USB_LoadEP0
  .text.USB_InitControlRead
-                0x00001ed4       0x90 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001ed4                USB_InitControlRead
+                0x00001e74       0x90 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001e74                USB_InitControlRead
  .text.USB_InitZeroLengthControlTransfer
-                0x00001f64       0x58 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001f64                USB_InitZeroLengthControlTransfer
+                0x00001f04       0x58 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001f04                USB_InitZeroLengthControlTransfer
  .text.USB_ControlReadDataStage
-                0x00001fbc        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001fbc                USB_ControlReadDataStage
+                0x00001f5c        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001f5c                USB_ControlReadDataStage
  .text.USB_ControlReadStatusStage
-                0x00001fc8       0x54 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00001fc8                USB_ControlReadStatusStage
+                0x00001f68       0x54 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001f68                USB_ControlReadStatusStage
  .text.USB_InitControlWrite
-                0x0000201c       0x84 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x0000201c                USB_InitControlWrite
+                0x00001fbc       0x84 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00001fbc                USB_InitControlWrite
  .text.USB_ControlWriteDataStage
-                0x000020a0       0xfc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x000020a0                USB_ControlWriteDataStage
+                0x00002040       0xfc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00002040                USB_ControlWriteDataStage
  .text.USB_ControlWriteStatusStage
-                0x0000219c       0x2c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x0000219c                USB_ControlWriteStatusStage
+                0x0000213c       0x2c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x0000213c                USB_ControlWriteStatusStage
  .text.USB_InitNoDataControlTransfer
-                0x000021c8       0x48 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x000021c8                USB_InitNoDataControlTransfer
+                0x00002168       0x48 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00002168                USB_InitNoDataControlTransfer
  .text.USB_NoDataControlStatusStage
-                0x00002210       0x64 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00002210                USB_NoDataControlStatusStage
+                0x000021b0       0x64 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x000021b0                USB_NoDataControlStatusStage
  .text.USB_UpdateStatusBlock
-                0x00002274       0x58 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x00002274                USB_UpdateStatusBlock
+                0x00002214       0x58 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x00002214                USB_UpdateStatusBlock
  .text.USB_InitializeStatusBlock
-                0x000022cc       0x48 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x000022cc                USB_InitializeStatusBlock
+                0x0000226c       0x48 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x0000226c                USB_InitializeStatusBlock
  .text.USB_EP_1_ISR
-                0x00002314       0x74 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
-                0x00002314                USB_EP_1_ISR
+                0x000022b4       0x74 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+                0x000022b4                USB_EP_1_ISR
  .text.USB_EP_2_ISR
-                0x00002388       0x74 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
-                0x00002388                USB_EP_2_ISR
+                0x00002328       0x74 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+                0x00002328                USB_EP_2_ISR
  .text.USB_EP_3_ISR
-                0x000023fc       0x7c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
-                0x000023fc                USB_EP_3_ISR
+                0x0000239c       0x7c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+                0x0000239c                USB_EP_3_ISR
  .text.USB_SOF_ISR
-                0x00002478        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
-                0x00002478                USB_SOF_ISR
+                0x00002418        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+                0x00002418                USB_SOF_ISR
  .text.USB_BUS_RESET_ISR
-                0x00002484        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
-                0x00002484                USB_BUS_RESET_ISR
+                0x00002424        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+                0x00002424                USB_BUS_RESET_ISR
  .text.USB_DispatchHIDClassRqst
-                0x00002490      0x2bc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
-                0x00002490                USB_DispatchHIDClassRqst
+                0x00002430      0x2bc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+                0x00002430                USB_DispatchHIDClassRqst
  .text.USB_FindHidClassDecriptor
-                0x0000274c       0x94 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
-                0x0000274c                USB_FindHidClassDecriptor
+                0x000026ec       0x94 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+                0x000026ec                USB_FindHidClassDecriptor
  .text.USB_FindReportDescriptor
-                0x000027e0       0xac .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
-                0x000027e0                USB_FindReportDescriptor
+                0x00002780       0xac .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+                0x00002780                USB_FindReportDescriptor
  .text.USB_FindReport
-                0x0000288c      0x100 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
-                0x0000288c                USB_FindReport
+                0x0000282c      0x100 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+                0x0000282c                USB_FindReport
  .text.USB_HandleStandardRqst
-                0x0000298c      0x654 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x0000298c                USB_HandleStandardRqst
+                0x0000292c      0x654 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x0000292c                USB_HandleStandardRqst
  .text.USB_ReadDieID
-                0x00002fe0       0xa8 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00002fe0                USB_ReadDieID
+                0x00002f80       0xa8 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x00002f80                USB_ReadDieID
  .text.USB_ConfigReg
-                0x00003088      0x204 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003088                USB_ConfigReg
+                0x00003028      0x204 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x00003028                USB_ConfigReg
  .text.USB_Config
-                0x0000328c      0x474 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x0000328c                USB_Config
+                0x0000322c      0x474 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x0000322c                USB_Config
  .text.USB_ConfigAltChanged
-                0x00003700      0x354 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003700                USB_ConfigAltChanged
+                0x000036a0      0x354 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x000036a0                USB_ConfigAltChanged
  .text.USB_GetConfigTablePtr
-                0x00003a54       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003a54                USB_GetConfigTablePtr
+                0x000039f4       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x000039f4                USB_GetConfigTablePtr
  .text.USB_GetDeviceTablePtr
-                0x00003ab4       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003ab4                USB_GetDeviceTablePtr
+                0x00003a54       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x00003a54                USB_GetDeviceTablePtr
  .text.USB_GetInterfaceClassTablePtr
-                0x00003adc       0x58 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003adc                USB_GetInterfaceClassTablePtr
+                0x00003a7c       0x58 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x00003a7c                USB_GetInterfaceClassTablePtr
  .text.USB_SetEndpointHalt
-                0x00003b34      0x130 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003b34                USB_SetEndpointHalt
+                0x00003ad4      0x130 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x00003ad4                USB_SetEndpointHalt
  .text.USB_ClearEndpointHalt
-                0x00003c64      0x1c4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003c64                USB_ClearEndpointHalt
+                0x00003c04      0x1c4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x00003c04                USB_ClearEndpointHalt
  .text.USB_ValidateAlternateSetting
-                0x00003e28       0x90 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
-                0x00003e28                USB_ValidateAlternateSetting
+                0x00003dc8       0x90 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+                0x00003dc8                USB_ValidateAlternateSetting
  .text.USB_HandleVendorRqst
-                0x00003eb8       0x70 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
-                0x00003eb8                USB_HandleVendorRqst
+                0x00003e58       0x70 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
+                0x00003e58                USB_HandleVendorRqst
  .text.isr_sendData_StartEx
-                0x00003f28       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
-                0x00003f28                isr_sendData_StartEx
+                0x00003ec8       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+                0x00003ec8                isr_sendData_StartEx
  .text.isr_sendData_SetVector
-                0x00003f50       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
-                0x00003f50                isr_sendData_SetVector
+                0x00003ef0       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+                0x00003ef0                isr_sendData_SetVector
  .text.isr_sendData_SetPriority
-                0x00003f78       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
-                0x00003f78                isr_sendData_SetPriority
+                0x00003f18       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+                0x00003f18                isr_sendData_SetPriority
  .text.isr_sendData_Enable
-                0x00003fa0       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
-                0x00003fa0                isr_sendData_Enable
+                0x00003f40       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+                0x00003f40                isr_sendData_Enable
  .text.isr_sendData_Disable
-                0x00003fb8       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
-                0x00003fb8                isr_sendData_Disable
+                0x00003f58       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+                0x00003f58                isr_sendData_Disable
  .text.Timer_sendData_Init
-                0x00003fd0       0xe4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
-                0x00003fd0                Timer_sendData_Init
+                0x00003f70       0xe4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+                0x00003f70                Timer_sendData_Init
  .text.Timer_sendData_Enable
-                0x000040b4       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
-                0x000040b4                Timer_sendData_Enable
+                0x00004054       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+                0x00004054                Timer_sendData_Enable
  .text.Timer_sendData_Start
-                0x00004114       0x2c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
-                0x00004114                Timer_sendData_Start
+                0x000040b4       0x2c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+                0x000040b4                Timer_sendData_Start
  .text.Timer_sendData_Stop
-                0x00004140       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
-                0x00004140                Timer_sendData_Stop
+                0x000040e0       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+                0x000040e0                Timer_sendData_Stop
  .text.Timer_sendData_SetInterruptMode
-                0x000041a0       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
-                0x000041a0                Timer_sendData_SetInterruptMode
+                0x00004140       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+                0x00004140                Timer_sendData_SetInterruptMode
  .text.Timer_sendData_WritePeriod
-                0x000041c0       0x24 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
-                0x000041c0                Timer_sendData_WritePeriod
+                0x00004160       0x24 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+                0x00004160                Timer_sendData_WritePeriod
  .text.Timer_sendData_WriteCounter
-                0x000041e4       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
-                0x000041e4                Timer_sendData_WriteCounter
+                0x00004184       0x20 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+                0x00004184                Timer_sendData_WriteCounter
  .text.Timer_sendData_SaveConfig
-                0x00004204        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
-                0x00004204                Timer_sendData_SaveConfig
+                0x000041a4        0xc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
+                0x000041a4                Timer_sendData_SaveConfig
  .text.Timer_sendData_Sleep
-                0x00004210       0x40 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
-                0x00004210                Timer_sendData_Sleep
- .text          0x00004250       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
-                0x00004250                CyDelayCycles
-                0x00004264                CyEnterCriticalSection
-                0x0000426c                CyExitCriticalSection
- .text.CyHalt   0x00004278       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
-                0x00004278                CyHalt
+                0x000041b0       0x40 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
+                0x000041b0                Timer_sendData_Sleep
+ .text          0x000041f0       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
+                0x000041f0                CyDelayCycles
+                0x00004204                CyEnterCriticalSection
+                0x0000420c                CyExitCriticalSection
+ .text.CyHalt   0x00004218       0x18 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+                0x00004218                CyHalt
  .text.CyDelayUs
-                0x00004290       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
-                0x00004290                CyDelayUs
+                0x00004230       0x28 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+                0x00004230                CyDelayUs
  .text.CyIntSetVector
-                0x000042b8       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
-                0x000042b8                CyIntSetVector
+                0x00004258       0x60 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+                0x00004258                CyIntSetVector
  .text.CyIntSetPriority
-                0x00004318       0x4c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
-                0x00004318                CyIntSetPriority
+                0x000042b8       0x4c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+                0x000042b8                CyIntSetPriority
  .text.USB_DispatchClassRqst
-                0x00004364       0xb0 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
-                0x00004364                USB_DispatchClassRqst
+                0x00004304       0xb0 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
+                0x00004304                USB_DispatchClassRqst
  .text.__libc_init_array
-                0x00004414       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
-                0x00004414                __libc_init_array
- .text.memcpy   0x00004460       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
-                0x00004460                memcpy
- .text.memset   0x00004472       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
-                0x00004472                memset
- .text.strcpy   0x00004482       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strcpy.o)
-                0x00004482                strcpy
+                0x000043b4       0x4c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-init.o)
+                0x000043b4                __libc_init_array
+ .text.memcpy   0x00004400       0x12 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
+                0x00004400                memcpy
+ .text.memset   0x00004412       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
+                0x00004412                memset
+ .text.strcpy   0x00004422       0x10 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strcpy.o)
+                0x00004422                strcpy
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -857,90 +858,90 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00004494        0x0
+.v4_bx          0x00004434        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00004494        0x0
+.iplt           0x00004434        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00004494        0x4
+.eh_frame       0x00004434        0x4
  *(.eh_frame)
- .eh_frame      0x00004494        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
- .eh_frame      0x00004494        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
-                0x00004498                PROVIDE (__exidx_start, .)
+ .eh_frame      0x00004434        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .eh_frame      0x00004434        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtend.o
+                0x00004438                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00004498                __exidx_end = .
+                0x00004438                __exidx_end = .
 
-.rodata         0x00004498      0x268
+.rodata         0x00004438      0x268
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00004498       0x20 .\CortexM3\ARM_GCC_473\Debug\main.o
- .rodata        0x000044b8       0x30 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
- .rodata        0x000044e8       0x14 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
- .rodata        0x000044fc      0x1cc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
-                0x000044fc                USB_DEVICE0_DESCR
-                0x00004510                USB_DEVICE0_CONFIGURATION0_DESCR
-                0x00004554                USB_STRING_DESCRIPTORS
-                0x000045f4                USB_SN_STRING_DESCRIPTOR
-                0x000045f8                USB_HIDREPORT_DESCRIPTOR1
-                0x00004630                USB_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
-                0x00004648                USB_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
-                0x0000464c                USB_DEVICE0_CONFIGURATION0_TABLE
-                0x00004674                USB_DEVICE0_TABLE
-                0x00004684                USB_TABLE
-                0x0000468c                USB_MSOS_DESCRIPTOR
-                0x000046a0                USB_MSOS_CONFIGURATION_DESCR
-                0x000046c8                . = ALIGN (0x4)
+ .rodata        0x00004438       0x20 .\CortexM3\ARM_GCC_473\Debug\main.o
+ .rodata        0x00004458       0x30 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+ .rodata        0x00004488       0x14 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+ .rodata        0x0000449c      0x1cc .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
+                0x0000449c                USB_DEVICE0_DESCR
+                0x000044b0                USB_DEVICE0_CONFIGURATION0_DESCR
+                0x000044f4                USB_STRING_DESCRIPTORS
+                0x00004594                USB_SN_STRING_DESCRIPTOR
+                0x00004598                USB_HIDREPORT_DESCRIPTOR1
+                0x000045d0                USB_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+                0x000045e8                USB_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+                0x000045ec                USB_DEVICE0_CONFIGURATION0_TABLE
+                0x00004614                USB_DEVICE0_TABLE
+                0x00004624                USB_TABLE
+                0x0000462c                USB_MSOS_DESCRIPTOR
+                0x00004640                USB_MSOS_CONFIGURATION_DESCR
+                0x00004668                . = ALIGN (0x4)
  *(.init)
- .init          0x000046c8        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
-                0x000046c8                _init
- .init          0x000046cc        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
-                0x000046d4                . = ALIGN (0x4)
-                0x000046d4                __preinit_array_start = .
+ .init          0x00004668        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
+                0x00004668                _init
+ .init          0x0000466c        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
+                0x00004674                . = ALIGN (0x4)
+                0x00004674                __preinit_array_start = .
  *(.preinit_array)
-                0x000046d4                __preinit_array_end = .
-                0x000046d4                . = ALIGN (0x4)
-                0x000046d4                __init_array_start = .
+                0x00004674                __preinit_array_end = .
+                0x00004674                . = ALIGN (0x4)
+                0x00004674                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x000046d4        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
- .init_array    0x000046d8        0x4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                0x000046dc                __init_array_end = .
-                0x000046dc                . = ALIGN (0x4)
+ .init_array    0x00004674        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .init_array    0x00004678        0x4 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                0x0000467c                __init_array_end = .
+                0x0000467c                . = ALIGN (0x4)
  *(.fini)
- .fini          0x000046dc        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
-                0x000046dc                _fini
- .fini          0x000046e0        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
-                0x000046e8                . = ALIGN (0x4)
-                0x000046e8                __fini_array_start = .
+ .fini          0x0000467c        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crti.o
+                0x0000467c                _fini
+ .fini          0x00004680        0x8 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtn.o
+                0x00004688                . = ALIGN (0x4)
+                0x00004688                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x000046e8        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
+ .fini_array    0x00004688        0x4 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x000046ec                __fini_array_end = .
-                0x000046ec                . = ALIGN (0x4)
+                0x0000468c                __fini_array_end = .
+                0x0000468c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x000046ec                . = ALIGN (0x4)
+                0x0000468c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x000046ec                . = ALIGN (0x4)
-                0x000046ec                __cy_regions = .
-                0x000046ec        0x4 LONG 0x4700 __cy_region_init_ram
-                0x000046f0        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x000046f4        0x4 LONG 0x20 __cy_region_init_size_ram
-                0x000046f8        0x4 LONG 0x4d8 __cy_region_zero_size_ram
-                0x000046fc                __cy_regions_end = .
-                0x00004700                . = ALIGN (0x8)
- *fill*         0x000046fc        0x4 00
-                0x00004700                _etext = .
+                0x0000468c                . = ALIGN (0x4)
+                0x0000468c                __cy_regions = .
+                0x0000468c        0x4 LONG 0x46a0 __cy_region_init_ram
+                0x00004690        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x00004694        0x4 LONG 0x20 __cy_region_init_size_ram
+                0x00004698        0x4 LONG 0x490 __cy_region_zero_size_ram
+                0x0000469c                __cy_regions_end = .
+                0x000046a0                . = ALIGN (0x8)
+ *fill*         0x0000469c        0x4 00
+                0x000046a0                _etext = .
 
 .ramvectors     0x1fff8000      0x100
                 0x1fff8000                __cy_region_start_ram = .
@@ -954,7 +955,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x20 load address 0x00004700
+.data           0x1fff8108       0x20 load address 0x000046a0
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
@@ -975,17 +976,18 @@ END GROUP
  *(.ram)
                 0x1fff8128                _edata = .
 
-.igot.plt       0x1fff8128        0x0 load address 0x00004720
+.igot.plt       0x1fff8128        0x0 load address 0x000046c0
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
-.bss            0x1fff8128      0x4d8 load address 0x00004720
+.bss            0x1fff8128      0x490 load address 0x000046c0
                 0x1fff8128                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss           0x1fff8128       0x1c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
  .bss           0x1fff8144        0xc .\CortexM3\ARM_GCC_473\Debug\main.o
                 0x1fff8144                messageSize
-                0x1fff8145                dataReady
+                0x1fff8145                returnFound
+                0x1fff8146                dataReady
                 0x1fff8148                i_send
                 0x1fff814c                messageBufferPosition
  .bss           0x1fff8150        0x1 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
@@ -997,62 +999,63 @@ END GROUP
  *fill*         0x1fff8159        0x3 00
  .bss           0x1fff815c        0x4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
  *(COMMON)
- COMMON         0x1fff8160      0x3cc .\CortexM3\ARM_GCC_473\Debug\main.o
-                0x1fff8160                packetSend
-                0x1fff83e0                packetUSB
-                0x1fff8430                messageReady
-                0x1fff8434                dec
-                0x1fff8438                usb
-                0x1fff8488                packetBin
-                0x1fff848c                hex
- COMMON         0x1fff852c        0x5 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
-                0x1fff852c                USB_lineControlBitmap
-                0x1fff852e                USB_cdc_data_out_ep
-                0x1fff852f                USB_lineChanged
-                0x1fff8530                USB_cdc_data_in_ep
- *fill*         0x1fff8531        0x3 00
- COMMON         0x1fff8534       0x98 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
-                0x1fff8534                USB_transferState
-                0x1fff8535                USB_interfaceNumber
-                0x1fff8536                USB_lastPacketSize
-                0x1fff8538                USB_interfaceClass
-                0x1fff853c                USB_interfaceSetting
-                0x1fff853e                USB_ep0Mode
-                0x1fff853f                USB_device
-                0x1fff8540                USB_deviceAddress
-                0x1fff8541                USB_ep0Toggle
-                0x1fff8542                USB_configurationChanged
-                0x1fff8544                USB_interfaceStatus
-                0x1fff8546                USB_transferByteCount
-                0x1fff8548                USB_configuration
-                0x1fff854c                USB_interfaceSetting_last
-                0x1fff8550                USB_currentTD
-                0x1fff855c                USB_ep0Count
-                0x1fff855d                USB_deviceStatus
-                0x1fff8560                USB_EP
- COMMON         0x1fff85cc        0xa .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
-                0x1fff85cc                USB_hidProtocol
-                0x1fff85d0                USB_hidIdleRate
-                0x1fff85d4                USB_hidIdleTimer
- *fill*         0x1fff85d6        0x2 00
- COMMON         0x1fff85d8       0x22 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
-                0x1fff85d8                USB_idSerialNumberStringDescriptor
-                0x1fff8600                . = ALIGN (0x8)
- *fill*         0x1fff85fa        0x6 00
+ COMMON         0x1fff8160      0x384 .\CortexM3\ARM_GCC_473\Debug\main.o
+                0x1fff8160                rxData
+                0x1fff8164                packetSend
+                0x1fff83e4                messageReady
+                0x1fff83e8                dec
+                0x1fff83ec                buffer
+                0x1fff83f0                usb
+                0x1fff8440                packetBin
+                0x1fff8444                hex
+ COMMON         0x1fff84e4        0x5 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+                0x1fff84e4                USB_lineControlBitmap
+                0x1fff84e6                USB_cdc_data_out_ep
+                0x1fff84e7                USB_lineChanged
+                0x1fff84e8                USB_cdc_data_in_ep
+ *fill*         0x1fff84e9        0x3 00
+ COMMON         0x1fff84ec       0x98 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+                0x1fff84ec                USB_transferState
+                0x1fff84ed                USB_interfaceNumber
+                0x1fff84ee                USB_lastPacketSize
+                0x1fff84f0                USB_interfaceClass
+                0x1fff84f4                USB_interfaceSetting
+                0x1fff84f6                USB_ep0Mode
+                0x1fff84f7                USB_device
+                0x1fff84f8                USB_deviceAddress
+                0x1fff84f9                USB_ep0Toggle
+                0x1fff84fa                USB_configurationChanged
+                0x1fff84fc                USB_interfaceStatus
+                0x1fff84fe                USB_transferByteCount
+                0x1fff8500                USB_configuration
+                0x1fff8504                USB_interfaceSetting_last
+                0x1fff8508                USB_currentTD
+                0x1fff8514                USB_ep0Count
+                0x1fff8515                USB_deviceStatus
+                0x1fff8518                USB_EP
+ COMMON         0x1fff8584        0xa .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+                0x1fff8584                USB_hidProtocol
+                0x1fff8588                USB_hidIdleRate
+                0x1fff858c                USB_hidIdleTimer
+ *fill*         0x1fff858e        0x2 00
+ COMMON         0x1fff8590       0x22 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
+                0x1fff8590                USB_idSerialNumberStringDescriptor
+                0x1fff85b8                . = ALIGN (0x8)
+ *fill*         0x1fff85b2        0x6 00
  *(.ram.b)
-                0x1fff8600                _end = .
-                0x1fff8600                __end = .
-                0x1fff8600                PROVIDE (end, .)
-                0x1fff8600                PROVIDE (__bss_end__, .)
-                0x00004700                __cy_region_init_ram = LOADADDR (.data)
+                0x1fff85b8                _end = .
+                0x1fff85b8                __end = .
+                0x1fff85b8                PROVIDE (end, .)
+                0x1fff85b8                PROVIDE (__bss_end__, .)
+                0x000046a0                __cy_region_init_ram = LOADADDR (.data)
                 0x00000020                __cy_region_init_size_ram = (_edata - ADDR (.data))
-                0x000004d8                __cy_region_zero_size_ram = (_end - _edata)
+                0x00000490                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff8600     0x1000 load address 0x00004720
-                0x1fff8600                . = _end
-                0x1fff9600                . = (. + 0x1000)
- *fill*         0x1fff8600     0x1000 00
-                0x1fff9600                __cy_heap_limit = .
+.heap           0x1fff85b8     0x1000 load address 0x000046c0
+                0x1fff85b8                . = _end
+                0x1fff95b8                . = (. + 0x1000)
+ *fill*         0x1fff85b8     0x1000 00
+                0x1fff95b8                __cy_heap_limit = .
 
 .stack          0x20004000     0x4000
                 0x20004000                __cy_stack_limit = .
@@ -1097,7 +1100,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00004720        0x0 load address 0x9050000c
+.rel.dyn        0x000046c0        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv7-m/crtbegin.o
 
 .stab
@@ -1166,77 +1169,77 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x51fb
+.debug_info     0x00000000     0x524b
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x3a7 .\CortexM3\ARM_GCC_473\Debug\main.o
- .debug_info    0x000003a7      0x13e .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
- .debug_info    0x000004e5      0x2ea .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
- .debug_info    0x000007cf      0x396 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
- .debug_info    0x00000b65      0x68b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
- .debug_info    0x000011f0      0x5f7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
- .debug_info    0x000017e7      0x56e .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
- .debug_info    0x00001d55      0x1d6 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
- .debug_info    0x00001f2b      0x386 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
- .debug_info    0x000022b1      0x84c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
- .debug_info    0x00002afd      0x18d .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
- .debug_info    0x00002c8a      0x278 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
- .debug_info    0x00002f02      0x285 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
- .debug_info    0x00003187      0x132 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
- .debug_info    0x000032b9       0xb2 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
- .debug_info    0x0000336b      0xcd7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
- .debug_info    0x00004042      0x5c3 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
- .debug_info    0x00004605      0x1b9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
- .debug_info    0x000047be      0x310 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
- .debug_info    0x00004ace      0x354 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
- .debug_info    0x00004e22      0x3d9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
+ .debug_info    0x00000000      0x3f7 .\CortexM3\ARM_GCC_473\Debug\main.o
+ .debug_info    0x000003f7      0x13e .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+ .debug_info    0x00000535      0x2ea .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_info    0x0000081f      0x396 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+ .debug_info    0x00000bb5      0x68b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+ .debug_info    0x00001240      0x5f7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+ .debug_info    0x00001837      0x56e .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+ .debug_info    0x00001da5      0x1d6 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+ .debug_info    0x00001f7b      0x386 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+ .debug_info    0x00002301      0x84c .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+ .debug_info    0x00002b4d      0x18d .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
+ .debug_info    0x00002cda      0x278 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+ .debug_info    0x00002f52      0x285 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+ .debug_info    0x000031d7      0x132 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
+ .debug_info    0x00003309       0xb2 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
+ .debug_info    0x000033bb      0xcd7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+ .debug_info    0x00004092      0x5c3 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
+ .debug_info    0x00004655      0x1b9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
+ .debug_info    0x0000480e      0x310 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
+ .debug_info    0x00004b1e      0x354 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
+ .debug_info    0x00004e72      0x3d9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x18a0
+.debug_abbrev   0x00000000     0x18ab
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x170 .\CortexM3\ARM_GCC_473\Debug\main.o
- .debug_abbrev  0x00000170       0x5d .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
- .debug_abbrev  0x000001cd      0x175 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
- .debug_abbrev  0x00000342      0x187 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
- .debug_abbrev  0x000004c9      0x1b4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
- .debug_abbrev  0x0000067d      0x1d0 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
- .debug_abbrev  0x0000084d      0x16e .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
- .debug_abbrev  0x000009bb       0xc7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
- .debug_abbrev  0x00000a82      0x153 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
- .debug_abbrev  0x00000bd5      0x1a1 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
- .debug_abbrev  0x00000d76       0xba .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
- .debug_abbrev  0x00000e30      0x12d .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
- .debug_abbrev  0x00000f5d       0xeb .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
- .debug_abbrev  0x00001048       0x9b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
- .debug_abbrev  0x000010e3       0x14 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
- .debug_abbrev  0x000010f7      0x207 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
- .debug_abbrev  0x000012fe      0x170 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
- .debug_abbrev  0x0000146e       0xba .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
- .debug_abbrev  0x00001528       0xa7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
- .debug_abbrev  0x000015cf      0x172 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
- .debug_abbrev  0x00001741      0x15f .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
+ .debug_abbrev  0x00000000      0x17b .\CortexM3\ARM_GCC_473\Debug\main.o
+ .debug_abbrev  0x0000017b       0x5d .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+ .debug_abbrev  0x000001d8      0x175 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_abbrev  0x0000034d      0x187 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+ .debug_abbrev  0x000004d4      0x1b4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+ .debug_abbrev  0x00000688      0x1d0 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+ .debug_abbrev  0x00000858      0x16e .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+ .debug_abbrev  0x000009c6       0xc7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+ .debug_abbrev  0x00000a8d      0x153 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+ .debug_abbrev  0x00000be0      0x1a1 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+ .debug_abbrev  0x00000d81       0xba .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
+ .debug_abbrev  0x00000e3b      0x12d .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+ .debug_abbrev  0x00000f68       0xeb .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+ .debug_abbrev  0x00001053       0x9b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
+ .debug_abbrev  0x000010ee       0x14 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00001102      0x207 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+ .debug_abbrev  0x00001309      0x170 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
+ .debug_abbrev  0x00001479       0xba .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
+ .debug_abbrev  0x00001533       0xa7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
+ .debug_abbrev  0x000015da      0x172 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
+ .debug_abbrev  0x0000174c      0x15f .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
 
-.debug_line     0x00000000     0x27dc
+.debug_line     0x00000000     0x27e1
  *(.debug_line)
- .debug_line    0x00000000      0x351 .\CortexM3\ARM_GCC_473\Debug\main.o
- .debug_line    0x00000351       0x53 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
- .debug_line    0x000003a4      0x1b0 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
- .debug_line    0x00000554      0x1d7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
- .debug_line    0x0000072b      0x2b8 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
- .debug_line    0x000009e3      0x228 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
- .debug_line    0x00000c0b      0x21a .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
- .debug_line    0x00000e25       0xd9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
- .debug_line    0x00000efe      0x179 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
- .debug_line    0x00001077      0x421 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
- .debug_line    0x00001498       0x7f .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
- .debug_line    0x00001517      0x157 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
- .debug_line    0x0000166e      0x168 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
- .debug_line    0x000017d6       0xbd .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
- .debug_line    0x00001893       0x68 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
- .debug_line    0x000018fb      0x73b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
- .debug_line    0x00002036      0x370 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
- .debug_line    0x000023a6       0x8b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
- .debug_line    0x00002431       0x5b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
- .debug_line    0x0000248c      0x1a9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
- .debug_line    0x00002635      0x1a7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
+ .debug_line    0x00000000      0x356 .\CortexM3\ARM_GCC_473\Debug\main.o
+ .debug_line    0x00000356       0x53 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+ .debug_line    0x000003a9      0x1b0 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_line    0x00000559      0x1d7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+ .debug_line    0x00000730      0x2b8 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+ .debug_line    0x000009e8      0x228 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+ .debug_line    0x00000c10      0x21a .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+ .debug_line    0x00000e2a       0xd9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+ .debug_line    0x00000f03      0x179 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+ .debug_line    0x0000107c      0x421 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+ .debug_line    0x0000149d       0x7f .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
+ .debug_line    0x0000151c      0x157 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+ .debug_line    0x00001673      0x168 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+ .debug_line    0x000017db       0xbd .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
+ .debug_line    0x00001898       0x68 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyBootAsmGnu.o)
+ .debug_line    0x00001900      0x73b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+ .debug_line    0x0000203b      0x370 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
+ .debug_line    0x000023ab       0x8b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
+ .debug_line    0x00002436       0x5b .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
+ .debug_line    0x00002491      0x1a9 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
+ .debug_line    0x0000263a      0x1a7 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
 
 .debug_frame    0x00000000     0x1cd4
  *(.debug_frame)
@@ -1266,47 +1269,47 @@ END GROUP
  .debug_frame   0x00001c94       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
  .debug_frame   0x00001cb4       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-strcpy.o)
 
-.debug_str      0x00000000     0x2128
+.debug_str      0x00000000     0x212a
  *(.debug_str)
- .debug_str     0x00000000      0x1fd .\CortexM3\ARM_GCC_473\Debug\main.o
-                                0x242 (size before relaxing)
- .debug_str     0x000001fd       0x77 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+ .debug_str     0x00000000      0x215 .\CortexM3\ARM_GCC_473\Debug\main.o
+                                0x25a (size before relaxing)
+ .debug_str     0x00000215       0x77 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
                                 0x1c7 (size before relaxing)
- .debug_str     0x00000274      0x10e .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+ .debug_str     0x0000028c      0x10e .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
                                 0x283 (size before relaxing)
- .debug_str     0x00000382      0x139 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
+ .debug_str     0x0000039a      0x139 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyfitter_cfg.o)
                                 0x2b6 (size before relaxing)
- .debug_str     0x000004bb      0x2ca .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
+ .debug_str     0x000004d3      0x2ca .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB.o)
                                 0x451 (size before relaxing)
- .debug_str     0x00000785      0x247 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
+ .debug_str     0x0000079d      0x240 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cdc.o)
                                 0x441 (size before relaxing)
- .debug_str     0x000009cc      0x230 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
+ .debug_str     0x000009dd      0x230 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_drv.o)
                                 0x516 (size before relaxing)
- .debug_str     0x00000bfc       0x6a .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
+ .debug_str     0x00000c0d       0x6a .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_episr.o)
                                 0x231 (size before relaxing)
- .debug_str     0x00000c66       0xfa .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
+ .debug_str     0x00000c77       0xfa .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_hid.o)
                                 0x30c (size before relaxing)
- .debug_str     0x00000d60      0x250 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
+ .debug_str     0x00000d71      0x250 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_std.o)
                                 0x59f (size before relaxing)
- .debug_str     0x00000fb0       0x55 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
+ .debug_str     0x00000fc1       0x55 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_vnd.o)
                                 0x216 (size before relaxing)
- .debug_str     0x00001005      0x162 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
+ .debug_str     0x00001016      0x162 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(isr_sendData.o)
                                 0x2d9 (size before relaxing)
- .debug_str     0x00001167      0x1f4 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
+ .debug_str     0x00001178      0x1ec .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData.o)
                                 0x356 (size before relaxing)
- .debug_str     0x0000135b       0xd2 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
+ .debug_str     0x00001364       0xd2 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(Timer_sendData_PM.o)
                                 0x227 (size before relaxing)
- .debug_str     0x0000142d      0x61f .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
+ .debug_str     0x00001436      0x61f .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyLib.o)
                                 0x7e9 (size before relaxing)
- .debug_str     0x00001a4c      0x371 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
+ .debug_str     0x00001a55      0x371 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(cyPm.o)
                                 0x4f8 (size before relaxing)
- .debug_str     0x00001dbd       0x39 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
+ .debug_str     0x00001dc6       0x39 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_cls.o)
                                 0x232 (size before relaxing)
- .debug_str     0x00001df6      0x104 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
+ .debug_str     0x00001dff      0x104 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(USB_descr.o)
                                 0x341 (size before relaxing)
- .debug_str     0x00001efa      0x130 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
+ .debug_str     0x00001f03      0x129 .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CyFlash.o)
                                 0x2be (size before relaxing)
- .debug_str     0x0000202a       0xfe .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
+ .debug_str     0x0000202c       0xfe .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a(CySpc.o)
                                 0x29a (size before relaxing)
 
 .debug_loc      0x00000000     0x2e32
