@@ -1,6 +1,6 @@
 -- ======================================================================
 -- usbCharBin.ctl generated from usbCharBin
--- 01/15/2015 at 07:22
+-- 01/19/2015 at 18:17
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

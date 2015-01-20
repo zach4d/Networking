@@ -26,9 +26,11 @@
 	
 #include <project.h>
 
-typedef int bool;
-enum {false, true};
 typedef enum {IDLE, BUSY, COLLISION} State;
 void init();
+
+void mystrrev(char hex[]);
+int hex_decimal(char hex[]);
+void decimal_hex(int n, char hex[]); /* Function to convert decimal to hexadecimal. */
 
 #endif

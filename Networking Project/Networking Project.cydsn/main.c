@@ -14,23 +14,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdbool.h>
 
 #include "main.h"
 
-// the state variable
-State currentState = IDLE;
+
 
 //usb and sending data
+char buffer[];
+char usb[80];
+char hex[80*2];
+char packetBin[4];
+char packetSend[80*8];
+unsigned int dec;
+uint8 messageSize = 0;
+bool returnFound = false;
+bool messageReady;
+
 char packetUSB[80];
 char packetMessage[80];
 char packetHex[80*2];
 uint8 packetBinary[4];
-uint8 packetSend[80*8];
-uint8 dec;
-uint8 flag = 1;
 bool dataReady = false;
 int i_send = 0;
 uint8 messageBufferPosition = 0;
+
+	// the state variable
+State currentState = IDLE;
 
 void printbinchar(char c)
 {
@@ -153,7 +163,6 @@ int main()
 	init();
 	uint16 count;
 	bool messageReady = false;
-	uint16 forLoopCounter;
 	// main program loop
 	for(;;)
     {
@@ -174,193 +183,207 @@ int main()
 			/*
 				Transm_Output_Write(1);
 			*/
-				dataReady = false;
-			
-				memset(packetSend,  0, (80*8));
-				Pin_LEDBusy_Write(0);			
-				Pin_LEDIdle_Write(1);
-				Pin_LEDCollision_Write(0);
-				/*****************************************************************************
-				
-				The USB need to watch for the return key before it creates the buffer
-				Currently it fires on every key press (1/8/2015) James Maki
-				
-				******************************************************************************/
-				
-				
-				//check message from usb
 				if(USB_DataIsReady() != 0u)               /* Check for input data from PC */
-	       	{   
-		           count = USB_GetAll(packetUSB);           /* Read received data and re-enable OUT endpoint */
-		           if(count != 0u)
-		           {
-						for(forLoopCounter=0; forLoopCounter<count;forLoopCounter++)
-						//USB_PutData(packetUSB, count); 
-		               /* If the last sent packet is exactly maximum packet size, 
-		               *  it shall be followed by a zero-length packet to assure the
-		               *  end of segment is properly identified by the terminal.
-		               */
-						
-		               if(packetUSB[forLoopCounter] == '\r' || count >= 80)
-		               {
-							messageReady = true;
-		                   packetMessage[messageBufferPosition] = '\0';
-							messageBufferPosition=0;
-							//USB_PutChar(packetUSB[forLoopCounter]);
-						}else{
-							messageReady = false;
-							messageBufferPosition++;
-							packetMessage[messageBufferPosition]=packetUSB[forLoopCounter];
-							//USB_PutChar(packetUSB[forLoopCounter]);
-						}
-		           }
-					while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */
-		                   USB_PutData(packetUSB, count);         /* Send zero-length packet to PC */
-					//generate packet and send packet
-			}
-			
-			if(messageReady){
-					i_send = 0;
+	       		{   
+		           count = USB_GetAll(buffer);           /* Read received data and re-enable OUT endpoint */
+		          if(count != 0u)
+		           {    
+					
 				
-					packetMessage[0] = 'H';	
-					packetMessage[1] = 'i';
-					packetMessage[2] = '\r';
-					
-					int l, l2;
-						//USB_PutChar('r');
-						
-						//USB_PutChar('\r');
-						//USB_PutChar('\n');
-					for(l = 0; packetMessage[l] != '\r'; l++)
-					{
-						//USB_PutChar('a');
-						//USB_PutChar(packetMessage[l]);
-						dec = (unsigned int) packetMessage[l];
-						//USB_PutChar(dec);
-					
-						decimal_hex(dec, packetHex);
-						//USB_PutChar(packetHex[l]);
-						//printStringAsBinary(packetHex);
-						//LCD_Position(1,0);
-					
-						
-						for(l2 = 0; packetHex[l2] != '\r'; l2++)
+						//while(USB_CDCIsReady() == 0u); /* Wait till component is ready to send more data to the PC */
+			              //USB_PutData(buffer, count);         /* Send zero-length packet to PC */
+						int counter;
+						for(counter = 0; counter < count && messageReady == false; counter++)
 						{
-							USB_PutChar(packetHex[l2]);
-							USB_PutChar('\r');
-							USB_PutChar('\n');
-							//printbinchar(packetHex[l2]);
-							if(packetHex[l2] == '0'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 0;
-								packetBinary[2] = 0;
-								packetBinary[3] = 0;
-							}else if(packetHex[l2] == '1'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 0;
-								packetBinary[2] = 0;
-								packetBinary[3] = 1;
-							}else if(packetHex[l2] == '2'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 0;
-								packetBinary[2] = 1;
-								packetBinary[3] = 0;
-							}else if(packetHex[l2] == '3'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 0;
-								packetBinary[2] = 1;
-								packetBinary[3] = 1;
-							}else if(packetHex[l2] == '4'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 1;
-								packetBinary[2] = 0;
-								packetBinary[3] = 0;
-							}else if(packetHex[l2] == '5'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 1;
-								packetBinary[2] = 0;
-								packetBinary[3] = 1;
-							}else if(packetHex[l2] == '6'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 1;
-								packetBinary[2] = 1;
-								packetBinary[3] = 0;
-							}else if(packetHex[l2] == '7'){
-								packetBinary[0] = 0;
-								packetBinary[1] = 1;
-								packetBinary[2] = 1;
-								packetBinary[3] = 1;
-							}else if(packetHex[l2] == '8'){
-								packetBinary[0] = 1;
-								packetBinary[1] = 0;
-								packetBinary[2] = 0;
-								packetBinary[3] = 0;
-							}else if(packetHex[l2] == '9'){
-								packetBinary[0] = 1;
-								packetBinary[1] = 0;
-								packetBinary[2] = 0;
-								packetBinary[3] = 1;
-							}else if(packetHex[l2] == 'A'){
-								packetBinary[0] = 1;
-								packetBinary[1] = 0;
-								packetBinary[2] = 1;
-								packetBinary[3] = 0;
-							}else if(packetHex[l2] == 'B'){
-								packetBinary[0] = 1;
-								packetBinary[1] = 0;
-								packetBinary[2] = 1;
-								packetBinary[3] = 1;
-							}else if(packetHex[l2] == 'C'){
-								packetBinary[0] = 1;
-								packetBinary[1] = 1;
-								packetBinary[2] = 0;
-								packetBinary[3] = 0;
-							}else if(packetHex[l2] =='D'){
-								packetBinary[0] = 1;
-								packetBinary[1] = 1;
-								packetBinary[2] = 0;
-								packetBinary[3] = 1;
-							}else if(packetHex[l2] == 'E'){
-								packetBinary[0] = 1;
-								packetBinary[1] = 1;
-								packetBinary[2] = 1;
-								packetBinary[3] = 0;
-							}else {
-								packetBinary[0] = 1;
-								packetBinary[1] = 1;
-								packetBinary[2] = 1;
-								packetBinary[3] = 1;
-							}
-						
-							int l3;
-							for(l3 = 0; l3 <4; l3++)
-							{
-								//packetSend[i_send + l3] = packetBinary[l3];
-								USB_PutChar(packetBinary[l3]);
-							}//generates binary values
+							while(USB_CDCIsReady() ==0u);
+							USB_PutChar(buffer[counter]);
+							usb[messageSize] = buffer[counter];
 							
-							i_send++;
+						
+							
+							messageSize++;
+							if(buffer[counter] == '\r'){
+								messageReady = true;
+							}
 						}
-						if(packetMessage[l] == '\r'){
-							messageReady = false;
-						}
-					}
 					
-					dataReady = true;
-	        	}
+					
 				
-				if(dataReady && messageReady){ 
-					i_send = 0;
-					//Transm_Output_Write(0); /* uncomment this line to see that Output change on each key pressed*/
-				//	USB_PutChar('\r');
-				//	USB_PutChar('\n');
-					int l2;
-					for(l2 = 0; l2 <10; l2++){
-					printbinchar(packetHex[l2]);
 					}
-					//Timer_sendData_Enable();
-					
 				}
+				
+				if(messageReady)
+				{
+	
+					//cout << "usb: " <<endl;
+					int i;
+					for(i = 0; usb[i] != '\r'; i++)
+					{
+						//cout<<"char "<<usb[i]<<endl;
+						
+						while(USB_CDCIsReady() == 0u);
+								USB_PutData("char ", 5);
+								while(USB_CDCIsReady() == 0u);
+								USB_PutChar(usb[i]);
+								while(USB_CDCIsReady() == 0u);
+								USB_PutChar('\r');
+								while(USB_CDCIsReady() == 0u);
+								USB_PutChar('\n');
+							
+								dec = (unsigned int)usb[i];
+								
+								//cout<< "index: " << i << " @ " << usb[i] <<endl;
+								//cout <<"dec "<< dec << endl;
+								
+								while(USB_CDCIsReady() == 0u);
+								USB_PutData("dec ", 4);
+								while(USB_CDCIsReady() == 0u);
+								USB_PutChar(dec);
+								while(USB_CDCIsReady() == 0u);
+								USB_PutChar('\r');
+								while(USB_CDCIsReady() == 0u);
+								USB_PutChar('\n');
+								
+								decimal_hex(dec, hex);
+								int i2;
+								for(i2 = 0; hex[i2] != '\0'; i2++)
+								{
+									//cout << "hex " << hex[i2] << endl;
+									
+									while(USB_CDCIsReady() == 0u);
+									USB_PutData("hex ", 4);
+									while(USB_CDCIsReady() == 0u);
+									USB_PutChar(hex[i2]);
+									USB_PutChar('\r');
+									while(USB_CDCIsReady() == 0u);
+									USB_PutChar('\n');
+									
+									//conver to binary
+									if(hex[i2] == '0'){
+										packetBin[0] = '0';
+										packetBin[1] = '0';
+										packetBin[2] = '0';
+										packetBin[3] = '0';
+									}else if(hex[i2] == '1'){
+										packetBin[0] = '0';
+										packetBin[1] = '0';
+										packetBin[2] = '0';
+										packetBin[3] = '1';
+									}else if(hex[i2] == '2'){
+										packetBin[0] = '0';
+										packetBin[1] = '0';
+										packetBin[2] = '1';
+										packetBin[3] = '0';
+									}else if(hex[i2] == '3'){
+										packetBin[0] = '0';
+										packetBin[1] = '0';
+										packetBin[2] = '1';
+										packetBin[3] = '1';
+									}else if(hex[i2] == '4'){
+										packetBin[0] = '0';
+										packetBin[1] = '1';
+										packetBin[2] = '0';
+										packetBin[3] = '0';
+									}else if(hex[i2] == '5'){
+										packetBin[0] = '0';
+										packetBin[1] = '1';
+										packetBin[2] = '0';
+										packetBin[3] = '1';
+									}else if(hex[i2] == '6'){
+										packetBin[0] = '0';
+										packetBin[1] = '1';
+										packetBin[2] = '1';
+										packetBin[3] = '0';
+									}else if(hex[i2] == '7'){
+										packetBin[0] = '0';
+										packetBin[1] = '1';
+										packetBin[2] = '1';
+										packetBin[3] = '1';
+									}else if(hex[i2] == '8'){
+										packetBin[0] = '1';
+										packetBin[1] = '0';
+										packetBin[2] = '0';
+										packetBin[3] = '0';
+									}else if(hex[i2] == '9'){
+										packetBin[0] = '1';
+										packetBin[1] = '0';
+										packetBin[2] = '0';
+										packetBin[3] = '1';
+									}else if(hex[i2] == 'A'){
+										packetBin[0] = '1';
+										packetBin[1] = '0';
+										packetBin[2] = '1';
+										packetBin[3] = '0';
+									}else if(hex[i2] == 'B'){
+										packetBin[0] = '1';
+										packetBin[1] = '0';
+										packetBin[2] = '1';
+										packetBin[3] = '1';
+									}else if(hex[i2] == 'C'){
+										packetBin[0] = '1';
+										packetBin[1] = '1';
+										packetBin[2] = '0';
+										packetBin[3] = '0';
+									}else if(hex[i2] =='D'){
+										packetBin[0] = '1';
+										packetBin[1] = '1';
+										packetBin[2] = '0';
+										packetBin[3] = '1';
+									}else if(hex[i2] == 'E'){
+										packetBin[0] = '1';
+										packetBin[1] = '1';
+										packetBin[2] = '1';
+										packetBin[3] = '0';
+									}else {
+										packetBin[0] = '1';
+										packetBin[1] = '1';
+										packetBin[2] = '1';
+										packetBin[3] = '1';
+									}
+						
+								int l2;
+								for(l2 = 0; l2 <4; l2++)
+								{
+									packetSend[i_send + l2] = packetBin[l2]; 	
+									//cout << "binary " << packetBin[l2] << " position" << i_send+l2 <<endl;
+								}
+								i_send +=4;
+								//cout<<"i_send " << i_send << endl;
+						
+							}
+							packetSend[i_send] = '\r';
+					
+							messageReady = false;
+						}//start of conversion
+						//cout<<"full "<< endl;
+						
+						while(USB_CDCIsReady() == 0u);
+						USB_PutData("full ", 5);
+						while(USB_CDCIsReady() == 0u);
+						USB_PutChar('\r');
+						while(USB_CDCIsReady() == 0u);
+						USB_PutChar('\n');
+					
+						int i3;
+						for(i3 = 0; packetSend[i3] != '\r'; i3++)
+						{
+							if(i3%8 == 0)
+							{
+								//cout<<" ";
+								
+								while(USB_CDCIsReady() == 0u);
+								USB_PutChar(' ');
+								
+								
+							}
+							//cout << packetSend[i3];
+							
+							while(USB_CDCIsReady() == 0u);
+							USB_PutChar(packetSend[i3]);
+							
+						}
+					
+					}//messageReady
 				break;
 			case BUSY:
 				Pin_LEDBusy_Write(1);			
@@ -384,6 +407,14 @@ void init()
 {		
 	
 	Transm_Output_Write(1);
+	
+	memset(usb, '0', 80);
+	memset(hex, '0', (80*2));
+	memset(packetBin, '0', 4);
+	memset(packetSend, '0', (80*8));
+	
+	messageReady = false;
+
 	//Enable Global Interrupts
 	CYGlobalIntEnable;
 	

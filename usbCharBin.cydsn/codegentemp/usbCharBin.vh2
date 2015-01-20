@@ -2,7 +2,7 @@
 --	Conversion of usbCharBin.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Jan 15 07:22:25 2015
+--	Mon Jan 19 18:17:12 2015
 --
 
 USE cypress.cypress.all;

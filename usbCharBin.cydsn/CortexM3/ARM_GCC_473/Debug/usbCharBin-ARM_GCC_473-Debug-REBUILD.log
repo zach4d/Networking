@@ -1,8 +1,43 @@
---------------- Rebuild Started: 01/15/2015 07:22:08 Project: usbCharBin, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Rebuild Started: 01/19/2015 18:17:04 Project: usbCharBin, Configuration: ARM GCC 4.7.3 Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cymetadata.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_audio.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_boot.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_cdc.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_cls.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_descr.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_drv.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_episr.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_hid.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_pm.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_std.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_vnd.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_midi.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\isr_sendData.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Timer_sendData.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Timer_sendData_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_Dm.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\USB_Dp.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\usbCharBin.hex"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\usbCharBin.elf"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\usbCharBin.map"
 Deleting file ".\usbCharBin.cycdx"
 Deleting file ".\usbCharBin.svd"
 Deleting file ".\usbCharBin.rpt"
 Deleting file ".\usbCharBin_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\.deps\C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\.deps\ARM_C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\.deps\GNU_ARM_ASM_FILE.P"
 cydsfit.exe "-.appdatapath" "C:\Users\makij\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\usbCharBin.cydsn\usbCharBin.cyprj" "-d" "CY8C5868AXI-LP035" "-s" "D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\usbCharBin.cydsn\Generated_Source\PSoC5" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
 Elaborating Design...
 HDL Generation ...
@@ -22,40 +57,63 @@ API Generation ...
 Dependency Generation ...
 Clean Temporary Files ...
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM3\ARM_GCC_473\Debug\main.o
-.\main.c:21:1: error: unknown type name 'State'
-.\main.c:21:22: error: 'IDLE' undeclared here (not in a function)
-.\main.c:31:1: error: unknown type name 'bool'
-.\main.c:31:18: error: 'false' undeclared here (not in a function)
-.\main.c: In function 'isr_sendingData':
-.\main.c:39:2: warning: implicit declaration of function 'Transm_Output_Write' [-Wimplicit-function-declaration]
 .\main.c: In function 'main':
-.\main.c:115:2: warning: implicit declaration of function 'init' [-Wimplicit-function-declaration]
-.\main.c:117:2: error: unknown type name 'bool'
-.\main.c:141:5: warning: implicit declaration of function 'Pin_LEDBusy_Write' [-Wimplicit-function-declaration]
-.\main.c:142:5: warning: implicit declaration of function 'Pin_LEDIdle_Write' [-Wimplicit-function-declaration]
-.\main.c:143:5: warning: implicit declaration of function 'Pin_LEDCollision_Write' [-Wimplicit-function-declaration]
-.\main.c:155:14: warning: pointer targets in passing argument 1 of 'USB_GetAll' differ in signedness [-Wpointer-sign]
+.\main.c:175:14: warning: pointer targets in passing argument 1 of 'USB_GetAll' differ in signedness [-Wpointer-sign]
 In file included from ./Generated_Source/PSoC5/project.h:24:0,
                  from .\main.c:12:
 ./Generated_Source/PSoC5/USB_cdc.h:39:12: note: expected 'uint8 *' but argument is of type 'char *'
-.\main.c:167:23: error: 'true' undeclared (first use in this function)
-.\main.c:167:23: note: each undeclared identifier is reported only once for each function it appears in
-.\main.c:179:22: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
+.\main.c:215:5: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
 In file included from ./Generated_Source/PSoC5/project.h:24:0,
                  from .\main.c:12:
 ./Generated_Source/PSoC5/USB_cdc.h:31:10: note: expected 'const uint8 *' but argument is of type 'char *'
-.\main.c:320:6: warning: implicit declaration of function 'printbinchar' [-Wimplicit-function-declaration]
+.\main.c:229:5: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
+In file included from ./Generated_Source/PSoC5/project.h:24:0,
+                 from .\main.c:12:
+./Generated_Source/PSoC5/USB_cdc.h:31:10: note: expected 'const uint8 *' but argument is of type 'char *'
+.\main.c:244:6: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
+In file included from ./Generated_Source/PSoC5/project.h:24:0,
+                 from .\main.c:12:
+./Generated_Source/PSoC5/USB_cdc.h:31:10: note: expected 'const uint8 *' but argument is of type 'char *'
+.\main.c:351:3: warning: pointer targets in passing argument 1 of 'USB_PutData' differ in signedness [-Wpointer-sign]
+In file included from ./Generated_Source/PSoC5/project.h:24:0,
+                 from .\main.c:12:
+./Generated_Source/PSoC5/USB_cdc.h:31:10: note: expected 'const uint8 *' but argument is of type 'char *'
+.\main.c:137:9: warning: unused variable 'forLoopCounter' [-Wunused-variable]
 .\main.c: At top level:
-.\main.c:328:6: warning: conflicting types for 'init' [enabled by default]
-.\main.c:115:2: note: previous implicit declaration of 'init' was here
-.\main.c: In function 'init':
-.\main.c:336:2: warning: implicit declaration of function 'isr_BusyToCollision_StartEx' [-Wimplicit-function-declaration]
-.\main.c:336:30: error: 'isr_BusyToCollision' undeclared (first use in this function)
-.\main.c:337:2: warning: implicit declaration of function 'isr_BusyToIdle_StartEx' [-Wimplicit-function-declaration]
-.\main.c:337:25: error: 'isr_BusyToIdle' undeclared (first use in this function)
-.\main.c:339:2: warning: implicit declaration of function 'isr_RisingEdge_StartEx' [-Wimplicit-function-declaration]
-.\main.c:339:25: error: 'isr_RisingEdgeDetected' undeclared (first use in this function)
-.\main.c:340:2: warning: implicit declaration of function 'isr_FallingEdge_StartEx' [-Wimplicit-function-declaration]
-.\main.c:340:26: error: 'isr_FallingEdgeDetected' undeclared (first use in this function)
-The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
---------------- Rebuild Failed: 01/15/2015 07:22:32 ---------------
+.\main.c:37:6: warning: array 'buffer' assumed to have one element [enabled by default]
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cymetadata.lst -ffunction-sections -c .\Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB.c -o .\CortexM3\ARM_GCC_473\Debug\USB.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_audio.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_audio.c -o .\CortexM3\ARM_GCC_473\Debug\USB_audio.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_boot.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_boot.c -o .\CortexM3\ARM_GCC_473\Debug\USB_boot.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_cdc.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_cdc.c -o .\CortexM3\ARM_GCC_473\Debug\USB_cdc.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_cls.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_cls.c -o .\CortexM3\ARM_GCC_473\Debug\USB_cls.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_descr.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_descr.c -o .\CortexM3\ARM_GCC_473\Debug\USB_descr.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_drv.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_drv.c -o .\CortexM3\ARM_GCC_473\Debug\USB_drv.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_episr.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_episr.c -o .\CortexM3\ARM_GCC_473\Debug\USB_episr.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_hid.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_hid.c -o .\CortexM3\ARM_GCC_473\Debug\USB_hid.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_pm.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_pm.c -o .\CortexM3\ARM_GCC_473\Debug\USB_pm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_std.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_std.c -o .\CortexM3\ARM_GCC_473\Debug\USB_std.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_vnd.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_vnd.c -o .\CortexM3\ARM_GCC_473\Debug\USB_vnd.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_midi.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_midi.c -o .\CortexM3\ARM_GCC_473\Debug\USB_midi.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\isr_sendData.lst -ffunction-sections -c .\Generated_Source\PSoC5\isr_sendData.c -o .\CortexM3\ARM_GCC_473\Debug\isr_sendData.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\Timer_sendData.lst -ffunction-sections -c .\Generated_Source\PSoC5\Timer_sendData.c -o .\CortexM3\ARM_GCC_473\Debug\Timer_sendData.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\Timer_sendData_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\Timer_sendData_PM.c -o .\CortexM3\ARM_GCC_473\Debug\Timer_sendData_PM.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_Dm.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_Dm.c -o .\CortexM3\ARM_GCC_473\Debug\USB_Dm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\USB_Dp.lst -ffunction-sections -c .\Generated_Source\PSoC5\USB_Dp.c -o .\CortexM3\ARM_GCC_473\Debug\USB_Dp.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\Cm3Start.lst -ffunction-sections -c .\Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+arm-none-eabi-as.exe -I. -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -g -alh=.\CortexM3\ARM_GCC_473\Debug/CyBootAsmGnu.lst -o .\CortexM3\ARM_GCC_473\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CyDmac.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_473\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CyFlash.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_473\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CyLib.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_473\Debug\CyLib.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cyPm.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_473\Debug\cyPm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CySpc.lst -ffunction-sections -c .\Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_473\Debug\CySpc.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cyutils.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_473\Debug\cyutils.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a .\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_473\Debug\USB.o .\CortexM3\ARM_GCC_473\Debug\USB_audio.o .\CortexM3\ARM_GCC_473\Debug\USB_boot.o .\CortexM3\ARM_GCC_473\Debug\USB_cdc.o .\CortexM3\ARM_GCC_473\Debug\USB_cls.o .\CortexM3\ARM_GCC_473\Debug\USB_descr.o .\CortexM3\ARM_GCC_473\Debug\USB_drv.o .\CortexM3\ARM_GCC_473\Debug\USB_episr.o .\CortexM3\ARM_GCC_473\Debug\USB_hid.o .\CortexM3\ARM_GCC_473\Debug\USB_pm.o .\CortexM3\ARM_GCC_473\Debug\USB_std.o .\CortexM3\ARM_GCC_473\Debug\USB_vnd.o .\CortexM3\ARM_GCC_473\Debug\USB_midi.o .\CortexM3\ARM_GCC_473\Debug\isr_sendData.o .\CortexM3\ARM_GCC_473\Debug\Timer_sendData.o .\CortexM3\ARM_GCC_473\Debug\Timer_sendData_PM.o .\CortexM3\ARM_GCC_473\Debug\USB_Dm.o .\CortexM3\ARM_GCC_473\Debug\USB_Dp.o .\CortexM3\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_473\Debug\CyDmac.o .\CortexM3\ARM_GCC_473\Debug\CyFlash.o .\CortexM3\ARM_GCC_473\Debug\CyLib.o .\CortexM3\ARM_GCC_473\Debug\cyPm.o .\CortexM3\ARM_GCC_473\Debug\CySpc.o .\CortexM3\ARM_GCC_473\Debug\cyutils.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a
+arm-none-eabi-gcc.exe -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g -Wl,-Map,.\CortexM3\ARM_GCC_473\Debug\usbCharBin.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM3\ARM_GCC_473\Debug\usbCharBin.elf .\CortexM3\ARM_GCC_473\Debug\main.o .\CortexM3\ARM_GCC_473\Debug\cymetadata.o .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o .\CortexM3\ARM_GCC_473\Debug\usbCharBin.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
+cyelftool.exe -C D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\usbCharBin.cydsn\CortexM3\ARM_GCC_473\Debug\usbCharBin.elf --flash_size 262144 --flash_row_size 256
+cyelftool.exe -S D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\usbCharBin.cydsn\CortexM3\ARM_GCC_473\Debug\usbCharBin.elf
+Flash used: 18110 of 262144 bytes (6.9 %).
+SRAM used: 21941 of 65536 bytes (33.5 %).
+--------------- Rebuild Succeeded: 01/19/2015 18:17:27 ---------------
