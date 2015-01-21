@@ -24,12 +24,14 @@
 char buffer[];
 char usb[80];
 char hex[80*2];
-char packetBin[4];
-char packetSend[80*8];
+uint8 packetBin[4];
+uint8 packetSend[80*8];
 unsigned int dec;
-uint8 messageSize = 0;
+int messageSize = 0;
 bool returnFound = false;
 bool messageReady;
+
+int signal = 1;
 
 char packetUSB[80];
 char packetMessage[80];
@@ -80,13 +82,35 @@ CY_ISR(isr_BusyToCollision)
 	currentState = COLLISION;
 }
 
-CY_ISR(isr_sendingData)
+CY_ISR(isr_sendData)
 {
-	//flag = !flag;
-	//Transm_Output_Write(flag);
-	Transm_Output_Write(packetSend[i_send]);
-	//printCharAsBinary(packetSend[i_send]);
-	i_send++;
+	if(signal == 1)
+	{
+		signal = 0;
+		if(messageSize < i_send)
+		{
+			//end of message
+			Timer_sendData_Stop();
+			Transm_Output_Write(1);
+			messageSize = 0;
+			return;
+		}
+		if(packetSend[messageSize] == '0')
+		{
+			while(USB_CDCIsReady() == 0u);
+			USB_PutChar('a');
+			
+			Transm_Output_Write(0);
+		}else{
+			Transm_Output_Write(1);
+		}
+		
+	}else{
+		signal = 1;
+		Transm_Output_Write(!Transm_Output_Read());
+		messageSize++;
+	}
+	Timer_sendData_WriteCounter(Timer_sendData_ReadPeriod());
 }
 
 void mystrrev(char hex[])
@@ -264,7 +288,7 @@ int main()
 										packetBin[1] = '0';
 										packetBin[2] = '0';
 										packetBin[3] = '0';
-									}else if(hex[i2] == '1'){
+									}else if(hex[i2] =='1'){
 										packetBin[0] = '0';
 										packetBin[1] = '0';
 										packetBin[2] = '0';
@@ -352,10 +376,14 @@ int main()
 						
 							}
 							packetSend[i_send] = '\r';
-					
+							while(USB_CDCIsReady() == 0u);
+							USB_PutChar(i_send);
+							
 							messageReady = false;
+							messageSize = 0;
 						}//start of conversion
 						//cout<<"full "<< endl;
+						
 						
 						while(USB_CDCIsReady() == 0u);
 						USB_PutData("full ", 5);
@@ -365,9 +393,10 @@ int main()
 						USB_PutChar('\n');
 					
 						int i3;
+						
 						for(i3 = 0; packetSend[i3] != '\r'; i3++)
 						{
-							if(i3%8 == 0)
+							if(i3 != 0 && i3%8 == 0)
 							{
 								//cout<<" ";
 								
@@ -377,14 +406,24 @@ int main()
 								
 							}
 							//cout << packetSend[i3];
-							
 							while(USB_CDCIsReady() == 0u);
 							USB_PutChar(packetSend[i3]);
-							
+							/*
+							if(packetSend[i3] == '0')
+							{
+								Transm_Output_Write(0);
+							}else{
+								Transm_Output_Write(1);
+							}
+							*/
 						}
-					
+				
+					Timer_sendData_WriteCounter(Timer_sendData_ReadPeriod());
+					Timer_sendData_Start();
 					}//messageReady
+					
 				break;
+				
 			case BUSY:
 				Pin_LEDBusy_Write(1);			
 				Pin_LEDIdle_Write(0);
@@ -425,11 +464,11 @@ void init()
 	isr_RisingEdge_StartEx(isr_RisingEdgeDetected);
 	isr_FallingEdge_StartEx(isr_FallingEdgeDetected);
 	
-	Timer_sendData_Start();
-	Timer_sendData_Sleep();
+	//Timer_sendData_Start();
+	//Timer_sendData_Stop();
 	
 	
-	isr_sendData_StartEx(isr_sendingData);
+	isr_sendData_StartEx(isr_sendData);
 	
 	    /* Start USBFS Operation with 3V operation */
     USB_Start(0u, USB_3V_OPERATION);

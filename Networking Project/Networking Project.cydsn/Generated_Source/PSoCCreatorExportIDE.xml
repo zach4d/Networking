@@ -132,6 +132,8 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Transm_Output_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Transm_Output.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Transm_Output.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\timer_clock_2.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\timer_clock_2.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\prebuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\postbuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CyElfTool.exe</File>

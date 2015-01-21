@@ -1,8 +1,8 @@
---------------- Build Started: 01/19/2015 18:20:43 Project: Design01, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Build Started: 01/21/2015 17:14:07 Project: Design01, Configuration: ARM GCC 4.7.3 Debug ---------------
 The code generation step is up to date.
 The compile step is up to date, no work needs to be done.
 The link step is up to date, no work needs to be done.
 cyelftool.exe -S "D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Design01.cydsn\CortexM3\ARM_GCC_473\Debug\Design01.elf"
 Flash used: 1550 of 262144 bytes (0.6 %).
 SRAM used: 20781 of 65536 bytes (31.7 %).
---------------- Build Succeeded: 01/19/2015 18:20:43 ---------------
+--------------- Build Succeeded: 01/21/2015 17:14:07 ---------------

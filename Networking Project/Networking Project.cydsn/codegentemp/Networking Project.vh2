@@ -2,7 +2,7 @@
 --	Conversion of Networking Project.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Jan 19 18:16:42 2015
+--	Wed Jan 21 17:20:15 2015
 --
 
 USE cypress.cypress.all;
@@ -476,15 +476,15 @@ SIGNAL \USB:dma_req_2\ : bit;
 SIGNAL \USB:dma_req_1\ : bit;
 SIGNAL \USB:dma_req_0\ : bit;
 SIGNAL \USB:Net_824\ : bit;
-SIGNAL Net_771 : bit;
+SIGNAL Net_810 : bit;
 SIGNAL \Timer_sendData:Net_260\ : bit;
 SIGNAL \Timer_sendData:Net_266\ : bit;
-SIGNAL Net_12 : bit;
+SIGNAL Net_809 : bit;
 SIGNAL \Timer_sendData:Net_51\ : bit;
 SIGNAL \Timer_sendData:Net_261\ : bit;
 SIGNAL \Timer_sendData:Net_57\ : bit;
-SIGNAL Net_773 : bit;
-SIGNAL Net_778 : bit;
+SIGNAL Net_833 : bit;
+SIGNAL Net_838 : bit;
 SIGNAL \Timer_sendData:Net_102\ : bit;
 SIGNAL tmpOE__Transm_Output_net_0 : bit;
 SIGNAL tmpFB_0__Transm_Output_net_0 : bit;
@@ -1432,27 +1432,27 @@ isr_BusyToIdle:cy_isr_v1_0
 	PORT MAP(int_signal=>Net_807);
 \Timer_sendData:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_771,
+	PORT MAP(clock=>Net_810,
 		kill=>zero,
 		enable=>tmpOE__Pin_LEDBusy_net_0,
 		capture=>zero,
 		timer_reset=>zero,
 		tc=>\Timer_sendData:Net_51\,
 		compare=>\Timer_sendData:Net_261\,
-		interrupt=>Net_773);
+		interrupt=>Net_833);
 timer_clock_2:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"c455d1ff-1235-4305-983b-46fd7c08457d",
-		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
+		source_clock_id=>"",
 		divisor=>0,
-		period=>"0",
-		is_direct=>'1',
+		period=>"833333333.333333",
+		is_direct=>'0',
 		is_digital=>'1')
-	PORT MAP(clock_out=>Net_771,
+	PORT MAP(clock_out=>Net_810,
 		dig_domain_out=>open);
 isr_sendData:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>Net_773);
+	PORT MAP(int_signal=>Net_833);
 Transm_Output:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"0e0c9380-6965-4440-8709-ce08a91e474c",
 		drive_mode=>"110",

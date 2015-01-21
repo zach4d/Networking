@@ -9,7 +9,7 @@
     <peripheral>
       <name>Timer_BusyToIdle</name>
       <description>No description available</description>
-      <baseAddress>0x4000640E</baseAddress>
+      <baseAddress>0x4000640C</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x92</size>
@@ -1006,7 +1006,7 @@
           <name>Timer_sendData_PERIOD</name>
           <description>TMRx.PER0 - Assigned Period</description>
           <addressOffset>0xB61</addressOffset>
-          <size>16</size>
+          <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
@@ -1015,7 +1015,7 @@
           <name>Timer_sendData_COUNTER</name>
           <description>TMRx.CNT_CMP0 - Current Down Counter Value</description>
           <addressOffset>0xB63</addressOffset>
-          <size>16</size>
+          <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
@@ -1025,7 +1025,7 @@
     <peripheral>
       <name>Timer_BusyToCollision</name>
       <description>No description available</description>
-      <baseAddress>0x4000640C</baseAddress>
+      <baseAddress>0x4000640E</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x92</size>

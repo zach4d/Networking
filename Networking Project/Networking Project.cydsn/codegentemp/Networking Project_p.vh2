@@ -1,5 +1,5 @@
 -- Project:   Networking Project
--- Generated: 01/19/2015 18:16:43
+-- Generated: 01/21/2015 17:20:16
 -- 
 
 ENTITY \Networking Project\ IS
@@ -37,8 +37,11 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     SIGNAL Net_3 : bit;
     SIGNAL Net_573 : bit;
     SIGNAL Net_648 : bit;
-    SIGNAL Net_773 : bit;
     SIGNAL Net_807 : bit;
+    SIGNAL Net_810 : bit;
+    ATTRIBUTE global_signal OF Net_810 : SIGNAL IS true;
+    SIGNAL Net_810_local : bit;
+    SIGNAL Net_833 : bit;
     SIGNAL Pin_LEDBusy(0)__PA : bit;
     SIGNAL Pin_LEDCollision(0)__PA : bit;
     SIGNAL Pin_LEDIdle(0)__PA : bit;
@@ -110,7 +113,7 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     ATTRIBUTE POWER OF tmpOE__Pin_LEDBusy_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
-    SIGNAL \ClockBlock.clk_bus_glb_ff__sig\ : bit;
+    SIGNAL \ClockBlock.dclk_glb_ff_0__sig\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0.ce0__sig\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0.cl0__sig\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0.z0__sig\ : bit;
@@ -1121,7 +1124,9 @@ BEGIN
             imo => ClockBlock_IMO,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\);
+            dclk_glb_0 => Net_810,
+            dclk_0 => Net_810_local,
+            dclk_glb_ff_0 => \ClockBlock.dclk_glb_ff_0__sig\);
 
     Net_1:macrocell
         GENERIC MAP(
@@ -1942,14 +1947,14 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => \ClockBlock.clk_bus_glb_ff__sig\,
+            clock => \ClockBlock.dclk_glb_ff_0__sig\,
             kill => open,
             enable => __ONE__,
             capture => open,
             timer_reset => open,
             tc => \Timer_sendData:Net_51\,
             cmp => \Timer_sendData:Net_261\,
-            irq => Net_773);
+            irq => Net_833);
 
     \USB:Dm(0)\:iocell
         GENERIC MAP(
@@ -2249,7 +2254,7 @@ BEGIN
         GENERIC MAP(
             int_type => "10")
         PORT MAP(
-            interrupt => Net_773,
+            interrupt => Net_833,
             clock => ClockBlock_BUS_CLK);
 
 END __DEFAULT__;

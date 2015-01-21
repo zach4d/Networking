@@ -69,6 +69,8 @@
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Timer_sendData.c" value="ARM_C_FILE;Timer_sendData" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Timer_sendData.h" value="NONE;Timer_sendData" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Timer_sendData_PM.c" value="ARM_C_FILE;Timer_sendData" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\timer_clock_2.c" value="ARM_C_FILE;timer_clock_2" />
+  <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\timer_clock_2.h" value="NONE;timer_clock_2" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\isr_sendData.c" value="ARM_C_FILE;isr_sendData" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\isr_sendData.h" value="NONE;isr_sendData" />
   <file name="D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\Networking Project\Networking Project.cydsn\codegentemp\Transm_Output_aliases.h" value="NONE;Transm_Output" />

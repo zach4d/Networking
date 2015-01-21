@@ -1,5 +1,5 @@
 -- Project:   Networking Project
--- Generated: 01/19/2015 18:16:44
+-- Generated: 01/21/2015 17:20:17
 -- 
 
 ENTITY \Networking Project\ IS
@@ -32,23 +32,26 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     SIGNAL ClockBlock_XTAL : bit;
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
     SIGNAL Net_1 : bit;
-    ATTRIBUTE placement_force OF Net_1 : SIGNAL IS "U(1,4,A)0";
+    ATTRIBUTE placement_force OF Net_1 : SIGNAL IS "U(0,5,A)2";
     SIGNAL Net_123 : bit;
     SIGNAL Net_129 : bit;
     SIGNAL Net_3 : bit;
-    ATTRIBUTE placement_force OF Net_3 : SIGNAL IS "U(1,4,A)2";
+    ATTRIBUTE placement_force OF Net_3 : SIGNAL IS "U(0,5,A)0";
     SIGNAL Net_573 : bit;
-    ATTRIBUTE placement_force OF Net_573 : SIGNAL IS "U(1,5,A)0";
+    ATTRIBUTE placement_force OF Net_573 : SIGNAL IS "U(0,4,A)0";
     SIGNAL Net_648 : bit;
-    SIGNAL Net_773 : bit;
     SIGNAL Net_807 : bit;
+    SIGNAL Net_810 : bit;
+    ATTRIBUTE global_signal OF Net_810 : SIGNAL IS true;
+    SIGNAL Net_810_local : bit;
+    SIGNAL Net_833 : bit;
     SIGNAL Pin_LEDBusy(0)__PA : bit;
     SIGNAL Pin_LEDCollision(0)__PA : bit;
     SIGNAL Pin_LEDIdle(0)__PA : bit;
     SIGNAL Recieve_Input(0)__PA : bit;
     SIGNAL Transm_Output(0)__PA : bit;
     SIGNAL \Falling_EdgeDetect:last\ : bit;
-    ATTRIBUTE placement_force OF \Falling_EdgeDetect:last\ : SIGNAL IS "U(1,4,A)1";
+    ATTRIBUTE placement_force OF \Falling_EdgeDetect:last\ : SIGNAL IS "U(0,5,A)1";
     SIGNAL \Timer_BusyToCollision:TimerUDB:control_0\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:control_1\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:control_2\ : bit;
@@ -59,16 +62,16 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     SIGNAL \Timer_BusyToCollision:TimerUDB:control_7\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:per_zero\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:run_mode\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:run_mode\ : SIGNAL IS "U(0,4,A)2";
+    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:run_mode\ : SIGNAL IS "U(1,5,A)2";
     SIGNAL \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u0.ce0__sig\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:status_2\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:status_3\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:status_tc\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:status_tc\ : SIGNAL IS "U(0,4,A)3";
+    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:status_tc\ : SIGNAL IS "U(1,5,A)3";
     SIGNAL \Timer_BusyToCollision:TimerUDB:timer_enable\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:timer_enable\ : SIGNAL IS "U(0,4,A)0";
+    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:timer_enable\ : SIGNAL IS "U(1,5,A)0";
     SIGNAL \Timer_BusyToCollision:TimerUDB:trig_disable\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:trig_disable\ : SIGNAL IS "U(0,4,A)1";
+    ATTRIBUTE placement_force OF \Timer_BusyToCollision:TimerUDB:trig_disable\ : SIGNAL IS "U(1,5,A)1";
     SIGNAL \Timer_BusyToIdle:TimerUDB:control_0\ : bit;
     SIGNAL \Timer_BusyToIdle:TimerUDB:control_1\ : bit;
     SIGNAL \Timer_BusyToIdle:TimerUDB:control_2\ : bit;
@@ -79,15 +82,15 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     SIGNAL \Timer_BusyToIdle:TimerUDB:control_7\ : bit;
     SIGNAL \Timer_BusyToIdle:TimerUDB:per_zero\ : bit;
     SIGNAL \Timer_BusyToIdle:TimerUDB:run_mode\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:run_mode\ : SIGNAL IS "U(1,5,A)3";
+    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:run_mode\ : SIGNAL IS "U(0,4,A)3";
     SIGNAL \Timer_BusyToIdle:TimerUDB:status_2\ : bit;
     SIGNAL \Timer_BusyToIdle:TimerUDB:status_3\ : bit;
     SIGNAL \Timer_BusyToIdle:TimerUDB:status_tc\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:status_tc\ : SIGNAL IS "U(1,5,B)0";
+    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:status_tc\ : SIGNAL IS "U(0,4,B)0";
     SIGNAL \Timer_BusyToIdle:TimerUDB:timer_enable\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:timer_enable\ : SIGNAL IS "U(1,5,A)1";
+    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:timer_enable\ : SIGNAL IS "U(0,4,A)1";
     SIGNAL \Timer_BusyToIdle:TimerUDB:trig_disable\ : bit;
-    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:trig_disable\ : SIGNAL IS "U(1,5,A)2";
+    ATTRIBUTE placement_force OF \Timer_BusyToIdle:TimerUDB:trig_disable\ : SIGNAL IS "U(0,4,A)2";
     SIGNAL \Timer_sendData:Net_261\ : bit;
     SIGNAL \Timer_sendData:Net_51\ : bit;
     SIGNAL \\\USB:Dm(0)\\__PA\ : bit;
@@ -115,7 +118,7 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     SIGNAL \USB:ept_int_7\ : bit;
     SIGNAL \USB:ept_int_8\ : bit;
     SIGNAL __ONE__ : bit;
-    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(1,4,A)3";
+    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(0,5,A)3";
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
@@ -123,7 +126,7 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     ATTRIBUTE POWER OF tmpOE__Pin_LEDBusy_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
-    SIGNAL \ClockBlock.clk_bus_glb_ff__sig\ : bit;
+    SIGNAL \ClockBlock.dclk_glb_ff_0__sig\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0.ce0__sig\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0.cl0__sig\ : bit;
     SIGNAL \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0.z0__sig\ : bit;
@@ -151,11 +154,11 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     SIGNAL \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u1.cmsbo__sig\ : bit;
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE lib_model OF Net_1 : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF Net_1 : LABEL IS "U(1,4)";
+    ATTRIBUTE Location OF Net_1 : LABEL IS "U(0,5)";
     ATTRIBUTE lib_model OF Net_3 : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF Net_3 : LABEL IS "U(1,4)";
+    ATTRIBUTE Location OF Net_3 : LABEL IS "U(0,5)";
     ATTRIBUTE lib_model OF Net_573 : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF Net_573 : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF Net_573 : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF Pin_LEDBusy(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF Pin_LEDBusy(0) : LABEL IS "P6[2]";
     ATTRIBUTE lib_model OF Pin_LEDCollision(0) : LABEL IS "iocell2";
@@ -167,39 +170,39 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     ATTRIBUTE lib_model OF Transm_Output(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF Transm_Output(0) : LABEL IS "P6[6]";
     ATTRIBUTE lib_model OF \Falling_EdgeDetect:last\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \Falling_EdgeDetect:last\ : LABEL IS "U(1,4)";
+    ATTRIBUTE Location OF \Falling_EdgeDetect:last\ : LABEL IS "U(0,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:rstSts:stsreg\ : LABEL IS "statusicell1";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:rstSts:stsreg\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:rstSts:stsreg\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:run_mode\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:run_mode\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:run_mode\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "controlcell1";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0\ : LABEL IS "U(1,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u0\ : LABEL IS "U(0,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u1\ : LABEL IS "datapathcell2";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u1\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:sT16:timerdp:u1\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:status_tc\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:status_tc\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:status_tc\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:timer_enable\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:timer_enable\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:timer_enable\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToCollision:TimerUDB:trig_disable\ : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:trig_disable\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Timer_BusyToCollision:TimerUDB:trig_disable\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:rstSts:stsreg\ : LABEL IS "statusicell2";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:rstSts:stsreg\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:rstSts:stsreg\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:run_mode\ : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:run_mode\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:run_mode\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "controlcell2";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u0\ : LABEL IS "datapathcell3";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u0\ : LABEL IS "U(0,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u0\ : LABEL IS "U(1,4)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u1\ : LABEL IS "datapathcell4";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u1\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:sT16:timerdp:u1\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:status_tc\ : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:status_tc\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:status_tc\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:timer_enable\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:timer_enable\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:timer_enable\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \Timer_BusyToIdle:TimerUDB:trig_disable\ : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:trig_disable\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \Timer_BusyToIdle:TimerUDB:trig_disable\ : LABEL IS "U(0,4)";
     ATTRIBUTE Location OF \Timer_sendData:TimerHW\ : LABEL IS "F(Timer,0)";
     ATTRIBUTE lib_model OF \USB:Dm(0)\ : LABEL IS "iocell6";
     ATTRIBUTE Location OF \USB:Dm(0)\ : LABEL IS "P15[7]";
@@ -217,7 +220,7 @@ ARCHITECTURE __DEFAULT__ OF \Networking Project\ IS
     ATTRIBUTE Location OF \USB:ord_int\ : LABEL IS "[IntrHod=(0)][IntrId=(25)]";
     ATTRIBUTE Location OF \USB:sof_int\ : LABEL IS "[IntrHod=(0)][IntrId=(21)]";
     ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(1,4)";
+    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(0,5)";
     ATTRIBUTE Location OF isr_BusyToCollision : LABEL IS "[IntrHod=(0)][IntrId=(3)]";
     ATTRIBUTE Location OF isr_BusyToIdle : LABEL IS "[IntrHod=(0)][IntrId=(4)]";
     ATTRIBUTE Location OF isr_FallingEdge : LABEL IS "[IntrHod=(0)][IntrId=(5)]";
@@ -1145,7 +1148,9 @@ BEGIN
             imo => ClockBlock_IMO,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\);
+            dclk_glb_0 => Net_810,
+            dclk_0 => Net_810_local,
+            dclk_glb_ff_0 => \ClockBlock.dclk_glb_ff_0__sig\);
 
     Net_1:macrocell
         GENERIC MAP(
@@ -1949,14 +1954,14 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => \ClockBlock.clk_bus_glb_ff__sig\,
+            clock => \ClockBlock.dclk_glb_ff_0__sig\,
             kill => open,
             enable => __ONE__,
             capture => open,
             timer_reset => open,
             tc => \Timer_sendData:Net_51\,
             cmp => \Timer_sendData:Net_261\,
-            irq => Net_773);
+            irq => Net_833);
 
     \USB:Dm(0)\:iocell
         GENERIC MAP(
@@ -2256,7 +2261,7 @@ BEGIN
         GENERIC MAP(
             int_type => "10")
         PORT MAP(
-            interrupt => Net_773,
+            interrupt => Net_833,
             clock => ClockBlock_BUS_CLK);
 
 END __DEFAULT__;

@@ -40,6 +40,7 @@
 #include <USB_midi.h>
 #include <USB_pvt.h>
 #include <Timer_sendData.h>
+#include <timer_clock_2.h>
 #include <isr_sendData.h>
 #include <Transm_Output_aliases.h>
 #include <Transm_Output.h>

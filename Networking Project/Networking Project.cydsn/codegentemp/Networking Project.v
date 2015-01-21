@@ -1,6 +1,6 @@
 // ======================================================================
 // Networking Project.v generated from TopDesign.cysch
-// 01/19/2015 at 18:16
+// 01/21/2015 at 17:20
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -622,7 +622,7 @@ module USBFS_v2_70_2 (
 
 endmodule
 
-// Timer_v2_60(CaptureAlternatingFall=false, CaptureAlternatingRise=false, CaptureCount=2, CaptureCounterEnabled=false, CaptureInputEnabled=false, CaptureMode=0, CONTROL3=1, ControlRegRemoved=0, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeviceFamily=PSoC5, EnableMode=0, FF16=true, FF8=false, FixedFunction=true, FixedFunctionUsed=1, HWCaptureCounterEnabled=false, InterruptOnCapture=false, InterruptOnFIFOFull=false, InterruptOnTC=true, IntOnCapture=0, IntOnFIFOFull=0, IntOnTC=1, NumberOfCaptures=1, param45=1, Period=9999, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=rstSts, RunMode=0, SiliconRevision=0, SoftwareCaptureModeEnabled=false, SoftwareTriggerModeEnabled=false, TriggerInputEnabled=false, TriggerMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UsesHWEnable=0, VerilogSectionReplacementString=sT16, CY_COMPONENT_NAME=Timer_v2_60, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Timer_sendData, CY_INSTANCE_SHORT_NAME=Timer_sendData, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=60, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Timer_sendData, )
+// Timer_v2_60(CaptureAlternatingFall=false, CaptureAlternatingRise=false, CaptureCount=2, CaptureCounterEnabled=false, CaptureInputEnabled=false, CaptureMode=0, CONTROL3=1, ControlRegRemoved=0, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DeviceFamily=PSoC5, EnableMode=0, FF16=false, FF8=true, FixedFunction=true, FixedFunctionUsed=1, HWCaptureCounterEnabled=false, InterruptOnCapture=false, InterruptOnFIFOFull=false, InterruptOnTC=true, IntOnCapture=0, IntOnFIFOFull=0, IntOnTC=1, NumberOfCaptures=1, param45=1, Period=249, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, Resolution=8, RstStatusReplacementString=rstSts, RunMode=0, SiliconRevision=0, SoftwareCaptureModeEnabled=false, SoftwareTriggerModeEnabled=false, TriggerInputEnabled=false, TriggerMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UsesHWEnable=0, VerilogSectionReplacementString=sT8, CY_COMPONENT_NAME=Timer_v2_60, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Timer_sendData, CY_INSTANCE_SHORT_NAME=Timer_sendData, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=60, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Timer_sendData, )
 module Timer_v2_60_3 (
     clock,
     reset,
@@ -646,7 +646,7 @@ module Timer_v2_60_3 (
     parameter DeviceFamily = "PSoC5";
     parameter InterruptOnCapture = 0;
     parameter InterruptOnTC = 1;
-    parameter Resolution = 16;
+    parameter Resolution = 8;
     parameter SiliconRevision = "0";
 
           wire  Net_261;
@@ -691,12 +691,12 @@ endmodule
 module top ;
 
           wire  Net_804;
-          wire  Net_778;
-          wire  Net_777;
-          wire  Net_776;
-          wire  Net_775;
-          wire  Net_774;
-          wire  Net_773;
+          wire  Net_838;
+          wire  Net_837;
+          wire  Net_836;
+          wire  Net_835;
+          wire  Net_834;
+          wire  Net_833;
           wire  Net_808;
           wire  Net_807;
           wire  Net_701;
@@ -719,8 +719,8 @@ module top ;
           wire  Net_3;
           wire  Net_2;
           wire  Net_1;
-          wire  Net_12;
-          wire  Net_771;
+          wire  Net_809;
+          wire  Net_810;
           wire  Net_117;
           wire  Net_10;
           wire  Net_648;
@@ -1132,42 +1132,42 @@ module top ;
     defparam USB.epDMAautoOptimization = 0;
 
     Timer_v2_60_3 Timer_sendData (
-        .reset(Net_12),
-        .interrupt(Net_773),
+        .reset(Net_809),
+        .interrupt(Net_833),
         .enable(1'b1),
         .trigger(1'b1),
         .capture(1'b0),
-        .capture_out(Net_777),
-        .tc(Net_778),
-        .clock(Net_771));
+        .capture_out(Net_837),
+        .tc(Net_838),
+        .clock(Net_810));
     defparam Timer_sendData.CaptureCount = 2;
     defparam Timer_sendData.CaptureCounterEnabled = 0;
     defparam Timer_sendData.DeviceFamily = "PSoC5";
     defparam Timer_sendData.InterruptOnCapture = 0;
     defparam Timer_sendData.InterruptOnTC = 1;
-    defparam Timer_sendData.Resolution = 16;
+    defparam Timer_sendData.Resolution = 8;
     defparam Timer_sendData.SiliconRevision = "0";
 
 
 	cy_clock_v1_0
 		#(.id("c455d1ff-1235-4305-983b-46fd7c08457d"),
-		  .source_clock_id("75C2148C-3656-4d8a-846D-0CAE99AB6FF7"),
+		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("0"),
-		  .is_direct(1),
+		  .period("833333333.333333"),
+		  .is_direct(0),
 		  .is_digital(1))
 		timer_clock_2
-		 (.clock_out(Net_771));
+		 (.clock_out(Net_810));
 
 
     ZeroTerminal ZeroTerminal_1 (
-        .z(Net_12));
+        .z(Net_809));
 
 
 	cy_isr_v1_0
 		#(.int_type(2'b10))
 		isr_sendData
-		 (.int_signal(Net_773));
+		 (.int_signal(Net_833));
 
 
 	wire [0:0] tmpOE__Transm_Output_net;

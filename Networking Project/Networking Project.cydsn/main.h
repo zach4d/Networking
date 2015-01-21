@@ -25,7 +25,6 @@
 #define MESSAGE_HEADER_CRC 0x7E
 	
 #include <project.h>
-
 typedef enum {IDLE, BUSY, COLLISION} State;
 void init();
 

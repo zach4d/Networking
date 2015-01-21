@@ -1,4 +1,4 @@
---------------- Rebuild Started: 01/19/2015 18:17:04 Project: usbCharBin, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Rebuild Started: 01/21/2015 15:37:26 Project: usbCharBin, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_473\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o"
 Deleting file ".\CortexM3\ARM_GCC_473\Debug\cymetadata.o"
@@ -116,4 +116,4 @@ cyelftool.exe -C D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950P
 cyelftool.exe -S D:\MSOE\2014-2015\Winter\CE4950_021_Network\lab\Project\ce4950Project\Networking\usbCharBin.cydsn\CortexM3\ARM_GCC_473\Debug\usbCharBin.elf
 Flash used: 18110 of 262144 bytes (6.9 %).
 SRAM used: 21941 of 65536 bytes (33.5 %).
---------------- Rebuild Succeeded: 01/19/2015 18:17:27 ---------------
+--------------- Rebuild Succeeded: 01/21/2015 15:37:48 ---------------
