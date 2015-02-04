@@ -206,8 +206,8 @@
       </field>
       <field name="HW_EN" from="7" to="7" access="RW" resetVal="" desc="When set Timer Enable controls counting." />
     </register>
-    <register name="Timer_sendData_PERIOD" address="0x40004F04" bitWidth="8" desc="TMRx.PER0 - Assigned Period" />
-    <register name="Timer_sendData_COUNTER" address="0x40004F06" bitWidth="8" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
+    <register name="Timer_sendData_PERIOD" address="0x40004F04" bitWidth="16" desc="TMRx.PER0 - Assigned Period" />
+    <register name="Timer_sendData_COUNTER" address="0x40004F06" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
   </block>
   <block name="timer_clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Timer_BusyToCollision" BASE="0x0" SIZE="0x0" desc="" visible="true">

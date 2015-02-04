@@ -250,7 +250,6 @@
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\isr_FallingEdge\isr_FallingEdge.h</v>
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\isr_RisingEdge</v>
 <v>Networking Project\Networking Project\Generated_Source\PSoC5\isr_RisingEdge\isr_RisingEdge.c</v>
-<v>Networking Project\Networking Project\Generated_Source\PSoC5\isr_RisingEdge\isr_RisingEdge.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -444,7 +443,6 @@
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Pin_LEDCollision.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Pin_LEDIdle.lst</v>
 <v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Recieve_Input.lst</v>
-<v>Networking Project\Networking Project\CortexM3\ARM_GCC_473\Debug\Listing Files\Timer_BusyToCollision.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

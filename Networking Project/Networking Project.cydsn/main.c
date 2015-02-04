@@ -84,10 +84,11 @@ CY_ISR(isr_BusyToCollision)
 
 CY_ISR(isr_sendData)
 {
+	Timer_sendData_STATUS;
 	if(signal == 1)
 	{
 		signal = 0;
-		if(messageSize < i_send)
+		if(messageSize >= i_send)
 		{
 			//end of message
 			Timer_sendData_Stop();
@@ -97,8 +98,8 @@ CY_ISR(isr_sendData)
 		}
 		if(packetSend[messageSize] == '0')
 		{
-			while(USB_CDCIsReady() == 0u);
-			USB_PutChar('a');
+			//while(USB_CDCIsReady() == 0u);
+			//USB_PutChar('a');
 			
 			Transm_Output_Write(0);
 		}else{
@@ -110,7 +111,7 @@ CY_ISR(isr_sendData)
 		Transm_Output_Write(!Transm_Output_Read());
 		messageSize++;
 	}
-	Timer_sendData_WriteCounter(Timer_sendData_ReadPeriod());
+	//Timer_sendData_WriteCounter(Timer_sendData_ReadPeriod());
 }
 
 void mystrrev(char hex[])
@@ -194,19 +195,10 @@ int main()
 		switch(currentState)
 		{
 			case IDLE:
-			/****************************************
-			uncommented as the current state was not changing
-			*********************************************/
-			/*
-			if(i_send == 0 || i_send == forLoopCounter)
-			{
-				Timer_sendData_Sleep();
-			}
-			*/
+			Pin_LEDBusy_Write(0);			
+			Pin_LEDIdle_Write(1);
+			Pin_LEDCollision_Write(0);
 			
-			/*
-				Transm_Output_Write(1);
-			*/
 				if(USB_DataIsReady() != 0u)               /* Check for input data from PC */
 	       		{   
 		           count = USB_GetAll(buffer);           /* Read received data and re-enable OUT endpoint */
